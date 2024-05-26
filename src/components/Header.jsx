@@ -20,7 +20,7 @@ const Header = () => {
           <Link
             key={item.name}
             to={item.path}
-            className={`text-maroon-light hover:text-maroon 
+            className={`text-maroon-light text-lg hover:text-maroon 
             relative flex justify-center font-semibold after:opacity-0 after:absolute 
             after:-bottom-2 after:bg-maroon-light after:w-2/3 after:h-[3px] after:transition-transform 
             after:duration-500 hover:after:scale-x-100 hover:after:opacity-100 ${
@@ -39,7 +39,7 @@ const Header = () => {
             className="inline-flex items-center font-medium justify-center px-4 py-2 text-gray-900 rounded-lg cursor-pointer hover:bg-stone-200"
           >
             {link[1].match(/^\/id/) !== null ? (
-              <div className="inline-flex items-center text-maroon-light">
+              <div className="inline-flex items-center text-maroon-light text-lg">
                 <img
                   src="/images/indonesia.png"
                   alt="Indonesia"
@@ -48,7 +48,7 @@ const Header = () => {
                 Indonesia
               </div>
             ) : (
-              <div className="inline-flex items-center text-maroon-light">
+              <div className="inline-flex items-center text-maroon-light text-lg">
                 <img
                   src="/images/english.png"
                   alt="English"
@@ -72,7 +72,7 @@ const Header = () => {
                   to="/id"
                   className="block px-4 py-2 hover:bg-stone-300 rounded-lg"
                 >
-                  <div className="inline-flex items-center text-maroon-light">
+                  <div className="inline-flex items-center text-maroon-light text-lg">
                     <img
                       src="/images/indonesia.png"
                       alt="Indonesia"
@@ -87,7 +87,7 @@ const Header = () => {
                   to="/en"
                   className="block px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <div className="inline-flex items-center tetx-maroon-light">
+                  <div className="inline-flex items-center text-maroon-light text-lg">
                     <img
                       src="/images/english.png"
                       alt="English"

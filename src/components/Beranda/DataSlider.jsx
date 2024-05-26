@@ -51,7 +51,7 @@ export default function DataSlider() {
     ),
   };
   return (
-    <div>
+    <div id="dataSlider">
       <div className="w-[85%] h-fit slider-container mx-auto z-20 mt-8">
         <Slider
           {...settings}
@@ -75,6 +75,7 @@ export default function DataSlider() {
           ))}
         </Slider>
       </div>
+      <style></style>
     </div>
   );
 }

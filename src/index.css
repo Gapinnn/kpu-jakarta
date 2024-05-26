@@ -10,7 +10,10 @@ base {
   .slick-dots .slick-active {
     @apply bg-gold rounded-full flex justify-center items-center w-6 h-6;
   }
-  .slick-dots .slick-active div {
+  #dataSlider .slick-dots li.slick-active div {
     @apply bg-gold rounded-full flex justify-center items-center w-6 h-6 scale-110;
+  }
+  #infoSlider .slick-dots li.slick-active div {
+    @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
   }
 }

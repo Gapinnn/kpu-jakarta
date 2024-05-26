@@ -48,3 +48,18 @@ export const dataCard = [
     detail: "Pemilu 2024",
   },
 ];
+
+export const dataInfo = [
+  {
+    file: "info-satu.png",
+    keterangan: "Informasi Pemilu 2024",
+  },
+  {
+    file: "info-dua.png",
+    keterangan: "Informasi Pemilu 2024",
+  },
+  {
+    file: "info-tiga.png",
+    keterangan: "Informasi Pemilu 2024",
+  },
+];

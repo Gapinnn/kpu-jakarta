@@ -1,11 +1,11 @@
-export default function PrevArrow() {
+export default function PrevArrow({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
       height="32"
       viewBox="0 0 24 24"
-      className="ms-2.5"
+      className={"ms-2.5 " + className}
     >
       <path
         fill="#660300"
