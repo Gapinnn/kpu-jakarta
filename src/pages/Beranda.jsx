@@ -1,11 +1,12 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import DataSlider from "../components/Beranda/DataSlider";
+import Hero from "../components/Beranda/Hero";
 
 export default function Beranda() {
   return (
     <>
-      <Header />
-      <Footer />
+      <div className="flex flex-col gap-0">
+        <Hero />
+      </div>
     </>
   );
 }

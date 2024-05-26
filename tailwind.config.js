@@ -3,10 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      // fontFamily: {
-      //   montserrat: ["Montserrat", "sans-serif"],
-      //   sans: ["DM Sans", "sans-serif"],
-      // },
+      backgroundImage: {
+        hero: "url('/images/hero.png')",
+      },
       colors: {
         maroon: {
           DEFAULT: "#340705",
@@ -20,6 +19,9 @@ export default {
           DEFAULT: "#ffbf00",
           neutral: "#ffdc73",
         },
+      },
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
       },
     },
   },

@@ -1,22 +1,45 @@
-export const menu = [
+export const menuId = [
   {
     name: "Beranda",
-    path: "/",
+    path: "/id",
   },
   {
     name: "Tentang Kami",
-    path: "/profil",
-  },
-  {
-    name: "Visualisasi",
-    path: "/visualisasi",
+    path: "/id/profil",
   },
   {
     name: "Berita",
-    path: "/berita",
+    path: "/id/berita",
+  },
+  {
+    name: "Visualisasi",
+    path: "/id/visualisasi",
   },
   {
     name: "Publikasi",
-    path: "/publikasi",
+    path: "/id/publikasi",
+  },
+];
+
+export const menuEn = [
+  {
+    name: "Beranda",
+    path: "/en",
+  },
+  {
+    name: "Tentang Kami",
+    path: "/en/profil",
+  },
+  {
+    name: "Berita",
+    path: "/en/berita",
+  },
+  {
+    name: "Visualisasi",
+    path: "/en/visualisasi",
+  },
+  {
+    name: "Publikasi",
+    path: "/en/publikasi",
   },
 ];
