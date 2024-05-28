@@ -1,8 +1,14 @@
-# React + Vite
+# Redesain Website KPU Jakarta
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Panduan Clone
 
-Currently, two official plugins are available:
+1. Buka Terminal/Git Bash
+2. Tuliskan command git `https://git.stis.ac.id/222112069/redesain-kpu-jakarta.git`
+3. Tuliskan command `cd redesain-kpu-jakarta`
+4. Kalau error tanya Gavin di grup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Panduan Instalasi
+
+1. Install npm package pake `npm install`, ini buat install beberapa package seperti tailwind dan react
+2. Jalankan build css nya, pake `npm run dev`
+3. Kalau error tanya Gavin di grup

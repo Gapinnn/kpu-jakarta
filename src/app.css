@@ -1,0 +1,23 @@
+/* Jaga-Jaga Ketika Manual CSS dengan Tailwind (index.css) Tidak Berjalan */
+
+#dataSlider .slick-dots li.slick-active div {
+  background-color: #ffbf00;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scale(1.1);
+}
+
+#infoSlider .slick-dots li.slick-active div {
+  background-color: #660300;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scale(1.1);
+}
