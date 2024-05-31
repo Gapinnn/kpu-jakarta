@@ -42,7 +42,7 @@ export default function Galeri() {
         <div className="mb-4 flex">
           <button
             onClick={() => setActiveTab("foto")}
-            className={`px-4 py-2 rounded-t-lg w-32 ${
+            className={`px-4 py-2 rounded-lg w-32 ${
               activeTab === "foto"
                 ? "bg-red-900 text-gold font-bold"
                 : "bg-white text-maroon font-bold"
@@ -52,7 +52,7 @@ export default function Galeri() {
           </button>
           <button
             onClick={() => setActiveTab("video")}
-            className={`px-4 py-2 rounded-t-lg w-32 ${
+            className={`px-4 py-2 rounded-lg w-32 ${
               activeTab === "video"
                 ? "bg-red-900 text-gold font-bold"
                 : "bg-white text-maroon font-bold"
@@ -68,7 +68,7 @@ export default function Galeri() {
                 <img
                   src={item.imgSrc}
                   alt={item.title}
-                  className="rounded-t-lg w-full"
+                  className="rounded-lg w-full"
                 />
                 <div className="p-4">
                   <h2 className="text-maroon font-bold mt-0 mb-0">
@@ -94,7 +94,7 @@ export default function Galeri() {
                 <img
                   src={item.imgSrc}
                   alt={item.title}
-                  className="rounded-t-lg w-full"
+                  className="rounded-lg w-full"
                 />
                 <div className="p-4">
                   <h2 className="text-maroon font-bold mt-0 mb-0">

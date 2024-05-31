@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Beranda from "./pages/Beranda";
 import Publikasi from "./pages/Publikasi";
+import BeritaTerkini from "./pages/BeritaTerkini";
+import Pengumuman from "./pages/Pengumuman";
+import BeritaOpini from "./pages/BeritaOpini";
 import HalamanBerita from "./pages/HalamanBerita";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -25,6 +28,12 @@ function App() {
         <Route path="/en/publikasi" element={<Publikasi />} />
         <Route path="/en/halamanberita" element={<HalamanBerita />} />
         <Route path="/id/halamanberita" element={<HalamanBerita />} />
+        <Route path="/id/beritaterkini" element={<BeritaTerkini />} />
+        <Route path="/en/beritaterkini" element={<BeritaTerkini />} />
+        <Route path="/id/beritaopini" element={<BeritaOpini />} />
+        <Route path="/en/beritaopini" element={<BeritaOpini />} />
+        <Route path="/id/pengumuman" element={<Pengumuman />} />
+        <Route path="/en/pengumuman" element={<Pengumuman />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,6 +1,6 @@
 const NewsDetail = () => {
   return (
-    <div className="flex-1 bg-white p-6 shadow-md rounded-lg">
+    <div className="flex-1 bg-white p-6 shadow rounded-lg">
       <img
         className="w-full h-96 object-cover rounded-lg"
         src="/images/info-dua.png"
@@ -65,20 +65,20 @@ const NewsRelated = () => {
 
   return (
     <div className="lg:w-1/3 shadow-md rounded-lg mt-8 lg:mt-0">
-      <h2 className="bg-maroon text-white text-2xl font-bold p-6 rounded-lg">
+      <h2 className="bg-maroon text-white text-2xl font-bold p-6 rounded-lg rounded-b-none">
         Berita Terkait
       </h2>
       <div className="">
         {relatedNewsItems.map((item) => (
           <div key={item.id} className="flex items-start p-4">
             <img
-              className="w-24 h-16 object-cover rounded-lg"
+              className="w-30 h-16 object-cover rounded-lg"
               src={item.image}
               alt="Related Berita"
             />
             <div className="ml-4">
-              <h3 className="text-lg font-bold">{item.title}</h3>
-              <p className="text-sm text-gray-500 mt-1">{item.date}</p>
+              <h3 className="text-lg font-bold space-y-1">{item.title}</h3>
+              <p className="text-sm text-gray-500">{item.date}</p>
             </div>
           </div>
         ))}

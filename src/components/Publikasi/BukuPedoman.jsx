@@ -1,11 +1,7 @@
 export default function BukuPedoman() {
   const Card = ({ title, date, views, imageSrc, description }) => (
     <div className="bg-white shadow-md rounded-lg p-4 flex flex-col md:flex-row">
-      <img
-        src={imageSrc}
-        alt={title}
-        className="w-full md:w-1/4 rounded-lg md:rounded-r-none"
-      />
+      <img src={imageSrc} alt={title} className="w-full md:w-1/4 rounded-lg" />
       <div className="p-4 md:w-3/4 flex flex-col justify-between">
         <div>
           <div className="flex items-center text-gray-500 text-sm mb-1">
