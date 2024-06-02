@@ -1,10 +1,32 @@
 export const groupBarChart1 = [
-  { region: "Jakarta Barat", male: 42.7, female: 25.8 },
-  { region: "Jakarta Selatan", male: 40.2, female: 33.9 },
-  { region: "Jakarta Timur", male: 36.1, female: 42.6 },
-  { region: "Jakarta Utara", male: 35.7, female: 25.7 },
-  { region: "Jakarta Pusat", male: 35.6, female: 35.0 },
-  { region: "Kepulauan Seribu", male: 34.1, female: 26.9 },
+  {
+    title:
+      "Jumlah Pemilih Tetap Berdasarkan Jenis Kelamin dan Kota di Provinsi DKI Jakarta",
+    interpretasi:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea eum fuga officia possimus illo cum fugiat quis? Eligendi reiciendis molestias vero fugit provident praesentium eius atque sit dignissimos numquam non ipsa consequatur tenetur adipisci ullam minus porro hic, aliquid saepe. Reiciendis repellat maxime adipisci dicta aliquam, expedita corrupti excepturi doloribus tempora rerum placeat aperiam tenetur soluta. Sed, ab laborum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea eum fuga officia possimus illo cum fugiat quis? Eligendi reiciendis molestias vero fugit provident praesentium eius atque sit dignissimos numquam non ipsa consequatur tenetur adipisci ullam minus porro hic, aliquid saepe. Reiciendis repellat maxime adipisci dicta aliquam, expedita corrupti excepturi doloribus tempora rerum placeat aperiam tenetur soluta. Sed, ab laborum!",
+    data: [
+      { region: "Jakarta \n Barat", male: 42.7, female: 25.8 },
+      { region: "Jakarta Selatan", male: 40.2, female: 33.9 },
+      { region: "Jakarta Timur", male: 36.1, female: 42.6 },
+      { region: "Jakarta Utara", male: 35.7, female: 25.7 },
+      { region: "Jakarta Pusat", male: 35.6, female: 35.0 },
+      { region: "Kepulauan Seribu", male: 34.1, female: 26.9 },
+    ],
+  },
+  {
+    title:
+      "Jumlah Pemilih Tetap Berdasarkan Jenis Kelamin dan Kota di Provinsi DKI Jakarta",
+    interpretasi:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea eum fuga officia possimus illo cum fugiat quis? Eligendi reiciendis molestias vero fugit provident praesentium eius atque sit dignissimos numquam non ipsa consequatur tenetur adipisci ullam minus porro hic, aliquid saepe. Reiciendis repellat maxime adipisci dicta aliquam, expedita corrupti excepturi doloribus tempora rerum placeat aperiam tenetur soluta. Sed, ab laborum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea eum fuga officia possimus illo cum fugiat quis? Eligendi reiciendis molestias vero fugit provident praesentium eius atque sit dignissimos numquam non ipsa consequatur tenetur adipisci ullam minus porro hic, aliquid saepe. Reiciendis repellat maxime adipisci dicta aliquam, expedita corrupti excepturi doloribus tempora rerum placeat aperiam tenetur soluta. Sed, ab laborum!",
+    data: [
+      { region: "Jakarta \n Barat", male: 42.7, female: 25.8 },
+      { region: "Jakarta Selatan", male: 40.2, female: 33.9 },
+      { region: "Jakarta Timur", male: 36.1, female: 42.6 },
+      { region: "Jakarta Utara", male: 35.7, female: 25.7 },
+      { region: "Jakarta Pusat", male: 35.6, female: 35.0 },
+      { region: "Kepulauan Seribu", male: 34.1, female: 26.9 },
+    ],
+  },
 ];
 
 export const groupBarChart2 = [

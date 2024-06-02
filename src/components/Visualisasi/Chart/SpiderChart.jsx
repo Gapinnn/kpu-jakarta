@@ -25,7 +25,7 @@ export default function SpiderChart({ title, data }) {
     };
 
     const width = containerWidth - margin.left - margin.right;
-    const widthFix = width > 560 ? 560 : width;
+    const widthFix = width > 480 ? 480 : width;
     const height = widthFix; // Adjust height calculation
 
     const config = {
@@ -345,8 +345,7 @@ export default function SpiderChart({ title, data }) {
         .style("padding", "10px")
         .style("background", "#333")
         .style("color", "white")
-        .style("border-radius", "5px")
-        .style("pointer-events", "none");
+        .style("border-radius", "5px");
     }
 
     const svgWidth = svg.node().getBBox().width;

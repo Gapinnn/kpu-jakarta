@@ -5,6 +5,7 @@ import Download from "../../Icon/Download";
 import FileSvg from "../../Icon/FileSvg";
 import FilePng from "../../Icon/FilePng";
 import FilePdf from "../../Icon/FilePdf";
+import UpArrow from "../../Icon/UpArrow";
 
 export default function GroupBarChart({ title, data }) {
   const createChart = useCallback(() => {
@@ -12,8 +13,9 @@ export default function GroupBarChart({ title, data }) {
 
     const margin = { top: 50, right: 25, bottom: 50, left: 25 }; // Adjusted bottom margin
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
-    const width = containerWidth - margin.left - margin.right;
-    const height = 0.7 * width; // Adjust height calculation
+    let width = containerWidth - margin.left - margin.right;
+    width = width > 1080 ? 1080 : width;
+    let height = 0.55 * width; // Adjust height calculation
 
     const svg = d3
       .select(`#${title}`)
@@ -27,8 +29,10 @@ export default function GroupBarChart({ title, data }) {
     const x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
     const x1 = d3.scaleBand().padding(0.05);
     const y = d3.scaleLinear().rangeRound([height, 0]);
-    const color = d3.scaleOrdinal().range(["#FFBF00", "#FFDC73"]);
+    const warna = ["#FFBF00", "#FFDC73"];
+    const color = d3.scaleOrdinal().range(warna);
     const keys = ["male", "female"];
+    const label = ["Laki-Laki", "Perempuan"];
 
     x0.domain(data.map((d) => d.region));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
@@ -42,16 +46,47 @@ export default function GroupBarChart({ title, data }) {
       .append("g")
       .attr("transform", (d) => `translate(${x0(d.region)},0)`)
       .selectAll("rect")
-      .data((d) => keys.map((key) => ({ key, value: d[key] })))
+      .data((d) =>
+        keys.map((key, i) => ({
+          key,
+          value: d[key],
+          region: d.region,
+          index: i,
+        }))
+      )
       .enter()
       .append("rect")
       .attr("x", (d) => x1(d.key))
-      .attr("y", (d) => y(d.value))
+      .attr("y", height)
       .attr("width", x1.bandwidth())
-      .attr("height", (d) => height - y(d.value))
+      .attr("height", 0)
       .attr("fill", (d) => color(d.key))
-      .append("title")
-      .text((d) => d.value);
+      .on("mouseover", function (event, d) {
+        tooltip
+          .html(
+            `<strong>${d.region}</strong><br/>${
+              label[d.index]
+            }<br/><span style="color:${warna[d.index]};">&#9632;</span> ${
+              d.value
+            }`
+          )
+          .style("opacity", 0.9)
+          .style("left", `${event.pageX + 10}px`)
+          .style("top", `${event.pageY - 28}px`);
+      })
+      .on("mousemove", function (event) {
+        tooltip
+          .style("left", `${event.pageX + 10}px`)
+          .style("top", `${event.pageY - 28}px`);
+      })
+      .on("mouseout", function () {
+        tooltip.style("opacity", 0);
+      })
+      .transition()
+      .duration(800)
+      .delay((d, i) => i * 400) // Tambahkan delay berdasarkan indeks
+      .attr("y", (d) => y(d.value)) // Pindahkan ke posisi y yang sesuai
+      .attr("height", (d) => height - y(d.value)); // Atur tinggi yang sesuai
 
     svg
       .selectAll(".label-male")
@@ -59,10 +94,10 @@ export default function GroupBarChart({ title, data }) {
       .enter()
       .append("text")
       .attr("class", "label-male")
-      .attr("x", (d) => x0(d.region) + x0.bandwidth() / 3)
+      .attr("x", (d) => x0(d.region) + x0.bandwidth() / 3.6)
       .attr("y", (d) => y(d.male) - 10)
       .attr("text-anchor", "middle")
-      .text((d) => d.male + "%")
+      .text((d) => d.male)
       .attr("fill", "#000")
       .attr("font-family", "Poppins")
       .attr("font-size", "12px");
@@ -76,7 +111,7 @@ export default function GroupBarChart({ title, data }) {
       .attr("x", (d) => x0(d.region) + x0.bandwidth() / 1.3)
       .attr("y", (d) => y(d.female) - 10)
       .attr("text-anchor", "middle")
-      .text((d) => d.female + "%")
+      .text((d) => d.female)
       .attr("fill", "#000")
       .attr("font-family", "Poppins")
       .attr("font-size", "12px");
@@ -118,6 +153,21 @@ export default function GroupBarChart({ title, data }) {
       .attr("y", 13) // Vertically align the text to the center of the rectangle
       .attr("dy", "0.3em")
       .text((d) => d);
+
+    // Buat elemen tooltip
+    let tooltip = d3.select("body").select(`.tooltip${title}`);
+    if (tooltip.empty()) {
+      tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", `tooltip${title}`)
+        .style("opacity", 0)
+        .style("position", "absolute")
+        .style("padding", "10px")
+        .style("background", "#333")
+        .style("color", "white")
+        .style("border-radius", "5px");
+    }
   }, [title, data]);
 
   const downloadSVG = () => {
@@ -219,51 +269,89 @@ export default function GroupBarChart({ title, data }) {
   }, [createChart]);
 
   return (
-    <div className="flex-col h-full w-full relative">
-      <div className="w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group">
-        <Download className="text-white w-6 h-6" />
+    <div className="flex-col h-full w-full">
+      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-72 group hover:bg-stone-100 hover:w-72 hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
+        <div className="inline-flex items-center text-maroon-light text-md">
+          Jumlah Pemilih Tetap
+        </div>
+        <UpArrow
+          className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
+        />
         <div
-          className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+          className={`absolute top-[1.5rem] -left-[2px] z-50 my-4 w-72 text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="py-2 font-medium" role="none">
             <li>
-              <div
-                onClick={downloadSVG}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
-              >
-                <FileSvg className="text-maroon-light w-6 h-6" />
+              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
                 <div className="inline-flex items-center text-maroon-light text-md font-semibold">
-                  SVG
+                  Jumlah Pemilih Tetap
                 </div>
               </div>
             </li>
             <li>
-              <div
-                onClick={downloadPNG}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
-              >
-                <FilePng className="text-maroon-light w-6 h-6" />
-                <div className="inline-flex items-center text-maroon-light text-md">
-                  PNG
+              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                  Jumlah Pemilih Tetap Baru
                 </div>
               </div>
             </li>
             <li>
-              <div
-                onClick={downloadPDF}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
-              >
-                <FilePdf className="text-maroon-light w-6 h-6" />
+              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
                 <div className="inline-flex items-center text-maroon-light text-md">
-                  PDF
+                  Jumlah Tempat Pemungutan Suara
                 </div>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <svg id={title} className="chart h-full w-full"></svg>
+      <div className="w-full flex relative">
+        <div className="w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group">
+          <Download className="text-white w-6 h-6" />
+          <div
+            className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+                transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
+          >
+            <ul className="py-2 font-medium" role="none">
+              <li>
+                <div
+                  onClick={downloadSVG}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FileSvg className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                    SVG
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={downloadPNG}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FilePng className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md">
+                    PNG
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={downloadPDF}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FilePdf className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md">
+                    PDF
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <svg id={title} className="chart h-full w-full"></svg>
+      </div>
     </div>
   );
 }

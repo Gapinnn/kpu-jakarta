@@ -57,7 +57,7 @@ const Header = () => {
               {item.branch && (
                 <div
                   className={`absolute top-[2.3rem] pt-2 px-2 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
-                transition-transform duration-300 transform  ${
+                transition-transform duration-500 transform  ${
                   hoverMenu === item.name
                     ? "opacity-100 translate-y-0 z-50 pointer-events-auto"
                     : "opacity-0 -translate-y-6 -z-20 pointer-events-none"
