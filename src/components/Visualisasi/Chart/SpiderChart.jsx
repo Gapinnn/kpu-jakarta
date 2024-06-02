@@ -348,6 +348,8 @@ export default function SpiderChart({ title, data }) {
         .style("border-radius", "5px");
     }
 
+    // HAHA HIHI
+
     const svgWidth = svg.node().getBBox().width;
 
     // TAMBAH LEGENDA
