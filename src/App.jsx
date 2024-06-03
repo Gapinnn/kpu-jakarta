@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Beranda from "./pages/Beranda";
+import StrukturOrganisasi from "./pages/StrukturOrganisasi";
 import Publikasi from "./pages/Publikasi";
 import BeritaTerkini from "./pages/BeritaTerkini";
 import Pengumuman from "./pages/Pengumuman";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/id/tupoksi" element={<Tupoksi />} />
         <Route path="/id/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/sop" element={<Sop />} />
+        <Route path="/id/strukturorganisasi" element={<StrukturOrganisasi />} />
         <Route path="/en" element={<Beranda />} />
         <Route path="/id/publikasi" element={<Publikasi />} />
         <Route path="/en/publikasi" element={<Publikasi />} />

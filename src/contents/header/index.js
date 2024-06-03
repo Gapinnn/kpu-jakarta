@@ -55,6 +55,14 @@ export const menuId = [
     path: "/id/publikasi",
     branch: false,
   },
+  {
+    name: "Visi Misi",
+    path: "/id/visi-misi",
+  },
+  {
+    name: "Tupoksi",
+    path: "/id/tupoksi",
+  },
 ];
 
 export const menuEn = [
