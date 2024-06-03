@@ -46,22 +46,24 @@ export const menuId = [
     ],
   },
   {
-    name: "Visualisasi",
-    path: "/id/visualisasi",
-    branch: false,
+    name: "Statistik",
+    path: "/id/statistik",
+    branch: true,
+    submenu: [
+      {
+        name: "Visualisasi",
+        path: "/id/statistik/visualisasi",
+      },
+      {
+        name: "Tabulasi",
+        path: "/id/statistik/tabulasi",
+      },
+    ],
   },
   {
     name: "Publikasi",
     path: "/id/publikasi",
     branch: false,
-  },
-  {
-    name: "Visi Misi",
-    path: "/id/visi-misi",
-  },
-  {
-    name: "Tupoksi",
-    path: "/id/tupoksi",
   },
 ];
 

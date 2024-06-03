@@ -1,4 +1,4 @@
-const OrganizationalStructure = () => {
+const Struktur = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full bg-maroon h-40 flex items-center justify-center"></div>
@@ -18,4 +18,4 @@ const OrganizationalStructure = () => {
   );
 };
 
-export default OrganizationalStructure;
+export default Struktur;

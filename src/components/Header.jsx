@@ -40,7 +40,7 @@ const Header = () => {
                 to={item.path}
                 onMouseOver={() => changeHoverMenu(item)}
                 onMouseLeave={resetHoverMenu}
-                className={`text-stone-100 text-lg hover:text-stone-200
+                className={`text-stone-100 py-1 text-lg hover:text-stone-200
             relative flex justify-center font-semibold group `}
               >
                 <div
