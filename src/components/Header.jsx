@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Logo from "./Logo/Logo";
 import { menuId, menuEn } from "../contents/header/";
 import { useCallback, useState } from "react";
+import UpArrow from "./Icon/UpArrow";
+import DropArrow from "./Icon/DropArrow";
 
 const Header = () => {
   const url = window.location.href;
@@ -9,28 +11,77 @@ const Header = () => {
   console.log(link[1]);
   const path = link[1].split("/");
   const menu = link[1].match(/^\/id/) !== null ? menuId : menuEn;
+  const [hoverMenu, setHoverMenu] = useState("default");
 
   const [languageDropdown, setLanguageDropdown] = useState(false);
 
+  const changeHoverMenu = useCallback((menu) => {
+    setHoverMenu(menu.name);
+  }, []);
+
+  const resetHoverMenu = useCallback(() => {
+    setHoverMenu("default");
+  }, []);
+
   return (
-    <header className="sticky top-0 w-full px-[3%] flex justify-between bg-white shadow-md z-30">
+    <header className="sticky top-0 w-full px-[3%] flex justify-between bg-stone-100 shadow-md z-30">
       <Logo></Logo>
       <nav className="hidden lg:flex space-x-10 items-center">
         {menu.map((item) => (
-          <Link
-            key={item.name}
-            to={item.path}
-            className={`text-maroon-light text-lg hover:text-maroon 
-            relative flex justify-center font-semibold after:opacity-0 after:absolute 
+          <div key={item.name} className="relative flex justify-center">
+            <Link
+              to={item.path}
+              onMouseOver={() => changeHoverMenu(item)}
+              onMouseLeave={resetHoverMenu}
+              className={`text-maroon-light text-lg hover:text-maroon 
+            relative flex justify-center font-semibold group `}
+            >
+              <div
+                className={`flex justify-center after:opacity-0 after:absolute 
             after:-bottom-2 after:bg-maroon-light after:w-2/3 after:h-[3px] after:transition-transform 
-            after:duration-500 hover:after:scale-x-100 hover:after:opacity-100 ${
+            after:duration-500 group-hover:after:scale-x-100 group-hover:after:opacity-100 ${
               link[1] == item.path
                 ? "text-maroon after:scale-x-100 after:opacity-100"
                 : ""
             }`}
-          >
-            {item.name}
-          </Link>
+              >
+                {item.name}
+              </div>
+              {item.branch && (
+                <UpArrow
+                  className={`mt-1 w-6 h-6 transition-transform duration-500 ${
+                    hoverMenu === item.name ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              )}
+              {item.branch && (
+                <div
+                  className={`absolute top-[2.3rem] pt-2 px-2 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+                transition-transform duration-500 transform  ${
+                  hoverMenu === item.name
+                    ? "opacity-100 translate-y-0 z-50 pointer-events-auto"
+                    : "opacity-0 -translate-y-6 -z-20 pointer-events-none"
+                }`}
+                >
+                  <ul className="py-2 font-medium" role="none">
+                    {item.submenu.map((subitem) => {
+                      return (
+                        <Link
+                          key={subitem.name}
+                          to={subitem.path}
+                          className="block px-4 py-2 hover:bg-stone-300 rounded-lg"
+                        >
+                          <div className="inline-flex items-center text-maroon-light text-lg">
+                            {subitem.name}
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </Link>
+          </div>
         ))}
         <div className="relative flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
           <button
