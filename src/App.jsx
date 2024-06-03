@@ -21,24 +21,27 @@ function App() {
       <Header />
       <Routes>
         <Route path="/id" element={<Beranda />} />
-        <Route path="/id/visi-misi" element={<VisiMisi />} />
-        <Route path="/id/tupoksi" element={<Tupoksi />} />
-        <Route path="/id/tugas-wewenang" element={<TugasWewenang />} />
+        <Route path="/id/profil/visi-misi" element={<VisiMisi />} />
+        <Route path="/id/profil/tupoksi" element={<Tupoksi />} />
+        <Route path="/id/profil/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/sop" element={<Sop />} />
-        <Route path="/id/strukturorganisasi" element={<StrukturOrganisasi />} />
+        <Route
+          path="/id/profil/strukturorganisasi"
+          element={<StrukturOrganisasi />}
+        />
         <Route path="/en" element={<Beranda />} />
         <Route path="/id/publikasi" element={<Publikasi />} />
         <Route path="/en/publikasi" element={<Publikasi />} />
         <Route path="/en/halamanberita" element={<HalamanBerita />} />
         <Route path="/id/halamanberita" element={<HalamanBerita />} />
-        <Route path="/id/beritaterkini" element={<BeritaTerkini />} />
-        <Route path="/en/beritaterkini" element={<BeritaTerkini />} />
-        <Route path="/id/beritaopini" element={<BeritaOpini />} />
-        <Route path="/en/beritaopini" element={<BeritaOpini />} />
-        <Route path="/id/pengumuman" element={<Pengumuman />} />
-        <Route path="/en/pengumuman" element={<Pengumuman />} />
-        <Route path="/id/visualisasi" element={<Visualisasi />} />
-        <Route path="/en/visualisasi" element={<Visualisasi />} />
+        <Route path="/id/berita/terkini" element={<BeritaTerkini />} />
+        <Route path="/en/berita/terkini" element={<BeritaTerkini />} />
+        <Route path="/id/berita/opini" element={<BeritaOpini />} />
+        <Route path="/en/berita/opini" element={<BeritaOpini />} />
+        <Route path="/id/berita/pengumuman" element={<Pengumuman />} />
+        <Route path="/en/berita/pengumuman" element={<Pengumuman />} />
+        <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
+        <Route path="/en/statistik/visualisasi" element={<Visualisasi />} />
       </Routes>
       <Footer />
     </BrowserRouter>
