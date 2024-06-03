@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Beranda from "./pages/Beranda";
+import StrukturOrganisasi from "./pages/StrukturOrganisasi";
 import Publikasi from "./pages/Publikasi";
 import BeritaTerkini from "./pages/BeritaTerkini";
 import Pengumuman from "./pages/Pengumuman";
@@ -12,6 +13,7 @@ import Tupoksi from "./pages/Tupoksi";
 import TugasWewenang from "./pages/TugasWewenang";
 import Sop from "./pages/Sop";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Visualisasi from "./pages/Visualisasi";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/id/tupoksi" element={<Tupoksi />} />
         <Route path="/id/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/sop" element={<Sop />} />
+        <Route path="/id/strukturorganisasi" element={<StrukturOrganisasi />} />
         <Route path="/en" element={<Beranda />} />
         <Route path="/id/publikasi" element={<Publikasi />} />
         <Route path="/en/publikasi" element={<Publikasi />} />
@@ -34,6 +37,8 @@ function App() {
         <Route path="/en/beritaopini" element={<BeritaOpini />} />
         <Route path="/id/pengumuman" element={<Pengumuman />} />
         <Route path="/en/pengumuman" element={<Pengumuman />} />
+        <Route path="/id/visualisasi" element={<Visualisasi />} />
+        <Route path="/en/visualisasi" element={<Visualisasi />} />
       </Routes>
       <Footer />
     </BrowserRouter>

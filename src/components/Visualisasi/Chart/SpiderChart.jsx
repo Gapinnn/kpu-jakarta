@@ -91,16 +91,16 @@ export default function SpiderChart({ title, data }) {
           ")"
       );
 
-    // BUAT FILTER UNTUK GLOW LINE
-    //Garis luar/tepian glow
-    var filter = g.append("defs").append("filter").attr("id", "glow"),
-      feGaussianBlur = filter
-        .append("feGaussianBlur")
-        .attr("stdDeviation", "2.5")
-        .attr("result", "coloredBlur"),
-      feMerge = filter.append("feMerge"),
-      feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),
-      feMergeNode_2 = feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+    // // BUAT FILTER UNTUK GLOW LINE
+    // //Garis luar/tepian glow
+    // var filter = g.append("defs").append("filter").attr("id", "glow"),
+    //   feGaussianBlur = filter
+    //     .append("feGaussianBlur")
+    //     .attr("stdDeviation", "2.5")
+    //     .attr("result", "coloredBlur"),
+    //   feMerge = filter.append("feMerge"),
+    //   feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),
+    //   feMergeNode_2 = feMerge.append("feMergeNode").attr("in", "SourceGraphic");
 
     // TAMBAHKAN GRID LINGKARAN (CIRCULAR)
     //Wrapper Grid & Axes
@@ -333,7 +333,7 @@ export default function SpiderChart({ title, data }) {
         tooltip.transition().duration(200).style("opacity", 0);
       });
 
-    //Tampilkan Tooltip Haha
+    //Tampilkan Tooltip
     let tooltip = d3.select("body").select(`.tooltip${title}`);
     if (tooltip.empty()) {
       tooltip = d3

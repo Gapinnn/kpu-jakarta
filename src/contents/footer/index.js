@@ -8,6 +8,10 @@ export const tentang = [
     path: "/visi-misi",
   },
   {
+    name: "Tupoksi",
+    path: "/tupoksi",
+  },
+  {
     name: "Tugas Wewenang",
     path: "/tugas",
   },
