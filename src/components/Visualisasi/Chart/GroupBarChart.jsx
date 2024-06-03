@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import * as d3 from "d3";
 import { jsPDF } from "jspdf";
 import Download from "../../Icon/Download";
@@ -7,15 +7,44 @@ import FilePng from "../../Icon/FilePng";
 import FilePdf from "../../Icon/FilePdf";
 import UpArrow from "../../Icon/UpArrow";
 
-export default function GroupBarChart({ title, data }) {
+export default function GroupBarChart({
+  title,
+  data,
+  keys,
+  warna,
+  dataName,
+  selectedData,
+  variabelAll,
+  changeDataName,
+  changeSelectedData,
+}) {
   const createChart = useCallback(() => {
+    d3.select(`#${title}`).style("background-color", "transparent");
     d3.select(`#${title}`).selectAll("*").remove();
 
-    const margin = { top: 50, right: 25, bottom: 50, left: 25 }; // Adjusted bottom margin
+    if (data.length === 0) {
+      d3.select(`#${title}`)
+        .style("display", "flex")
+        .style("justify-content", "center")
+        .style("align-items", "center")
+        .style("background-color", "rgb(214,211,209)")
+        .style("border-radius", "24px")
+        .append("text")
+        .attr("x", "50%")
+        .attr("y", "50%")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("class", " font-bold")
+        .text("CENTANG MINIMAL SATU CHECKBOX DI BAWAH")
+        .style("font-size", "2rem");
+      return;
+    }
+
+    const margin = { top: 50, right: 25, bottom: 50, left: 25 };
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
     let width = containerWidth - margin.left - margin.right;
     width = width > 1080 ? 1080 : width;
-    let height = 0.55 * width; // Adjust height calculation
+    let height = 0.55 * width;
 
     const svg = d3
       .select(`#${title}`)
@@ -29,29 +58,43 @@ export default function GroupBarChart({ title, data }) {
     const x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1);
     const x1 = d3.scaleBand().padding(0.05);
     const y = d3.scaleLinear().rangeRound([height, 0]);
-    const warna = ["#FFBF00", "#FFDC73"];
     const color = d3.scaleOrdinal().range(warna);
-    const keys = ["male", "female"];
-    const label = ["Laki-Laki", "Perempuan"];
 
-    x0.domain(data.map((d) => d.region));
+    // Function to flatten the data
+    const flattenData = (data, keys) => {
+      const result = [];
+      data[0].forEach((d, i) => {
+        const item = { region: d.region };
+        keys.forEach((key, k) => {
+          item[key] = data[k][i].value;
+        });
+        result.push(item);
+      });
+      return result;
+    };
+
+    const flattenedData = flattenData(data, keys);
+
+    x0.domain(flattenedData.map((d) => d.region));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
-    y.domain([0, d3.max(data, (d) => d3.max(keys, (key) => d[key]))]).nice();
+    y.domain([
+      0,
+      d3.max(flattenedData, (d) => d3.max(keys, (key) => d[key])),
+    ]).nice();
 
     svg
       .append("g")
       .selectAll("g")
-      .data(data)
+      .data(flattenedData)
       .enter()
       .append("g")
       .attr("transform", (d) => `translate(${x0(d.region)},0)`)
       .selectAll("rect")
       .data((d) =>
-        keys.map((key, i) => ({
+        keys.map((key) => ({
           key,
           value: d[key],
           region: d.region,
-          index: i,
         }))
       )
       .enter()
@@ -65,56 +108,60 @@ export default function GroupBarChart({ title, data }) {
         tooltip
           .html(
             `<strong>${d.region}</strong><br/>${
-              label[d.index]
-            }<br/><span style="color:${warna[d.index]};">&#9632;</span> ${
+              d.key
+            }<br/><span style="color:${color(d.key)};">&#9632;</span> ${
               d.value
             }`
           )
           .style("opacity", 0.9)
           .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`);
+          .style("top", `${event.pageY - 28}px`)
+          .style("cursor", "pointer");
       })
       .on("mousemove", function (event) {
         tooltip
           .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`);
+          .style("top", `${event.pageY - 28}px`)
+          .style("cursor", "pointer");
       })
       .on("mouseout", function () {
         tooltip.style("opacity", 0);
       })
       .transition()
       .duration(800)
-      .delay((d, i) => i * 400) // Tambahkan delay berdasarkan indeks
-      .attr("y", (d) => y(d.value)) // Pindahkan ke posisi y yang sesuai
-      .attr("height", (d) => height - y(d.value)); // Atur tinggi yang sesuai
+      .delay((d, i) => i * 400)
+      .attr("y", (d) => y(d.value))
+      .attr("height", (d) => height - y(d.value));
 
     svg
-      .selectAll(".label-male")
-      .data(data)
+      .append("g")
+      .selectAll("g")
+      .data(flattenedData)
+      .enter()
+      .append("g")
+      .attr("transform", (d) => `translate(${x0(d.region)},0)`)
+      .selectAll("text")
+      .data((d) =>
+        keys.map((key) => ({
+          key,
+          value: d[key],
+          region: d.region,
+        }))
+      )
       .enter()
       .append("text")
-      .attr("class", "label-male")
-      .attr("x", (d) => x0(d.region) + x0.bandwidth() / 3.6)
-      .attr("y", (d) => y(d.male) - 10)
+      .attr("x", (d) => x1(d.key) + x1.bandwidth() / 2)
+      .attr("y", (d) => y(d.value) - 50)
       .attr("text-anchor", "middle")
-      .text((d) => d.male)
-      .attr("fill", "#000")
-      .attr("font-family", "Poppins")
-      .attr("font-size", "12px");
-
-    svg
-      .selectAll(".label-female")
-      .data(data)
-      .enter()
-      .append("text")
-      .attr("class", "label-female")
-      .attr("x", (d) => x0(d.region) + x0.bandwidth() / 1.3)
-      .attr("y", (d) => y(d.female) - 10)
-      .attr("text-anchor", "middle")
-      .text((d) => d.female)
-      .attr("fill", "#000")
-      .attr("font-family", "Poppins")
-      .attr("font-size", "12px");
+      .attr("fill", "black")
+      .style("opacity", 0)
+      .text((d) => d.value)
+      .style("font-size", "12px")
+      .transition()
+      .duration(800)
+      .delay((d, i) => i * 400)
+      .style("opacity", 1)
+      .attr("y", (d) => y(d.value) - 5);
 
     svg
       .append("g")
@@ -123,38 +170,37 @@ export default function GroupBarChart({ title, data }) {
       .call(d3.axisBottom(x0).tickSize(0))
       .selectAll("text")
       .attr("font-size", "12px")
-      .attr("transform", "translate(0,4)") // Rotate labels to prevent overlap
+      .attr("transform", "translate(0,4)")
       .attr("text-anchor", "center");
 
     const legend = svg
       .append("g")
       .attr("font-size", 12)
       .attr("font-weight", "bold")
-      .attr("text-anchor", "start") // Align text to the start
+      .attr("text-anchor", "start")
       .selectAll("g")
-      .data(["Laki-Laki", "Perempuan"])
+      .data(keys)
       .enter()
       .append("g")
       .attr(
         "transform",
         (d, i) => `translate(${(width / 8) * 3 + i * 96},-40)`
-      ); // Center the legend horizontally
+      );
 
     legend
       .append("rect")
-      .attr("x", 0) // Adjust the position of the rectangle
+      .attr("x", 0)
       .attr("width", 26)
       .attr("height", 26)
       .attr("fill", color);
 
     legend
       .append("text")
-      .attr("x", 32) // Adjust the position of the text
-      .attr("y", 13) // Vertically align the text to the center of the rectangle
+      .attr("x", 32)
+      .attr("y", 13)
       .attr("dy", "0.3em")
       .text((d) => d);
 
-    // Buat elemen tooltip
     let tooltip = d3.select("body").select(`.tooltip${title}`);
     if (tooltip.empty()) {
       tooltip = d3
@@ -166,26 +212,40 @@ export default function GroupBarChart({ title, data }) {
         .style("padding", "10px")
         .style("background", "#333")
         .style("color", "white")
-        .style("border-radius", "5px");
+        .style("border-radius", "5px")
+        .style("cursor", "pointer");
     }
-  }, [title, data]);
+  }, [title, data, keys, warna]);
 
-  const downloadSVG = () => {
+  const downloadSVG = async () => {
+    // Ensure the state change is completed
+    await changeSelectedData("all");
+
     const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgBlob = new Blob([serializer.serializeToString(svgElement)], {
-      type: "image/svg+xml",
-    });
-    const url = URL.createObjectURL(svgBlob);
-    const downloadLink = svgElement.createElement("a");
-    downloadLink.href = url;
-    downloadLink.download = `${title}.svg`;
-    svgElement.body.appendChild(downloadLink);
-    downloadLink.click();
-    svgElement.body.removeChild(downloadLink);
+
+    if (svgElement) {
+      const serializer = new XMLSerializer();
+      const svgBlob = new Blob([serializer.serializeToString(svgElement)], {
+        type: "image/svg+xml",
+      });
+      const url = URL.createObjectURL(svgBlob);
+
+      const downloadLink = document.createElement("a");
+      downloadLink.href = url;
+      downloadLink.download = `${title}.svg`;
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      URL.revokeObjectURL(url);
+    } else {
+      console.error("SVG element not found");
+    }
   };
 
   const downloadPNG = () => {
+    changeSelectedData("all");
     const svgElement = document.querySelector(`#${title}`);
     const serializer = new XMLSerializer();
     const svgStr = serializer.serializeToString(svgElement);
@@ -223,6 +283,7 @@ export default function GroupBarChart({ title, data }) {
   };
 
   const downloadPDF = () => {
+    changeSelectedData("all");
     const svgElement = document.querySelector(`#${title}`);
     const serializer = new XMLSerializer();
     const svgStr = serializer.serializeToString(svgElement);
@@ -270,44 +331,41 @@ export default function GroupBarChart({ title, data }) {
 
   return (
     <div className="flex-col h-full w-full">
-      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-72 group hover:bg-stone-100 hover:w-72 hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
+      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
         <div className="inline-flex items-center text-maroon-light text-md">
-          Jumlah Pemilih Tetap
+          {dataName}
         </div>
         <UpArrow
           className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
+        {/* Dropdown */}
         <div
-          className={`absolute top-[1.5rem] -left-[2px] z-50 my-4 w-72 text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
+          className={`absolute top-[1.5rem] -left-[2px] z-50 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="py-2 font-medium" role="none">
-            <li>
-              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                <div className="inline-flex items-center text-maroon-light text-md font-semibold">
-                  Jumlah Pemilih Tetap
+            {variabelAll.map((variabel) => (
+              <li
+                className={`${variabel.name === dataName ? "hidden" : ""}`}
+                key={variabel.name}
+                onClick={() => changeDataName(variabel.name)}
+              >
+                <div className="cursor-pointer flex w-full gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                    {variabel.name}
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                <div className="inline-flex items-center text-maroon-light text-md font-semibold">
-                  Jumlah Pemilih Tetap Baru
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                <div className="inline-flex items-center text-maroon-light text-md">
-                  Jumlah Tempat Pemungutan Suara
-                </div>
-              </div>
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div className="w-full flex relative">
-        <div className="w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group">
+        <div
+          className={`w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
+            data.length === 0 ? "hidden" : ""
+          }`}
+        >
           <Download className="text-white w-6 h-6" />
           <div
             className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
@@ -351,6 +409,42 @@ export default function GroupBarChart({ title, data }) {
           </div>
         </div>
         <svg id={title} className="chart h-full w-full"></svg>
+      </div>
+      <div className="w-full flex items-center justify-center">
+        <div className="w-40">
+          <div className="flex items-center justify-center">
+            <input
+              id={`${title}-laki-laki`}
+              type="checkbox"
+              checked={selectedData.group1}
+              onChange={() => changeSelectedData("group1")}
+              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+            />
+            <label
+              htmlFor={`${title}-laki-laki`}
+              className="w-full ml-2 text-md font-medium text-maroon-light"
+            >
+              Laki-Laki
+            </label>
+          </div>
+        </div>
+        <div className="w-40">
+          <div className="flex items-center justify-center">
+            <input
+              id={`${title}-perempuan`}
+              type="checkbox"
+              checked={selectedData.group2}
+              onChange={() => changeSelectedData("group2")}
+              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+            />
+            <label
+              htmlFor={`${title}-perempuan`}
+              className="w-full ml-2 text-md font-medium text-maroon-light"
+            >
+              Perempuan
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   );

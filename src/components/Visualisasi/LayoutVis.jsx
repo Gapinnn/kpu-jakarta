@@ -5,7 +5,7 @@ export default function LayoutVis({ title, children }) {
         {title}
       </div>
       <div
-        className={`relative p-4 flex flex-col w-full shadow-xl bg-stone-200 rounded-b-2xl border-1 mx-auto lg:px-8 transition-all duration-300 opacity-100`}
+        className={`relative p-4 flex flex-col w-full shadow-xl bg-stone-100 rounded-b-2xl border-1 mx-auto lg:px-8 transition-all duration-300 opacity-100`}
       >
         <div>{children}</div>
       </div>
