@@ -218,7 +218,6 @@ export default function GroupBarChart({
   }, [title, data, keys, warna]);
 
   const downloadSVG = async () => {
-    // Ensure the state change is completed
     await changeSelectedData("all");
 
     const svgElement = document.querySelector(`#${title}`);
@@ -244,8 +243,7 @@ export default function GroupBarChart({
     }
   };
 
-  const downloadPNG = () => {
-    changeSelectedData("all");
+  const downloadPNG = async () => {
     const svgElement = document.querySelector(`#${title}`);
     const serializer = new XMLSerializer();
     const svgStr = serializer.serializeToString(svgElement);
@@ -282,8 +280,7 @@ export default function GroupBarChart({
     img.src = url;
   };
 
-  const downloadPDF = () => {
-    changeSelectedData("all");
+  const downloadPDF = async () => {
     const svgElement = document.querySelector(`#${title}`);
     const serializer = new XMLSerializer();
     const svgStr = serializer.serializeToString(svgElement);
@@ -331,6 +328,7 @@ export default function GroupBarChart({
 
   return (
     <div className="flex-col h-full w-full">
+      {/* Dropdown */}
       <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
         <div className="inline-flex items-center text-maroon-light text-md">
           {dataName}
@@ -338,7 +336,6 @@ export default function GroupBarChart({
         <UpArrow
           className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
-        {/* Dropdown */}
         <div
           className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
@@ -360,7 +357,9 @@ export default function GroupBarChart({
           </ul>
         </div>
       </div>
+      {/* Konten Utama */}
       <div className="w-full flex relative">
+        {/* Download Button */}
         <div
           className={`w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
             data.length === 0 ? "hidden" : ""
@@ -408,40 +407,42 @@ export default function GroupBarChart({
             </ul>
           </div>
         </div>
+        {/* Chart */}
         <svg id={title} className="chart h-full w-full"></svg>
       </div>
+      {/* Checkbox Filter */}
       <div className="w-full flex items-center justify-center">
         <div className="w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-laki-laki`}
+              id={`${title}-${keys[0]}`}
               type="checkbox"
               checked={selectedData.group1}
               onChange={() => changeSelectedData("group1")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-laki-laki`}
+              htmlFor={`${title}-${keys[0]}`}
               className="w-full ml-2 text-md font-medium text-maroon-light"
             >
-              Laki-Laki
+              {keys[0]}
             </label>
           </div>
         </div>
         <div className="w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-perempuan`}
+              id={`${title}-${keys[1]}`}
               type="checkbox"
               checked={selectedData.group2}
               onChange={() => changeSelectedData("group2")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-perempuan`}
+              htmlFor={`${title}-${keys[1]}`}
               className="w-full ml-2 text-md font-medium text-maroon-light"
             >
-              Perempuan
+              {keys[1]}
             </label>
           </div>
         </div>

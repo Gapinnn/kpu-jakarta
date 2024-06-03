@@ -26,7 +26,7 @@ function App() {
         <Route path="/id/profil/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/sop" element={<Sop />} />
         <Route
-          path="/id/profil/strukturorganisasi"
+          path="/id/profil/struktur-organisasi"
           element={<StrukturOrganisasi />}
         />
         <Route path="/en" element={<Beranda />} />

@@ -1,4 +1,3 @@
-import ChartEmpat from "../components/Visualisasi/ChartEmpat";
 import ChartSatu from "../components/Visualisasi/ChartSatu";
 import ChartTiga from "../components/Visualisasi/ChartTiga";
 
@@ -21,7 +20,6 @@ export default function Visualisasi() {
           </h1>
           <div className="grid grid-cols-1 justify-center gap-4">
             <ChartTiga />
-            <ChartEmpat />
           </div>
         </div>
       </div>
