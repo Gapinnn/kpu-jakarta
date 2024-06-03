@@ -19,6 +19,14 @@ export const menuId = [
     name: "Publikasi",
     path: "/id/publikasi",
   },
+  {
+    name: "Visi Misi",
+    path: "/id/visi-misi",
+  },
+  {
+    name: "Tupoksi",
+    path: "/id/tupoksi",
+  },
 ];
 
 export const menuEn = [
