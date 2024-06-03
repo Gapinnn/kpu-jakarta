@@ -1,4 +1,16 @@
 /* Jaga-Jaga Ketika Manual CSS dengan Tailwind (index.css) Tidak Berjalan */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 #dataSlider .slick-dots li.slick-active div {
   background-color: #ffbf00;
