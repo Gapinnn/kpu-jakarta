@@ -48,7 +48,9 @@ const VisiMisiComponent = () => {
                     d="m1 9 4-4-4-4"
                   />
                 </svg>
-                <p className="text-lg text-maroon-light font-medium">Profil</p>
+                <p className="text-lg text-maroon-light font-medium">
+                  Tentang Kami
+                </p>
               </div>
             </Link>
             {/* Current Page */}

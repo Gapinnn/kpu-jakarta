@@ -1,0 +1,210 @@
+// const createChart = useCallback(() => {
+//   d3.select(`#${title}`).style("background-color", "transparent");
+//   d3.select(`#${title}`).selectAll("*").remove();
+
+//   if (data.length === 0) {
+//     d3.select(`#${title}`)
+//       .style("display", "flex")
+//       .style("justify-content", "center")
+//       .style("align-items", "center")
+//       .style("background-color", "rgb(214,211,209)")
+//       .style("border-radius", "24px")
+//       .append("text")
+//       .attr("x", "50%")
+//       .attr("y", "50%")
+//       .attr("text-anchor", "middle")
+//       .attr("dominant-baseline", "middle")
+//       .attr("class", " font-bold")
+//       .text("CENTANG MINIMAL SATU CHECKBOX DI BAWAH")
+//       .style("font-size", "2rem");
+//     return;
+//   }
+
+//   const flattenData = (data, keys) => {
+//     const result = [];
+//     data[0].forEach((d, i) => {
+//       const item = { region: d.region };
+//       keys.forEach((key, k) => {
+//         item[key] = data[k][i].value;
+//       });
+//       result.push(item);
+//     });
+//     return result;
+//   };
+
+//   const flattenedData = flattenData(data, keys);
+
+//   const allAxis = keys;
+//   const color = d3.scaleOrdinal().range(warna);
+
+//   // Responsive Width
+//   const containerWidth = document.querySelector(`#${title}`).clientWidth;
+
+//   const margin = {
+//     top: containerWidth > 1080 ? 50 : containerWidth > 640 ? 40 : 30,
+//     right: containerWidth > 1080 ? 60 : containerWidth > 640 ? 50 : 30,
+//     bottom: containerWidth > 1080 ? 70 : containerWidth > 640 ? 50 : 40,
+//     left: containerWidth > 1080 ? 60 : containerWidth > 640 ? 50 : 30,
+//   };
+
+//   const width = containerWidth - margin.left - margin.right;
+//   const widthFix = width > 480 ? 480 : width;
+//   const height = widthFix;
+
+//   const config = {
+//     w: widthFix,
+//     h: height,
+//     margin: margin,
+//     levels: 5,
+//     maxValue: 1,
+//     labelFactor: containerWidth > 640 ? 1.15 : 1.05,
+//     wrapWidth: 60,
+//     opacityArea: 0.35,
+//     dotRadius: 4,
+//     opacityCircles: 0.1,
+//     strokeWidth: 2,
+//     roundStrokes: true,
+//     color: color,
+//   };
+
+//   var maxValue = Math.max(
+//     config.maxValue,
+//     d3.max(flattenedData, (d) => d3.max(keys, (key) => d[key]))
+//   );
+
+//   const total = allAxis.length;
+//   const radius = Math.min(config.w / 2, config.h / 2);
+//   const angleSlice = (Math.PI * 2) / total;
+
+//   var rScale = d3.scaleLinear().range([0, radius]).domain([0, maxValue]);
+
+//   var svg = d3
+//     .select(`#${title}`)
+//     .append("svg")
+//     .attr("width", widthFix + config.margin.left + config.margin.right)
+//     .attr("height", height + config.margin.top + config.margin.bottom)
+//     .attr("class", "radar" + `${title} mx-auto`);
+
+//   var g = svg
+//     .append("g")
+//     .attr(
+//       "transform",
+//       "translate(" +
+//         (config.w / 2 + config.margin.left) +
+//         "," +
+//         (config.h / 2 + config.margin.top) +
+//         ")"
+//     );
+
+//   // Kode untuk grid, sumbu, dan label tetap sama
+
+//   var radarLine = d3
+//     .lineRadial()
+//     .curve(d3.curveBasisClosed)
+//     .radius((d) => rScale(d.value))
+//     .angle((d, i) => i * angleSlice);
+
+//   if (config.roundStrokes) {
+//     radarLine.curve(d3.curveCardinalClosed);
+//   }
+
+//   var blobWrapper = g
+//     .selectAll(".radarWrapper")
+//     .data(flattenedData)
+//     .enter()
+//     .append("g")
+//     .attr("class", "radarWrapper");
+
+//   blobWrapper
+//     .append("path")
+//     .attr("class", "radarArea")
+//     .attr("d", (d) => radarLine(keys.map((key) => ({ value: d[key] }))))
+//     .style("fill", (d, i) => config.color(i))
+//     .style("fill-opacity", config.opacityArea)
+//     .on("mouseover", function () {
+//       d3.selectAll(".radarArea")
+//         .transition()
+//         .duration(200)
+//         .style("fill-opacity", 0.1);
+//       d3.select(this).transition().duration(200).style("fill-opacity", 0.7);
+//     })
+//     .on("mouseout", function () {
+//       d3.selectAll(".radarArea")
+//         .transition()
+//         .duration(200)
+//         .style("fill-opacity", config.opacityArea);
+//     });
+
+//   blobWrapper
+//     .append("path")
+//     .attr("class", "radarStroke")
+//     .attr("d", (d) => radarLine(keys.map((key) => ({ value: d[key] }))))
+//     .style("stroke-width", config.strokeWidth + "px")
+//     .style("stroke", (d, i) => config.color(i))
+//     .style("fill", "none")
+//     .style("filter", "url(#glow)");
+
+//   blobWrapper
+//     .selectAll(".radarCircle")
+//     .data((d) => keys.map((key) => ({ value: d[key], region: d.region })))
+//     .enter()
+//     .append("circle")
+//     .attr("class", "radarCircle")
+//     .attr("r", config.dotRadius)
+//     .attr(
+//       "cx",
+//       (d, i) => rScale(d.value) * Math.cos(angleSlice * i - Math.PI / 2)
+//     )
+//     .attr(
+//       "cy",
+//       (d, i) => rScale(d.value) * Math.sin(angleSlice * i - Math.PI / 2)
+//     )
+//     .style("fill", (_, i) => config.color(i))
+//     .style("fill-opacity", 0.8);
+
+//   var blobCircleWrapper = g
+//     .selectAll(".radarCircleWrapper")
+//     .data(flattenedData)
+//     .enter()
+//     .append("g")
+//     .attr("class", "radarCircleWrapper");
+
+//   blobCircleWrapper
+//     .selectAll(".radarInvisibleCircle")
+//     .data((d) =>
+//       keys.map((key) => ({ value: d[key], key: key, region: d.region }))
+//     )
+//     .enter()
+//     .append("circle")
+//     .attr("class", "radarInvisibleCircle")
+//     .attr("r", config.dotRadius * 1.5)
+//     .attr(
+//       "cx",
+//       (d, i) => rScale(d.value) * Math.cos(angleSlice * i - Math.PI / 2)
+//     )
+//     .attr(
+//       "cy",
+//       (d, i) => rScale(d.value) * Math.sin(angleSlice * i - Math.PI / 2)
+//     )
+//     .style("fill", "none")
+//     .style("pointer-events", "all")
+//     .on("mouseover", function (event, d) {
+//       var newX = event.pageX;
+//       var newY = event.pageY;
+//       let tooltipHtml = `<strong>Indikator ${d.key}</strong><br/><i>Region ${
+//         d.region
+//       }</i><br/><span style="color:${color(
+//         keys.indexOf(d.key)
+//       )};">&#9632;</span> ${d.value}`;
+//       tooltip
+//         .html(tooltipHtml)
+//         .style("opacity", 0.9)
+//         .style("left", `${newX + 10}px`)
+//         .style("top", `${newY - 28}px`);
+//     })
+//     .on("mouseout", function () {
+//       tooltip.transition().duration(200).style("opacity", 0);
+//     });
+
+//   // Kode untuk tooltip dan legenda tetap sama
+// }, [title, data, keys, warna]);

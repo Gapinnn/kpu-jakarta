@@ -40,6 +40,8 @@ export default function SpiderChart({
       return;
     }
 
+    // Penyamaan Format Data
+
     const label = keys;
     const hexColor = warna;
     const color = d3.scaleOrdinal().range(hexColor);
@@ -284,6 +286,7 @@ export default function SpiderChart({
       .append("path")
       .attr("class", "radarStroke")
       .attr("d", function (d) {
+        console.log("spider", d);
         return radarLine(d);
       })
       .style("stroke-width", config.strokeWidth + "px")
@@ -342,8 +345,6 @@ export default function SpiderChart({
       .style("fill", "none")
       .style("pointer-events", "all")
       .on("mouseover", function (event, d) {
-        console.log(d.group);
-        console.log(hexColor[d.group]);
         var newX = event.pageX;
         var newY = event.pageY;
         let tooltipHtml = `<strong>Indikator ${

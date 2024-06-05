@@ -46,7 +46,9 @@ const TupoksiComponent = () => {
                     d="m1 9 4-4-4-4"
                   />
                 </svg>
-                <p className="text-lg text-maroon-light font-medium">Profil</p>
+                <p className="text-lg text-maroon-light font-medium">
+                  Tentang Kami
+                </p>
               </div>
             </Link>
             {/* Current Page */}
@@ -77,10 +79,10 @@ const TupoksiComponent = () => {
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center mx-auto py-8 px-10 bg-stone-100 shadow-xl rounded-2xl">
           <h1 className="text-maroon-light font-bold text-3xl mb-4">
-            Tugas Pokok dan Fungsi KPU DKI Jakarta
+            Tugas Pokok dan Fungsi KPU Provinsi DKI Jakarta
           </h1>
 
-          <h1 className=" text-black text-lg p-2 ">
+          <h1 className=" text-black text-lg mt-2 ">
             Pemilihan umum diselenggarakan oleh suatu komisi pemilihan umum yang
             bersifat nasional, tetap, dan mandiri. Dalam menyelenggarakan
             Pemilihan Umum, Komisi Pemilihan Umum terdiri atas KPU Provinsi yang
@@ -96,144 +98,344 @@ const TupoksiComponent = () => {
           </h1>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
-            1. Divisi Keuangan, Umum, dan Rumah Tangga;
+            1. Divisi Keuangan, Umum, dan Rumah Tangga
           </h1>
           {/* list */}
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">1</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <div className="text-black text-lg mt-2">
               Divisi Keuangan, Umum, dan Rumah Tangga mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <p>a. Administrasi perkantoran, rumah tangga, dan kearsipan;</p>
-              <p>b. Protokol dan persidangan;</p>
-              <p>c. Pengelolaan dan pelaporan Barang Milik Negara;</p>
-              <p>d. Pelaporan dan pertanggungjawaban keuangan;</p>
-              <p>
-                e. Pengusulan peresmian keanggotaan dan pelaksanaan sumpah/janji
-                DPRD Provinsi.
-              </p>
-            </h1>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Administrasi perkantoran, rumah tangga, dan kearsipan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Protokol dan persidangan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengelolaan dan pelaporan barang milik negara;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pelaporan dan pertanggungjawaban keuangan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengusulan peresmian keanggotaan dan pelaksanaan sumpah/janji
+                  DPRD Provinsi;
+                </h1>
+              </div>
+            </div>
           </div>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
             2. Divisi Sosialisasi, Pendidikan Pemilih, dan Partisipasi
-            Masyarakat;
+            Masyarakat
           </h1>
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">2</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Sosialisasi, Pendidikan Pemilih, dan Partisipasi Masyarakat
               mempunyai tugas untuk mengoordinasikan, menyelenggarakan,
               mengendalikan, memantau, supervisi, dan evaluasi terkait dengan
               kebijakan:
-              <p> a. Sosialisasi kepemiluan;</p>
-              <p> b. Partisipasi masyarakat dan pendidikan pemilih;</p>
-              <p> c. Publikasi dan kehumasan;</p>
-              <p> d. Kampanye Pemilu dan Pemilihan;</p>
-              <p> e. Kerja sama antar lembaga; dan</p>
-              <p> f. Pengelolaan dan penyediaan informasi publik.</p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">Sosialisasi kepemiluan;</h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Partisipasi masyarakat dan pendidikan pemilih;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">Publikasi dan kehumasan;</h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Kampanye pemilu dan pemilihan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">
+                  Kerja sama antar lembaga;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  f
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengelolaan dan penyediaan informasi publik.
+                </h1>
+              </div>
             </h1>
           </div>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
-            3. Divisi Data dan Informasi;
+            3. Divisi Data dan Informasi
           </h1>
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">3</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Data dan Informasi mempunyai tugas untuk mengoordinasikan,
               menyelenggarakan, mengendalikan, memantau, supervisi, dan evaluasi
               terkait dengan kebijakan:
-              <p> a. Pemutakhiran dan pemeliharaan data pemilih;</p>
-              <p> b. Sistem informasi yang berkaitan dengan tahapan pemilu;</p>
-              <p> c. Pengelolaan sarana dan prasarana teknologi informasi;</p>
-              <p> d. Pengelolaan dan penyajian data hasil Pemilu nasional;</p>
-              <p> e. Pengendalian informasi; dan</p>
-              <p>
-                {" "}
-                f. Pengelolaan dan pengolahan data hasil Pemilu dan Pemilihan
-              </p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pemutakhiran dan pemeliharaan data pemilih;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Sistem informasi yang berkaitan dengan tahapan pemilu;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengelolaan sarana dan prasarana teknologi informasi;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengelolaan dan penyajian data hasil pemilu nasional;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">Pengendalian informasi;</h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  f
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengelolaan dan pengolahan data hasil pemilu dan pemilihan.
+                </h1>
+              </div>
             </h1>
           </div>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
-            4. Divisi Perencanaan dan Logistik;
+            4. Divisi Perencanaan dan Logistik
           </h1>
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">4</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Perencanaan dan Logistik mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <p> a. Penyusunan program dan anggaran;</p>
-              <p>
-                {" "}
-                b. Perencanaan, pengadaan barang dan jasa, serta distribusi
-                logistik; dan
-              </p>
-              <p>
-                {" "}
-                c. Monitoring, evaluasi, dan pengendalian program dan anggaran.
-              </p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penyusunan program dan anggaran;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Perencanaan, pengadaan barang dan jasa, serta distribusi
+                  logistik;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Monitoring, evaluasi, dan pengendalian program dan anggaran;
+                </h1>
+              </div>
             </h1>
           </div>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
-            5. Divisi Teknis Penyelenggaraan;
+            5. Divisi Teknis Penyelenggaraan
           </h1>
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">5</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Teknis Penyelenggaraan mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <p> a. Pengusulan daerah pemilihan dan alokasi kursi;</p>
-              <p> b. Verifikasi partai politik dan anggota DPD;</p>
-              <p> c. Pencalonan Peserta Pemilu dan Pemilihan;</p>
-              <p>
-                {" "}
-                d. Pemungutan, penghitungan suara, dan rekapitulasi penghitungan
-                suara;
-              </p>
-              <p>
-                {" "}
-                e. Penetapan hasil dan pendokumentasian hasil Pemilu dan
-                Pemilihan;
-              </p>
-              <p> f. Pelaporan dana kampanye; dan</p>
-              <p> g. Penggantian antar waktu anggota DPRD Provinsi.</p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengusulan daerah pemilihan dan alokasi kursi;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Verifikasi partai politik dan anggota DPD;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pencalonan peserta pemilu dan pemilihan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pemungutan, penghitungan suara, dan rekapitulasi penghitungan
+                  suara;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penetapan hasil dan pendokumentasian hasil pemilu dan
+                  pemilihan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  f
+                </h1>
+                <h1 className="text-black text-lg">Pelaporan dana kampanye;</h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  g
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penggantian antar waktu anggota DPRD Provinsi.
+                </h1>
+              </div>
             </h1>
           </div>
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
-            6. Divisi Hukum dan Pengawasan;
+            6. Divisi Hukum dan Pengawasan
           </h1>
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">6</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Hukum dan Pengawasan mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <p> a. Penyusunan rancangan Keputusan KPU Provinsi;</p>
-              <p> b. Telaah hukum dan advokasi hukum;</p>
-              <p>
-                {" "}
-                c. Penyelesaian sengketa proses, tahapan, hasil Pemilu dan
-                Pemilihan, serta non tahapan Pemilu dan Pemilihan;
-              </p>
-              <p> d. Dokumentasi dan publikasi hukum;</p>
-              <p> e. Pengawasan dan pengendalian internal; dan</p>
-              <p>
-                {" "}
-                f. Penanganan pelanggaran administrasi, Kode Etik, dan Kode
-                Perilaku.
-              </p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penyusunan rancangan keputusan KPU Provinsi;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Telaah hukum dan advokasi hukum;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penyelesaian sengketa proses, tahapan, hasil pemilu dan
+                  pemilihan, serta non tahapan pemilu dan pemilihan;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Dokumentasi dan publikasi hukum;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengawasan dan pengendalian internal;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  f
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penanganan pelanggaran administrasi, kode etik, dan kode
+                  perilaku.
+                </h1>
+              </div>
             </h1>
           </div>
 
@@ -244,27 +446,59 @@ const TupoksiComponent = () => {
 
           <div className="flex px-4 mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">6</h1> */}
-            <h1 className="text-black text-lg p-2 ml-14">
+            <h1 className="text-black text-lg mt-2">
               Divisi Sumber Daya Manusia dan Litbang mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <p>
-                {" "}
-                a. Pengusulan penggantian antar waktu anggota KPU
-                Kabupaten/Kota;
-              </p>
-              <p> b. Pengawasan proses rekrutmen anggota PPK, PPS, dan KPPS;</p>
-              <p>
-                {" "}
-                c. Pembinaan etika dan evaluasi kinerja sumber daya manusia;
-              </p>
-              <p> d. Pengembangan budaya kerja, tata laksana dan organisasi;</p>
-              <p>
-                {" "}
-                e. Pendidikan dan pelatihan, serta pengembangan sumber daya
-                manusia; dan
-              </p>
-              <p> f. Penelitian dan pengembangan kepemiluan.</p>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  a
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengusulan penggantian antar waktu anggota KPU Kabupaten/Kota;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  b
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengawasan proses rekrutmen anggota PPK, PPS, dan KPPS;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  c
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pembinaan etika dan evaluasi kinerja sumber daya manusia;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  d
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pengembangan budaya kerja, tata laksana dan organisasi;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  e
+                </h1>
+                <h1 className="text-black text-lg">
+                  Pendidikan dan pelatihan, serta pengembangan sumber daya
+                  manusia;
+                </h1>
+              </div>
+              <div className="flex gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+                  f
+                </h1>
+                <h1 className="text-black text-lg">
+                  Penelitian dan pengembangan kepemiluan.
+                </h1>
+              </div>
             </h1>
           </div>
           {/* akhir list */}

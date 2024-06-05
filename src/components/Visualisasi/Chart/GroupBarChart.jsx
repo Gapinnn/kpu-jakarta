@@ -74,6 +74,7 @@ export default function GroupBarChart({
     };
 
     const flattenedData = flattenData(data, keys);
+    console.log(flattenedData);
 
     x0.domain(flattenedData.map((d) => d.region));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
@@ -90,13 +91,14 @@ export default function GroupBarChart({
       .append("g")
       .attr("transform", (d) => `translate(${x0(d.region)},0)`)
       .selectAll("rect")
-      .data((d) =>
-        keys.map((key) => ({
+      .data((d) => {
+        console.log("group-bar", d);
+        return keys.map((key) => ({
           key,
           value: d[key],
           region: d.region,
-        }))
-      )
+        }));
+      })
       .enter()
       .append("rect")
       .attr("x", (d) => x1(d.key))
@@ -132,36 +134,6 @@ export default function GroupBarChart({
       .delay((d, i) => i * 400)
       .attr("y", (d) => y(d.value))
       .attr("height", (d) => height - y(d.value));
-
-    svg
-      .append("g")
-      .selectAll("g")
-      .data(flattenedData)
-      .enter()
-      .append("g")
-      .attr("transform", (d) => `translate(${x0(d.region)},0)`)
-      .selectAll("text")
-      .data((d) =>
-        keys.map((key) => ({
-          key,
-          value: d[key],
-          region: d.region,
-        }))
-      )
-      .enter()
-      .append("text")
-      .attr("x", (d) => x1(d.key) + x1.bandwidth() / 2)
-      .attr("y", (d) => y(d.value) - 50)
-      .attr("text-anchor", "middle")
-      .attr("fill", "black")
-      .style("opacity", 0)
-      .text((d) => d.value)
-      .style("font-size", "12px")
-      .transition()
-      .duration(800)
-      .delay((d, i) => i * 400)
-      .style("opacity", 1)
-      .attr("y", (d) => y(d.value) - 5);
 
     svg
       .append("g")

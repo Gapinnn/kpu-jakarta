@@ -46,7 +46,9 @@ const TugasWewenangComponent = () => {
                     d="m1 9 4-4-4-4"
                   />
                 </svg>
-                <p className="text-lg text-maroon-light font-medium">Profil</p>
+                <p className="text-lg text-maroon-light font-medium">
+                  Tentang Kami
+                </p>
               </div>
             </Link>
             {/* Current Page */}
@@ -77,10 +79,10 @@ const TugasWewenangComponent = () => {
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center mx-auto py-8 px-10 bg-stone-100 shadow-xl rounded-2xl">
           <h1 className="text-maroon-light font-bold text-3xl mb-4">
-            Tugas dan Wewenang KPU
+            Tugas dan Wewenang KPU Provinsi DKI Jakarta
           </h1>
           {/* tugas */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-[28] p-4  text-left font-bold">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-lg p-4 text-left font-bold">
             Tugas KPU
           </h1>
 
@@ -90,7 +92,7 @@ const TugasWewenangComponent = () => {
           </h1>
           {/* list */}
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               1
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -98,7 +100,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               2
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -107,7 +109,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               3
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -115,7 +117,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               4
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -124,7 +126,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               5
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -132,7 +134,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className=" bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className=" bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               6
             </h1>
             <h1 className=" text-black text-lg p-2 ml-14">
@@ -142,7 +144,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               7
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -152,7 +154,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               8
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -161,7 +163,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               9
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -170,7 +172,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               10
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -179,7 +181,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               11
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -188,7 +190,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               12
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -209,7 +211,7 @@ const TugasWewenangComponent = () => {
           </h1>
           {/* list */}
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               1
             </h1>
             <h1 className="text-black text-lg p-2 ml-14">
@@ -218,7 +220,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               2
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -226,7 +228,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               3
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -234,7 +236,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               4
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -247,7 +249,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               5
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -256,7 +258,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               6
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -267,7 +269,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               7
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -276,7 +278,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               8
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -284,7 +286,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               9
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -293,7 +295,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               10
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -306,7 +308,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               11
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">
@@ -315,7 +317,7 @@ const TugasWewenangComponent = () => {
             </h1>
           </div>
           <div className="flex px-4 mb-2">
-            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-[16] p-2 text-center absolute">
+            <h1 className="bg-maroon-light rounded-lg w-14 text-gold text-lg font-bold p-2 text-center absolute">
               12
             </h1>
             <h1 className="text-black text-[12] p-2 ml-14">

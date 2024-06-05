@@ -46,7 +46,9 @@ const Struktur = () => {
                     d="m1 9 4-4-4-4"
                   />
                 </svg>
-                <p className="text-lg text-maroon-light font-medium">Profil</p>
+                <p className="text-lg text-maroon-light font-medium">
+                  Tentang Kami
+                </p>
               </div>
             </Link>
             {/* Current Page */}
@@ -77,7 +79,7 @@ const Struktur = () => {
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center rounded-2xl mx-auto py-8 px-10 bg-white shadow-xl">
           <h2 className="text-maroon-light text-3xl font-bold mb-4">
-            STRUKTUR ORGANISASI
+            Struktur Organisasi KPU Provinsi DKI Jakarta
           </h2>
           <img
             src={"/images/struktur-kpu.png"}

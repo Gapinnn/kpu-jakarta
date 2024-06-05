@@ -8,7 +8,7 @@ import Cancel from "./Icon/Cancel";
 
 const Header = () => {
   const url = window.location.href;
-  const link = url.split("5173");
+  const link = url.split("5174");
   console.log(link[1]);
   // const path = link[1].split("/");
   const menu = link[1].match(/^\/id/) !== null ? menuId : menuEn;
@@ -183,7 +183,7 @@ const Header = () => {
           }`}
         >
           Catat Tanggal (26 - 27 November 2024) Pilkada DKI Jakarta : Pemilihan
-          Umum Gubernur dan DPRD Provinsi DKI Jakarta!
+          Gubernur dan DPRD Provinsi DKI Jakarta!
         </p>
         <div
           onClick={showInfoHandler}
