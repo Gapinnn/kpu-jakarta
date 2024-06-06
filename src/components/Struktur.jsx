@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
+
 const Struktur = () => {
   return (
-    <div className="flex flex-col w-full bg-stone-200 relative">
+    <div className="flex flex-col w-full bg-stone-200 relative min-h-screen">
       <div className="w-full flex flex-col gap-0 absolute bottom-0">
         <div className="bg-maroon-light bg-opacity-85 w-full h-52 rounded-t-full"></div>
         <div className="bg-maroon-light bg-opacity-85 w-full h-8"></div>
       </div>
 
-      <div className="container mx-auto py-10 px-2 flex flex-col justify-center">
-        {/* Breadcumb */}
+      <div className="container mx-auto py-10 px-4 md:px-2 flex flex-col justify-center">
+        {/* Breadcrumb */}
         <nav
           className="w-fit flex px-5 py-3 mb-2 text-stone-900 border border-gray-200 rounded-xl bg-white shadow-xl"
           aria-label="Breadcrumb"
@@ -32,7 +33,7 @@ const Struktur = () => {
             <Link to={"/id/profil/visi-misi"}>
               <div className="flex items-center">
                 <svg
-                  className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-maroon-light "
+                  className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-maroon-light"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -52,39 +53,37 @@ const Struktur = () => {
               </div>
             </Link>
             {/* Current Page */}
-            <Link>
-              <div className="flex items-center">
-                <svg
-                  className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-gray-900"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <p className="text-lg text-gray-900 font-medium">
-                  Struktur Organisasi
-                </p>
-              </div>
-            </Link>
+            <div className="flex items-center">
+              <svg
+                className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <p className="text-lg text-gray-900 font-medium">
+                Struktur Organisasi
+              </p>
+            </div>
           </ol>
         </nav>
-        {/* Konten */}
-        <div className="w-full z-20 flex flex-col justify-center rounded-2xl mx-auto py-8 px-10 bg-white shadow-xl">
-          <h2 className="text-maroon-light text-3xl font-bold mb-4">
+        {/* Content */}
+        <div className="w-full z-20 flex flex-col justify-center rounded-2xl mx-auto py-8 px-4 md:px-10 bg-white shadow-xl">
+          <h2 className="text-maroon-light text-3xl font-bold mb-4 text-center md:text-left">
             Struktur Organisasi KPU Provinsi DKI Jakarta
           </h2>
           <img
             src={"/images/struktur-kpu.png"}
             alt="Struktur Organisasi"
-            className="text-center w-full h-auto"
+            className="mx-auto w-full h-auto"
           />
         </div>
       </div>
