@@ -1,4 +1,4 @@
-import VisiMisiComponent from "../components/VisiMisi";
+import VisiMisiComponent from "../components/VisiMisi/VisiMisi";
 
 export default function VisiMisi() {
   return (

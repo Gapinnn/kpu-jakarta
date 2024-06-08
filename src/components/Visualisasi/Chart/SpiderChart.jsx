@@ -460,93 +460,97 @@ export default function SpiderChart({
 
   const downloadSVG = () => {
     const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgBlob = new Blob([serializer.serializeToString(svgElement)], {
-      type: "image/svg+xml",
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const blob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
     });
-    const url = URL.createObjectURL(svgBlob);
-    const downloadLink = svgElement.createElement("a");
-    downloadLink.href = url;
-    downloadLink.download = `${title}.svg`;
-    svgElement.body.appendChild(downloadLink);
-    downloadLink.click();
-    svgElement.body.removeChild(downloadLink);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${title}.svg`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const downloadPNG = () => {
-    const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = svgElement.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const svgElement = document.querySelector(`#${title} svg`);
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    const image = new Image();
+    image.src = url;
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 8; // Faktor resolusi yang lebih tinggi (contoh: 2 untuk 2x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    img.onload = function () {
-      // Isi latar belakang kanvas dengan warna putih
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      // Gambar SVG pada kanvas
-      ctx.drawImage(img, 0, 0, svgViewBox.width, svgViewBox.height);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-      const imgURL = canvas.toDataURL("image/png");
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const downloadLink = svgElement.createElement("a");
-      downloadLink.href = imgURL;
-      downloadLink.download = `${title}`;
-      svgElement.body.appendChild(downloadLink);
-      downloadLink.click();
-      svgElement.body.removeChild(downloadLink);
-      DOMURL.revokeObjectURL(imgURL);
+      // Konversi ke PNG dengan kualitas gambar yang lebih tinggi
+      const pngDataUrl = canvas.toDataURL("image/png", 1.0); // Gunakan kualitas 1.0 untuk PNG terbaik
+      const a = document.createElement("a");
+      a.href = pngDataUrl;
+      a.download = `${title}.png`;
+      a.click();
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   const downloadPDF = () => {
-    const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
+    const svgElement = document.querySelector(`#${title} svg`);
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    // Tentukan ukuran kanvas berdasarkan ukuran SVG
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = svgElement.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const image = new Image();
+    image.src = url;
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 4; // Faktor resolusi yang lebih tinggi (contoh: 2 untuk 2x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-    img.onload = function () {
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const imgData = canvas.toDataURL("image/png");
+      // Konversi ke PDF
       const pdf = new jsPDF({
-        orientation: "landscape",
-        unit: "px",
-        format: [svgViewBox.width, svgViewBox.height],
+        orientation: "landscape", // Atur orientasi landscape
+        unit: "pt", // Satuan ukuran (contoh: poin)
+        format: [canvas.height, canvas.width], // Ukuran halaman sesuai dengan gambar yang dihasilkan
       });
+      pdf.addImage(
+        canvas.toDataURL("image/png"),
+        "PNG",
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-      pdf.addImage(imgData, "PNG", 0, 0, svgViewBox.width, svgViewBox.height);
-      pdf.save(`${title}`);
-
-      DOMURL.revokeObjectURL(imgData);
+      // Simpan PDF dengan nama file yang sesuai
+      pdf.save(`${title}.pdf`);
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   useEffect(() => {
@@ -591,7 +595,7 @@ export default function SpiderChart({
       <div className="w-full flex relative">
         {/* Download Button */}
         <div
-          className={`w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
+          className={`w-9 h-9 absolute top-0 right-0 z-20 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
             data.length === 0 ? "hidden" : ""
           }`}
         >

@@ -15,6 +15,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Visualisasi from "./pages/Visualisasi";
 import PublikasiDokumen from "./pages/PublikasiDokumen";
 import PublikasiGaleri from "./pages/PublikasiGaleri";
+import Tabulasi from "./pages/Tabulasi";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="/en/berita/pengumuman" element={<Pengumuman />} />
         <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/en/statistik/visualisasi" element={<Visualisasi />} />
+        <Route path="/id/statistik/tabulasi" element={<Tabulasi />} />
+        <Route path="/en/statistik/tabulasi" element={<Tabulasi />} />
       </Routes>
       <Footer />
     </BrowserRouter>

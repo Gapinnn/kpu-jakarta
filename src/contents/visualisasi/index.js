@@ -1,3 +1,897 @@
+export const groupStackedBarChart1 = [
+  // Provinsi DKI Jakarta
+  {
+    // Nama Daerah
+    region: "Provinsi DKI Jakarta",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kota Jakarta Pusat
+  {
+    // Nama Daerah
+    region: "Kota Jakarta Pusat",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kota Jakarta Selatan
+  {
+    // Nama Daerah
+    region: "Kota Jakarta Selatan",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kota Jakarta Barat
+  {
+    // Nama Daerah
+    region: "Kota Jakarta Barat",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kota Jakarta Utara
+  {
+    // Nama Daerah
+    region: "Kota Jakarta Utara",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kota Jakarta Timur
+  {
+    // Nama Daerah
+    region: "Kota Jakarta Timur",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+  // Kabupaten Kepulauan Seribu
+  {
+    // Nama Daerah
+    region: "Kabupaten Kepulauan Seribu",
+    // Data Daerah
+    data: {
+      // Judul Visualisasi
+      title:
+        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+      // Interpretasi Visualisasi
+      interpretasi:
+        "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
+      // Indikators atau Key Segment Data (Stacked Bar)
+      indikators: [
+        "SD/MI Sederajat",
+        "SMP/MTs Sederajat",
+        "SMA/MA Sederajat",
+        "Diploma I-IV",
+        "Sarjana (S1, S2, S3)",
+      ],
+      // Label pada Visualisasi (sumbu X)
+      labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
+      // Kategori/Kelomopok pada Visualisasi
+      categories: ["Laki-Laki", "Perempuan"],
+      // Warna Kategori pada Visualisasi
+      colors: ["#2787a2", "#37a6c0", "#5cbdd4", "#83cde0", "#c6e7f1"],
+      colors2: ["#d93f57", "#e84b5c", "#f27a83", "#f7aaae", "#fbd0d2"],
+      // Apakah data dalam persentase? (true/false)
+      isPercentage: true,
+      // Data Visualisasi
+      data: [
+        // Kategori: Laki-Laki
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+        // Kategori: Perempuan
+        [
+          // 0 buah
+          {
+            label: "Agus-Sylviana",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Ahok-Djarot
+          {
+            label: "Ahok-Djarot",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+          // Anis-Sandiaga
+          {
+            label: "Anis-Sandiaga",
+            percentage1: 5,
+            percentage2: 25,
+            percentage3: 35,
+            percentage4: 20,
+            percentage5: 15,
+            value1: 20,
+            value2: 100,
+            value3: 180,
+            value4: 40,
+            value5: 60,
+          },
+        ],
+      ],
+    },
+  },
+];
+
+// DAFTAR DAERAH (DROPDOWN)
+export const listDaerahGroupStackedBarChart1 = [
+  { name: "DKI Jakarta" },
+  {
+    name: "Jakarta Pusat",
+  },
+  {
+    name: "Jakarta Selatan",
+  },
+  {
+    name: "Jakarta Barat",
+  },
+  {
+    name: "Jakarta Utara",
+  },
+  {
+    name: "Jakarta Timur",
+  },
+  {
+    name: "Kepulauan Seribu",
+  },
+];
+
 export const groupBarChart1 = [
   {
     title:
