@@ -1,13 +1,11 @@
-import BarChart from "../components/Icon/BarChart";
-import SpiderChart from "../components/Icon/SpiderChart";
-import StackedBarChart from "../components/Icon/StackedBarChart";
-import Breadcumb from "../components/Visualisasi/Breadcumb";
-import ChartDua from "../components/Visualisasi/ChartDua";
-import ChartSatu from "../components/Visualisasi/ChartSatu";
-import ChartTiga from "../components/Visualisasi/ChartTiga";
+import Table from "../components/Icon/Table";
+import Breadcumb from "../components/Tabulasi/Breadcumb";
+import TabulasiDua from "../components/Tabulasi/TabulasiDua";
+import TabulasiSatu from "../components/Tabulasi/TabulasiSatu";
+import TabulasiTiga from "../components/Tabulasi/TabulasiTiga";
 import { useState } from "react";
 
-export default function Visualisasi() {
+export default function Tabulasi() {
   const [tabActive, setTabctive] = useState(0);
 
   return (
@@ -19,14 +17,14 @@ export default function Visualisasi() {
           {/* Judul Halaman */}
           <div className="flex flex-col gap-2 my-4">
             <h1 className="text-maroon-light font-bold text-3xl">
-              Visualisasi Data KPU DKI Jakarta
+              Tabulasi Data KPU DKI Jakarta
             </h1>
             <p className="text-stone-900 text-xl mb-1">
-              Bentuk visualisasi data-data pemilihan umum KPU DKI Jakarta yang
-              disajikan dengan menggunakan ilustrasi grafik disertai
-              interpretasi teks. Grafik yang disediakan juga meliputi tabel yang
-              ada dalam publikasi Statistik Indonesia. Visualisasi ini dibagi
-              menjadi tiga bagian berdasarkan data yang disajikan, yaitu:
+              Tabulasi data-data pemilihan umum KPU DKI Jakarta yang disajikan
+              dalam bentuk tabel untuk dapat dimanfaatkan masyarakat. Tabel yang
+              disediakan juga meliputi tabel yang ada dalam publikasi Statistik
+              Indonesia. Tabulasi data ini dibagi menjadi tiga bagian
+              berdasarkan data yang disajikan, yaitu:
             </p>
             {/* list */}
             <div className="flex items-center gap-4">
@@ -34,7 +32,7 @@ export default function Visualisasi() {
                 1
               </h1>
               <h1 className="text-stone-900 font-semibold text-xl">
-                Visualisasi Karakteristik Pemilih Pemilu
+                Tabulasi Karakteristik Pemilih Pemilu
               </h1>
             </div>
             <div className="flex items-center gap-4">
@@ -42,7 +40,7 @@ export default function Visualisasi() {
                 2
               </h1>
               <h1 className="text-stone-900 font-semibold text-xl">
-                Visualisasi Indikator Pemilu
+                Tabulasi Indikator Pemilu
               </h1>
             </div>
             <div className="flex items-center gap-4 mb-2">
@@ -50,7 +48,7 @@ export default function Visualisasi() {
                 3
               </h1>
               <h1 className="text-stone-900 font-semibold text-xl">
-                Visualisasi Persebaran Pilihan Pemilu
+                Tabulasi Persebaran Pilihan Pemilu
               </h1>
             </div>
           </div>
@@ -67,7 +65,7 @@ export default function Visualisasi() {
                       : "border-b-4 border-maroon-light"
                   }`}
                 >
-                  <BarChart
+                  <Table
                     className={`w-7 h-7 me-2 ${
                       tabActive !== 0
                         ? "text-stone-400 group-hover:text-stone-500"
@@ -94,7 +92,7 @@ export default function Visualisasi() {
                       : "border-b-4 border-maroon-light"
                   }`}
                 >
-                  <SpiderChart
+                  <Table
                     className={`w-7 h-7 me-2 ${
                       tabActive !== 1
                         ? "text-stone-400 group-hover:text-stone-500"
@@ -121,7 +119,7 @@ export default function Visualisasi() {
                       : "border-b-4 border-maroon-light"
                   }`}
                 >
-                  <StackedBarChart
+                  <Table
                     className={`w-7 h-7 me-2 ${
                       tabActive !== 2
                         ? "text-stone-400 group-hover:text-stone-500"
@@ -145,61 +143,58 @@ export default function Visualisasi() {
           {/* Karakteristik Pemilih Pemilu */}
           {tabActive === 0 && (
             <>
+              {/* Subjudul Halaman */}
               <div className="flex flex-col gap-1 pt-4">
                 <h1 className="text-2xl text-maroon-light font-bold">
-                  Visualisasi Karakteristik Pemilih Pemilu
+                  Tabulasi Karakteristik Pemilih Pemilu
                 </h1>
                 <p className="text-stone-900 text-lg">
-                  Visualisasi ini menampilkan berbagai demografi dan
+                  Tabel-tabel ini menampilkan berbagai demografi dan
                   karakteristik sosial ekonomi pemilih yang berpartisipasi dalam
                   Pemilu 2024, termasuk usia, jenis kelamin, pendidikan, dan
                   pekerjaan.
                 </p>
               </div>
-              {/* Grafik */}
-              <div className="grid grid-cols-1 justify-center gap-4 mb-12">
-                <ChartSatu />
-              </div>
+              {/* Tabulasi Satu */}
+              <TabulasiSatu />
             </>
           )}
 
           {/* Indikator Pemilu */}
           {tabActive === 1 && (
             <>
+              {/* Subjudul Halaman */}
               <div className="flex flex-col gap-1 pt-4">
                 <h1 className="text-2xl text-maroon-light font-bold">
-                  Visualisasi Indikator Pemilu
+                  Tabulasi Indikator Pemilu
                 </h1>
                 <p className="text-stone-900 text-lg">
-                  Visualisasi ini menunjukkan berbagai indikator yang
+                  Tabel-tabel ini menunjukkan berbagai indikator yang
                   mempengaruhi Pemilu 2024, seperti partisipasi pemilih, jumlah
                   kandidat, dan tingkat kampanye di berbagai wilayah.
                 </p>
               </div>
-              {/* Grafik */}
-              <div className="grid grid-cols-1 mb-12 justify-center gap-4">
-                <ChartDua />
-              </div>
+              {/* Tabulasi Dua */}
+              <TabulasiDua />
             </>
           )}
 
           {/* Persebaran Pilihan Pemilu */}
           {tabActive === 2 && (
             <>
+              {/* Subjudul Halaman */}
               <div className="flex flex-col gap-1 pt-4">
                 <h1 className="text-2xl text-maroon-light font-bold">
-                  Visualisasi Persebaran Pilihan Pemilu 2019
+                  Tabulasi Persebaran Pilihan Pemilu
                 </h1>
                 <p className="text-stone-900 text-lg">
-                  Visualisasi ini menggambarkan distribusi pilihan pemilih dalam
+                  Tabel-tabel ini menggambarkan distribusi pilihan pemilih dalam
                   Pemilu 2019 di seluruh wilayah, menyoroti pola suara yang
                   mendukung berbagai partai politik dan kandidat.
                 </p>
               </div>
-              {/* Grafik */}
-              <div className="grid grid-cols-1 mb-12 justify-center gap-4">
-                <ChartTiga />
-              </div>
+              {/* Tabulasi Tiga */}
+              <TabulasiTiga />
             </>
           )}
         </div>

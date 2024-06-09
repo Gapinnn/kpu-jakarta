@@ -10,7 +10,7 @@ export default function ChartSatu() {
   const [data, setData] = useState(groupBarChart1[0].data);
   const [warna, setWarna] = useState(groupBarChart1[0].warna);
   const [label, setLabel] = useState(groupBarChart1[0].label);
-  const [dataName, setDataName] = useState("Jumlah Pemilih Tetap");
+  const [dataName, setDataName] = useState("Jumlah Pemilih");
   const [indexData, setIndexData] = useState(0);
   const [selectedData, setSelectedData] = useState({
     group1: true,
@@ -26,11 +26,11 @@ export default function ChartSatu() {
   const changeData = useCallback((dataName) => {
     switch (dataName) {
       case "Jumlah Pemilih Tetap":
-        return 0;
-      case "Jumlah Pemilih Tetap Baru":
         return 1;
-      case "Jumlah Tempat Pemungutan Suara":
+      case "Jumlah Pemilih Baru":
         return 2;
+      case "Jumlah Pemilih":
+        return 0;
       default:
         return 0;
     }

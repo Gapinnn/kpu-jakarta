@@ -13,8 +13,8 @@ export const menuId = [
         path: "/id/profil/visi-misi",
       },
       {
-        name: "Tupoksi",
-        path: "/id/profil/tupoksi",
+        name: "Tugas Pokok",
+        path: "/id/profil/tugas-pokok",
       },
       {
         name: "Tugas Wewenang",
@@ -63,7 +63,17 @@ export const menuId = [
   {
     name: "Publikasi",
     path: "/id/publikasi",
-    branch: false,
+    branch: true,
+    submenu: [
+      {
+        name: "Dokumen",
+        path: "/id/publikasi/dokumen",
+      },
+      {
+        name: "Galeri",
+        path: "/id/publikasi/galeri",
+      },
+    ],
   },
 ];
 

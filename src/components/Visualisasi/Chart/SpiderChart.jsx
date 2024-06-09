@@ -5,23 +5,55 @@ import Download from "../../Icon/Download";
 import FileSvg from "../../Icon/FileSvg";
 import FilePng from "../../Icon/FilePng";
 import FilePdf from "../../Icon/FilePdf";
+import UpArrow from "../../Icon/UpArrow";
 
-export default function SpiderChart({ title, data }) {
+export default function SpiderChart({
+  title,
+  data,
+  keys,
+  warna,
+  dataName,
+  selectedData,
+  variabelAll,
+  changeDataName,
+  changeSelectedData,
+}) {
   const createChart = useCallback(() => {
+    d3.select(`#${title}`).style("background-color", "transparent");
     d3.select(`#${title}`).selectAll("*").remove();
 
-    const label = ["Orang Tua", "Gen Z Anak", "Gen Z Dewasa"];
-    const hexColor = ["#FFC837", "#6497B1", "#FA8295"];
+    if (data.length === 0) {
+      d3.select(`#${title}`)
+        .style("display", "flex")
+        .style("justify-content", "center")
+        .style("align-items", "center")
+        .style("background-color", "rgb(214,211,209)")
+        .style("border-radius", "24px")
+        .append("text")
+        .attr("x", "50%")
+        .attr("y", "50%")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("class", " font-bold")
+        .text("CENTANG MINIMAL SATU CHECKBOX DI BAWAH")
+        .style("font-size", "2rem");
+      return;
+    }
+
+    // Penyamaan Format Data
+
+    const label = keys;
+    const hexColor = warna;
     const color = d3.scaleOrdinal().range(hexColor);
 
     // Responsive Width
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
 
     const margin = {
-      top: containerWidth > 1080 ? 100 : containerWidth > 640 ? 80 : 30,
-      right: containerWidth > 1080 ? 120 : containerWidth > 640 ? 120 : 30,
-      bottom: containerWidth > 1080 ? 140 : containerWidth > 640 ? 100 : 50,
-      left: containerWidth > 1080 ? 120 : containerWidth > 640 ? 120 : 30,
+      top: containerWidth > 1080 ? 50 : containerWidth > 640 ? 40 : 30,
+      right: containerWidth > 1080 ? 60 : containerWidth > 640 ? 50 : 30,
+      bottom: containerWidth > 1080 ? 70 : containerWidth > 640 ? 50 : 40,
+      left: containerWidth > 1080 ? 60 : containerWidth > 640 ? 50 : 30,
     };
 
     const width = containerWidth - margin.left - margin.right;
@@ -254,6 +286,7 @@ export default function SpiderChart({ title, data }) {
       .append("path")
       .attr("class", "radarStroke")
       .attr("d", function (d) {
+        console.log("spider", d);
         return radarLine(d);
       })
       .style("stroke-width", config.strokeWidth + "px")
@@ -312,8 +345,6 @@ export default function SpiderChart({ title, data }) {
       .style("fill", "none")
       .style("pointer-events", "all")
       .on("mouseover", function (event, d) {
-        console.log(d.group);
-        console.log(hexColor[d.group]);
         var newX = event.pageX;
         var newY = event.pageY;
         let tooltipHtml = `<strong>Indikator ${
@@ -326,8 +357,8 @@ export default function SpiderChart({ title, data }) {
         tooltip
           .html(tooltipHtml)
           .style("opacity", 0.9)
-          .style("left", `${newX + 10}px`)
-          .style("top", `${newY - 28}px`);
+          .style("left", `${newX}px`)
+          .style("top", `${newY - 100}px`);
       })
       .on("mouseout", function () {
         tooltip.transition().duration(200).style("opacity", 0);
@@ -365,7 +396,7 @@ export default function SpiderChart({ title, data }) {
       .attr(
         "transform",
         (d, i) =>
-          `translate(${svgWidth / 2 - 1 * 120 + i * 120}, ${
+          `translate(${svgWidth / 2 - 1 * 100 + i * 120}, ${
             containerWidth > 1080 ? 730 : containerWidth > 640 ? 700 : 680
           })`
       ); // Center the legend horizontally
@@ -425,156 +456,251 @@ export default function SpiderChart({ title, data }) {
         }
       });
     } //wrap
-  }, [title, data]);
+  }, [title, data, keys, warna]);
 
   const downloadSVG = () => {
     const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgBlob = new Blob([serializer.serializeToString(svgElement)], {
-      type: "image/svg+xml",
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const blob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
     });
-    const url = URL.createObjectURL(svgBlob);
-    const downloadLink = svgElement.createElement("a");
-    downloadLink.href = url;
-    downloadLink.download = `${title}.svg`;
-    svgElement.body.appendChild(downloadLink);
-    downloadLink.click();
-    svgElement.body.removeChild(downloadLink);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${title}.svg`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const downloadPNG = () => {
-    const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = svgElement.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const svgElement = document.querySelector(`#${title} svg`);
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    const image = new Image();
+    image.src = url;
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 8; // Faktor resolusi yang lebih tinggi (contoh: 2 untuk 2x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    img.onload = function () {
-      // Isi latar belakang kanvas dengan warna putih
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      // Gambar SVG pada kanvas
-      ctx.drawImage(img, 0, 0, svgViewBox.width, svgViewBox.height);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-      const imgURL = canvas.toDataURL("image/png");
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const downloadLink = svgElement.createElement("a");
-      downloadLink.href = imgURL;
-      downloadLink.download = `${title}`;
-      svgElement.body.appendChild(downloadLink);
-      downloadLink.click();
-      svgElement.body.removeChild(downloadLink);
-      DOMURL.revokeObjectURL(imgURL);
+      // Konversi ke PNG dengan kualitas gambar yang lebih tinggi
+      const pngDataUrl = canvas.toDataURL("image/png", 1.0); // Gunakan kualitas 1.0 untuk PNG terbaik
+      const a = document.createElement("a");
+      a.href = pngDataUrl;
+      a.download = `${title}.png`;
+      a.click();
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   const downloadPDF = () => {
-    const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
+    const svgElement = document.querySelector(`#${title} svg`);
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    // Tentukan ukuran kanvas berdasarkan ukuran SVG
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = svgElement.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const image = new Image();
+    image.src = url;
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 4; // Faktor resolusi yang lebih tinggi (contoh: 2 untuk 2x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-    img.onload = function () {
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const imgData = canvas.toDataURL("image/png");
+      // Konversi ke PDF
       const pdf = new jsPDF({
-        orientation: "landscape",
-        unit: "px",
-        format: [svgViewBox.width, svgViewBox.height],
+        orientation: "landscape", // Atur orientasi landscape
+        unit: "pt", // Satuan ukuran (contoh: poin)
+        format: [canvas.height, canvas.width], // Ukuran halaman sesuai dengan gambar yang dihasilkan
       });
+      pdf.addImage(
+        canvas.toDataURL("image/png"),
+        "PNG",
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-      pdf.addImage(imgData, "PNG", 0, 0, svgViewBox.width, svgViewBox.height);
-      pdf.save(`${title}`);
-
-      DOMURL.revokeObjectURL(imgData);
+      // Simpan PDF dengan nama file yang sesuai
+      pdf.save(`${title}.pdf`);
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   useEffect(() => {
     createChart();
 
     window.addEventListener("resize", createChart);
-    return () => {
-      window.removeEventListener("resize", createChart);
-      d3.select(`#${title}`).selectAll("*").remove();
-      d3.select(`.tooltip${title}`).remove();
-    };
-  }, [createChart, title]);
+    return () => window.removeEventListener("resize", createChart);
+  }, [createChart]);
 
   return (
-    <div className="flex-col h-full w-full relative">
-      <div className="w-9 h-9 z-20 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group">
-        <Download className="text-white w-6 h-6" />
+    <div className="flex-col h-full w-full">
+      {/* Dropdown */}
+      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
+        <div className="inline-flex items-center text-maroon-light text-md">
+          {dataName}
+        </div>
+        <UpArrow
+          className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
+        />
         <div
-          className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+          className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="py-2 font-medium" role="none">
-            <li>
-              <div
-                onClick={downloadSVG}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+            {variabelAll.map((variabel) => (
+              <li
+                className={`${variabel.name === dataName ? "hidden" : ""}`}
+                key={variabel.name}
+                onClick={() => changeDataName(variabel.name)}
               >
-                <FileSvg className="text-maroon-light w-6 h-6" />
-                <div className="inline-flex items-center text-maroon-light text-md font-semibold">
-                  SVG
+                <div className="cursor-pointer flex w-full gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                    {variabel.name}
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div
-                onClick={downloadPNG}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
-              >
-                <FilePng className="text-maroon-light w-6 h-6" />
-                <div className="inline-flex items-center text-maroon-light text-md">
-                  PNG
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                onClick={downloadPDF}
-                className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
-              >
-                <FilePdf className="text-maroon-light w-6 h-6" />
-                <div className="inline-flex items-center text-maroon-light text-md">
-                  PDF
-                </div>
-              </div>
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      <div id={title} className="relative flex-col h-full w-full mx-auto"></div>
+      {/* Konten Utama */}
+      <div className="w-full flex relative">
+        {/* Download Button */}
+        <div
+          className={`w-9 h-9 absolute top-0 right-0 z-20 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
+            data.length === 0 ? "hidden" : ""
+          }`}
+        >
+          <Download className="text-white w-6 h-6" />
+          <div
+            className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+                transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
+          >
+            <ul className="py-2 font-medium" role="none">
+              <li>
+                <div
+                  onClick={downloadSVG}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FileSvg className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                    SVG
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={downloadPNG}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FilePng className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md">
+                    PNG
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={downloadPDF}
+                  className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
+                >
+                  <FilePdf className="text-maroon-light w-6 h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-md">
+                    PDF
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* Chart */}
+        <div
+          id={title}
+          className="relative flex-col h-full w-full mx-auto"
+        ></div>
+      </div>
+      {/* Checkbox Filter */}
+      <div className="w-full flex items-center justify-center">
+        <div className="w-40">
+          <div className="flex items-center justify-center">
+            <input
+              id={`${title}-${keys[0]}`}
+              type="checkbox"
+              checked={selectedData.group1}
+              onChange={() => changeSelectedData("group1")}
+              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+            />
+            <label
+              htmlFor={`${title}-${keys[0]}`}
+              className="w-full ml-2 text-md font-medium text-maroon-light"
+            >
+              {keys[0]}
+            </label>
+          </div>
+        </div>
+        <div className="w-40">
+          <div className="flex items-center justify-center">
+            <input
+              id={`${title}-${keys[1]}`}
+              type="checkbox"
+              checked={selectedData.group2}
+              onChange={() => changeSelectedData("group2")}
+              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+            />
+            <label
+              htmlFor={`${title}-${keys[1]}`}
+              className="w-full ml-2 text-md font-medium text-maroon-light"
+            >
+              {keys[1]}
+            </label>
+          </div>
+        </div>
+        <div className="w-40">
+          <div className="flex items-center justify-center">
+            <input
+              id={`${title}-${keys[2]}`}
+              type="checkbox"
+              checked={selectedData.group2}
+              onChange={() => changeSelectedData("group3")}
+              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+            />
+            <label
+              htmlFor={`${title}-${keys[2]}`}
+              className="w-full ml-2 text-md font-medium text-maroon-light"
+            >
+              {keys[2]}
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

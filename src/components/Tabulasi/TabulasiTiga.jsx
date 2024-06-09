@@ -1,0 +1,145 @@
+import { useState, useEffect } from "react";
+import UpArrow from "../Icon/UpArrow";
+import {
+  pilihanDataTabulasi3,
+  kategoriTabulasi3,
+  allDataTabulasi3,
+} from "../../contents/tabulasi";
+
+export default function TabulasiTiga() {
+  const [indexData, setIndexData] = useState(0);
+  const [dataName, setDataName] = useState("Pendidikan Pemilih");
+  const [selectedData, setSelectedData] = useState(allDataTabulasi3[indexData]);
+
+  useEffect(() => {
+    setSelectedData(allDataTabulasi3[indexData]);
+  }, [indexData]);
+
+  return (
+    <div className="flex-col h-full w-fit mx-auto">
+      <div className="container flex flex-col py-4">
+        {/* Dropdown */}
+        <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl w-fit max-w-[18rem] group hover:bg-stone-100 hover:w-[18rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
+          <div className="inline-flex items-center text-maroon-light text-md">
+            {dataName}
+          </div>
+          <UpArrow
+            className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
+          />
+          <div
+            className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[18rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
+                transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
+          >
+            <ul className="py-2 font-medium" role="none">
+              {pilihanDataTabulasi3.map((variabel) => (
+                <li
+                  className={`${variabel.name === dataName ? "hidden" : ""}`}
+                  key={variabel.name}
+                  onClick={() => {
+                    setDataName(variabel.name);
+                    setIndexData(variabel.value);
+                  }}
+                >
+                  <div className="cursor-pointer flex w-full gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                    <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                      {variabel.name}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        {/* Judul Tabel */}
+        <h3 className="text-maroon-light mx-auto text-center text-xl font-bold mb-4">
+          {selectedData.title}
+        </h3>
+        {/* Tabel */}
+        <div className="overflow-x-scroll md:overflow-hidden mb-4">
+          <table className="mx-auto border rounded-xl bg-white border-separate">
+            <thead>
+              <tr className="bg-gold">
+                <th
+                  className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                  rowSpan="2"
+                >
+                  Kategori Frekuensi
+                </th>
+                {kategoriTabulasi3.map((item) => (
+                  <th
+                    key={item.name}
+                    className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    colSpan="2"
+                  >
+                    {item.name}
+                  </th>
+                ))}
+              </tr>
+              <tr className="bg-gold-neutral">
+                {kategoriTabulasi3.map((item) => (
+                  <>
+                    <th
+                      key={item.name}
+                      className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    >
+                      {allDataTabulasi3[indexData].column[0]}
+                    </th>
+                    <th
+                      key={item.name}
+                      className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    >
+                      {allDataTabulasi3[indexData].column[1]}
+                    </th>
+                  </>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {selectedData.label.map((item, index) => (
+                <tr
+                  key={index}
+                  className={`border ${
+                    index % 2 === 0 ? "bg-gray-200" : "bg-white"
+                  }`}
+                >
+                  <td className="py-1 px-2 font-semibold border">{item}</td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* Interpretasi */}
+        <div className=" mb-4 mx-auto">
+          <h3 className="text-maroon-light text-center text-xl font-bold">
+            Interpretasi
+          </h3>
+          <p className="text-justify mt-1">{selectedData.interpretasi}</p>
+        </div>
+      </div>
+    </div>
+  );
+}

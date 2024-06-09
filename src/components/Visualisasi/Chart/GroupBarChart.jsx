@@ -44,7 +44,7 @@ export default function GroupBarChart({
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
     let width = containerWidth - margin.left - margin.right;
     width = width > 1080 ? 1080 : width;
-    let height = 0.55 * width;
+    let height = 0.45 * width;
 
     const svg = d3
       .select(`#${title}`)
@@ -74,6 +74,7 @@ export default function GroupBarChart({
     };
 
     const flattenedData = flattenData(data, keys);
+    console.log(flattenedData);
 
     x0.domain(flattenedData.map((d) => d.region));
     x1.domain(keys).rangeRound([0, x0.bandwidth()]);
@@ -90,13 +91,14 @@ export default function GroupBarChart({
       .append("g")
       .attr("transform", (d) => `translate(${x0(d.region)},0)`)
       .selectAll("rect")
-      .data((d) =>
-        keys.map((key) => ({
+      .data((d) => {
+        console.log("group-bar", d);
+        return keys.map((key) => ({
           key,
           value: d[key],
           region: d.region,
-        }))
-      )
+        }));
+      })
       .enter()
       .append("rect")
       .attr("x", (d) => x1(d.key))
@@ -114,14 +116,14 @@ export default function GroupBarChart({
             }`
           )
           .style("opacity", 0.9)
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY - 100}px`)
           .style("cursor", "pointer");
       })
       .on("mousemove", function (event) {
         tooltip
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY - 100}px`)
           .style("cursor", "pointer");
       })
       .on("mouseout", function () {
@@ -133,6 +135,8 @@ export default function GroupBarChart({
       .attr("y", (d) => y(d.value))
       .attr("height", (d) => height - y(d.value));
 
+    console.log(flattenedData);
+
     svg
       .append("g")
       .selectAll("g")
@@ -142,16 +146,15 @@ export default function GroupBarChart({
       .attr("transform", (d) => `translate(${x0(d.region)},0)`)
       .selectAll("text")
       .data((d) =>
-        keys.map((key) => ({
-          key,
-          value: d[key],
-          region: d.region,
+        keys.map((category) => ({
+          category,
+          value: d[category],
         }))
       )
       .enter()
       .append("text")
-      .attr("x", (d) => x1(d.key) + x1.bandwidth() / 2)
-      .attr("y", (d) => y(d.value) - 50)
+      .attr("x", (d) => x1(d.category) + x1.bandwidth() / 2)
+      .attr("y", (d) => y(d.value) - 5)
       .attr("text-anchor", "middle")
       .attr("fill", "black")
       .style("opacity", 0)
@@ -160,8 +163,7 @@ export default function GroupBarChart({
       .transition()
       .duration(800)
       .delay((d, i) => i * 400)
-      .style("opacity", 1)
-      .attr("y", (d) => y(d.value) - 5);
+      .style("opacity", 1);
 
     svg
       .append("g")
@@ -217,10 +219,7 @@ export default function GroupBarChart({
     }
   }, [title, data, keys, warna]);
 
-  const downloadSVG = async () => {
-    // Ensure the state change is completed
-    await changeSelectedData("all");
-
+  const downloadSVG = () => {
     const svgElement = document.querySelector(`#${title}`);
 
     if (svgElement) {
@@ -245,81 +244,84 @@ export default function GroupBarChart({
   };
 
   const downloadPNG = () => {
-    changeSelectedData("all");
     const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = svgElement.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    const image = new Image();
+    image.src = url;
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 12; // Faktor resolusi yang lebih tinggi (contoh: 2 untuk 2x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    img.onload = function () {
-      // Isi latar belakang kanvas dengan warna putih
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      // Gambar SVG pada kanvas
-      ctx.drawImage(img, 0, 0, svgViewBox.width, svgViewBox.height);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-      const imgURL = canvas.toDataURL("image/png");
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const downloadLink = svgElement.createElement("a");
-      downloadLink.href = imgURL;
-      downloadLink.download = `${title}`;
-      svgElement.body.appendChild(downloadLink);
-      downloadLink.click();
-      svgElement.body.removeChild(downloadLink);
-      DOMURL.revokeObjectURL(imgURL);
+      // Konversi ke PNG dengan kualitas gambar yang lebih tinggi
+      const pngDataUrl = canvas.toDataURL("image/png", 1.0); // Gunakan kualitas 1.0 untuk PNG terbaik
+      const a = document.createElement("a");
+      a.href = pngDataUrl;
+      a.download = `${title}.png`;
+      a.click();
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   const downloadPDF = () => {
-    changeSelectedData("all");
     const svgElement = document.querySelector(`#${title}`);
-    const serializer = new XMLSerializer();
-    const svgStr = serializer.serializeToString(svgElement);
+    const svgString = new XMLSerializer().serializeToString(svgElement);
+    const svgBlob = new Blob([svgString], {
+      type: "image/svg+xml;charset=utf-8",
+    });
+    const url = URL.createObjectURL(svgBlob);
 
-    // Tentukan ukuran kanvas berdasarkan ukuran SVG
-    const svgViewBox = svgElement.viewBox.baseVal;
-    const canvas = document.createElement("canvas");
-    canvas.width = svgViewBox.width;
-    canvas.height = svgViewBox.height;
+    const image = new Image();
+    image.src = url;
 
-    const ctx = canvas.getContext("2d");
-    const DOMURL = window.URL || window.webkitURL || window;
-    const img = new Image();
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      const scaleFactor = 8; // Faktor resolusi yang lebih tinggi (contoh: 8 untuk 8x lebih besar)
+      canvas.width = image.width * scaleFactor;
+      canvas.height = image.height * scaleFactor;
+      const context = canvas.getContext("2d");
 
-    const svgBlob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
-    const url = DOMURL.createObjectURL(svgBlob);
+      // Aktifkan anti-aliasing
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
-    img.onload = function () {
-      ctx.fillStyle = "white";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
+      // Gambar ulang dengan faktor resolusi yang lebih tinggi
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-      const imgData = canvas.toDataURL("image/png");
+      // Konversi ke PDF dengan orientasi landscape
       const pdf = new jsPDF({
-        orientation: "landscape",
-        unit: "px",
-        format: [svgViewBox.width, svgViewBox.height],
+        orientation: "landscape", // Atur orientasi landscape
+        unit: "pt", // Satuan ukuran (contoh: poin)
+        format: [canvas.height, canvas.width], // Ukuran halaman sesuai dengan gambar yang dihasilkan
       });
+      pdf.addImage(
+        canvas.toDataURL("image/png"),
+        "PNG",
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-      pdf.addImage(imgData, "PNG", 0, 0, svgViewBox.width, svgViewBox.height);
-      pdf.save(`${title}`);
-
-      DOMURL.revokeObjectURL(imgData);
+      // Simpan PDF dengan nama file yang sesuai
+      pdf.save(`${title}.pdf`);
+      URL.revokeObjectURL(url);
     };
-
-    img.src = url;
   };
 
   useEffect(() => {
@@ -331,6 +333,7 @@ export default function GroupBarChart({
 
   return (
     <div className="flex-col h-full w-full">
+      {/* Dropdown */}
       <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
         <div className="inline-flex items-center text-maroon-light text-md">
           {dataName}
@@ -338,7 +341,6 @@ export default function GroupBarChart({
         <UpArrow
           className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
-        {/* Dropdown */}
         <div
           className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
@@ -360,7 +362,9 @@ export default function GroupBarChart({
           </ul>
         </div>
       </div>
+      {/* Konten Utama */}
       <div className="w-full flex relative">
+        {/* Download Button */}
         <div
           className={`w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
             data.length === 0 ? "hidden" : ""
@@ -408,40 +412,42 @@ export default function GroupBarChart({
             </ul>
           </div>
         </div>
+        {/* Chart */}
         <svg id={title} className="chart h-full w-full"></svg>
       </div>
+      {/* Checkbox Filter */}
       <div className="w-full flex items-center justify-center">
         <div className="w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-laki-laki`}
+              id={`${title}-${keys[0]}`}
               type="checkbox"
               checked={selectedData.group1}
               onChange={() => changeSelectedData("group1")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-laki-laki`}
+              htmlFor={`${title}-${keys[0]}`}
               className="w-full ml-2 text-md font-medium text-maroon-light"
             >
-              Laki-Laki
+              {keys[0]}
             </label>
           </div>
         </div>
         <div className="w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-perempuan`}
+              id={`${title}-${keys[1]}`}
               type="checkbox"
               checked={selectedData.group2}
               onChange={() => changeSelectedData("group2")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-perempuan`}
+              htmlFor={`${title}-${keys[1]}`}
               className="w-full ml-2 text-md font-medium text-maroon-light"
             >
-              Perempuan
+              {keys[1]}
             </label>
           </div>
         </div>

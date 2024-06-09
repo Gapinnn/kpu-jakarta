@@ -65,21 +65,19 @@ export default function Modul() {
   ];
 
   return (
-    <div className="bg-maroon min-h-screen p-8">
-      <div className="container mx-auto">
-        <h1 className="text-white text-3xl font-bold mb-8">Modul</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {data.map((item, index) => (
-            <Card
-              key={index}
-              title={item.title}
-              date={item.date}
-              views={item.views}
-              imageSrc={item.imageSrc}
-              description={item.description}
-            />
-          ))}
-        </div>
+    <div className="p-8 mt-8 bg-stone-100 rounded-2xl shadow-xl mx-auto z-20">
+      <h1 className="text-maroon-light text-3xl font-bold mb-8">Modul</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {data.map((item, index) => (
+          <Card
+            key={index}
+            title={item.title}
+            date={item.date}
+            views={item.views}
+            imageSrc={item.imageSrc}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
   );

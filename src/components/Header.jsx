@@ -37,7 +37,7 @@ const Header = () => {
           {menu.map((item) => (
             <div key={item.name} className="relative flex justify-center">
               <Link
-                to={item.path}
+                to={item.branch ? "#" : item.path}
                 onMouseOver={() => changeHoverMenu(item)}
                 onMouseLeave={resetHoverMenu}
                 className={`text-stone-100 py-1 text-lg hover:text-stone-200
@@ -183,7 +183,7 @@ const Header = () => {
           }`}
         >
           Catat Tanggal (26 - 27 November 2024) Pilkada DKI Jakarta : Pemilihan
-          Umum Gubernur dan DPRD Provinsi DKI Jakarta!
+          Gubernur dan DPRD Provinsi DKI Jakarta!
         </p>
         <div
           onClick={showInfoHandler}
