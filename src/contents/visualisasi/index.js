@@ -7,7 +7,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -131,7 +131,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -255,7 +255,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -379,7 +379,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -503,7 +503,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -627,7 +627,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -751,7 +751,7 @@ export const groupStackedBarChart1 = [
     data: {
       // Judul Visualisasi
       title:
-        "Proporsi Pilihan Calon Pemilih Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
+        "Proporsi Pilihan Calon Pemilu 2019 Berdasarkan Jenis Kelamin dan Tingkat Pendidikan",
       // Interpretasi Visualisasi
       interpretasi:
         "Gen Z, dengan semangat dan keahlian digitalnya, dapat menjadi jembatan untuk memperkenalkan budaya Bali kepada dunia yang lebih luas. Melalui platform media sosial, mereka dapat membagikan konten kreatif yang menarik tentang tradisi, adat istiadat, dan seni budaya Bali. Hal ini dapat meningkatkan kesadaran dan minat masyarakat global terhadap budaya Bali yang unik dan memesona. Di sisi lain, orang tua sebagai pewaris budaya Bali memiliki tanggung jawab untuk meneruskan pengetahuan dan nilai-nilai budaya kepada generasi muda. Melalui berbagai cara, seperti bercerita, mencontohkan perilaku, dan mengadakan kegiatan budaya, orang tua dapat menanamkan rasa cinta dan kebanggaan terhadap budaya Bali dalam diri anak-anak mereka.",
@@ -895,79 +895,79 @@ export const listDaerahGroupStackedBarChart1 = [
 export const groupBarChart1 = [
   {
     title:
-      "Jumlah Pemilih Tetap Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
-    interpretasi:
-      "Data mengenai jumlah pemilih tetap berdasarkan jenis kelamin di Provinsi DKI Jakarta menunjukkan variasi yang signifikan. Di Jakarta Barat, pemilih laki-laki berjumlah 427, sementara perempuan hanya 258, menunjukkan dominasi laki-laki. Hal serupa terlihat di Jakarta Utara dengan laki-laki 357 dan perempuan 257, serta di Kepulauan Seribu dengan laki-laki 341 dan perempuan 269. Namun, di Jakarta Selatan dan Jakarta Timur, jumlah pemilih perempuan sedikit lebih tinggi dengan masing-masing 339 perempuan dibandingkan 402 laki-laki di Jakarta Selatan, dan 426 perempuan dibandingkan 361 laki-laki di Jakarta Timur. Di Jakarta Pusat, jumlah pemilih hampir seimbang dengan 356 laki-laki dan 350 perempuan. Secara keseluruhan, data ini menunjukkan variasi yang cukup beragam dengan beberapa wilayah mendominasi oleh pemilih laki-laki sementara yang lain menunjukkan keseimbangan atau dominasi perempuan.",
-    label: ["Laki-Laki", "Perempuan"],
-    warna: ["#FFBF00", "#FFDC73"],
-    data: [
-      [
-        { region: "Jakarta \n Barat", value: 427 },
-        { region: "Jakarta Selatan", value: 402 },
-        { region: "Jakarta Timur", value: 361 },
-        { region: "Jakarta Utara", value: 357 },
-        { region: "Jakarta Pusat", value: 356 },
-        { region: "Kepulauan Seribu", value: 341 },
-      ],
-      [
-        { region: "Jakarta \n Barat", value: 258 },
-        { region: "Jakarta Selatan", value: 339 },
-        { region: "Jakarta Timur", value: 426 },
-        { region: "Jakarta Utara", value: 257 },
-        { region: "Jakarta Pusat", value: 350 },
-        { region: "Kepulauan Seribu", value: 269 },
-      ],
-    ],
-  },
-  {
-    title:
-      "Jumlah Pemilih Baru Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
-    interpretasi:
-      "Data mengenai jumlah pemilih tetap berdasarkan jenis kelamin di Provinsi DKI Jakarta menunjukkan variasi yang signifikan. Di Jakarta Barat, pemilih laki-laki berjumlah 427, sementara perempuan hanya 258, menunjukkan dominasi laki-laki. Hal serupa terlihat di Jakarta Utara dengan laki-laki 357 dan perempuan 257, serta di Kepulauan Seribu dengan laki-laki 341 dan perempuan 269. Namun, di Jakarta Selatan dan Jakarta Timur, jumlah pemilih perempuan sedikit lebih tinggi dengan masing-masing 339 perempuan dibandingkan 402 laki-laki di Jakarta Selatan, dan 426 perempuan dibandingkan 361 laki-laki di Jakarta Timur. Di Jakarta Pusat, jumlah pemilih hampir seimbang dengan 356 laki-laki dan 350 perempuan. Secara keseluruhan, data ini menunjukkan variasi yang cukup beragam dengan beberapa wilayah mendominasi oleh pemilih laki-laki sementara yang lain menunjukkan keseimbangan atau dominasi perempuan.",
-    label: ["Laki-Laki", "Perempuan"],
-    warna: ["#FFBF00", "#FFDC73"],
-    data: [
-      [
-        { region: "Jakarta \n Barat", value: 427 },
-        { region: "Jakarta Selatan", value: 402 },
-        { region: "Jakarta Timur", value: 361 },
-        { region: "Jakarta Utara", value: 357 },
-        { region: "Jakarta Pusat", value: 356 },
-        { region: "Kepulauan Seribu", value: 341 },
-      ],
-      [
-        { region: "Jakarta \n Barat", value: 258 },
-        { region: "Jakarta Selatan", value: 339 },
-        { region: "Jakarta Timur", value: 426 },
-        { region: "Jakarta Utara", value: 257 },
-        { region: "Jakarta Pusat", value: 350 },
-        { region: "Kepulauan Seribu", value: 269 },
-      ],
-    ],
-  },
-  {
-    title:
-      "Pemilih Tidak Tetap Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
+      "Jumlah Pemilih Pemilu 2024 Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
     interpretasi:
       "Data mengenai jumlah tempat pemungutan suara (TPS) di Provinsi DKI Jakarta menunjukkan variasi yang signifikan di antara wilayah-wilayah yang berbeda. Di Jakarta Barat, terdapat 527 TPS untuk pemilih laki-laki dan 258 TPS untuk pemilih perempuan, menunjukkan konsentrasi yang lebih tinggi untuk pemilih laki-laki. Jakarta Selatan memiliki 502 TPS untuk laki-laki dan 339 TPS untuk perempuan, sedangkan Jakarta Timur mencatat jumlah tertinggi dengan 561 TPS untuk laki-laki dan 226 TPS untuk perempuan. Di Jakarta Utara, terdapat 557 TPS untuk laki-laki dan 257 TPS untuk perempuan, sementara di Jakarta Pusat terdapat 556 TPS untuk laki-laki dan 250 TPS untuk perempuan. Kepulauan Seribu menunjukkan pola yang serupa dengan 541 TPS untuk laki-laki dan 269 TPS untuk perempuan. Data ini mengindikasikan bahwa jumlah TPS cenderung lebih banyak dialokasikan untuk pemilih laki-laki di hampir semua wilayah, dengan Jakarta Timur memiliki jumlah TPS tertinggi untuk laki-laki dan Jakarta Selatan menunjukkan distribusi yang lebih seimbang antara laki-laki dan perempuan.",
     label: ["Laki-Laki", "Perempuan"],
     warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
-        { region: "Jakarta \n Barat", value: 427 },
-        { region: "Jakarta Selatan", value: 402 },
-        { region: "Jakarta Timur", value: 361 },
-        { region: "Jakarta Utara", value: 357 },
-        { region: "Jakarta Pusat", value: 356 },
-        { region: "Kepulauan Seribu", value: 341 },
+        { region: "Jakarta \n Barat", value: 422127 },
+        { region: "Jakarta Selatan", value: 404512 },
+        { region: "Jakarta Timur", value: 362411 },
+        { region: "Jakarta Utara", value: 354177 },
+        { region: "Jakarta Pusat", value: 356118 },
+        { region: "Kepulauan Seribu", value: 334211 },
       ],
       [
-        { region: "Jakarta \n Barat", value: 258 },
-        { region: "Jakarta Selatan", value: 339 },
-        { region: "Jakarta Timur", value: 426 },
-        { region: "Jakarta Utara", value: 257 },
-        { region: "Jakarta Pusat", value: 350 },
-        { region: "Kepulauan Seribu", value: 269 },
+        { region: "Jakarta \n Barat", value: 251358 },
+        { region: "Jakarta Selatan", value: 338139 },
+        { region: "Jakarta Timur", value: 512426 },
+        { region: "Jakarta Utara", value: 412257 },
+        { region: "Jakarta Pusat", value: 331350 },
+        { region: "Kepulauan Seribu", value: 513269 },
+      ],
+    ],
+  },
+  {
+    title:
+      "Jumlah Pemilih Tetap Pemilu 2024 Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
+    interpretasi:
+      "Data mengenai jumlah pemilih tetap berdasarkan jenis kelamin di Provinsi DKI Jakarta menunjukkan variasi yang signifikan. Di Jakarta Barat, pemilih laki-laki berjumlah 427, sementara perempuan hanya 258, menunjukkan dominasi laki-laki. Hal serupa terlihat di Jakarta Utara dengan laki-laki 357 dan perempuan 257, serta di Kepulauan Seribu dengan laki-laki 341 dan perempuan 269. Namun, di Jakarta Selatan dan Jakarta Timur, jumlah pemilih perempuan sedikit lebih tinggi dengan masing-masing 339 perempuan dibandingkan 402 laki-laki di Jakarta Selatan, dan 426 perempuan dibandingkan 361 laki-laki di Jakarta Timur. Di Jakarta Pusat, jumlah pemilih hampir seimbang dengan 356 laki-laki dan 350 perempuan. Secara keseluruhan, data ini menunjukkan variasi yang cukup beragam dengan beberapa wilayah mendominasi oleh pemilih laki-laki sementara yang lain menunjukkan keseimbangan atau dominasi perempuan.",
+    label: ["Laki-Laki", "Perempuan"],
+    warna: ["#FFBF00", "#FFDC73"],
+    data: [
+      [
+        { region: "Jakarta \n Barat", value: 451427 },
+        { region: "Jakarta Selatan", value: 408192 },
+        { region: "Jakarta Timur", value: 334361 },
+        { region: "Jakarta Utara", value: 334357 },
+        { region: "Jakarta Pusat", value: 321156 },
+        { region: "Kepulauan Seribu", value: 313141 },
+      ],
+      [
+        { region: "Jakarta \n Barat", value: 351258 },
+        { region: "Jakarta Selatan", value: 383123 },
+        { region: "Jakarta Timur", value: 422126 },
+        { region: "Jakarta Utara", value: 229957 },
+        { region: "Jakarta Pusat", value: 321150 },
+        { region: "Kepulauan Seribu", value: 481269 },
+      ],
+    ],
+  },
+  {
+    title:
+      "Jumlah Pemilih Baru Pemilu 2024 Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
+    interpretasi:
+      "Data mengenai jumlah pemilih tetap berdasarkan jenis kelamin di Provinsi DKI Jakarta menunjukkan variasi yang signifikan. Di Jakarta Barat, pemilih laki-laki berjumlah 427, sementara perempuan hanya 258, menunjukkan dominasi laki-laki. Hal serupa terlihat di Jakarta Utara dengan laki-laki 357 dan perempuan 257, serta di Kepulauan Seribu dengan laki-laki 341 dan perempuan 269. Namun, di Jakarta Selatan dan Jakarta Timur, jumlah pemilih perempuan sedikit lebih tinggi dengan masing-masing 339 perempuan dibandingkan 402 laki-laki di Jakarta Selatan, dan 426 perempuan dibandingkan 361 laki-laki di Jakarta Timur. Di Jakarta Pusat, jumlah pemilih hampir seimbang dengan 356 laki-laki dan 350 perempuan. Secara keseluruhan, data ini menunjukkan variasi yang cukup beragam dengan beberapa wilayah mendominasi oleh pemilih laki-laki sementara yang lain menunjukkan keseimbangan atau dominasi perempuan.",
+    label: ["Laki-Laki", "Perempuan"],
+    warna: ["#FFBF00", "#FFDC73"],
+    data: [
+      [
+        { region: "Jakarta \n Barat", value: 341427 },
+        { region: "Jakarta Selatan", value: 437202 },
+        { region: "Jakarta Timur", value: 388861 },
+        { region: "Jakarta Utara", value: 312657 },
+        { region: "Jakarta Pusat", value: 321256 },
+        { region: "Kepulauan Seribu", value: 322141 },
+      ],
+      [
+        { region: "Jakarta \n Barat", value: 441258 },
+        { region: "Jakarta Selatan", value: 321139 },
+        { region: "Jakarta Timur", value: 422126 },
+        { region: "Jakarta Utara", value: 611257 },
+        { region: "Jakarta Pusat", value: 352122 },
+        { region: "Kepulauan Seribu", value: 261219 },
       ],
     ],
   },
@@ -975,7 +975,8 @@ export const groupBarChart1 = [
 
 export const spiderChart1 = [
   {
-    title: "Indikator Pemilu Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
+    title:
+      "Indikator Pemilu 2019 Berdasarkan Jenis Kelamin di Provinsi DKI Jakarta",
     interpretasi:
       "Data mengenai jumlah tempat pemungutan suara (TPS) di Provinsi DKI Jakarta menunjukkan variasi yang signifikan di antara wilayah-wilayah yang berbeda. Di Jakarta Barat, terdapat 527 TPS untuk pemilih laki-laki dan 258 TPS untuk pemilih perempuan, menunjukkan konsentrasi yang lebih tinggi untuk pemilih laki-laki. Jakarta Selatan memiliki 502 TPS untuk laki-laki dan 339 TPS untuk perempuan, sedangkan Jakarta Timur mencatat jumlah tertinggi dengan 561 TPS untuk laki-laki dan 226 TPS untuk perempuan. Di Jakarta Utara, terdapat 557 TPS untuk laki-laki dan 257 TPS untuk perempuan, sementara di Jakarta Pusat terdapat 556 TPS untuk laki-laki dan 250 TPS untuk perempuan. Kepulauan Seribu menunjukkan pola yang serupa dengan 541 TPS untuk laki-laki dan 269 TPS untuk perempuan. Data ini mengindikasikan bahwa jumlah TPS cenderung lebih banyak dialokasikan untuk pemilih laki-laki di hampir semua wilayah, dengan Jakarta Timur memiliki jumlah TPS tertinggi untuk laki-laki dan Jakarta Selatan menunjukkan distribusi yang lebih seimbang antara laki-laki dan perempuan.",
     label: ["Laki-Laki", "Perempuan", "Umum"],
@@ -1011,7 +1012,7 @@ export const spiderChart1 = [
     ],
   },
   {
-    title: "Indikator Pemilu Berdasarkan Generasi di Provinsi DKI Jakarta",
+    title: "Indikator Pemilu 2019 Berdasarkan Generasi di Provinsi DKI Jakarta",
     interpretasi:
       "Data mengenai jumlah tempat pemungutan suara (TPS) di Provinsi DKI Jakarta menunjukkan variasi yang signifikan di antara wilayah-wilayah yang berbeda. Di Jakarta Barat, terdapat 527 TPS untuk pemilih laki-laki dan 258 TPS untuk pemilih perempuan, menunjukkan konsentrasi yang lebih tinggi untuk pemilih laki-laki. Jakarta Selatan memiliki 502 TPS untuk laki-laki dan 339 TPS untuk perempuan, sedangkan Jakarta Timur mencatat jumlah tertinggi dengan 561 TPS untuk laki-laki dan 226 TPS untuk perempuan. Di Jakarta Utara, terdapat 557 TPS untuk laki-laki dan 257 TPS untuk perempuan, sementara di Jakarta Pusat terdapat 556 TPS untuk laki-laki dan 250 TPS untuk perempuan. Kepulauan Seribu menunjukkan pola yang serupa dengan 541 TPS untuk laki-laki dan 269 TPS untuk perempuan. Data ini mengindikasikan bahwa jumlah TPS cenderung lebih banyak dialokasikan untuk pemilih laki-laki di hampir semua wilayah, dengan Jakarta Timur memiliki jumlah TPS tertinggi untuk laki-laki dan Jakarta Selatan menunjukkan distribusi yang lebih seimbang antara laki-laki dan perempuan.",
     label: ["Gen X", "Milenial", "Gen Z"],
@@ -1047,7 +1048,7 @@ export const spiderChart1 = [
     ],
   },
   {
-    title: "Indikator Pemilu Berdasarkan Generasi di Provinsi DKI Jakarta",
+    title: "Indikator Pemilu 2019 Berdasarkan Generasi di Provinsi DKI Jakarta",
     interpretasi:
       "Data mengenai jumlah tempat pemungutan suara (TPS) di Provinsi DKI Jakarta menunjukkan variasi yang signifikan di antara wilayah-wilayah yang berbeda. Di Jakarta Barat, terdapat 527 TPS untuk pemilih laki-laki dan 258 TPS untuk pemilih perempuan, menunjukkan konsentrasi yang lebih tinggi untuk pemilih laki-laki. Jakarta Selatan memiliki 502 TPS untuk laki-laki dan 339 TPS untuk perempuan, sedangkan Jakarta Timur mencatat jumlah tertinggi dengan 561 TPS untuk laki-laki dan 226 TPS untuk perempuan. Di Jakarta Utara, terdapat 557 TPS untuk laki-laki dan 257 TPS untuk perempuan, sementara di Jakarta Pusat terdapat 556 TPS untuk laki-laki dan 250 TPS untuk perempuan. Kepulauan Seribu menunjukkan pola yang serupa dengan 541 TPS untuk laki-laki dan 269 TPS untuk perempuan. Data ini mengindikasikan bahwa jumlah TPS cenderung lebih banyak dialokasikan untuk pemilih laki-laki di hampir semua wilayah, dengan Jakarta Timur memiliki jumlah TPS tertinggi untuk laki-laki dan Jakarta Selatan menunjukkan distribusi yang lebih seimbang antara laki-laki dan perempuan.",
     label: ["Gen X", "Milenial", "Gen Z"],
@@ -1085,9 +1086,9 @@ export const spiderChart1 = [
 ];
 
 export const listVariabelGroupBarChart1 = [
+  { name: "Jumlah Pemilih" },
   { name: "Jumlah Pemilih Tetap" },
-  { name: "Jumlah Pemilih Tetap Baru" },
-  { name: "Jumlah Tempat Pemungutan Suara" },
+  { name: "Jumlah Pemilih Baru" },
 ];
 
 export const listVariabelSpiderChart1 = [

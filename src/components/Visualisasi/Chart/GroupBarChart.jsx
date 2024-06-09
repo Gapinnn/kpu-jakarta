@@ -44,7 +44,7 @@ export default function GroupBarChart({
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
     let width = containerWidth - margin.left - margin.right;
     width = width > 1080 ? 1080 : width;
-    let height = 0.55 * width;
+    let height = 0.45 * width;
 
     const svg = d3
       .select(`#${title}`)
@@ -116,14 +116,14 @@ export default function GroupBarChart({
             }`
           )
           .style("opacity", 0.9)
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY - 100}px`)
           .style("cursor", "pointer");
       })
       .on("mousemove", function (event) {
         tooltip
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY - 100}px`)
           .style("cursor", "pointer");
       })
       .on("mouseout", function () {

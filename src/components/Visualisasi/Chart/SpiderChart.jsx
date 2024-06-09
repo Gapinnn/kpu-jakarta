@@ -357,8 +357,8 @@ export default function SpiderChart({
         tooltip
           .html(tooltipHtml)
           .style("opacity", 0.9)
-          .style("left", `${newX + 10}px`)
-          .style("top", `${newY - 28}px`);
+          .style("left", `${newX}px`)
+          .style("top", `${newY - 100}px`);
       })
       .on("mouseout", function () {
         tooltip.transition().duration(200).style("opacity", 0);

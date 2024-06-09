@@ -52,7 +52,7 @@ export default function GroupStackedBarChart({
     const containerWidth = document.querySelector(`#${title}`).clientWidth;
     let width = containerWidth - margin.left - margin.right;
     width = width > 1080 ? 1080 : width;
-    let height = 0.55 * width;
+    let height = 0.5 * width;
 
     const svg = d3
       .select(`#${title}`)

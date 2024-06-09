@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import UpArrow from "../Icon/UpArrow";
 import {
-  pilihanDataTabulasi1,
-  kategoriTabulasi1,
-  allDataTabulasi1,
+  pilihanDataTabulasi2,
+  kategoriTabulasi2,
+  allDataTabulasi2,
 } from "../../contents/tabulasi";
 
-export default function TabulasiSatu() {
+export default function TabulasiDua() {
   const [indexData, setIndexData] = useState(0);
   const [dataName, setDataName] = useState("Pendidikan Pemilih");
-  const [selectedData, setSelectedData] = useState(allDataTabulasi1[indexData]);
+  const [selectedData, setSelectedData] = useState(allDataTabulasi2[indexData]);
 
   useEffect(() => {
-    setSelectedData(allDataTabulasi1[indexData]);
+    setSelectedData(allDataTabulasi2[indexData]);
   }, [indexData]);
 
   return (
@@ -31,7 +31,7 @@ export default function TabulasiSatu() {
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
           >
             <ul className="py-2 font-medium" role="none">
-              {pilihanDataTabulasi1.map((variabel) => (
+              {pilihanDataTabulasi2.map((variabel) => (
                 <li
                   className={`${variabel.name === dataName ? "hidden" : ""}`}
                   key={variabel.name}
@@ -62,7 +62,7 @@ export default function TabulasiSatu() {
                 <th className="px-6 py-3 text-center font-bold uppercase text-stone-900 border">
                   Kategori Frekuensi
                 </th>
-                {kategoriTabulasi1.map((item) => (
+                {kategoriTabulasi2.map((item) => (
                   <th
                     key={item.name}
                     className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"

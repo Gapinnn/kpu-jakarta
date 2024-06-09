@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import UpArrow from "../Icon/UpArrow";
 import {
-  pilihanDataTabulasi1,
-  kategoriTabulasi1,
-  allDataTabulasi1,
+  pilihanDataTabulasi3,
+  kategoriTabulasi3,
+  allDataTabulasi3,
 } from "../../contents/tabulasi";
 
-export default function TabulasiSatu() {
+export default function TabulasiTiga() {
   const [indexData, setIndexData] = useState(0);
   const [dataName, setDataName] = useState("Pendidikan Pemilih");
-  const [selectedData, setSelectedData] = useState(allDataTabulasi1[indexData]);
+  const [selectedData, setSelectedData] = useState(allDataTabulasi3[indexData]);
 
   useEffect(() => {
-    setSelectedData(allDataTabulasi1[indexData]);
+    setSelectedData(allDataTabulasi3[indexData]);
   }, [indexData]);
 
   return (
@@ -31,7 +31,7 @@ export default function TabulasiSatu() {
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
           >
             <ul className="py-2 font-medium" role="none">
-              {pilihanDataTabulasi1.map((variabel) => (
+              {pilihanDataTabulasi3.map((variabel) => (
                 <li
                   className={`${variabel.name === dataName ? "hidden" : ""}`}
                   key={variabel.name}
@@ -56,38 +56,77 @@ export default function TabulasiSatu() {
         </h3>
         {/* Tabel */}
         <div className="overflow-x-scroll md:overflow-hidden mb-4">
-          <table className="mx-auto border  rounded-xl bg-white border-separate">
-            <thead className="bg-gold">
-              <tr>
-                <th className="px-6 py-3 text-center font-bold uppercase text-stone-900 border">
+          <table className="mx-auto border rounded-xl bg-white border-separate">
+            <thead>
+              <tr className="bg-gold">
+                <th
+                  className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                  rowSpan="2"
+                >
                   Kategori Frekuensi
                 </th>
-                {kategoriTabulasi1.map((item) => (
+                {kategoriTabulasi3.map((item) => (
                   <th
                     key={item.name}
                     className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    colSpan="2"
                   >
                     {item.name}
                   </th>
                 ))}
               </tr>
+              <tr className="bg-gold-neutral">
+                {kategoriTabulasi3.map((item) => (
+                  <>
+                    <th
+                      key={item.name}
+                      className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    >
+                      {allDataTabulasi3[indexData].column[0]}
+                    </th>
+                    <th
+                      key={item.name}
+                      className="px-6 py-3 text-center font-bold uppercase text-stone-900 border"
+                    >
+                      {allDataTabulasi3[indexData].column[1]}
+                    </th>
+                  </>
+                ))}
+              </tr>
             </thead>
             <tbody>
-              {selectedData.data[0].map((item, index) => (
+              {selectedData.label.map((item, index) => (
                 <tr
                   key={index}
                   className={`border ${
                     index % 2 === 0 ? "bg-gray-200" : "bg-white"
                   }`}
                 >
-                  <td className="py-1 px-2 font-semibold border">
-                    {item.label}
+                  <td className="py-1 px-2 font-semibold border">{item}</td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
                   </td>
-                  {selectedData.label.map((label, index2) => (
-                    <td key={label} className="text-center py-1 px-2 border">
-                      {selectedData.data[index2][index].value}
-                    </td>
-                  ))}
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
+                  <td key={item.label} className="text-center py-1 px-2 border">
+                    {Math.floor(Math.random() * (3500000 - 500000 + 1)) +
+                      500000}
+                  </td>
                 </tr>
               ))}
             </tbody>
