@@ -17,11 +17,17 @@ import Visualisasi from "./pages/Visualisasi";
 import PublikasiDokumen from "./pages/PublikasiDokumen";
 import PublikasiGaleri from "./pages/PublikasiGaleri";
 import Tabulasi from "./pages/Tabulasi";
+import PdfView from "./pages/PdfView";
+import Pengaduan from "./pages/Pengaduan";
+import Dumas from "./pages/Dumas";
+import Whistleblowing from "./pages/Whistleblowing";
+import ButtonToTop from "./components/ButtonToTop";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <ButtonToTop />
       <Routes>
         <Route path="/id" element={<Beranda />} />
         <Route path="/id/profil/visi-misi" element={<VisiMisi />} />
@@ -29,7 +35,7 @@ function App() {
         <Route path="/id/profil/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/profil/sejarah" element={<Sejarah />} />
         <Route path="/en/profil/sejarah" element={<Sejarah />} />
-        <Route path="/id/sop" element={<Sop />} />
+        <Route path="/id/sop" elemen t={<Sop />} />
         <Route
           path="/id/profil/struktur-organisasi"
           element={<StrukturOrganisasi />}
@@ -41,16 +47,29 @@ function App() {
         <Route path="/en/publikasi/galeri" element={<PublikasiGaleri />} />
         <Route path="/en/halamanberita" element={<HalamanBerita />} />
         <Route path="/id/halamanberita" element={<HalamanBerita />} />
-        <Route path="/id/berita/terkini" element={<BeritaTerkini />} />
-        <Route path="/en/berita/terkini" element={<BeritaTerkini />} />
-        <Route path="/id/berita/opini" element={<BeritaOpini />} />
-        <Route path="/en/berita/opini" element={<BeritaOpini />} />
-        <Route path="/id/berita/pengumuman" element={<Pengumuman />} />
-        <Route path="/en/berita/pengumuman" element={<Pengumuman />} />
+        <Route path="/id/informasi/berita" element={<BeritaTerkini />} />
+        <Route path="/en/informasi/berita" element={<BeritaTerkini />} />
+        <Route path="/id/informasi/opini" element={<BeritaOpini />} />
+        <Route path="/en/informasi/opini" element={<BeritaOpini />} />
+        <Route path="/id/informasi/pengumuman" element={<Pengumuman />} />
+        <Route path="/en/informasi/pengumuman" element={<Pengumuman />} />
         <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/en/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/id/statistik/tabulasi" element={<Tabulasi />} />
         <Route path="/en/statistik/tabulasi" element={<Tabulasi />} />
+        <Route path="/id/pengaduan" element={<Pengaduan />} />
+        <Route path="/en/pengaduan" element={<Pengaduan />} />
+        <Route path="/id/pengaduan/dumas" element={<Dumas />} />
+        <Route path="/en/pengaduan/dumas" element={<Dumas />} />
+        <Route
+          path="/id/pengaduan/whistleblowing"
+          element={<Whistleblowing />}
+        />
+        <Route
+          path="/en/pengaduan/whistleblowing"
+          element={<Whistleblowing />}
+        />
+        <Route path="/pdf-viewer" Component={PdfView} />
       </Routes>
       <Footer />
     </BrowserRouter>

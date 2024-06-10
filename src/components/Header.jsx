@@ -5,15 +5,15 @@ import { useCallback, useState } from "react";
 import UpArrow from "./Icon/UpArrow";
 import DropArrow from "./Icon/DropArrow";
 import Cancel from "./Icon/Cancel";
+import getLanguage from "../hooks/getLanguage";
+import getPath from "../hooks/getPath";
 
 const Header = () => {
-  const url = window.location.href;
-  const link = url.split("5173");
-  console.log(link[1]);
-  // const path = link[1].split("/");
-  const menu = link[1].match(/^\/id/) !== null ? menuId : menuEn;
-  const [hoverMenu, setHoverMenu] = useState("default");
+  const urlPath = getPath();
+  const lang = getLanguage();
 
+  const menu = lang === "id" ? menuId : menuEn;
+  const [hoverMenu, setHoverMenu] = useState("default");
   const [languageDropdown, setLanguageDropdown] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
 
@@ -47,7 +47,7 @@ const Header = () => {
                   className={`flex justify-center after:opacity-0 after:absolute 
             after:-bottom-2 after:bg-stone-100 after:w-2/3 after:h-[3px] after:transition-transform 
             after:duration-500 group-hover:after:scale-x-100 group-hover:after:opacity-100 ${
-              link[1] == item.path
+              urlPath == item.path
                 ? "text-stone-100 after:scale-x-100 after:opacity-100"
                 : ""
             }`}
@@ -96,7 +96,7 @@ const Header = () => {
               onClick={() => setLanguageDropdown(!languageDropdown)}
               className="inline-flex items-center font-medium justify-center px-4 py-2 text-gray-900 rounded-lg cursor-pointer hover:bg-maroon"
             >
-              {link[1].match(/^\/id/) !== null ? (
+              {lang === "id" ? (
                 <div className="inline-flex items-center text-stone-100 text-lg">
                   <img
                     src="/images/indonesia.png"
