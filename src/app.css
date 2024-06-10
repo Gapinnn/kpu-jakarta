@@ -33,3 +33,36 @@ body {
   height: 1.5rem;
   transform: scale(1.1);
 }
+
+#bahanSosialisasiSlider .slick-dots li.slick-active div {
+  background-color: #660300;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scale(1.1);
+}
+
+#bukuPedomanSlider .slick-dots li.slick-active div {
+  background-color: #660300;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scale(1.1);
+}
+
+#modulSlider .slick-dots li.slick-active div {
+  background-color: #660300;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scale(1.1);
+}

@@ -27,21 +27,21 @@ export const menuId = [
     ],
   },
   {
-    name: "Berita",
-    path: "/id/berita",
+    name: "Informasi",
+    path: "/id/informasi",
     branch: true,
     submenu: [
       {
-        name: "Berita Terkini",
-        path: "/id/berita/terkini",
+        name: "Berita",
+        path: "/id/informasi/berita",
       },
       {
         name: "Pengumuman",
-        path: "/id/berita/pengumuman",
+        path: "/id/informasi/pengumuman",
       },
       {
         name: "Opini",
-        path: "/id/berita/opini",
+        path: "/id/informasi/opini",
       },
     ],
   },
@@ -74,6 +74,11 @@ export const menuId = [
         path: "/id/publikasi/galeri",
       },
     ],
+  },
+  {
+    name: "Pengaduan",
+    path: "/id/pengaduan",
+    branch: false,
   },
 ];
 

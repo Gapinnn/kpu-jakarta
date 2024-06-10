@@ -16,6 +16,15 @@ base {
   #infoSlider .slick-dots li.slick-active div {
     @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
   }
+  #bahanSosialisasiSlider .slick-dots li.slick-active div {
+    @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
+  }
+  #bukuPedomanSlider .slick-dots li.slick-active div {
+    @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
+  }
+  #modulSlider .slick-dots li.slick-active div {
+    @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
+  }
 
   /* input[type="checkbox"] {
     width: 20px;

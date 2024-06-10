@@ -1,86 +1,152 @@
-import { Link } from "react-router-dom";
-import BahanSosialisasi from "../components/Publikasi/BahanSosialisasi";
-import BukuPedoman from "../components/Publikasi/BukuPedoman";
-import Modul from "../components/Publikasi/Modul";
+import BahanSosialisasi from "../components/Publikasi/Dokumen/BahanSosialisasi";
+import BukuPedoman from "../components/Publikasi/Dokumen/BukuPedoman";
+import Modul from "../components/Publikasi/Dokumen/Modul";
+import Breadcumb from "../components/Publikasi/Dokumen/Breadcumb";
+import { useState } from "react";
+import Sosialisasi from "../components/Icon/Sosialisasi";
+import Pedoman from "../components/Icon/Pedoman";
+import Modull from "../components/Icon/Modull";
 
 export default function PublikasiDokumen() {
+  const [tabActive, setTabctive] = useState(0);
   return (
     <>
-      <div className="flex flex-col gap-0 bg-stone-200 relative">
-        <div className="w-full rounded-xl flex flex-col gap-0 absolute bottom-0">
-          <div className="bg-maroon-light bg-opacity-85 w-full h-52 rounded-t-full"></div>
-          <div className="bg-maroon-light bg-opacity-85 w-full h-8"></div>
-        </div>
-        <div className="container mx-auto py-10 px-2 flex flex-col justify-center">
+      <div className="flex flex-col gap-0 bg-stone-100">
+        <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
           {/* Breadcumb */}
-          <nav
-            className="w-fit flex px-5 py-3 mb-2 text-stone-900 border border-gray-200 rounded-xl bg-stone-100 shadow-xl"
-            aria-label="Breadcrumb"
-          >
-            <ol className="inline-flex items-center space-x-1 rtl:space-x-reverse">
-              <Link to={"/id"} className="inline-flex items-center">
-                <div className="inline-flex items-center text-lg font-medium text-maroon-light hover:text-maroon">
-                  <svg
-                    className="w-5 h-5 me-2.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="#660300"
-                    stroke="#660300"
-                    viewBox="0 0 20 20"
+          <Breadcumb />
+          {/* Judul Halaman */}
+          <div className="flex flex-col gap-2 my-4">
+            <h1 className="text-maroon-light font-bold text-3xl">
+              Publikasi Dokumen
+            </h1>
+            <p className="text-stone-900 text-xl mb-1">
+              Publikasi ini mencakup berbagai dokumen resmi yang dihasilkan oleh
+              KPU DKI Jakarta. Dokumen-dokumen ini disusun untuk mendukung
+              profesionalitas, transparansi, dan akuntabilitas dalam proses
+              pemilihan umum. Publikasi dokumen ini dibagi menjadi tiga kategori
+              berdasarkan fungsi dan tujuan dokumen, yaitu:
+            </p>
+            {/* list */}
+            <div className="flex items-center gap-4">
+              <h1 className="bg-maroon-light rounded-lg text-gold text-lg w-8 h-8 text-center font-bold">
+                1
+              </h1>
+              <h1 className="text-stone-900 font-semibold text-xl">
+                Bahan Sosialisasi
+              </h1>
+            </div>
+            <div className="flex items-center gap-4">
+              <h1 className="bg-maroon-light rounded-lg text-gold text-lg w-8 h-8 text-center font-bold">
+                2
+              </h1>
+              <h1 className="text-stone-900 font-semibold text-xl">
+                Buku Pedoman
+              </h1>
+            </div>
+            <div className="flex items-center gap-4 mb-2">
+              <h1 className="bg-maroon-light rounded-lg text-gold text-lg w-8 h-8 text-center font-bold">
+                3
+              </h1>
+              <h1 className="text-stone-900 font-semibold text-xl">Modul</h1>
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="border-b-2 border-stone-400">
+            <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-stone-500 ">
+              <li className="me-2">
+                <div
+                  onClick={() => setTabctive(0)}
+                  className={`inline-flex items-center justify-center p-4 rounded-t-lg hover:text-stone-600 group ${
+                    tabActive !== 0
+                      ? "border-b-[3px] border-transparent hover:border-stone-400"
+                      : "border-b-4 border-maroon-light"
+                  }`}
+                >
+                  <Sosialisasi
+                    className={`w-7 h-7 me-2 ${
+                      tabActive !== 0
+                        ? "text-stone-400 group-hover:text-stone-500"
+                        : "text-maroon-light"
+                    }`}
+                  />
+                  <p
+                    className={`text-lg cursor-pointer ${
+                      tabActive !== 0
+                        ? "text-stone-600 group-hover:text-stone-900"
+                        : "text-maroon-light"
+                    }`}
                   >
-                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
-                  </svg>
-                  Beranda
-                </div>
-              </Link>
-              <Link to={"/id/publikasi/dokumen"}>
-                <div className="flex items-center">
-                  <svg
-                    className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-maroon-light "
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 6 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 9 4-4-4-4"
-                    />
-                  </svg>
-                  <p className="text-lg text-maroon-light font-medium">
-                    Publikasi
+                    Bahan Sosialisasi
                   </p>
                 </div>
-              </Link>
-              {/* Current Page */}
-              <Link>
-                <div className="flex items-center">
-                  <svg
-                    className="rtl:rotate-180 block w-3.5 h-3.5 mx-1.5 text-gray-900"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 6 10"
+              </li>
+              <li className="me-2">
+                <div
+                  onClick={() => setTabctive(1)}
+                  className={`inline-flex items-center justify-center p-4 rounded-t-lg hover:text-stone-600 group ${
+                    tabActive !== 1
+                      ? "border-b-[3px] border-transparent hover:border-stone-400"
+                      : "border-b-4 border-maroon-light"
+                  }`}
+                >
+                  <Pedoman
+                    className={`w-7 h-7 me-2 ${
+                      tabActive !== 1
+                        ? "text-stone-400 group-hover:text-stone-500"
+                        : "text-maroon-light"
+                    }`}
+                  />
+                  <p
+                    className={`text-lg cursor-pointer ${
+                      tabActive !== 1
+                        ? "text-stone-600 group-hover:text-stone-900"
+                        : "text-maroon-light"
+                    }`}
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 9 4-4-4-4"
-                    />
-                  </svg>
-                  <p className="text-lg text-gray-900 font-medium">Dokumen</p>
+                    Buku Pedoman
+                  </p>
                 </div>
-              </Link>
-            </ol>
-          </nav>
-          <BahanSosialisasi />
-          <BukuPedoman />
-          <Modul />
+              </li>
+              <li className="me-2">
+                <div
+                  onClick={() => setTabctive(2)}
+                  className={`inline-flex items-center justify-center p-4 rounded-t-lg hover:text-stone-600 group ${
+                    tabActive !== 2
+                      ? "border-b-[3px] border-transparent hover:border-stone-400"
+                      : "border-b-4 border-maroon-light"
+                  }`}
+                >
+                  <Modull
+                    className={`w-7 h-7 me-2 ${
+                      tabActive !== 2
+                        ? "text-stone-400 group-hover:text-stone-500"
+                        : "text-maroon-light"
+                    }`}
+                  />
+                  <p
+                    className={`text-lg cursor-pointer ${
+                      tabActive !== 2
+                        ? "text-stone-600 group-hover:text-stone-900"
+                        : "text-maroon-light"
+                    }`}
+                  >
+                    Modul
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Bahan Sosialisasi */}
+          {tabActive === 0 && <BahanSosialisasi />}
+
+          {/* Buku Pedoman */}
+          {tabActive === 1 && <BukuPedoman />}
+
+          {/* Modul */}
+          {tabActive === 2 && <Modul />}
         </div>
       </div>
     </>
