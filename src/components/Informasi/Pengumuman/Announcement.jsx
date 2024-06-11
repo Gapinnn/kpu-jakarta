@@ -1,14 +1,14 @@
 import { Link, useSearchParams } from "react-router-dom";
 import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
-import ArrowDown from "../../Icon/ArrowDown";
-import { listTahun, listKategori } from "../../../contents/filter";
-import { useEffect, useRef, useState } from "react";
-import { dataBerita } from "../../../contents/informasi/berita";
 import Breadcumb from "./Breadcumb";
+import { listKategori, listTahun } from "../../../contents/filter";
+import { dataPengumuman } from "../../../contents/informasi/pengumuman";
+import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
+import ArrowDown from "../../Icon/ArrowDown";
 
-const NewsItem = ({ image, date, title, description, tags }) => (
+const PengumumanItem = ({ image, date, title, description, tags }) => (
   <div className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2">
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
@@ -46,10 +46,10 @@ const NewsItem = ({ image, date, title, description, tags }) => (
   </div>
 );
 
-const NewsPage = () => {
+const PengumumanPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [listBerita, setListBerita] = useState(dataBerita);
+  const [listPengumuman, setListPengumuman] = useState(dataPengumuman);
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -63,7 +63,8 @@ const NewsPage = () => {
   const [kataKunci, setKataKunci] = useState(searchParams.get("keyword") || "");
   const [page, setPage] = useState(1);
   const firstIndex = (page - 1) * 5;
-  const lastIndex = page * 5 > listBerita.length ? listBerita.length : page * 5;
+  const lastIndex =
+    page * 5 > listPengumuman.length ? listPengumuman.length : page * 5;
 
   const tahunRef = useRef(null);
   const kategoriRef = useRef(null);
@@ -118,7 +119,8 @@ const NewsPage = () => {
 
   const handleTampilkan = () => {
     setPage(1);
-    const dataFilter = dataBerita.filter((item) => {
+    updateURL();
+    const dataFilter = dataPengumuman.filter((item) => {
       if (searchTahun !== "" && searchKategori !== "") {
         return item.year === searchTahun && item.tags.includes(searchKategori);
       } else if (searchTahun !== "") {
@@ -142,7 +144,7 @@ const NewsPage = () => {
             }
           })
         : [];
-    setListBerita(dataSearch);
+    setListPengumuman(dataSearch);
   };
 
   const handleKeyDown = (e) => {
@@ -179,21 +181,21 @@ const NewsPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-2 my-4">
           <h1 className="text-maroon-light font-bold text-3xl">
-            Berita KPU DKI Jakarta
+            Pengumuman KPU DKI Jakarta
           </h1>
           <p className="text-stone-900 text-xl mb-1">
-            Berita ini menyajikan informasi terkini mengenai berbagai kegiatan
-            dan perkembangan terkait pemilihan umum yang diselenggarakan oleh
-            KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan
-            lain-lain.
+            Pengumuman ini berisi informasi penting dari KPU DKI Jakarta,
+            seperti jadwal pemilu, prosedur pendaftaran calon, dan peraturan
+            pemilu terbaru. Pengumuman ini dirancang untuk memberi tahu
+            masyarakat dan memastikan kelancaran pelaksanaan pemilihan umum.
           </p>
         </div>
         {/* Konten Utama */}
         <div className="flex flex-col lg:flex-row">
-          {/* Filter Berita */}
+          {/* Filter Pengumuman */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Filter Berita
+              Filter Pengumuman
             </h2>
             <div className="p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
@@ -212,7 +214,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Berita
+                  Tahun Pengumuman
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -268,7 +270,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Berita
+                  Kategori Pengumuman
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -331,24 +333,24 @@ const NewsPage = () => {
               </button>
             </div>
           </div>
-          {/* List Berita */}
+          {/* List Pengumuman */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-4">
               <span className="text-gray-800 font-semibold pt-2">
                 {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                  dataBerita.length
-                } Berita`}
+                  dataPengumuman.length
+                } Pengumuman`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              {listBerita.length > 0 ? (
-                listBerita
+              {listPengumuman.length > 0 ? (
+                listPengumuman
                   .slice(firstIndex, lastIndex)
-                  .map((item) => <NewsItem key={item.id} {...item} />)
+                  .map((item) => <PengumumanItem key={item.id} {...item} />)
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-xl font-semibold text-stone-800">
-                    Berita KPU DKI Jakarta Tidak Tersedia
+                    Pengumuman KPU DKI Jakarta Tidak Tersedia
                   </h3>
                   <p className="text-lg text-stone-700">
                     Silakan Coba Kata Kunci atau Filter Lainnya
@@ -375,7 +377,6 @@ const NewsPage = () => {
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
-                    <span className="sr-only">Previous</span>
                     <svg
                       className="w-4 h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
@@ -393,48 +394,47 @@ const NewsPage = () => {
                     </svg>
                   </div>
                 </button>
-                {Array.from({ length: Math.ceil(listBerita.length / 5) }).map(
-                  (_, i) => (
-                    <li
-                      onClick={() => {
-                        setPage(i + 1);
-                        window.scrollTo(0, 0);
-                      }}
-                      key={i}
+                {Array.from({
+                  length: Math.ceil(listPengumuman.length / 5),
+                }).map((_, i) => (
+                  <li
+                    onClick={() => {
+                      setPage(i + 1);
+                      window.scrollTo(0, 0);
+                    }}
+                    key={i}
+                  >
+                    <div
+                      className={`flex cursor-pointer items-center justify-center px-4 h-10 text-lg font-semibold border border-gray-400 ${
+                        i + 1 === page
+                          ? "bg-maroon-light text-white"
+                          : "text-gray-600 bg-white hover:bg-gray-100 hover:text-gray-700"
+                      }`}
                     >
-                      <div
-                        className={`flex cursor-pointer items-center justify-center px-4 h-10 text-lg font-semibold border border-gray-400 ${
-                          i + 1 === page
-                            ? "bg-maroon-light text-white"
-                            : "text-gray-600 bg-white hover:bg-gray-100 hover:text-gray-700"
-                        }`}
-                      >
-                        {i + 1}
-                      </div>
-                    </li>
-                  )
-                )}
+                      {i + 1}
+                    </div>
+                  </li>
+                ))}
                 <button
                   onClick={() => {
-                    if (page < Math.ceil(listBerita.length / 5)) {
+                    if (page < Math.ceil(listPengumuman.length / 5)) {
                       setPage(page + 1);
                       window.scrollTo(0, 0);
                     }
                   }}
                   disabled={
-                    page === Math.ceil(listBerita.length / 5) ||
-                    listBerita.length === 0
+                    page === Math.ceil(listPengumuman.length / 5) ||
+                    listPengumuman.length === 0
                   }
                 >
                   <div
                     className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
-                      page === Math.ceil(listBerita.length / 5) ||
-                      listBerita.length === 0
+                      page === Math.ceil(listPengumuman.length / 5) ||
+                      listPengumuman.length === 0
                         ? "cursor-not-allowed"
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
-                    <span className="sr-only">Next</span>
                     <svg
                       className="w-4 h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
@@ -461,10 +461,10 @@ const NewsPage = () => {
   );
 };
 
-export default function BeritaNow() {
+export default function Announcement() {
   return (
     <div>
-      <NewsPage />
+      <PengumumanPage />
     </div>
   );
 }

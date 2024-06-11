@@ -1,4 +1,4 @@
-import Announcement from "../components/Informasi/Announcement";
+import Announcement from "../components/Informasi/Pengumuman/Announcement";
 
 export default function Pengumuman() {
   return (

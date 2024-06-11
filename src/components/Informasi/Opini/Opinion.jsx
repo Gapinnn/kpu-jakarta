@@ -1,14 +1,14 @@
 import { Link, useSearchParams } from "react-router-dom";
 import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
-import ArrowDown from "../../Icon/ArrowDown";
-import { listTahun, listKategori } from "../../../contents/filter";
-import { useEffect, useRef, useState } from "react";
-import { dataBerita } from "../../../contents/informasi/berita";
 import Breadcumb from "./Breadcumb";
+import { listKategori, listTahun } from "../../../contents/filter";
+import { dataOpini } from "../../../contents/informasi/opini";
+import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
+import ArrowDown from "../../Icon/ArrowDown";
 
-const NewsItem = ({ image, date, title, description, tags }) => (
+const OpiniItem = ({ image, date, title, description, tags }) => (
   <div className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2">
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
@@ -46,10 +46,10 @@ const NewsItem = ({ image, date, title, description, tags }) => (
   </div>
 );
 
-const NewsPage = () => {
+const OpiniPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [listBerita, setListBerita] = useState(dataBerita);
+  const [listOpini, setListOpini] = useState(dataOpini);
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -63,7 +63,7 @@ const NewsPage = () => {
   const [kataKunci, setKataKunci] = useState(searchParams.get("keyword") || "");
   const [page, setPage] = useState(1);
   const firstIndex = (page - 1) * 5;
-  const lastIndex = page * 5 > listBerita.length ? listBerita.length : page * 5;
+  const lastIndex = page * 5 > listOpini.length ? listOpini.length : page * 5;
 
   const tahunRef = useRef(null);
   const kategoriRef = useRef(null);
@@ -118,7 +118,7 @@ const NewsPage = () => {
 
   const handleTampilkan = () => {
     setPage(1);
-    const dataFilter = dataBerita.filter((item) => {
+    const dataFilter = dataOpini.filter((item) => {
       if (searchTahun !== "" && searchKategori !== "") {
         return item.year === searchTahun && item.tags.includes(searchKategori);
       } else if (searchTahun !== "") {
@@ -142,7 +142,7 @@ const NewsPage = () => {
             }
           })
         : [];
-    setListBerita(dataSearch);
+    setListOpini(dataSearch);
   };
 
   const handleKeyDown = (e) => {
@@ -179,21 +179,21 @@ const NewsPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-2 my-4">
           <h1 className="text-maroon-light font-bold text-3xl">
-            Berita KPU DKI Jakarta
+            Opini KPU DKI Jakarta
           </h1>
           <p className="text-stone-900 text-xl mb-1">
-            Berita ini menyajikan informasi terkini mengenai berbagai kegiatan
-            dan perkembangan terkait pemilihan umum yang diselenggarakan oleh
-            KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan
-            lain-lain.
+            Opini ini berisi pandangan, analisis, dan komentar dari berbagai
+            pihak terkait isu-isu pemilihan umum di DKI Jakarta. Tulisan-tulisan
+            ini bertujuan untuk memberikan perspektif yang beragam dan mendalam
+            mengenai proses demokrasi.
           </p>
         </div>
         {/* Konten Utama */}
         <div className="flex flex-col lg:flex-row">
-          {/* Filter Berita */}
+          {/* Filter Opini */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Filter Berita
+              Filter Opini
             </h2>
             <div className="p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
@@ -212,7 +212,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Berita
+                  Tahun Opini
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -268,7 +268,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Berita
+                  Kategori Opini
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -331,24 +331,24 @@ const NewsPage = () => {
               </button>
             </div>
           </div>
-          {/* List Berita */}
+          {/* List Opini */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-4">
               <span className="text-gray-800 font-semibold pt-2">
                 {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                  dataBerita.length
-                } Berita`}
+                  dataOpini.length
+                } Opini`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              {listBerita.length > 0 ? (
-                listBerita
+              {listOpini.length > 0 ? (
+                listOpini
                   .slice(firstIndex, lastIndex)
-                  .map((item) => <NewsItem key={item.id} {...item} />)
+                  .map((item) => <OpiniItem key={item.id} {...item} />)
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-xl font-semibold text-stone-800">
-                    Berita KPU DKI Jakarta Tidak Tersedia
+                    Opini KPU DKI Jakarta Tidak Tersedia
                   </h3>
                   <p className="text-lg text-stone-700">
                     Silakan Coba Kata Kunci atau Filter Lainnya
@@ -375,7 +375,6 @@ const NewsPage = () => {
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
-                    <span className="sr-only">Previous</span>
                     <svg
                       className="w-4 h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
@@ -393,7 +392,7 @@ const NewsPage = () => {
                     </svg>
                   </div>
                 </button>
-                {Array.from({ length: Math.ceil(listBerita.length / 5) }).map(
+                {Array.from({ length: Math.ceil(listOpini.length / 5) }).map(
                   (_, i) => (
                     <li
                       onClick={() => {
@@ -416,25 +415,24 @@ const NewsPage = () => {
                 )}
                 <button
                   onClick={() => {
-                    if (page < Math.ceil(listBerita.length / 5)) {
+                    if (page < Math.ceil(listOpini.length / 5)) {
                       setPage(page + 1);
                       window.scrollTo(0, 0);
                     }
                   }}
                   disabled={
-                    page === Math.ceil(listBerita.length / 5) ||
-                    listBerita.length === 0
+                    page === Math.ceil(listOpini.length / 5) ||
+                    listOpini.length === 0
                   }
                 >
                   <div
                     className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
-                      page === Math.ceil(listBerita.length / 5) ||
-                      listBerita.length === 0
+                      page === Math.ceil(listOpini.length / 5) ||
+                      listOpini.length === 0
                         ? "cursor-not-allowed"
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
-                    <span className="sr-only">Next</span>
                     <svg
                       className="w-4 h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
@@ -461,10 +459,10 @@ const NewsPage = () => {
   );
 };
 
-export default function BeritaNow() {
+export default function Opini() {
   return (
     <div>
-      <NewsPage />
+      <OpiniPage />
     </div>
   );
 }
