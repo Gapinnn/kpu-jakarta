@@ -1,4 +1,4 @@
-export default function Two({ className = "w-12 h-12 text-white" }) {
+export default function ArrowDown({ className, onClick }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,11 +6,11 @@ export default function Two({ className = "w-12 h-12 text-white" }) {
       height="32"
       viewBox="0 0 24 24"
       className={className}
+      onClick={onClick}
     >
       <path
         fill="currentColor"
-        stroke="currentColor"
-        d="M9 7v2h4v2h-2a2 2 0 0 0-2 2v4h6v-2h-4v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
+        d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4z"
       />
     </svg>
   );

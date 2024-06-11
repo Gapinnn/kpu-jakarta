@@ -7,6 +7,42 @@ base {
 }
 
 @layer components {
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-stone-300 rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-neutral rounded-md;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold;
+  }
+
+  .dropdown-scroll::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .dropdown-scroll ::-webkit-scrollbar-track {
+    @apply bg-stone-300 rounded-md;
+  }
+
+  .dropdown-scroll::-webkit-scrollbar-thumb {
+    @apply bg-maroon-light bg-opacity-70 rounded-md;
+  }
+
+  .dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    @apply bg-maroon-light;
+  }
+
   .slick-dots .slick-active {
     @apply bg-gold rounded-full flex justify-center items-center w-6 h-6;
   }

@@ -60,7 +60,7 @@ export default function Breadcumb() {
               />
             </svg>
             <p className="text-lg text-gray-900 font-medium">
-              Pengaduan Masyarakat
+              Aduan Masyarakat
             </p>
           </div>
         </Link>

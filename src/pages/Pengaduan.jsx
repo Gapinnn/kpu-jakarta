@@ -38,9 +38,8 @@ export default function Pengaduan() {
                   Pengaduan <br /> Masyarakat
                 </h1>
                 <p className="text-lg text-stone-700">
-                  Pengajuan hanya dapat dilakukan jika sudah memiliki No.
-                  Permohonan Pengajuan Aduan yang didapatkan dari Formulir
-                  Permohonan Pengajuan Aduan.
+                  Pengajuan laporan segala bentuk pelanggaran atau masalah
+                  terkait pelaksanaan program kerja KPU Provinsi DKI Jakarta.
                 </p>
               </div>
               <Link
@@ -64,16 +63,19 @@ export default function Pengaduan() {
                 </h1>
                 <p className="text-lg text-stone-700">
                   Pengajuan laporan pelanggaran/kecurangan yang dilakukan oleh
-                  Pegawai KPU Provinsi DKI Jakarta (komisioner, PNS dan non
-                  PNS).
+                  Pegawai (Komisioner, PNS, dan non-PNS) KPU Provinsi DKI
+                  Jakarta.
                 </p>
               </div>
-              <button className="mt-6 flex flex-row items-center w-fit group">
+              <Link
+                to="/id/pengaduan/whistleblowing"
+                className="mt-6 flex flex-row items-center w-fit group"
+              >
                 <p className="text-maroon-light text-lg font-semibold group-hover:text-maroon">
                   Whistleblowing KPU DKI Jakarta
                 </p>
                 <Lanjut className="w-6 h-6 text-maroon-light group-hover:text-maroon ms-2" />
-              </button>
+              </Link>
             </div>
             {/* Lapor go id */}
             <div className="bg-white p-8 flex flex-col gap-3 rounded-2xl shadow-xl">

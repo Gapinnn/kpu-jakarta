@@ -1,4 +1,4 @@
-import Opinion from "../components/Berita/Opinion";
+import Opinion from "../components/Informasi/Opinion";
 
 export default function BeritaOpini() {
   return (
