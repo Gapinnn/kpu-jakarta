@@ -1,4 +1,4 @@
-import BeritaNow from "../components/Informasi/BeritaNow";
+import BeritaNow from "../components/Informasi/Berita/BeritaNow";
 
 export default function BeritaTerkini() {
   return (

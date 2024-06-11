@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
-import Calendar from "../Icon/Calendar";
-import Tag from "../Icon/Tag";
-import ArrowDown from "../Icon/ArrowDown";
-import { listTahun, listKategori } from "../../contents/filter";
-import { useEffect, useRef, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import Calendar from "../../Icon/Calendar";
+import Tag from "../../Icon/Tag";
+import ArrowDown from "../../Icon/ArrowDown";
+import { listTahun, listKategori } from "../../../contents/filter";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { dataBerita } from "../../../contents/informasi/berita";
+import Breadcumb from "./Breadcumb";
+import Clear from "../../Icon/Clear";
 
-const NewsItem = ({ image, date, title, description }) => (
+const NewsItem = ({ image, date, title, description, tags }) => (
   <div className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2">
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
@@ -20,12 +23,17 @@ const NewsItem = ({ image, date, title, description }) => (
             {date}
           </p>
         </div>
-        <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
-          <Tag className="w-4 h-4 text-stone-600 group-hover:text-stone-100" />
-          <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
-            Kategori
-          </p>
-        </div>
+        {tags.map((tag, i) => (
+          <div
+            key={i}
+            className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group"
+          >
+            <Tag className="w-4 h-4 text-stone-600 group-hover:text-stone-100" />
+            <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
+              {tag}
+            </p>
+          </div>
+        ))}
       </div>
       <h3 className="text-xl w-full font-bold text-gray-900">{title}</h3>
       <p className="text-gray-800 text-lg mt-1 leading-tight">{description}</p>
@@ -39,95 +47,23 @@ const NewsItem = ({ image, date, title, description }) => (
 );
 
 const NewsPage = () => {
-  const newsItems = [
-    {
-      id: 1,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 2,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 3,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 4,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 5,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 6,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 7,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 8,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 9,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-    {
-      id: 10,
-      image: "/images/info-dua.png",
-      date: "12 Februari 2024",
-      title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
-      description:
-        "Jakarta - Komisi Pemilihan Umum (KPU) Provinsi DKI Jakarta akan merekrut calon anggota Panitia Pemilihan Kecamatan (PPK) untuk Pilkada serentak 2024 yang akan digelar pada 27 November 2024 mendatang. ",
-    },
-  ];
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const [listBerita, setListBerita] = useState(dataBerita);
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
   const [dataKategori, setDataKategori] = useState(listKategori);
-  const [searchTahun, setSearchTahun] = useState("");
-  const [searchKategori, setSearchKategori] = useState("");
+  const [searchTahun, setSearchTahun] = useState(
+    searchParams.get("tahun") || ""
+  );
+  const [searchKategori, setSearchKategori] = useState(
+    searchParams.get("kategori") || ""
+  );
+  const [kataKunci, setKataKunci] = useState(searchParams.get("keyword") || "");
+  const [page, setPage] = useState(1);
+  const firstIndex = (page - 1) * 5;
+  const lastIndex = page * 5 > listBerita.length ? listBerita.length : page * 5;
 
   const tahunRef = useRef(null);
   const kategoriRef = useRef(null);
@@ -180,6 +116,52 @@ const NewsPage = () => {
     }
   };
 
+  const handleTampilkan = () => {
+    setPage(1);
+    const dataFilter = dataBerita.filter((item) => {
+      if (searchTahun !== "" && searchKategori !== "") {
+        return item.year === searchTahun && item.tags.includes(searchKategori);
+      } else if (searchTahun !== "") {
+        return item.year === searchTahun;
+      } else if (searchKategori !== "") {
+        return item.tags.includes(searchKategori);
+      } else {
+        return item;
+      }
+    });
+    console.log("dataFilter", dataFilter);
+    const dataSearch =
+      dataFilter.length > 0
+        ? dataFilter.filter((item) => {
+            if (kataKunci !== "") {
+              return (
+                item.title.toLowerCase().includes(kataKunci.toLowerCase()) ||
+                item.description.toLowerCase().includes(kataKunci.toLowerCase())
+              );
+            } else {
+              return item;
+            }
+          })
+        : [];
+    console.log("dataSearch", dataSearch);
+    setListBerita(dataSearch);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleTampilkan();
+    }
+  };
+
+  const updateURL = useCallback(() => {
+    const queryParams = {};
+    if (kataKunci) queryParams.keyword = kataKunci;
+    if (searchTahun) queryParams.tahun = searchTahun;
+    if (searchKategori) queryParams.kategori = searchKategori;
+    queryParams.page = page;
+    setSearchParams(queryParams);
+  }, [kataKunci, searchTahun, searchKategori, page, setSearchParams]);
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -187,15 +169,30 @@ const NewsPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    updateURL();
+  }, [updateURL]);
+
   return (
     <div className="flex flex-col w-full bg-stone-100">
       <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
-        <h1 className="text-3xl font-bold text-maroon mb-4">Berita</h1>
-        <div className="text-gray-800 mb-4">
-          Berita terkait kegiatan statistik dan kegiatan lainnya yang
-          diselenggarakan oleh Badan Pusat Statistik.
+        {/* Breadcumb */}
+        <Breadcumb />
+        {/* Judul Halaman */}
+        <div className="flex flex-col gap-2 my-4">
+          <h1 className="text-maroon-light font-bold text-3xl">
+            Berita KPU DKI Jakarta
+          </h1>
+          <p className="text-stone-900 text-xl mb-1">
+            Berita ini menyajikan informasi terkini mengenai berbagai kegiatan
+            dan perkembangan terkait pemilihan umum yang diselenggarakan oleh
+            KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan
+            lain-lain.
+          </p>
         </div>
+        {/* Konten Utama */}
         <div className="flex flex-col lg:flex-row">
+          {/* Filter Berita */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Filter Berita
@@ -206,6 +203,9 @@ const NewsPage = () => {
                   Kata Kunci
                 </h5>
                 <input
+                  value={kataKunci}
+                  onChange={(e) => setKataKunci(e.target.value)}
+                  onKeyDown={handleKeyDown}
                   type="text"
                   placeholder="Masukkan kata kunci..."
                   className="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
@@ -220,6 +220,7 @@ const NewsPage = () => {
                   <input
                     onFocus={() => setShowDropdownTahun(true)}
                     onChange={handleSearchTahun}
+                    onKeyDown={handleKeyDown}
                     value={searchTahun}
                     type="text"
                     id="simple-search"
@@ -227,6 +228,12 @@ const NewsPage = () => {
                     placeholder="Pilih Tahun"
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
+                    {searchTahun !== "" && (
+                      <Clear
+                        onClick={() => setSearchTahun("")}
+                        className="w-6 h-6 text-gray-400 hover:text-gray-800 group-focus-within:text-gray-800"
+                      />
+                    )}
                     <div className="flex w-0.5 h-3/4 bg-gray-200"></div>
                     <ArrowDown
                       onClick={() => setShowDropdownTahun(!showDropdownTahun)}
@@ -269,6 +276,7 @@ const NewsPage = () => {
                   <input
                     onFocus={() => setShowDropdownKategori(true)}
                     onChange={handleSearchKategori}
+                    onKeyDown={handleKeyDown}
                     value={searchKategori}
                     type="text"
                     id="simple-search"
@@ -276,6 +284,12 @@ const NewsPage = () => {
                     placeholder="Pilih Kategori"
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
+                    {searchKategori !== "" && (
+                      <Clear
+                        onClick={() => setSearchKategori("")}
+                        className="w-6 h-6 text-gray-400 hover:text-gray-800 group-focus-within:text-gray-800"
+                      />
+                    )}
                     <div className="flex w-0.5 h-3/4 bg-gray-200"></div>
                     <ArrowDown
                       onClick={() =>
@@ -311,23 +325,133 @@ const NewsPage = () => {
                   </div>
                 )}
               </div>
-              <button className="w-full mt-4 py-2 bg-maroon-light text-white rounded-lg">
+              <button
+                onClick={() => handleTampilkan()}
+                className="w-full mt-4 py-2 bg-maroon-light text-white rounded-lg"
+              >
                 Tampilkan
               </button>
             </div>
           </div>
-
+          {/* List Berita */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-gray-800 pt-2">
-                Menampilkan 1-10 dari 485 Berita
+              <span className="text-gray-800 font-semibold pt-2">
+                {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
+                  dataBerita.length
+                } Berita`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
-              {newsItems.map((item) => (
-                <NewsItem key={item.id} {...item} />
-              ))}
+              {listBerita.length > 0 ? (
+                listBerita
+                  .slice(firstIndex, lastIndex)
+                  .map((item) => <NewsItem key={item.id} {...item} />)
+              ) : (
+                <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
+                  <h3 className="text-xl font-semibold text-stone-800">
+                    Berita KPU DKI Jakarta Tidak Tersedia
+                  </h3>
+                  <p className="text-lg text-stone-700">
+                    Silakan Coba Kata Kunci atau Filter Lainnya
+                  </p>
+                </div>
+              )}
             </div>
+            {/* Pagination */}
+            <nav className="w-full flex justify-center mx-auto mt-4">
+              <ul className="flex items-center -space-x-px h-10 text-base">
+                <button
+                  onClick={() => {
+                    if (page > 1) {
+                      setPage(page - 1);
+                      window.scrollTo(0, 0);
+                    }
+                  }}
+                  disabled={page === 1}
+                >
+                  <div
+                    className={`flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-400 rounded-s-lg ${
+                      page === 1
+                        ? "cursor-not-allowed"
+                        : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
+                    }`}
+                  >
+                    <span className="sr-only">Previous</span>
+                    <svg
+                      className="w-4 h-4 text-maroon-light rtl:rotate-180"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 1 1 5l4 4"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                {Array.from({ length: Math.ceil(listBerita.length / 5) }).map(
+                  (_, i) => (
+                    <li
+                      onClick={() => {
+                        setPage(i + 1);
+                        window.scrollTo(0, 0);
+                      }}
+                      key={i}
+                    >
+                      <div
+                        className={`flex cursor-pointer items-center justify-center px-4 h-10 text-lg font-semibold border border-gray-400 ${
+                          i + 1 === page
+                            ? "bg-maroon-light text-white"
+                            : "text-gray-600 bg-white hover:bg-gray-100 hover:text-gray-700"
+                        }`}
+                      >
+                        {i + 1}
+                      </div>
+                    </li>
+                  )
+                )}
+                <button
+                  onClick={() => {
+                    if (page < Math.ceil(listBerita.length / 5)) {
+                      setPage(page + 1);
+                      window.scrollTo(0, 0);
+                    }
+                  }}
+                  disabled={page === Math.ceil(listBerita.length / 5)}
+                >
+                  <div
+                    className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
+                      page === Math.ceil(listBerita.length / 5)
+                        ? "cursor-not-allowed"
+                        : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
+                    }`}
+                  >
+                    <span className="sr-only">Next</span>
+                    <svg
+                      className="w-4 h-4 text-maroon-light rtl:rotate-180"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
