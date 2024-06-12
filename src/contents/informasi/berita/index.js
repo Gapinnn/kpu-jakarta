@@ -228,3 +228,36 @@ export const dataBerita = [
     ],
   },
 ];
+
+export const dataBeritaTerkait = [
+  {
+    id: 1,
+    title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
+    date: "02 Feb 2024",
+    image: "/images/info-dua.png",
+  },
+  {
+    id: 2,
+    title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
+    date: "02 Feb 2024",
+    image: "/images/info-dua.png",
+  },
+  {
+    id: 3,
+    title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
+    date: "02 Feb 2024",
+    image: "/images/info-dua.png",
+  },
+  {
+    id: 4,
+    title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
+    date: "02 Feb 2024",
+    image: "/images/info-dua.png",
+  },
+  {
+    id: 5,
+    title: "KPU DKI Jakarta Buka Pendaftaran PPK Untuk Pilkada",
+    date: "02 Feb 2024",
+    image: "/images/info-dua.png",
+  },
+];

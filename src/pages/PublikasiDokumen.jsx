@@ -2,13 +2,16 @@ import BahanSosialisasi from "../components/Publikasi/Dokumen/BahanSosialisasi";
 import BukuPedoman from "../components/Publikasi/Dokumen/BukuPedoman";
 import Modul from "../components/Publikasi/Dokumen/Modul";
 import Breadcumb from "../components/Publikasi/Dokumen/Breadcumb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sosialisasi from "../components/Icon/Sosialisasi";
 import Pedoman from "../components/Icon/Pedoman";
 import Modull from "../components/Icon/Modull";
 
 export default function PublikasiDokumen() {
   const [tabActive, setTabctive] = useState(0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col gap-0 bg-stone-100">

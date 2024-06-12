@@ -23,8 +23,12 @@ import Dumas from "./pages/Dumas";
 import Whistleblowing from "./pages/Whistleblowing";
 import ButtonToTop from "./components/ButtonToTop";
 import Agenda from "./pages/Agenda";
+import getLanguage from "./hooks/getLanguage";
+import HalamanOpini from "./pages/HalamanOpini";
+import HalamanPengumuman from "./pages/HalamanPengumuman";
 
 function App() {
+  const lang = getLanguage();
   return (
     <BrowserRouter>
       <Header />
@@ -47,14 +51,30 @@ function App() {
         <Route path="/en/publikasi/dokumen" element={<PublikasiDokumen />} />
         <Route path="/id/publikasi/galeri" element={<PublikasiGaleri />} />
         <Route path="/en/publikasi/galeri" element={<PublikasiGaleri />} />
-        <Route path="/en/halamanberita" element={<HalamanBerita />} />
-        <Route path="/id/halamanberita" element={<HalamanBerita />} />
         <Route path="/id/informasi/berita" element={<BeritaTerkini />} />
         <Route path="/en/informasi/berita" element={<BeritaTerkini />} />
+        <Route
+          path="/id/informasi/berita/:idBerita"
+          element={<HalamanBerita />}
+        />
+        <Route
+          path="/en/informasi/berita/:idBerita"
+          element={<HalamanBerita />}
+        />
         <Route path="/id/informasi/opini" element={<BeritaOpini />} />
         <Route path="/en/informasi/opini" element={<BeritaOpini />} />
+        <Route path="/id/informasi/opini/:idOpini" element={<HalamanOpini />} />
+        <Route path="/en/informasi/opini/:idOpini" element={<HalamanOpini />} />
         <Route path="/id/informasi/pengumuman" element={<Pengumuman />} />
         <Route path="/en/informasi/pengumuman" element={<Pengumuman />} />
+        <Route
+          path="/id/informasi/pengumuman/:idPengumuman"
+          element={<HalamanPengumuman />}
+        />
+        <Route
+          path="/en/informasi/pengumuman/:idPengumuman"
+          element={<HalamanPengumuman />}
+        />
         <Route path="/id/informasi/agenda" element={<Agenda />} />
         <Route path="/en/informasi/agenda" element={<Agenda />} />
         <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
@@ -74,6 +94,7 @@ function App() {
           element={<Whistleblowing />}
         />
         <Route path="/pdf-viewer" Component={PdfView} />
+        <Route path="*" element={<Navigate to={`/${lang}`} />} />
       </Routes>
       <Footer />
     </BrowserRouter>
