@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Beranda from "./pages/Beranda";
 import StrukturOrganisasi from "./pages/StrukturOrganisasi";
 import Sejarah from "./pages/Sejarah";
@@ -30,6 +30,7 @@ function App() {
       <Header />
       <ButtonToTop />
       <Routes>
+        <Route path="/" element={<Navigate to="/id" />} />
         <Route path="/id" element={<Beranda />} />
         <Route path="/id/profil/visi-misi" element={<VisiMisi />} />
         <Route path="/id/profil/tugas-pokok" element={<Tupoksi />} />
