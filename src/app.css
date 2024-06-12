@@ -66,3 +66,150 @@ body {
   height: 1.5rem;
   transform: scale(1.1);
 }
+
+/* Kalendar */
+:root {
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: #fff;
+  --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+  --fc-neutral-text-color: black;
+  --fc-border-color: #ffbf00;
+
+  --fc-button-text-color: black;
+  --fc-button-bg-color: #ffdc73;
+  --fc-button-border-color: #ffbf00;
+  --fc-button-hover-bg-color: #ffbf00;
+  --fc-button-hover-border-color: #ffbf00;
+  --fc-button-active-bg-color: #ffbf00;
+  --fc-button-active-border-color: #ffbf00;
+
+  --fc-event-bg-color: #ffbf00;
+  --fc-event-border-color: #ffbf00;
+  --fc-event-text-color: black;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: rgba(215, 215, 215, 0.3);
+  --fc-bg-event-color: rgb(143, 223, 130);
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: #660300;
+  --fc-list-event-dot-width: 10px;
+  --fc-list-event-hover-bg-color: #f5f5f5;
+  --fc-daygrid-event-dot-width: 8px;
+}
+
+h2.fc-toolbar-title {
+  font-size: 2rem !important;
+  font-weight: 800;
+  color: black;
+}
+
+div.fc-timegrid-event-harness.fc-timegrid-event-harness-inset {
+  display: flex;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 10px !important;
+}
+
+div.fc-timegrid-event-harness.fc-timegrid-event-harness-inset a {
+  width: 100%;
+  margin-left: 2.5px;
+  display: flex;
+  width: 100%;
+  background-color: #ffdc73;
+  border: #ffbf00;
+  box-shadow: none;
+  border-radius: 10px !important;
+}
+
+div.fc-event-main {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffdc73;
+  border-radius: 10px !important;
+}
+
+div.fc-toolbar-chunk .fc-today-button.fc-button.fc-button-primary {
+  background-color: #ffbf00;
+  color: black !important;
+  font-weight: 600;
+  opacity: initial;
+}
+
+div.fc-view-harness.fc-view-harness-active {
+  height: fit-content;
+}
+
+tr.fc-scrollgrid-section.fc-scrollgrid-section-header
+  div.fc-scrollgrid-sync-inner {
+  background-color: #ffdc73;
+  padding: 0.75rem;
+}
+
+th.fc-timegrid-axis {
+  background-color: #ffbf00;
+}
+
+th.fc-timegrid-axis div.fc-timegrid-axis-frame {
+  content: "Jam";
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+tr.fc-scrollgrid-section.fc-scrollgrid-section-header
+  div.fc-scrollgrid-sync-inner
+  a {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: black;
+}
+
+button.fc-today-button.fc-button.fc-button-primary {
+  color: black;
+  background-color: #ffbf00;
+}
+
+a.fc-daygrid-day-number {
+  color: black;
+  font-size: 1.1rem;
+}
+
+div.fc-event-main div.fc-event-main-frame {
+  padding: 0.2rem;
+  background-color: #ffdc73;
+}
+
+div.fc-event-main div.fc-event-main-frame div.fc-event-time {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+a.fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-start.fc-event-end.fc-event-today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-start.fc-event-end.fc-event-today
+  div {
+  color: #660300;
+}
+
+a.fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-start.fc-event-end.fc-event-today
+  div.fc-daygrid-event-dot {
+  background-color: #660300;
+  border: 4px solid #660300;
+}

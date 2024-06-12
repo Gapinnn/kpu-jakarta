@@ -24,6 +24,10 @@ export const menuId = [
         name: "Struktur Organisasi",
         path: "/id/profil/struktur-organisasi",
       },
+      {
+        name: "Sejarah Pemilu",
+        path: "/id/profil/sejarah-pemilu",
+      },
     ],
   },
   {
@@ -42,6 +46,10 @@ export const menuId = [
       {
         name: "Opini",
         path: "/id/informasi/opini",
+      },
+      {
+        name: "Agenda",
+        path: "/id/informasi/agenda",
       },
     ],
   },

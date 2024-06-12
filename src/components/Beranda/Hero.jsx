@@ -39,7 +39,7 @@ export default function Hero() {
                 className="text-stone-100 italic text-center mx-auto font-extrabold text-4xl"
               ></h1>
             </div>
-            <SearchBar />
+            {/* <SearchBar /> */}
           </div>
           <DataSlider />
         </div>

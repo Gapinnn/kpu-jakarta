@@ -22,6 +22,7 @@ import Pengaduan from "./pages/Pengaduan";
 import Dumas from "./pages/Dumas";
 import Whistleblowing from "./pages/Whistleblowing";
 import ButtonToTop from "./components/ButtonToTop";
+import Agenda from "./pages/Agenda";
 
 function App() {
   return (
@@ -33,8 +34,8 @@ function App() {
         <Route path="/id/profil/visi-misi" element={<VisiMisi />} />
         <Route path="/id/profil/tugas-pokok" element={<Tupoksi />} />
         <Route path="/id/profil/tugas-wewenang" element={<TugasWewenang />} />
-        <Route path="/id/profil/sejarah" element={<Sejarah />} />
-        <Route path="/en/profil/sejarah" element={<Sejarah />} />
+        <Route path="/id/profil/sejarah-pemilu" element={<Sejarah />} />
+        <Route path="/en/profil/sejarah-pemilu" element={<Sejarah />} />
         <Route path="/id/sop" elemen t={<Sop />} />
         <Route
           path="/id/profil/struktur-organisasi"
@@ -53,6 +54,8 @@ function App() {
         <Route path="/en/informasi/opini" element={<BeritaOpini />} />
         <Route path="/id/informasi/pengumuman" element={<Pengumuman />} />
         <Route path="/en/informasi/pengumuman" element={<Pengumuman />} />
+        <Route path="/id/informasi/agenda" element={<Agenda />} />
+        <Route path="/en/informasi/agenda" element={<Agenda />} />
         <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/en/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/id/statistik/tabulasi" element={<Tabulasi />} />

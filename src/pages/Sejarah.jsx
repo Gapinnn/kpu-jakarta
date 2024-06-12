@@ -1,4 +1,4 @@
-import SejarahComponent from "../components/SejarahComponent";
+import SejarahComponent from "../components/Sejarah/SejarahComponent";
 
 export default function Sejarah() {
   return (

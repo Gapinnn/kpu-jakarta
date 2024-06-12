@@ -1,6 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
+import EyeView from "../../Icon/EyeView";
 import Breadcumb from "./Breadcumb";
 import { listKategori, listTahun } from "../../../contents/filter";
 import { dataOpini } from "../../../contents/informasi/opini";
@@ -8,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
 import ArrowDown from "../../Icon/ArrowDown";
 
-const OpiniItem = ({ image, date, title, description, tags }) => (
+const OpiniItem = ({ image, date, title, views, description, tags }) => (
   <div className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2">
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
@@ -21,6 +22,12 @@ const OpiniItem = ({ image, date, title, description, tags }) => (
           <Calendar className="w-5 h-5 text-stone-600 group-hover:text-stone-100" />
           <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
             {date}
+          </p>
+        </div>
+        <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
+          <EyeView className="w-5 h-5 text-stone-600 group-hover:text-stone-100" />
+          <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
+            {views} baca
           </p>
         </div>
         {tags.map((tag, i) => (
@@ -325,7 +332,7 @@ const OpiniPage = () => {
               </div>
               <button
                 onClick={() => handleTampilkan()}
-                className="w-full mt-4 py-2 bg-maroon-light text-white rounded-lg"
+                className="w-full mt-4 py-1 text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
                 Tampilkan
               </button>

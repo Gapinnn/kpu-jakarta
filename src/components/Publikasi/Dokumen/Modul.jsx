@@ -3,7 +3,6 @@ import NextArrow from "../../Icon/NextArrow";
 import PrevArrow from "../../Icon/PrevArrow";
 import Calendar from "../../Icon/Calendar";
 import FileDoc from "../../Icon/FileDoc";
-import EyeView from "../../Icon/EyeView";
 import Tag from "../../Icon/Tag";
 import FIleOpen from "../../Icon/FIleOpen";
 import FileDownload from "../../Icon/FileDownload";
@@ -28,7 +27,6 @@ export default function Modul() {
   const Card = ({
     title,
     date,
-    views,
     imageSrc,
     description,
     size,
@@ -61,12 +59,6 @@ export default function Modul() {
               <FileDoc className="w-4 h-4 text-stone-500 group-hover:text-stone-100" />
               <p className="text-stone-500 text-xs ms-1 font-semibold group-hover:text-stone-100">
                 {size}
-              </p>
-            </div>
-            <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
-              <EyeView className="w-4 h-4 text-stone-500 group-hover:text-stone-100" />
-              <p className="text-stone-500 text-xs ms-1 font-semibold group-hover:text-stone-100">
-                {views}
               </p>
             </div>
             {tags.map((tag) => (

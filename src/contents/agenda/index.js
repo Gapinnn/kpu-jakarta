@@ -1,0 +1,111 @@
+export const dataKalendar = [
+  {
+    title: "Rapat Pemilu Satu",
+    start: "2024-06-12T08:30:00",
+    end: "2024-06-12T10:00:00",
+    extendedProps: {
+      gedung: "A",
+      lantai: "2",
+      ruang: "101",
+      public: true,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pemilu Satu",
+    start: "2024-06-12T10:30:00",
+    end: "2024-06-12T12:30:00",
+    extendedProps: {
+      gedung: "B",
+      lantai: "3",
+      ruang: "305",
+      public: true,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pemilu Satu",
+    start: "2024-06-12T14:00:00",
+    end: "2024-06-12T16:30:00",
+    extendedProps: {
+      gedung: "A",
+      lantai: "2",
+      ruang: "101",
+      public: true,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+
+  {
+    title: "Rapat Pilkada Satu",
+    start: "2024-06-13T08:30:00",
+    end: "2024-06-13T10:30:00",
+    extendedProps: {
+      gedung: "C",
+      lantai: "1",
+      ruang: "102",
+      public: true,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pilkada Satu",
+    start: "2024-06-13T15:00:00",
+    end: "2024-06-13T17:00:00",
+    extendedProps: {
+      gedung: "D",
+      lantai: "4",
+      ruang: "405",
+      public: true,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pilkada Dua",
+    start: "2024-06-14T09:00:00",
+    end: "2024-06-14T11:00:00",
+    extendedProps: {
+      gedung: "A",
+      lantai: "2",
+      ruang: "101",
+      public: false,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pemilu Dua",
+    start: "2024-06-13T12:30:00",
+    end: "2024-06-13T14:30:00",
+    extendedProps: {
+      gedung: "E",
+      lantai: "2",
+      ruang: "202",
+      public: false,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Rapat Pilkada Tiga",
+    start: "2024-07-13T11:00:00",
+    end: "2024-07-13T13:00:00",
+    extendedProps: {
+      gedung: "A",
+      lantai: "2",
+      ruang: "101",
+      public: false,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+  {
+    title: "Sidang Pemilu Satu",
+    start: "2024-06-14T12:00:00",
+    end: "2024-06-14T15:00:00",
+    extendedProps: {
+      gedung: "F",
+      lantai: "3",
+      ruang: "303",
+      public: false,
+      leader: "Kepala KPU DKI Jakarta",
+    },
+  },
+];

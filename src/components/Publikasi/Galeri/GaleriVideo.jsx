@@ -2,7 +2,6 @@ import Slider from "react-slick";
 import NextArrow from "../../Icon/NextArrow";
 import PrevArrow from "../../Icon/PrevArrow";
 import Calendar from "../../Icon/Calendar";
-import EyeView from "../../Icon/EyeView";
 import Tag from "../../Icon/Tag";
 import { dataGaleriVideo } from "../../../contents/galeri";
 import FileVideo from "../../Icon/FileVideo";
@@ -18,7 +17,7 @@ export default function GaleriVideo() {
     document.body.removeChild(link);
   };
 
-  const Card = ({ title, date, views, imageSrc, size, tags, filepath }) => (
+  const Card = ({ title, date, imageSrc, size, tags, filepath }) => (
     <div className="p-4">
       <div className="bg-white shadow-md rounded-lg flex flex-col gap-0">
         <div className="flex w-full h-[14rem] relative border-2 border-maroon-light rounded-t-xl overflow-hidden">
@@ -48,12 +47,6 @@ export default function GaleriVideo() {
               <FileVideo className="w-3 h-3 text-stone-500 group-hover:text-stone-100" />
               <p className="text-stone-500 text-xs ms-1 font-semibold group-hover:text-stone-100">
                 {size}
-              </p>
-            </div>
-            <div className="bg-stone-200 py-0.5 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
-              <EyeView className="w-3 h-3 text-stone-500 group-hover:text-stone-100" />
-              <p className="text-stone-500 text-xs ms-1 font-semibold group-hover:text-stone-100">
-                {views}
               </p>
             </div>
             {tags.map((tag) => (
