@@ -23,8 +23,10 @@ import Dumas from "./pages/Dumas";
 import Whistleblowing from "./pages/Whistleblowing";
 import ButtonToTop from "./components/ButtonToTop";
 import Agenda from "./pages/Agenda";
+import getLanguage from "./hooks/getLanguage";
 
 function App() {
+  const lang = getLanguage();
   return (
     <BrowserRouter>
       <Header />
@@ -74,6 +76,7 @@ function App() {
           element={<Whistleblowing />}
         />
         <Route path="/pdf-viewer" Component={PdfView} />
+        <Route path="*" element={<Navigate to={`/${lang}`} />} />
       </Routes>
       <Footer />
     </BrowserRouter>
