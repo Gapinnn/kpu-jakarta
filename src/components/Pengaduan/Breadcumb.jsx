@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
+import getLanguage from "../../hooks/getLanguage";
 export default function Breadcumb() {
+  const lang = getLanguage();
   return (
     <nav
       className="w-fit rounded-xl flex mb-4 text-stone-900"
       aria-label="Breadcrumb"
     >
       <ol className="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        <Link to={"/id"} className="inline-flex items-center">
+        <Link to={`/${lang}`} className="inline-flex items-center">
           <div className="inline-flex items-center text-lg font-medium text-maroon-light hover:text-maroon">
             <svg
               className="w-5 h-5 me-2.5"

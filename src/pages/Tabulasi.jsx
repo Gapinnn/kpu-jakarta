@@ -3,11 +3,13 @@ import Breadcumb from "../components/Tabulasi/Breadcumb";
 import TabulasiDua from "../components/Tabulasi/TabulasiDua";
 import TabulasiSatu from "../components/Tabulasi/TabulasiSatu";
 import TabulasiTiga from "../components/Tabulasi/TabulasiTiga";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Tabulasi() {
   const [tabActive, setTabctive] = useState(0);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col w-full bg-stone-100">

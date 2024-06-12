@@ -5,11 +5,13 @@ import Breadcumb from "../components/Visualisasi/Breadcumb";
 import ChartDua from "../components/Visualisasi/ChartDua";
 import ChartSatu from "../components/Visualisasi/ChartSatu";
 import ChartTiga from "../components/Visualisasi/ChartTiga";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Visualisasi() {
   const [tabActive, setTabctive] = useState(0);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col w-full bg-stone-100">

@@ -1,12 +1,15 @@
 import GaleriFoto from "../components/Publikasi/Galeri/GaleriFoto";
 import GaleriVideo from "../components/Publikasi/Galeri/GaleriVideo";
 import Breadcumb from "../components/Publikasi/Galeri/Breadcumb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Images from "../components/Icon/Images";
 import Videos from "../components/Icon/Videos";
 
 export default function PublikasiGaleri() {
   const [tabActive, setTabctive] = useState(0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col gap-0 bg-stone-100">

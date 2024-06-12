@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import Book from "../components/Icon/Book";
 import Unduh from "../components/Icon/Unduh";
 
 export default function Sop() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col w-full">

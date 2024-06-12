@@ -8,9 +8,22 @@ import { dataOpini } from "../../../contents/informasi/opini";
 import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
 import ArrowDown from "../../Icon/ArrowDown";
+import getLanguage from "../../../hooks/getLanguage";
 
-const OpiniItem = ({ image, date, title, views, description, tags }) => (
-  <div className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2">
+const OpiniItem = ({
+  id,
+  image,
+  date,
+  title,
+  views,
+  description,
+  tags,
+  lang,
+}) => (
+  <Link
+    to={`/${lang}/informasi/opini/${id}`}
+    className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
+  >
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
       src={image}
@@ -44,16 +57,19 @@ const OpiniItem = ({ image, date, title, views, description, tags }) => (
       </div>
       <h3 className="text-xl w-full font-bold text-gray-900">{title}</h3>
       <p className="text-gray-800 text-lg mt-1 leading-tight">{description}</p>
-      <Link to="#" className="flex flex-row items-center w-fit group">
+      <Link
+        to={`/${lang}/informasi/opini/${id}`}
+        className="flex flex-row items-center w-fit group"
+      >
         <p className="text-maroon-light text-sm font-semibold group-hover:text-maroon">
           Selengkapnya
         </p>
       </Link>
     </div>
-  </div>
+  </Link>
 );
-
 const OpiniPage = () => {
+  const lang = getLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [listOpini, setListOpini] = useState(dataOpini);
@@ -351,7 +367,9 @@ const OpiniPage = () => {
               {listOpini.length > 0 ? (
                 listOpini
                   .slice(firstIndex, lastIndex)
-                  .map((item) => <OpiniItem key={item.id} {...item} />)
+                  .map((item) => (
+                    <OpiniItem key={item.id} lang={lang} {...item} />
+                  ))
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-xl font-semibold text-stone-800">
