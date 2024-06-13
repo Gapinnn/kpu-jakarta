@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo/Logo";
 import { menuId, menuEn } from "../contents/header/";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import UpArrow from "./Icon/UpArrow";
 import DropArrow from "./Icon/DropArrow";
 import getLanguage from "../hooks/getLanguage";
@@ -27,6 +27,18 @@ const Header = () => {
     bahasa: false,
   });
 
+  const buttonRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (buttonRef.current && buttonRef.current.contains(event.target)) {
+      return;
+    }
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  };
+
   const changeShowAccordion = useCallback((menu) => {
     setShowAccordion((prev) => ({ ...prev, [menu]: !prev[menu] }));
   }, []);
@@ -43,6 +55,13 @@ const Header = () => {
     setShowInfo(!showInfo);
   };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="w-full flex flex-col sticky top-0 z-30 shadow-xl">
       <div className="w-full px-[3%] flex justify-between bg-maroon-light">
@@ -50,12 +69,13 @@ const Header = () => {
         {/* Hamburger Hp/Tablet */}
         <nav className="flex lg:hidden justify-center items-center">
           <button
+            ref={buttonRef}
             className="flex items-center justify-center w-fit h-auto"
             onClick={() => setShowMenu(!showMenu)}
             type="button"
           >
             <Cancel
-              className={`w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
+              className={`z-20 w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
                 showMenu ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
               }`}
             />
@@ -200,6 +220,7 @@ const Header = () => {
           className={`absolute top-16 w-full z-20 min-h-screen bg-black bg-opacity-70`}
         >
           <div
+            ref={dropdownRef}
             className={`bg-white rounded-b-xl shadow-lg w-full min-h-fit max-h-[100vh] overflow-y-auto p-8 flex flex-col gap-6 justify-center items-start transition-all duration-1000`}
           >
             {menu.map((item) => (

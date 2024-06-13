@@ -62,31 +62,115 @@ base {
     @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 scale-110;
   }
 
-  /* input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+  @media (min-width: 320px) {
+    h2.fc-toolbar-title {
+      @apply text-[1.4rem] font-extrabold text-black leading-6 !important;
+    }
+    .fc-daygrid-event-harness a {
+      @apply text-xs flex-wrap text-center justify-center;
+    }
+
+    .fc-daygrid-event-harness a .fc-event-time::after {
+      content: " WIB";
+    }
+
+    .fc-col-header-cell.fc-day div a {
+      @apply text-sm -translate-x-1 !important;
+    }
+
+    .fc-toolbar-title {
+      @apply text-xl font-extrabold text-black leading-6 !important;
+    }
+
+    .fc-next-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-sm px-2 !important;
+    }
+
+    .fc-prev-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-sm px-2 !important;
+    }
+
+    .fc-today-button.fc-button.fc-button-primary {
+      @apply bg-gold-neutral hover:bg-gold border border-black font-bold text-black text-base px-2 -translate-x-1.5 !important;
+    }
+
+    .fc-timeGridWeek-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-medium text-black text-xs !important;
+    }
+
+    .fc-dayGridMonth-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-medium text-black text-xs !important;
+    }
+
+    .fc-toolbar-chunk:first-of-type {
+      @apply flex flex-col gap-0.5 justify-center items-center;
+    }
+
+    .fc-toolbar-chunk:last-of-type div.fc-button-group {
+      @apply flex flex-col gap-0.5 justify-center items-center;
+    }
   }
 
-  input[type="checkbox"]:checked + label::before {
-    content: "";
-    display: block;
-    position: absolute;
-    text-align: center;
-    height: 20px;
-    width: 20px;
-    left: 0;
-    top: 5px;
-    background-color: #fa9e57;
-    font-family: "Montserrat";
-    border-radius: 2px;
-    border: 1px solid rgb(150 150 150 / 30%);
+  @media (min-width: 768px) {
+    h2.fc-toolbar-title {
+      @apply text-2xl font-extrabold text-black leading-6 !important;
+    }
+    .fc-daygrid-event-harness a {
+      @apply text-xs flex-wrap text-center justify-center;
+    }
+
+    .fc-daygrid-event-harness a .fc-event-time::after {
+      content: " WIB";
+    }
+
+    .fc-col-header-cell.fc-day div a {
+      @apply text-base -translate-x-0 !important;
+    }
+
+    .fc-toolbar-title {
+      @apply text-[1.35rem] font-extrabold text-black leading-6 !important;
+    }
+
+    .fc-next-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-base px-2 !important;
+    }
+
+    .fc-prev-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-base px-2 !important;
+    }
+
+    .fc-today-button.fc-button.fc-button-primary {
+      @apply bg-gold-neutral hover:bg-gold border border-black font-bold text-black text-lg px-2 -translate-x-1.5 !important;
+    }
+
+    .fc-timeGridWeek-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-medium text-black text-base py-2 px-3 !important;
+    }
+
+    .fc-dayGridMonth-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-medium text-black text-base py-2 px-3 !important;
+    }
+
+    .fc-toolbar-chunk:first-of-type {
+      @apply flex flex-col gap-1 justify-center items-center;
+    }
+
+    .fc-toolbar-chunk:last-of-type div.fc-button-group {
+      @apply flex flex-col gap-1 items-center mt-0;
+    }
   }
 
-  input[type="checkbox"]:checked + label::after {
-    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
-    display: block;
-    position: absolute;
-    left: 3px;
-    top: 3px;
-  } */
+  @media (min-width: 1020px) {
+    .fc-timeGridWeek-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-lg py-2 px-3 !important;
+    }
+
+    .fc-dayGridMonth-button.fc-button.fc-button-primary {
+      @apply bg-gold hover:bg-gold-neutral border border-black font-bold text-black text-lg py-2 px-3 !important;
+    }
+
+    .fc-toolbar-chunk:last-of-type div.fc-button-group {
+      @apply flex flex-row gap-1.5 items-center mt-14;
+    }
+  }
 }

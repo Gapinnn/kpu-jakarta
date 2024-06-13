@@ -22,24 +22,25 @@ const OpiniItem = ({
 }) => (
   <Link
     to={`/${lang}/informasi/opini/${id}`}
-    className="flex flex-col md:flex-row items-center p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
+    className="flex flex-col md:flex-row items-start p-3 lg:p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
   >
     <img
       className="w-full md:w-64 object-cover rounded-lg mb-2 md:mb-0"
       src={image}
       alt={title}
     />
-    <div className="md:ml-3 flex-1">
-      <div className="text-gray-500 text-base mb-1 flex items-center gap-2">
+    <div className="md:ml-2 lg:ml-3 flex-1">
+      {/* Tags */}
+      <div className="text-gray-500 text-base mb-1 flex items-center gap-1 lg:gap-2">
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
-          <Calendar className="w-5 h-5 text-stone-600 group-hover:text-stone-100" />
-          <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
+          <Calendar className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
+          <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
             {date}
           </p>
         </div>
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
-          <EyeView className="w-5 h-5 text-stone-600 group-hover:text-stone-100" />
-          <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
+          <EyeView className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
+          <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
             {views} baca
           </p>
         </div>
@@ -48,15 +49,15 @@ const OpiniItem = ({
             key={i}
             className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group"
           >
-            <Tag className="w-4 h-4 text-stone-600 group-hover:text-stone-100" />
-            <p className="text-stone-600 text-sm ms-1 font-semibold group-hover:text-stone-100">
+            <Tag className="w-3 h-3 md:w-4 md:h-4 text-stone-600 group-hover:text-stone-100" />
+            <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
               {tag}
             </p>
           </div>
         ))}
       </div>
       <h3 className="text-xl w-full font-bold text-gray-900">{title}</h3>
-      <p className="text-gray-800 text-lg mt-1 leading-tight">{description}</p>
+      <p className="text-gray-800 text-lg mt-1 leading-snug">{description}</p>
       <Link
         to={`/${lang}/informasi/opini/${id}`}
         className="flex flex-row items-center w-fit group"
@@ -196,13 +197,13 @@ const OpiniPage = () => {
 
   return (
     <div className="flex flex-col w-full bg-stone-100">
-      <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
+      <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
         {/* Breadcumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <div className="flex flex-col gap-2 my-4">
-          <h1 className="text-maroon-light font-bold text-3xl">
-            Opini KPU DKI Jakarta
+        <div className="flex flex-col gap-0 lg:gap-2 my-0 lg:my-4 mb-1 lg:mb-0">
+          <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+            Opini KPU Provinsi DKI Jakarta
           </h1>
           <p className="text-stone-900 text-xl mb-1">
             Opini ini berisi pandangan, analisis, dan komentar dari berbagai
@@ -212,13 +213,13 @@ const OpiniPage = () => {
           </p>
         </div>
         {/* Konten Utama */}
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col mt-3 lg:mt-0 lg:flex-row">
           {/* Filter Opini */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
               Filter Opini
             </h2>
-            <div className="p-3 bg-white rounded-lg shadow-md">
+            <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
                 <h5 className="text-lg font-semibold text-gray-900 mb-1">
                   Kata Kunci
@@ -356,7 +357,7 @@ const OpiniPage = () => {
           </div>
           {/* List Opini */}
           <div className="w-full">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-2 lg:mb-4">
               <span className="text-gray-800 font-semibold pt-2">
                 {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
                   dataOpini.length
@@ -372,10 +373,10 @@ const OpiniPage = () => {
                   ))
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
-                  <h3 className="text-xl font-semibold text-stone-800">
+                  <h3 className="text-xl text-center font-semibold text-stone-800">
                     Opini KPU DKI Jakarta Tidak Tersedia
                   </h3>
-                  <p className="text-lg text-stone-700">
+                  <p className="text-lg text-center text-stone-700">
                     Silakan Coba Kata Kunci atau Filter Lainnya
                   </p>
                 </div>
@@ -394,7 +395,7 @@ const OpiniPage = () => {
                   disabled={page === 1}
                 >
                   <div
-                    className={`flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-400 rounded-s-lg ${
+                    className={`flex items-center justify-center px-4 h-10 ms-0 leading-snug text-gray-500 bg-white border border-e-0 border-gray-400 rounded-s-lg ${
                       page === 1
                         ? "cursor-not-allowed"
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
@@ -451,7 +452,7 @@ const OpiniPage = () => {
                   }
                 >
                   <div
-                    className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
+                    className={`flex items-center justify-center px-4 h-10 leading-snug text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
                       page === Math.ceil(listOpini.length / 5) ||
                       listOpini.length === 0
                         ? "cursor-not-allowed"

@@ -8,7 +8,7 @@ import Maps from "./Logo/Maps";
 
 const Footer = () => {
   return (
-    <footer className="bg-maroon w-full px-[3%] py-8 clearfix">
+    <footer className="bg-maroon w-full px-[5%] py-8">
       <div className="flex w-full flex-col lg:flex-row items-start lg:justify-between py-2 lg:py-4 lg:mx-0 border-b-2 border-gold z-20 relative">
         <div className="flex w-full flex-col items-start gap-2 lg:gap-4 z-20 mx-4 lg:mx-0">
           <div className="flex gap-3 mb-6 lg:mb-0">

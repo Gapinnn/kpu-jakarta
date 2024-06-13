@@ -106,10 +106,19 @@ body {
   --fc-daygrid-event-dot-width: 8px;
 }
 
-h2.fc-toolbar-title {
-  font-size: 2rem !important;
-  font-weight: 800;
-  color: black;
+div.fc-daygrid-event-harness {
+  margin-bottom: 0.75rem;
+}
+div.fc-daygrid-event-harness a {
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+  text-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+div.fc-daygrid-event-harness a div.fc-event-time::after {
+  content: " WIB";
 }
 
 div.fc-timegrid-event-harness.fc-timegrid-event-harness-inset {
