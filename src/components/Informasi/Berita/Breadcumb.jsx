@@ -6,11 +6,11 @@ export default function Breadcumb() {
   return (
     <nav className="inline align-middle mb-4" aria-label="Breadcrumb">
       <Link
-        to={"/"}
-        className="text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
+        to={`/${lang}`}
+        className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
       >
         <svg
-          className="inline w-5 h-5 me-2.5 mb-1"
+          className="inline w-4 h-4 md:w-5 md:h-5 me-2 md:me-2.5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="#660300"
@@ -19,14 +19,14 @@ export default function Breadcumb() {
         >
           <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
         </svg>
-        <span className="inline">Beranda</span>
+        <span className="inline text-center align-text-top">Beranda</span>
       </Link>
       <Link
         to={`/${lang}/informasi/berita`}
-        className="text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
+        className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
       >
         <svg
-          className="rtl:rotate-180 inline w-3.5 h-3.5 mb-1 mx-1.5 text-maroon-light "
+          className="rtl:rotate-180 inline w-2.5 h-2.5 md:w-3.5 md:h-3.5 mx-1.5 text-maroon-light "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -40,12 +40,12 @@ export default function Breadcumb() {
             d="m1 9 4-4-4-4"
           />
         </svg>
-        Informasi
+        <span className="inline text-center align-text-top">Informasi</span>
       </Link>
       {/* Halaman Saat Ini */}
-      <Link className="text-lg inline font-semibold text-stone-900 align-middle">
+      <Link className="text-sm md:text-base lg:text-lg inline font-semibold text-stone-900 align-middle">
         <svg
-          className="rtl:rotate-180 inline w-3.5 h-3.5 mb-1 mx-1.5 text-stone-900 "
+          className="rtl:rotate-180 inline w-2.5 h-2.5 md:w-3.5 md:h-3.5 mx-1.5 text-stone-900 "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -59,7 +59,7 @@ export default function Breadcumb() {
             d="m1 9 4-4-4-4"
           />
         </svg>
-        Berita
+        <span className="inline text-center align-text-top">Berita</span>
       </Link>
     </nav>
   );

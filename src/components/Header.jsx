@@ -75,12 +75,12 @@ const Header = () => {
             type="button"
           >
             <Cancel
-              className={`z-20 w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
+              className={`z-20 w-8 h-8 md:w-10 md:h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
                 showMenu ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
               }`}
             />
             <Hamburger
-              className={`absolute w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
+              className={`absolute w-8 h-8 md:w-10 md:h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
                 showMenu ? "opacity-0 -rotate-90" : "opacity-100 rotate-0"
               }`}
             />
@@ -235,7 +235,7 @@ const Header = () => {
                       if (item.branch) return;
                       setShowMenu(false);
                     }}
-                    className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-lg group `}
+                    className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-base md:text-lg group `}
                   >
                     <p className="flex">{item.name}</p>
                     {item.branch && (
@@ -254,7 +254,7 @@ const Header = () => {
                           to={subitem.path}
                           className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
                         >
-                          <p className="inline-flex items-center text-stone-900 font-semibold text-lg">
+                          <p className="inline-flex items-center text-stone-800 font-semibold text-base md:text-lg">
                             {subitem.name}
                           </p>
                         </Link>
@@ -270,7 +270,7 @@ const Header = () => {
                 className="flex w-full"
               >
                 <Link
-                  className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-lg group `}
+                  className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-base md:text-lg group `}
                 >
                   <p className="flex">Bahasa</p>
                   <ArrowDown
@@ -292,7 +292,7 @@ const Header = () => {
                       to="/id"
                       className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
                     >
-                      <div className="inline-flex items-center text-stone-900 font-semibold text-lg gap-1">
+                      <div className="inline-flex items-center text-stone-900 font-semibold text-base md:text-lg gap-1">
                         <img
                           src="/images/indonesia.png"
                           alt="Indonesia"
@@ -312,7 +312,7 @@ const Header = () => {
                       to="/en"
                       className="block px-2 py-1 hover:bg-stone-300 text-stone-900 font-semibold rounded-lg"
                     >
-                      <div className="inline-flex items-center text-stone-900 font-semibold text-lg gap-1">
+                      <div className="inline-flex items-center text-stone-900 font-semibold text-base md:text-lg gap-1">
                         <img
                           src="/images/english.png"
                           alt="English"
@@ -349,7 +349,7 @@ const Header = () => {
           />
         </div>
         <p
-          className={`text-base lg:text-xl font-bold text-stone-100 transition-transform duration-300 ${
+          className={`text-sm md:text-base lg:text-xl font-bold text-stone-100 transition-transform duration-300 ${
             showInfo ? " opacity-100" : " opacity-0"
           }`}
         >

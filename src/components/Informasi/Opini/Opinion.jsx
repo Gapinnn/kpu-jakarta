@@ -56,13 +56,17 @@ const OpiniItem = ({
           </div>
         ))}
       </div>
-      <h3 className="text-xl w-full font-bold text-gray-900">{title}</h3>
-      <p className="text-gray-800 text-lg mt-1 leading-snug">{description}</p>
+      <h3 className="text-base md:text-lg lg:text-xl w-full font-bold text-gray-900">
+        {title}
+      </h3>
+      <p className="text-gray-800 text-sm md:text-base lg:text-lg mt-1 leading-snug">
+        {description}
+      </p>
       <Link
         to={`/${lang}/informasi/opini/${id}`}
         className="flex flex-row items-center w-fit group"
       >
-        <p className="text-maroon-light text-sm font-semibold group-hover:text-maroon">
+        <p className="text-maroon-light text-xs md:text-sm font-semibold group-hover:text-maroon">
           Selengkapnya
         </p>
       </Link>
@@ -201,11 +205,11 @@ const OpiniPage = () => {
         {/* Breadcumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <div className="flex flex-col gap-0 lg:gap-2 my-0 lg:my-4 mb-1 lg:mb-0">
-          <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+        <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-0">
+          <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
             Opini KPU Provinsi DKI Jakarta
           </h1>
-          <p className="text-stone-900 text-xl mb-1">
+          <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
             Opini ini berisi pandangan, analisis, dan komentar dari berbagai
             pihak terkait isu-isu pemilihan umum di DKI Jakarta. Tulisan-tulisan
             ini bertujuan untuk memberikan perspektif yang beragam dan mendalam
@@ -216,12 +220,12 @@ const OpiniPage = () => {
         <div className="flex flex-col mt-3 lg:mt-0 lg:flex-row">
           {/* Filter Opini */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
               Filter Opini
             </h2>
             <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
-                <h5 className="text-lg font-semibold text-gray-900 mb-1">
+                <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
                   Kata Kunci
                 </h5>
                 <input
@@ -230,12 +234,12 @@ const OpiniPage = () => {
                   onKeyDown={handleKeyDown}
                   type="text"
                   placeholder="Masukkan kata kunci..."
-                  className="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
+                  className="w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
                 />
               </div>
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
-                <h5 className="text-lg font-semibold text-gray-900 mb-1">
+                <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
                   Tahun Opini
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
@@ -246,7 +250,7 @@ const OpiniPage = () => {
                     value={searchTahun}
                     type="text"
                     id="simple-search"
-                    className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2.5  "
+                    className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base"
                     placeholder="Pilih Tahun"
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
@@ -291,7 +295,7 @@ const OpiniPage = () => {
               </div>
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
-                <h5 className="text-lg font-semibold text-gray-900 mb-1">
+                <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
                   Kategori Opini
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
@@ -302,7 +306,7 @@ const OpiniPage = () => {
                     value={searchKategori}
                     type="text"
                     id="simple-search"
-                    className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2.5  "
+                    className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base  "
                     placeholder="Pilih Kategori"
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
@@ -349,7 +353,7 @@ const OpiniPage = () => {
               </div>
               <button
                 onClick={() => handleTampilkan()}
-                className="w-full mt-4 py-1 text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
+                className="w-full mt-4 py-1 text-base lg:text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
                 Tampilkan
               </button>
@@ -358,7 +362,7 @@ const OpiniPage = () => {
           {/* List Opini */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-2 lg:mb-4">
-              <span className="text-gray-800 font-semibold pt-2">
+              <span className="text-gray-800 text-sm md:text-base font-semibold pt-2">
                 {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
                   dataOpini.length
                 } Opini`}
@@ -373,10 +377,10 @@ const OpiniPage = () => {
                   ))
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
-                  <h3 className="text-xl text-center font-semibold text-stone-800">
+                  <h3 className="text-base md:text-lg lg:text-xl text-center font-semibold text-stone-800">
                     Opini KPU DKI Jakarta Tidak Tersedia
                   </h3>
-                  <p className="text-lg text-center text-stone-700">
+                  <p className="text-sm md:text-base lg:text-lg text-center text-stone-700">
                     Silakan Coba Kata Kunci atau Filter Lainnya
                   </p>
                 </div>
@@ -395,14 +399,15 @@ const OpiniPage = () => {
                   disabled={page === 1}
                 >
                   <div
-                    className={`flex items-center justify-center px-4 h-10 ms-0 leading-snug text-gray-500 bg-white border border-e-0 border-gray-400 rounded-s-lg ${
+                    className={`flex items-center justify-center px-3 md:px-4 h-8 md:h-10 ms-0 leading-snug text-gray-500 bg-white border border-e-0 border-gray-400 rounded-s-lg ${
                       page === 1
                         ? "cursor-not-allowed"
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
+                    <span className="sr-only">Previous</span>
                     <svg
-                      className="w-4 h-4 text-maroon-light rtl:rotate-180"
+                      className="w-3 h-3 md:w-4 md:h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -428,7 +433,7 @@ const OpiniPage = () => {
                       key={i}
                     >
                       <div
-                        className={`flex cursor-pointer items-center justify-center px-4 h-10 text-lg font-semibold border border-gray-400 ${
+                        className={`flex cursor-pointer items-center justify-center px-3 md:px-4 h-8 md:h-10 text-base md:text-lg font-semibold border border-gray-400 ${
                           i + 1 === page
                             ? "bg-maroon-light text-white"
                             : "text-gray-600 bg-white hover:bg-gray-100 hover:text-gray-700"
@@ -452,15 +457,16 @@ const OpiniPage = () => {
                   }
                 >
                   <div
-                    className={`flex items-center justify-center px-4 h-10 leading-snug text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
+                    className={`flex items-center justify-center px-3 md:px-4 h-8 md:h-10 leading-snug text-gray-500 bg-white border border-gray-400 rounded-e-lg ${
                       page === Math.ceil(listOpini.length / 5) ||
                       listOpini.length === 0
                         ? "cursor-not-allowed"
                         : "cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                     }`}
                   >
+                    <span className="sr-only">Next</span>
                     <svg
-                      className="w-4 h-4 text-maroon-light rtl:rotate-180"
+                      className="w-3 h-3 md:w-4 md:h-4 text-maroon-light rtl:rotate-180"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

@@ -241,8 +241,8 @@ export default function Kalendar() {
   }, [data]);
 
   return (
-    <div className="w-full bg-white rounded-2xl shadow-xl px-4 py-8 flex flex-col items-center gap-2">
-      <h1 className="text-2xl mb-6 font-bold text-stone-900">
+    <div className="w-full bg-white rounded-2xl shadow-xl px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-2">
+      <h1 className="text-lg md:text-xl lg:text-2xl mb-3 md:mb-4 lg:mb-6 font-bold text-stone-900">
         Kalendar Agenda
       </h1>
       <div className="flex w-full m-0 p-0">
