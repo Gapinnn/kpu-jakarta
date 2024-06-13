@@ -1,7 +1,7 @@
 export const dataKalendar = [
   {
     title: "Rapat Pemilu Satu",
-    start: "2024-06-12T08:30:00",
+    start: "2024-06-12T07:30:00",
     end: "2024-06-12T10:00:00",
     extendedProps: {
       gedung: "A",
