@@ -1,27 +1,30 @@
+import getLanguage from "../../hooks/getLanguage";
+
+const lang = getLanguage();
 export const tentang = [
   {
     name: "KPU Jakarta",
-    path: "/kpu-jakarta",
+    path: `/${lang}`,
   },
   {
     name: "Visi Misi",
-    path: "/visi-misi",
+    path: `/${lang}/profil/visi-misi`,
   },
   {
-    name: "Tupoksi",
-    path: "/tupoksi",
+    name: "Tugas Pokok",
+    path: `/${lang}/profil/tugas-pokok`,
   },
   {
     name: "Tugas Wewenang",
-    path: "/tugas",
+    path: `/${lang}/profil/tugas-wewenang`,
   },
   {
     name: "Struktur Organisasi",
-    path: "/struktur",
+    path: `/${lang}/profil/struktur-organisasi`,
   },
   {
-    name: "Standar Operasional Prosedur",
-    path: "/sop",
+    name: "Sejarah Pemilu",
+    path: `/${lang}/profil/sejarah-pemilu`,
   },
 ];
 

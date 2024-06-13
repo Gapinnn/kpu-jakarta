@@ -12,7 +12,7 @@ const Struktur = () => {
         {/* Breadcrumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+        <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
           Struktur Organisasi KPU Provinsi DKI Jakarta
         </h1>
         {/* Konten */}

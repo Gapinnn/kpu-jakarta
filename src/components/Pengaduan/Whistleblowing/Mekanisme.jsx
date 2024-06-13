@@ -48,7 +48,7 @@ export default function Mekanisme() {
 
   return (
     <div className="overflow-hidden w-full bg-white rounded-2xl shadow-xl px-2 md:px-4 lg:px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-1 lg:gap-2">
-      <h1 className="text-2xl mb-5 lg:mb-6 font-bold text-stone-900">
+      <h1 className="text-lg md:text-xl lg:text-2xl mb-5 lg:mb-6 font-bold text-stone-900">
         Mekanisme Whistleblowing
       </h1>
       {/* Horizontal Stepper */}
@@ -142,21 +142,21 @@ export default function Mekanisme() {
       <ol className="relative lg:hidden text-gray-500 border-s-2 border-gold mb-2">
         <li
           onClick={() => setActiveStep(1)}
-          className="mb-10 ms-6 flex items-center"
+          className="mb-6 md:mb-10 ms-6 flex items-center"
         >
           <span
-            className={`absolute flex items-center justify-center w-9 h-9 rounded-full -start-5 ${
+            className={`absolute flex items-center justify-center w-7 h-7 md:w-9 md:h-9 rounded-full -start-3.5 md:-start-[1.25rem] ${
               activeStep >= 1 ? "bg-gold" : "bg-stone-300"
             }`}
           >
             <One
-              className={`w-8 h-8 ${
+              className={`w-6 h-6 md:w-8 md:h-8 ${
                 activeStep >= 1 ? "text-maroon-light" : "text-stone-600"
               }`}
             />
           </span>
           <h2
-            className={`text-xl font-bold text-center w-max shrink-0 ${
+            className={`text-base md:text-lg font-bold text-center w-max shrink-0 ${
               activeStep >= 1 ? "text-maroon-light" : "text-stone-600"
             }`}
           >
@@ -165,21 +165,21 @@ export default function Mekanisme() {
         </li>
         <li
           onClick={() => setActiveStep(2)}
-          className="mb-10 ms-6 flex items-center"
+          className="mb-6 md:mb-10 ms-6 flex items-center"
         >
           <span
-            className={`absolute flex items-center justify-center w-9 h-9 rounded-full -start-5 ${
+            className={`absolute flex items-center justify-center w-7 h-7 md:w-9 md:h-9 rounded-full -start-3.5 md:-start-[1.25rem] ${
               activeStep >= 2 ? "bg-gold" : "bg-stone-300"
             }`}
           >
             <Two
-              className={`w-8 h-8 ${
+              className={`w-6 h-6 md:w-8 md:h-8 ${
                 activeStep >= 2 ? "text-maroon-light" : "text-stone-600"
               }`}
             />
           </span>
           <h2
-            className={`text-xl font-bold text-center w-max shrink-0 ${
+            className={`text-base md:text-lg font-bold text-center w-max shrink-0 ${
               activeStep >= 2 ? "text-maroon-light" : "text-stone-600"
             }`}
           >
@@ -191,18 +191,18 @@ export default function Mekanisme() {
           className="ms-6  flex items-center"
         >
           <span
-            className={`absolute flex items-center justify-center w-9 h-9 rounded-full -start-5 ${
+            className={`absolute flex items-center justify-center w-7 h-7 md:w-9 md:h-9 rounded-full -start-3.5 md:-start-[1.25rem] ${
               activeStep >= 3 ? "bg-gold" : "bg-stone-300"
             }`}
           >
             <Three
-              className={`w-8 h-8 ${
+              className={`w-6 h-6 md:w-8 md:h-8 ${
                 activeStep >= 3 ? "text-maroon-light" : "text-stone-600"
               }`}
             />
           </span>
           <h2
-            className={`text-xl font-bold text-center w-max shrink-0 ${
+            className={`text-base md:text-lg font-bold text-center w-max shrink-0 ${
               activeStep >= 3 ? "text-maroon-light" : "text-stone-600"
             }`}
           >
@@ -213,10 +213,10 @@ export default function Mekanisme() {
 
       {/* Konten Satu */}
       {activeStep === 1 && (
-        <div className="w-full px-7 pr-3 lg:pr-0 lg:px-16 py-4">
+        <div className="w-full px-5 md:px-8 pr-3 lg:pr-0 lg:px-16 py-4">
           <ol
             type="1"
-            className="flex flex-col gap-2 list-decimal text-justify text-xl"
+            className="flex flex-col gap-2 list-decimal text-sm md:text-base lg:text-lg"
           >
             <li>
               <p>
@@ -227,7 +227,7 @@ export default function Mekanisme() {
                 (Komisioner, PNS dan non-PNS) KPU Provinsi DKI Jakarta dengan
                 kesalahan sebagai berikut:
               </p>
-              <ol className="flex flex-col gap-1 pl-6 list-disc text-justify text-xl">
+              <ol className="flex flex-col gap-1 pl-6 list-disc text-sm md:text-base lg:text-lg">
                 <li>Pelanggaran kode etik</li>
                 <li>Benturan kepentingan</li>
                 <li>Perbuatan melanggar hukum lainnya</li>
@@ -263,10 +263,10 @@ export default function Mekanisme() {
 
       {/* Konten Dua */}
       {activeStep === 2 && (
-        <div className="w-full px-7 pr-3 lg:pr-0 lg:px-16 py-4">
+        <div className="w-full px-5 md:px-8 pr-3 lg:pr-0 lg:px-16 py-4">
           <ol
             type="1"
-            className="flex flex-col gap-2 list-decimal text-justify text-xl"
+            className="flex flex-col gap-2 list-decimal text-sm md:text-base lg:text-lg"
           >
             <li>
               <p>
@@ -285,7 +285,7 @@ export default function Mekanisme() {
                 Pelapor Keberatan bersedia untuk ditanya lebih lanjut terkait
                 laporan whistleblowing yang memuat:
               </p>
-              <ol className="flex flex-col gap-1 pl-6 list-disc text-justify text-xl">
+              <ol className="flex flex-col gap-1 pl-6 list-disc text-sm md:text-base lg:text-lg">
                 <li>Nama Terlapor;</li>
                 <li>Jabatan Terlapor;</li>
                 <li>Hal yang dilaporkan;</li>
@@ -300,36 +300,36 @@ export default function Mekanisme() {
       {activeStep === 3 && (
         <div className="w-full px-1 lg:px-16 py-4 flex flex-col gap-2 lg:gap-4">
           <div className="w-full bg-maroon-light bg-blend-lighten bg-opacity-20 px-2 lg:px-4 py-2 rounded-lg flex items-center">
-            <p className="text-xl text-center text-maroon-light font-semibold">
+            <p className="text-sm md:text-base lg:text-lg text-center text-maroon-light font-semibold">
               Pastikan anda telah memahami Mekanisme Pengajuan dan Penanganan
               Pengajuan sebelum Pelaporan Whistleblowing
             </p>
           </div>
-          <p className="text-xl text-stone-900">
+          <p className="text-sm md:text-base lg:text-lg text-stone-900">
             Anda dapat melakukan pelaporan whistleblowing dengan melakukan
             pengunduhan file berikut
           </p>
           <button
             onClick={handleUnduhFormulir}
-            className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
+            className="w-max text-sm md:text-base flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
           >
             <FileDownload className="w-5 h-5 me-2" />
             <p>Formulir Whistleblowing</p>
           </button>
-          <p className="text-xl text-stone-900">
+          <p className="text-sm md:text-base lg:text-lg text-stone-900">
             Adapun beberapa dokumen berikut yang dapat membantu anda dalam
             melakukan pelaporan whistleblowing
           </p>
           <button
             onClick={handleUnduhTataCara}
-            className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
+            className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-sm md:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
           >
             <FileDownload className="w-5 h-5 me-2" />
             <p>Tata Cara Lapor Whistleblowing</p>
           </button>
           <button
             onClick={handleUnduhTim}
-            className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
+            className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-sm md:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
           >
             <FileDownload className="w-5 h-5 me-2" />
             <p>Tim Whistleblowing</p>
@@ -341,14 +341,14 @@ export default function Mekanisme() {
       <div className="flex w-full justify-between lg:hidden">
         <button
           onClick={handlePrev}
-          className={`flex flex-row w-max mt-4 py-1 px-3 text-lg font-medium rounded-lg border-2  ${
+          className={`flex flex-row w-max mt-4 py-1 px-3 text-sm md:text-base lg:text-lg font-medium rounded-lg border-2  ${
             activeStep === 1
               ? "bg-stone-200 text-stone-700"
               : "bg-maroon-light text-white"
           }`}
         >
           <ArrowDown
-            className={` w-8 h-8 rotate-90 -ms-3 ${
+            className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rotate-90 -ms-3 ${
               activeStep === 1 ? "text-stone-700" : "text-white"
             }`}
           />
@@ -356,7 +356,7 @@ export default function Mekanisme() {
         </button>
         <button
           onClick={handleNext}
-          className={`flex flex-row w-max mt-4 py-1 px-3 text-lg font-medium rounded-lg border-2  ${
+          className={`flex flex-row w-max mt-4 py-1 px-3 text-sm md:text-base lg:text-lg font-medium rounded-lg border-2  ${
             activeStep === 3
               ? "bg-stone-200 text-stone-700"
               : "bg-maroon-light text-white"
@@ -364,7 +364,7 @@ export default function Mekanisme() {
         >
           Selanjutnya
           <ArrowDown
-            className={` w-8 h-8 -rotate-90 -me-3 ${
+            className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 -rotate-90 -me-3 ${
               activeStep === 3 ? "text-stone-700" : "text-white"
             }`}
           />
