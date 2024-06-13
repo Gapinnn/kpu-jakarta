@@ -4,9 +4,11 @@ import { menuId, menuEn } from "../contents/header/";
 import { useCallback, useState } from "react";
 import UpArrow from "./Icon/UpArrow";
 import DropArrow from "./Icon/DropArrow";
-import Cancel from "./Icon/Cancel";
 import getLanguage from "../hooks/getLanguage";
 import getPath from "../hooks/getPath";
+import Hamburger from "./Icon/Hamburger";
+import Cancel from "./Icon/Cancel";
+import ArrowDown from "./Icon/ArrowDown";
 
 const Header = () => {
   const urlPath = getPath();
@@ -16,6 +18,18 @@ const Header = () => {
   const [hoverMenu, setHoverMenu] = useState("default");
   const [languageDropdown, setLanguageDropdown] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showAccordion, setShowAccordion] = useState({
+    ["Tentang Kami"]: false,
+    Informasi: false,
+    Statistik: false,
+    Publikasi: false,
+    bahasa: false,
+  });
+
+  const changeShowAccordion = useCallback((menu) => {
+    setShowAccordion((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  }, []);
 
   const changeHoverMenu = useCallback((menu) => {
     setHoverMenu(menu.name);
@@ -33,6 +47,26 @@ const Header = () => {
     <header className="w-full flex flex-col sticky top-0 z-30 shadow-xl">
       <div className="w-full px-[3%] flex justify-between bg-maroon-light">
         <Logo></Logo>
+        {/* Hamburger Hp/Tablet */}
+        <nav className="flex lg:hidden justify-center items-center">
+          <button
+            className="flex items-center justify-center w-fit h-auto"
+            onClick={() => setShowMenu(!showMenu)}
+            type="button"
+          >
+            <Cancel
+              className={`w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
+                showMenu ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
+              }`}
+            />
+            <Hamburger
+              className={`absolute w-10 h-10 text-white py-1 text-lg hover:text-stone-200 transition-transform duration-300 ${
+                showMenu ? "opacity-0 -rotate-90" : "opacity-100 rotate-0"
+              }`}
+            />
+          </button>
+        </nav>
+        {/* Menu Laptop */}
         <nav className="hidden lg:flex space-x-10 items-center">
           {menu.map((item) => (
             <div key={item.name} className="relative flex justify-center">
@@ -160,25 +194,141 @@ const Header = () => {
           </div>
         </nav>
       </div>
+      {/* Menu Hp/Tablet */}
+      {showMenu && (
+        <div
+          className={`absolute top-16 w-full z-20 min-h-screen bg-black bg-opacity-70`}
+        >
+          <div
+            className={`bg-white rounded-b-xl shadow-lg w-full min-h-fit max-h-[100vh] overflow-y-auto p-8 flex flex-col gap-6 justify-center items-start transition-all duration-1000`}
+          >
+            {menu.map((item) => (
+              <div className="w-full flex flex-col gap-4" key={item.name}>
+                <div
+                  onClick={() => changeShowAccordion(item.name)}
+                  className="flex w-full"
+                >
+                  <Link
+                    to={item.branch ? "#" : item.path}
+                    onClick={() => {
+                      if (item.branch) return;
+                      setShowMenu(false);
+                    }}
+                    className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-lg group `}
+                  >
+                    <p className="flex">{item.name}</p>
+                    {item.branch && (
+                      <ArrowDown
+                        className={`flex w-6 h-6 text-stone-900 transition-transform duration-300`}
+                      />
+                    )}
+                  </Link>
+                </div>
+                {showAccordion[item.name] && item.branch && (
+                  <div className="w-full flex flex-col gap-3">
+                    {item.submenu.map((subitem) => (
+                      <div key={subitem.name}>
+                        <Link
+                          onClick={() => setShowMenu(false)}
+                          to={subitem.path}
+                          className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
+                        >
+                          <p className="inline-flex items-center text-stone-900 font-semibold text-lg">
+                            {subitem.name}
+                          </p>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="w-full flex flex-col gap-4">
+              <div
+                onClick={() => changeShowAccordion("bahasa")}
+                className="flex w-full"
+              >
+                <Link
+                  className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-lg group `}
+                >
+                  <p className="flex">Bahasa</p>
+                  <ArrowDown
+                    className={`flex w-6 h-6 text-stone-900 transition-transform duration-300 ${
+                      showAccordion.bahasa ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </Link>
+              </div>
+              {showAccordion.bahasa && (
+                <div className="w-full flex flex-col gap-3">
+                  <div
+                    onClick={() => {
+                      setLanguageDropdown(!languageDropdown);
+                      setShowMenu(false);
+                    }}
+                  >
+                    <Link
+                      to="/id"
+                      className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
+                    >
+                      <div className="inline-flex items-center text-stone-900 font-semibold text-lg gap-1">
+                        <img
+                          src="/images/indonesia.png"
+                          alt="Indonesia"
+                          className="w-8 h-6 mr-2 shadow-xl border"
+                        />
+                        Indonesia
+                      </div>
+                    </Link>
+                  </div>
+                  <div
+                    onClick={() => {
+                      setLanguageDropdown(!languageDropdown);
+                      setShowMenu(false);
+                    }}
+                  >
+                    <Link
+                      to="/en"
+                      className="block px-2 py-1 hover:bg-stone-300 text-stone-900 font-semibold rounded-lg"
+                    >
+                      <div className="inline-flex items-center text-stone-900 font-semibold text-lg gap-1">
+                        <img
+                          src="/images/english.png"
+                          alt="English"
+                          className="w-8 h-6 mr-2 shadow-xl border"
+                        />
+                        English
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Info */}
       <div
-        className={`relative w-full flex  space-x-24 bg-maroon px-4 transition-transform duration-600 ${
-          !showInfo ? " h-2 py-2 justify-end" : " h-fit justify-center py-3 "
+        className={`relative w-full flex space-x-2 md:space-x-4 lg:space-x-24 bg-maroon px-2 lg:px-4 transition-transform duration-600 ${
+          !showInfo
+            ? " h-2 py-1.5 lg:py-2 justify-end"
+            : " h-fit justify-center py-2 lg:py-3 "
         }`}
       >
         <div
           onClick={showInfoHandler}
-          className={`absolute z-10 top-4 flex justify-center items-center w-10 h-6 me-[10%] rounded-b-full bg-maroon transition-transform duration-300 ${
+          className={`absolute z-10 top-2 lg:top-4 flex justify-center items-center w-9 lg:w-10 h-5 lg:h-6 me-[5%] md:me-[8%] lg:me-[10%] rounded-b-full bg-maroon transition-transform duration-300 ${
             !showInfo
               ? " opacity-100 translate-y-0"
               : " opacity-0 -translate-y-8"
           }`}
         >
           <DropArrow
-            className={`w-8 h-8 mb-1 text-stone-100 transition-transform duration-200`}
+            className={`w-7 lg:w-8 h-7 lg:h-8 mb-1 text-stone-100 transition-transform duration-200`}
           />
         </div>
         <p
-          className={`text-xl font-bold text-stone-100 transition-transform duration-300 ${
+          className={`text-base lg:text-xl font-bold text-stone-100 transition-transform duration-300 ${
             showInfo ? " opacity-100" : " opacity-0"
           }`}
         >
@@ -187,11 +337,11 @@ const Header = () => {
         </p>
         <div
           onClick={showInfoHandler}
-          className={`w-8 h-8 bg-stone-100 flex justify-center items-center transition-transform duration-300 ${
+          className={`w-7 md:-translate-x-1.5 lg:translate-x-0 lg:w-8 h-7 lg:h-8 bg-stone-100 self-center flex justify-center items-center transition-transform duration-300 ${
             showInfo ? " opacity-100 scale-100" : " opacity-0 scale-0"
           }`}
         >
-          <Cancel className="w-6 h-6 text-maroon-light" />
+          <Cancel className="w-6 h-5 lg:h-6 text-maroon-light" />
         </div>
       </div>
     </header>

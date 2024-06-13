@@ -13,12 +13,14 @@ export default function Pengaduan() {
   return (
     <>
       <div className="flex flex-col gap-0 bg-stone-100">
-        <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
+        <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
           {/* Breadcumb */}
           <Breadcumb />
           {/* Judul Halaman */}
-          <div className="flex flex-col gap-2 my-4">
-            <h1 className="text-maroon-light font-bold text-3xl">Pengaduan</h1>
+          <div className="flex flex-col gap-0 lg:gap-2 my-0 lg:my-4 mb-1 lg:mb-0">
+            <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+              Pengaduan
+            </h1>
             <p className="text-stone-900 text-xl mb-1">
               Layanan pengaduan ini memungkinkan warga DKI Jakarta untuk
               menyampaikan keluhan, laporan, dan masukan terkait KPU DKI
@@ -27,9 +29,9 @@ export default function Pengaduan() {
             </p>
           </div>
           {/* Menu */}
-          <div className="w-full grid grid-cols-3 gap-6 py-2 justify-between items-center">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 py-2 justify-between items-center">
             {/* Pengajuan Keberatan Informasi */}
-            <div className="bg-white p-8 flex flex-col gap-3 rounded-2xl shadow-xl">
+            <div className="bg-white p-6 lg:p-8 flex flex-col gap-2 lg:gap-3 rounded-2xl shadow-xl">
               <div className="w-20 h-20 rounded-full bg-maroon-light flex flex-col justify-center items-center">
                 <Clipboard className="w-12 h-12 text-white" />
               </div>
@@ -44,7 +46,7 @@ export default function Pengaduan() {
               </div>
               <Link
                 to="/id/pengaduan/dumas"
-                className="mt-6 flex flex-row items-center w-fit group"
+                className="mt-4 lg:mt-6 flex flex-row items-center w-fit group"
               >
                 <p className="text-maroon-light text-lg font-semibold group-hover:text-maroon">
                   Dumas KPU DKI Jakarta
@@ -53,7 +55,7 @@ export default function Pengaduan() {
               </Link>
             </div>
             {/* Whistleblowing System */}
-            <div className="bg-white p-8 flex flex-col gap-3 rounded-2xl shadow-xl">
+            <div className="bg-white p-6 lg:p-8 flex flex-col gap-2 lg:gap-3 rounded-2xl shadow-xl">
               <div className="w-20 h-20 rounded-full bg-maroon-light flex flex-col justify-center items-center">
                 <People className="w-12 h-12 text-white" />
               </div>
@@ -69,7 +71,7 @@ export default function Pengaduan() {
               </div>
               <Link
                 to="/id/pengaduan/whistleblowing"
-                className="mt-6 flex flex-row items-center w-fit group"
+                className="mt-4 lg:mt-6 flex flex-row items-center w-fit group"
               >
                 <p className="text-maroon-light text-lg font-semibold group-hover:text-maroon">
                   Whistleblowing KPU DKI Jakarta
@@ -78,7 +80,7 @@ export default function Pengaduan() {
               </Link>
             </div>
             {/* Lapor go id */}
-            <div className="bg-white p-8 flex flex-col gap-3 rounded-2xl shadow-xl">
+            <div className="bg-white p-6 lg:p-8 flex flex-col gap-2 lg:gap-3 rounded-2xl shadow-xl">
               <div className="w-20 h-20 rounded-full bg-maroon-light flex flex-col justify-center items-center">
                 <Comment className="w-12 h-12 text-white" />
               </div>
@@ -102,7 +104,7 @@ export default function Pengaduan() {
                     "noopener,noreferrer"
                   );
                 }}
-                className="mt-6 flex flex-row items-center w-fit group"
+                className="mt-4 lg:mt-6 flex flex-row items-center w-fit group"
               >
                 <p className="text-maroon-light text-lg font-semibold group-hover:text-maroon">
                   Lapor.go.id

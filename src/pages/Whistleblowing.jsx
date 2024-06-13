@@ -9,12 +9,12 @@ export default function Whistleblowing() {
   return (
     <>
       <div className="flex flex-col gap-0 bg-stone-100">
-        <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
+        <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
           {/* Breadcumb */}
           <Breadcumb />
           {/* Judul Halaman */}
-          <div className="flex flex-col gap-2 my-4">
-            <h1 className="text-maroon-light font-bold text-3xl">
+          <div className="flex flex-col gap-0 lg:gap-2 my-0 lg:my-4 mb-1 lg:mb-0">
+            <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
               Whistleblowing System
             </h1>
             <p className="text-stone-900 text-xl mb-1">
