@@ -7,27 +7,18 @@ const Sejarah = () => {
   const [tabActive, setTabActive] = useState(0);
   return (
     <div className="flex flex-col w-full bg-stone-100">
-      <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
+      <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
         {/* Breadcumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <div className="flex flex-col gap-2 my-4">
-          <h1 className="text-maroon-light font-bold text-3xl">
-            Sejarah Pemilu
-          </h1>
-          <p className="text-stone-900 text-xl mb-1">
-            Sejarah Pemilu ini menyajikan gambaran lengkap mengenai perjalanan
-            sejarah pemilihan umum di Indonesia, khususnya di wilayah DKI
-            Jakarta. Disusun oleh KPU DKI Jakarta, publikasi ini bertujuan untuk
-            memberikan pemahaman yang mendalam mengenai perkembangan demokrasi,
-            perubahan sistem pemilu, dan pencapaian penting dalam setiap periode
-            pemilihan umum.
-          </p>
-        </div>
-        {/* Perbesar max-w ke 7xl */}
-        <div className="w-full z-20 flex flex-col justify-center mx-auto py-8 px-10 bg-white shadow-2xl rounded-2xl">
-          <div className="flex">
-            <div className="w-1/4 p-2 pr-4 rounded-lg">
+        <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+          Sejarah Pemilu di Indonesia
+        </h1>
+        {/* Konten */}
+        <div className="w-full z-20 flex flex-col justify-center mx-auto py-4 lg:py-8 px-2 lg:px-10 bg-white shadow-2xl rounded-2xl">
+          <div className="flex flex-col gap-2 lg:gap-0 lg:flex-row">
+            {/* Tab Tahun */}
+            <div className="w-full lg:w-1/4 pt-0 lg:pt-2 p-2 lg:pr-4 rounded-lg">
               <ul className="flex flex-col justify-between gap-2">
                 {dataSejarah.map((election, index) => (
                   <button
@@ -44,18 +35,48 @@ const Sejarah = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-3/4 border-l-2 border-gold border-opacity-50 pl-4">
+            {/* Konten Sejarah */}
+            <div className="w-full lg:w-3/4 border-t-2 lg:border-t-0 lg:border-l-2 border-gold border-opacity-50 pt-4 lg:pl-4">
               <h2 className="text-maroon-light text-2xl font-bold">
                 {dataSejarah[tabActive].name}
               </h2>
-              <h3 className="text-xl text-stone-800 font-semibold mb-4">
+              <h3 className="text-xl text-stone-800 font-semibold mb-2">
                 {dataSejarah[tabActive].title}
               </h3>
-              <div className="flex">
+              {/* Isi Sejarah */}
+              {/* Versi Non Laptop */}
+              <div className="w-full block lg:hidden">
                 <img
                   src={dataSejarah[tabActive].imgSrc}
                   alt="Pemilu 1955"
-                  className="w-1/4 rounded-lg shadow-md" // Ubah ukuran gambar ke w-1/4 untuk proporsi lebih besar
+                  className="float-left w-1/3 md:w-[40%] mt-1 ml-2 mr-4 h-fit rounded-lg shadow-md" // Ubah ukuran gambar ke w-1/4 untuk proporsi lebih besar
+                />
+                <p className="text-justify px-2">
+                  <span>{dataSejarah[tabActive].deskripsi}</span>
+                </p>
+                <div className="w-full pt-4 pb-1 px-1 lg:hidden">
+                  <Link
+                    to="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(
+                        dataSejarah[tabActive].url,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }}
+                    className="w-full mt-2 py-1.5 px-5 md:px-6 font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
+                  >
+                    Selengkapnya
+                  </Link>
+                </div>
+              </div>
+              {/* Versi Laptop */}
+              <div className="hidden lg:flex">
+                <img
+                  src={dataSejarah[tabActive].imgSrc}
+                  alt="Pemilu 1955"
+                  className="w-1/4 h-fit rounded-lg shadow-md" // Ubah ukuran gambar ke w-1/4 untuk proporsi lebih besar
                 />
                 <p className="flex flex-col text-justify pl-4 pr-8">
                   <span>{dataSejarah[tabActive].deskripsi}</span>

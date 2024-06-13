@@ -210,6 +210,10 @@ const Header = () => {
                 >
                   <Link
                     to={item.branch ? "#" : item.path}
+                    onClick={() => {
+                      if (item.branch) return;
+                      setShowMenu(false);
+                    }}
                     className={`w-full flex items-center justify-between text-stone-900 py-1 font-bold text-lg group `}
                   >
                     <p className="flex">{item.name}</p>
@@ -225,6 +229,7 @@ const Header = () => {
                     {item.submenu.map((subitem) => (
                       <div key={subitem.name}>
                         <Link
+                          onClick={() => setShowMenu(false)}
                           to={subitem.path}
                           className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
                         >
@@ -256,7 +261,12 @@ const Header = () => {
               </div>
               {showAccordion.bahasa && (
                 <div className="w-full flex flex-col gap-3">
-                  <div onClick={() => setLanguageDropdown(!languageDropdown)}>
+                  <div
+                    onClick={() => {
+                      setLanguageDropdown(!languageDropdown);
+                      setShowMenu(false);
+                    }}
+                  >
                     <Link
                       to="/id"
                       className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
@@ -271,7 +281,12 @@ const Header = () => {
                       </div>
                     </Link>
                   </div>
-                  <div onClick={() => setLanguageDropdown(!languageDropdown)}>
+                  <div
+                    onClick={() => {
+                      setLanguageDropdown(!languageDropdown);
+                      setShowMenu(false);
+                    }}
+                  >
                     <Link
                       to="/en"
                       className="block px-2 py-1 hover:bg-stone-300 text-stone-900 font-semibold rounded-lg"
@@ -294,7 +309,7 @@ const Header = () => {
       )}
       {/* Info */}
       <div
-        className={`relative w-full flex space-x-2 lg:space-x-24 bg-maroon px-2 lg:px-4 transition-transform duration-600 ${
+        className={`relative w-full flex space-x-2 md:space-x-4 lg:space-x-24 bg-maroon px-2 lg:px-4 transition-transform duration-600 ${
           !showInfo
             ? " h-2 py-1.5 lg:py-2 justify-end"
             : " h-fit justify-center py-2 lg:py-3 "
@@ -302,7 +317,7 @@ const Header = () => {
       >
         <div
           onClick={showInfoHandler}
-          className={`absolute z-10 top-2 lg:top-4 flex justify-center items-center w-9 lg:w-10 h-5 lg:h-6 me-[5%] lg:me-[10%] rounded-b-full bg-maroon transition-transform duration-300 ${
+          className={`absolute z-10 top-2 lg:top-4 flex justify-center items-center w-9 lg:w-10 h-5 lg:h-6 me-[5%] md:me-[8%] lg:me-[10%] rounded-b-full bg-maroon transition-transform duration-300 ${
             !showInfo
               ? " opacity-100 translate-y-0"
               : " opacity-0 -translate-y-8"
@@ -322,7 +337,7 @@ const Header = () => {
         </p>
         <div
           onClick={showInfoHandler}
-          className={`w-7 lg:w-8 h-7 lg:h-8 bg-stone-100 self-center flex justify-center items-center transition-transform duration-300 ${
+          className={`w-7 md:-translate-x-1.5 lg:translate-x-0 lg:w-8 h-7 lg:h-8 bg-stone-100 self-center flex justify-center items-center transition-transform duration-300 ${
             showInfo ? " opacity-100 scale-100" : " opacity-0 scale-0"
           }`}
         >

@@ -9,7 +9,7 @@ import Maps from "./Logo/Maps";
 const Footer = () => {
   return (
     <footer className="bg-maroon w-full px-[3%] py-8 clearfix">
-      <div className="flex w-full flex-col lg:flex-row items-start lg:justify-between py-2 lg:py-4 lg:mx-12 border-b-2 border-gold z-20 relative">
+      <div className="flex w-full flex-col lg:flex-row items-start lg:justify-between py-2 lg:py-4 lg:mx-0 border-b-2 border-gold z-20 relative">
         <div className="flex w-full flex-col items-start gap-2 lg:gap-4 z-20 mx-4 lg:mx-0">
           <div className="flex gap-3 mb-6 lg:mb-0">
             <img
@@ -52,7 +52,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4 mt-2 lg:mt-8">
+          <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4 mt-2 lg:mt-0">
             <h3 className="text-xl font-bold text-stone-100">Tautan Lain</h3>
             {tautan.map((item) => (
               <Link

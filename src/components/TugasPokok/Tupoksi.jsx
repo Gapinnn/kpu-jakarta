@@ -8,16 +8,16 @@ const TupoksiComponent = () => {
         <div className="bg-maroon-light bg-opacity-85 w-full h-8"></div>
       </div>
 
-      <div className="container mx-auto pt-8 pb-12 px-2 flex flex-col justify-center">
+      <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
         {/* Breadcumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <h1 className="text-maroon-light font-bold text-3xl mb-6 mt-4">
+        <h1 className="text-maroon-light font-bold text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
           Tugas Pokok dan Fungsi KPU Provinsi DKI Jakarta
         </h1>
         {/* Konten */}
-        <div className="w-full z-20 flex flex-col justify-center mx-auto py-8 px-10 bg-white shadow-2xl rounded-2xl">
-          <h1 className=" text-black text-lg ">
+        <div className="w-full z-20 flex flex-col justify-center mx-auto py-4 lg:py-8 px-2 lg:px-10 bg-white shadow-2xl rounded-2xl">
+          <h1 className=" text-black text-lg px-2 lg:px-0">
             Pemilihan umum diselenggarakan oleh suatu komisi pemilihan umum yang
             bersifat nasional, tetap, dan mandiri. Dalam menyelenggarakan
             Pemilihan Umum, Komisi Pemilihan Umum terdiri atas KPU Provinsi yang
@@ -32,51 +32,51 @@ const TupoksiComponent = () => {
             berikut:
           </h1>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mb-0 lg:mb-4 mt-4 lg:mt-10">
             1. Divisi Keuangan, Umum, dan Rumah Tangga
           </h1>
           {/* list */}
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">1</h1> */}
             <div className="text-black text-lg mt-2">
               Divisi Keuangan, Umum, dan Rumah Tangga mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Administrasi perkantoran, rumah tangga, dan kearsipan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Protokol dan persidangan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengelolaan dan pelaporan barang milik negara;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pelaporan dan pertanggungjawaban keuangan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengusulan peresmian keanggotaan dan pelaksanaan sumpah/janji
@@ -86,57 +86,57 @@ const TupoksiComponent = () => {
             </div>
           </div>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             2. Divisi Sosialisasi, Pendidikan Pemilih, dan Partisipasi
             Masyarakat
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">2</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Sosialisasi, Pendidikan Pemilih, dan Partisipasi Masyarakat
               mempunyai tugas untuk mengoordinasikan, menyelenggarakan,
               mengendalikan, memantau, supervisi, dan evaluasi terkait dengan
               kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">Sosialisasi kepemiluan;</h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Partisipasi masyarakat dan pendidikan pemilih;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">Publikasi dan kehumasan;</h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Kampanye pemilu dan pemilihan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Kerja sama antar lembaga;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  f
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengelolaan dan penyediaan informasi publik.
@@ -145,57 +145,57 @@ const TupoksiComponent = () => {
             </h1>
           </div>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             3. Divisi Data dan Informasi
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">3</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Data dan Informasi mempunyai tugas untuk mengoordinasikan,
               menyelenggarakan, mengendalikan, memantau, supervisi, dan evaluasi
               terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pemutakhiran dan pemeliharaan data pemilih;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Sistem informasi yang berkaitan dengan tahapan pemilu;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengelolaan sarana dan prasarana teknologi informasi;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengelolaan dan penyajian data hasil pemilu nasional;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">Pengendalian informasi;</h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  f
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengelolaan dan pengolahan data hasil pemilu dan pemilihan.
@@ -204,36 +204,36 @@ const TupoksiComponent = () => {
             </h1>
           </div>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             4. Divisi Perencanaan dan Logistik
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">4</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Perencanaan dan Logistik mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penyusunan program dan anggaran;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Perencanaan, pengadaan barang dan jasa, serta distribusi
                   logistik;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Monitoring, evaluasi, dan pengendalian program dan anggaran;
@@ -242,66 +242,66 @@ const TupoksiComponent = () => {
             </h1>
           </div>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             5. Divisi Teknis Penyelenggaraan
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">5</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Teknis Penyelenggaraan mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengusulan daerah pemilihan dan alokasi kursi;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Verifikasi partai politik dan anggota DPD;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pencalonan peserta pemilu dan pemilihan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pemungutan, penghitungan suara, dan rekapitulasi penghitungan
                   suara;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penetapan hasil dan pendokumentasian hasil pemilu dan
                   pemilihan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  f
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">Pelaporan dana kampanye;</h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
                   g
                 </h1>
                 <h1 className="text-black text-lg">
@@ -311,60 +311,60 @@ const TupoksiComponent = () => {
             </h1>
           </div>
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             6. Divisi Hukum dan Pengawasan
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">6</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Hukum dan Pengawasan mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penyusunan rancangan keputusan KPU Provinsi;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Telaah hukum dan advokasi hukum;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penyelesaian sengketa proses, tahapan, hasil pemilu dan
                   pemilihan, serta non tahapan pemilu dan pemilihan;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Dokumentasi dan publikasi hukum;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengawasan dan pengendalian internal;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  f
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penanganan pelanggaran administrasi, kode etik, dan kode
@@ -375,60 +375,60 @@ const TupoksiComponent = () => {
           </div>
 
           {/* Misi */}
-          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-10">
+          <h1 className="bg-maroon-light rounded-xl text-gold text-xl p-4 text-left font-bold mt-4 lg:mt-10">
             7. Divisi Sumber Daya Manusia, Penelitian, dan Pengembangan
           </h1>
 
-          <div className="flex px-4 mb-2">
+          <div className="flex px-2 lg:px-4 mb-0 lg:mb-2">
             {/* <h1 className="bg-maroon-light rounded-lg w-12 text-gold text-lg p-2 text-center absolute font-bold">6</h1> */}
             <h1 className="text-black text-lg mt-2">
               Divisi Sumber Daya Manusia dan Litbang mempunyai tugas untuk
               mengoordinasikan, menyelenggarakan, mengendalikan, memantau,
               supervisi, dan evaluasi terkait dengan kebijakan:
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  a
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengusulan penggantian antar waktu anggota KPU Kabupaten/Kota;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  b
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengawasan proses rekrutmen anggota PPK, PPS, dan KPPS;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  c
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pembinaan etika dan evaluasi kinerja sumber daya manusia;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  d
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pengembangan budaya kerja, tata laksana dan organisasi;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  e
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Pendidikan dan pelatihan, serta pengembangan sumber daya
                   manusia;
                 </h1>
               </div>
-              <div className="flex gap-2 mt-1">
-                <h1 className="bg-maroon-light rounded-lg text-gold text-md w-[1.6rem] h-[1.6rem] p-0 font-semibold flex justify-center items-center">
-                  f
+              <div className="flex items-start gap-1.5 lg:gap-2 mt-1">
+                <h1 className="bg-maroon-light rounded-lg text-gold text-md py-0 px-1.5 font-semibold flex justify-center items-center">
+                  #
                 </h1>
                 <h1 className="text-black text-lg">
                   Penelitian dan pengembangan kepemiluan.

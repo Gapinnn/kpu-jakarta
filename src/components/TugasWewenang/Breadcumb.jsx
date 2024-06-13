@@ -5,7 +5,7 @@ export default function Breadcumb() {
   const lang = getLanguage();
   return (
     <nav className="w-fit flex mb-4 text-stone-900" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 rtl:space-x-reverse">
+      <ol className="inline-flex items-center space-x-1 rtl:space-x-reverse flex-wrap">
         <Link to={`/${lang}`} className="inline-flex items-center">
           <div className="inline-flex items-center text-lg font-medium text-maroon-light hover:text-maroon">
             <svg
