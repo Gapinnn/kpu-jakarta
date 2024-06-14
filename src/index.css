@@ -92,13 +92,13 @@ base {
     }
 
     #dataSlider .slick-dots li.slick-active div {
-      @apply bg-gold rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
+      @apply bg-gold -translate-y-0.5 mt-1 rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
     }
     #dataSlider .slick-dots li div {
-      @apply bg-gold bg-opacity-65 rounded-full flex justify-center items-center w-4 h-4 scale-110 !important;
+      @apply bg-gold mt-1 bg-opacity-65 rounded-full flex justify-center items-center w-4 h-4 scale-110 !important;
     }
     #infoSlider .slick-dots li.slick-active div {
-      @apply bg-maroon-light mt-1 -translate-y-0.5 rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
+      @apply bg-maroon-light mt-1 -translate-y-1 rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
     }
     #bahanSosialisasiSlider .slick-dots li.slick-active div {
       @apply bg-maroon-light mt-1 rounded-full flex justify-center items-center w-5 h-5 -translate-y-0.5 scale-110 !important;
@@ -169,13 +169,13 @@ base {
     }
 
     #dataSlider .slick-dots li.slick-active div {
-      @apply bg-gold rounded-full flex justify-center items-center w-6 h-6 scale-110 !important;
+      @apply bg-gold -translate-y-0.5 mt-1 rounded-full flex justify-center items-center w-6 h-6 scale-110 !important;
     }
     #dataSlider .slick-dots li div {
-      @apply bg-gold bg-opacity-65 rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
+      @apply bg-gold mt-1 bg-opacity-65 rounded-full flex justify-center items-center w-5 h-5 scale-110 !important;
     }
     #infoSlider .slick-dots li.slick-active div {
-      @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 mt-1 -translate-y-0.5 scale-110 !important;
+      @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 mt-1 -translate-y-1 scale-110 !important;
     }
     #bahanSosialisasiSlider .slick-dots li.slick-active div {
       @apply bg-maroon-light rounded-full flex justify-center items-center w-6 h-6 mt-1 -translate-y-0.5 scale-110 !important;
