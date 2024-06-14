@@ -1,30 +1,71 @@
+import { useState, useEffect } from "react";
 import YouTube from "react-youtube";
 
 export default function KontenVideo() {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const optVideoUtama = {
-    height: "630",
-    width: "1120",
+    height:
+      windowDimensions.width < 768
+        ? "210"
+        : windowDimensions.width < 1024
+        ? "405"
+        : "630",
+    width:
+      windowDimensions.width < 768
+        ? "380"
+        : windowDimensions.width < 1024
+        ? "720"
+        : "1120",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       rel: 0,
       color: "#ffbf00",
     },
   };
+
   const optVideoSamping = {
-    height: "180",
-    width: "320",
+    height:
+      windowDimensions.width < 768
+        ? "55"
+        : windowDimensions.width < 1024
+        ? "120"
+        : "180",
+    width:
+      windowDimensions.width < 768
+        ? "110"
+        : windowDimensions.width < 1024
+        ? "220"
+        : "320",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       rel: 0,
       color: "#ffbf00",
     },
   };
+
   return (
     <div className="w-full bg-stone-100 p-2 py-4">
-      <h1 className="text-maroon-light text-center mx-auto font-extrabold text-4xl mt-8">
+      <h1 className="text-maroon-light text-center mx-auto font-extrabold text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-8 lg:mt-8">
         Konten Video
       </h1>
-      <div className="flex justify-center w-full mt-8 gap-8 p-2">
+      <div className="flex flex-col items-center lg:flex-row justify-center w-full mt-4 md:mt-6 lg:mt-8 gap-2 md:gap-3 lg:gap-8 p-2">
         {/* Konten Video Utama */}
         <div className="w-fit">
           <div className="rounded-3xl overflow-hidden border-8 border-gold">
@@ -32,7 +73,7 @@ export default function KontenVideo() {
           </div>
         </div>
         {/* Konten Video Samping */}
-        <div className="w-fit flex flex-col justify-between items-center">
+        <div className="w-fit lg:w-fit flex flex-row gap-2 md:gap-4 lg:gap-0 lg:flex-col justify-center lg:justify-between items-center">
           <div className="rounded-xl overflow-hidden border-[6px] border-gold">
             <YouTube videoId="FaD-VDro_tM" opts={optVideoSamping} />
           </div>
