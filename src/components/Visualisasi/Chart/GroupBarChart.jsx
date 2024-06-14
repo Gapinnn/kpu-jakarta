@@ -15,6 +15,7 @@ export default function GroupBarChart({
   dataName,
   selectedData,
   variabelAll,
+  checkboxLabels,
   changeDataName,
   changeSelectedData,
 }) {
@@ -159,7 +160,7 @@ export default function GroupBarChart({
       .attr("fill", "black")
       .style("opacity", 0)
       .text((d) => d.value)
-      .style("font-size", "12px")
+      .style("font-size", window.innerWidth < 768 ? "9px" : "12px")
       .transition()
       .duration(800)
       .delay((d, i) => i * 400)
@@ -175,6 +176,9 @@ export default function GroupBarChart({
       .attr("transform", "translate(0,4)")
       .attr("text-anchor", "center");
 
+    const rWidth =
+      window.innerWidth < 768 ? 80 : window.innerWidth < 1024 ? 88 : 96;
+    const rTranslasi = width / 2 - (keys.length / 2) * rWidth;
     const legend = svg
       .append("g")
       .attr("font-size", 12)
@@ -184,23 +188,29 @@ export default function GroupBarChart({
       .data(keys)
       .enter()
       .append("g")
-      .attr(
-        "transform",
-        (d, i) => `translate(${(width / 8) * 3 + i * 96},-40)`
-      );
+      .attr("transform", (d, i) => `translate(${rTranslasi + i * rWidth},-40)`);
 
     legend
       .append("rect")
       .attr("x", 0)
-      .attr("width", 26)
-      .attr("height", 26)
+      .attr(
+        "width",
+        window.innerWidth < 768 ? 16 : window.innerWidth < 1024 ? 20 : 24
+      )
+      .attr(
+        "height",
+        window.innerWidth < 768 ? 16 : window.innerWidth < 1024 ? 20 : 24
+      )
       .attr("fill", color);
 
     legend
       .append("text")
-      .attr("x", 32)
+      .attr(
+        "x",
+        window.innerWidth < 768 ? 22 : window.innerWidth < 1024 ? 26 : 32
+      )
       .attr("y", 13)
-      .attr("dy", "0.3em")
+      .attr("dy", window.innerWidth < 1024 ? "0rem" : "0.25rem")
       .text((d) => d);
 
     let tooltip = d3.select("body").select(`.tooltip${title}`);
@@ -334,26 +344,26 @@ export default function GroupBarChart({
   return (
     <div className="flex-col h-full w-full">
       {/* Dropdown */}
-      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
-        <div className="inline-flex items-center text-maroon-light text-md">
+      <div className="relative inline-flex justify-between gap-2 md:gap-3 p-1.5 md:p-3 lg:p-3 py-1 md:py-1.5 rounded-2xl w-fit md:max-w-[13rem] lg:max-w-[18rem] group hover:bg-stone-100 md:hover:w-[13rem] lg:hover:w-[18rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-3 lg:px-4 text-gray-900 cursor-pointer">
+        <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
           {dataName}
         </div>
         <UpArrow
-          className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
+          className={`w-6 h-6 md:w-7 md:h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
         <div
-          className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
+          className={`absolute top-[0.95rem] md:top-[1.5rem] lg:top-[1.5rem] -left-[2.5px] lg:-left-[2px] z-20 my-4 md:w-[13rem] lg:w-[18rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
-          <ul className="py-2 font-medium" role="none">
+          <ul className="pt-0.5 pb-1 md:py-2 font-medium" role="none">
             {variabelAll.map((variabel) => (
               <li
                 className={`${variabel.name === dataName ? "hidden" : ""}`}
                 key={variabel.name}
                 onClick={() => changeDataName(variabel.name)}
               >
-                <div className="cursor-pointer flex w-full gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
                     {variabel.name}
                   </div>
                 </div>
@@ -366,23 +376,23 @@ export default function GroupBarChart({
       <div className="w-full flex relative">
         {/* Download Button */}
         <div
-          className={`w-9 h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
+          className={`w-8 h-8 lg:w-9 lg:h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
             data.length === 0 ? "hidden" : ""
           }`}
         >
-          <Download className="text-white w-6 h-6" />
+          <Download className="text-white w-5 h-5 md:w-6 md:h-6" />
           <div
-            className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+            className={`absolute -bottom-[8rem] md:-bottom-[9rem] lg:-bottom-[9.5rem] right-0 z-50 my-2 md:my-3 lg:my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
           >
-            <ul className="py-2 font-medium" role="none">
+            <ul className="py-1.5 lg:py-2 font-medium" role="none">
               <li>
                 <div
                   onClick={downloadSVG}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FileSvg className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                  <FileSvg className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
                     SVG
                   </div>
                 </div>
@@ -392,8 +402,8 @@ export default function GroupBarChart({
                   onClick={downloadPNG}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FilePng className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md">
+                  <FilePng className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
                     PNG
                   </div>
                 </div>
@@ -403,8 +413,8 @@ export default function GroupBarChart({
                   onClick={downloadPDF}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FilePdf className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md">
+                  <FilePdf className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
                     PDF
                   </div>
                 </div>
@@ -417,37 +427,37 @@ export default function GroupBarChart({
       </div>
       {/* Checkbox Filter */}
       <div className="w-full flex items-center justify-center">
-        <div className="w-40">
+        <div className="w-24 md:w-28 lg:w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-${keys[0]}`}
+              id={`${title}-${checkboxLabels[0]}`}
               type="checkbox"
               checked={selectedData.group1}
               onChange={() => changeSelectedData("group1")}
-              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+              className="w-6 h-6 lg:w-7 lg:h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-${keys[0]}`}
-              className="w-full ml-2 text-md font-medium text-maroon-light"
+              htmlFor={`${title}-${checkboxLabels[0]}`}
+              className="w-full ml-2 text-sm md:text-base font-medium text-maroon-light"
             >
-              {keys[0]}
+              {checkboxLabels[0]}
             </label>
           </div>
         </div>
-        <div className="w-40">
+        <div className="w-24 md:w-28 lg:w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-${keys[1]}`}
+              id={`${title}-${checkboxLabels[1]}`}
               type="checkbox"
               checked={selectedData.group2}
               onChange={() => changeSelectedData("group2")}
-              className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
+              className="w-6 h-6 lg:w-7 lg:h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-${keys[1]}`}
-              className="w-full ml-2 text-md font-medium text-maroon-light"
+              htmlFor={`${title}-${checkboxLabels[1]}`}
+              className="w-full ml-2 text-sm md:text-base font-medium text-maroon-light"
             >
-              {keys[1]}
+              {checkboxLabels[1]}
             </label>
           </div>
         </div>

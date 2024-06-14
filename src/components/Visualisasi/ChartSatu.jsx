@@ -17,6 +17,7 @@ export default function ChartSatu() {
     group2: true,
   });
   const [indexSelectedData, setIndexSelectedData] = useState([0, 1]);
+  const checkboxLabels = groupBarChart1[0].label;
 
   const changeDataName = (value) => {
     changeSelectedData("all");
@@ -77,6 +78,78 @@ export default function ChartSatu() {
   };
 
   useEffect(() => {
+    // Function to update region names based on screen width
+    const updateRegionNames = () => {
+      if (window.innerWidth < 760) {
+        groupBarChart1.forEach((chart) => {
+          chart.data.forEach((dataSet) => {
+            dataSet.forEach((item) => {
+              switch (item.region) {
+                case "Jakarta Barat":
+                  item.region = "Jakbar";
+                  break;
+                case "Jakarta Pusat":
+                  item.region = "Jakpus";
+                  break;
+                case "Jakarta Selatan":
+                  item.region = "Jaksel";
+                  break;
+                case "Jakarta Timur":
+                  item.region = "Jaktim";
+                  break;
+                case "Jakarta Utara":
+                  item.region = "Jakut";
+                  break;
+                case "Kepulauan Seribu":
+                  item.region = "K.Seribu";
+                  break;
+                default:
+                  break;
+              }
+            });
+          });
+        });
+      } else {
+        groupBarChart1.forEach((chart) => {
+          chart.data.forEach((dataSet) => {
+            dataSet.forEach((item) => {
+              switch (item.region) {
+                case "Jakbar":
+                  item.region = "Jakarta Barat";
+                  break;
+                case "Jakpus":
+                  item.region = "Jakarta Pusat";
+                  break;
+                case "Jaksel":
+                  item.region = "Jakarta Selatan";
+                  break;
+                case "Jaktim":
+                  item.region = "Jakarta Timur";
+                  break;
+                case "Jakut":
+                  item.region = "Jakarta Utara";
+                  break;
+                case "K.Seribu":
+                  item.region = "Kepulauan Seribu";
+                  break;
+                default:
+                  break;
+              }
+            });
+          });
+        });
+      }
+    };
+
+    updateRegionNames();
+    window.addEventListener("resize", updateRegionNames);
+
+    return () => {
+      window.removeEventListener("resize", updateRegionNames);
+    };
+  }, []);
+
+  useEffect(() => {
     setIndexData(changeData(dataName));
   }, [dataName, changeData]);
 
@@ -96,7 +169,7 @@ export default function ChartSatu() {
 
   return (
     <LayoutVis title={groupBarChart1[indexData].title}>
-      <div className="w-full flex flex-col lg:flex-row gap-6">
+      <div className="w-full flex flex-col lg:flex-row gap-2 md:gap-4 lg:gap-6">
         <GroupBarChart
           data={data}
           keys={label}
@@ -104,17 +177,18 @@ export default function ChartSatu() {
           dataName={dataName}
           variabelAll={listVariabelGroupBarChart1}
           selectedData={selectedData}
+          checkboxLabels={checkboxLabels}
           changeDataName={changeDataName}
           changeSelectedData={changeSelectedData}
           title="groupbarchart-1"
           className="mx-auto flex lg:basis-[35%] xl:basis-2/3"
         />
-        <div className="w-full flex lg:basis-[65%] xl:basis-1/3 gap-2 flex-col">
-          <h2 className="text-xl text-maroon-light font-bold text-center mt-2">
+        <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
+          <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
             Interpretasi
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
-          <p className="text-black text-md">
+          <p className="text-black text-justify text-sm md:text-base">
             {groupBarChart1[indexData].interpretasi}
           </p>
         </div>

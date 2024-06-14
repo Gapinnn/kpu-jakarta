@@ -24,6 +24,7 @@ export default function ChartTiga() {
     group2: true,
   });
   const [indexSelectedKategori, setIndexSelectedKategori] = useState([0, 1]);
+  const checkboxLabels = groupStackedBarChart1[0].data.categories;
 
   const changeDaerahName = (value) => {
     changeSelectedKategori("all");
@@ -92,6 +93,52 @@ export default function ChartTiga() {
   };
 
   useEffect(() => {
+    function updateIndikators() {
+      if (window.innerWidth < 768) {
+        const indikatorBaru = indikators.map((item) => {
+          switch (item) {
+            case "SMA/MA Sederajat":
+              return "SMA";
+            case "SMP/MTs Sederajat":
+              return "SMP";
+            case "SD/MI Sederajat":
+              return "SD";
+            case "Diploma I-IV":
+              return "D1-D4";
+            case "Sarjana (S1, S2, S3)":
+              return "S1-S3";
+            default:
+              return item;
+          }
+        });
+        setIndikators(indikatorBaru);
+      } else {
+        const indikatorBaru = indikators.map((item) => {
+          switch (item) {
+            case "SMA":
+              return "SMA/MA Sederajat";
+            case "SMP":
+              return "SMP/MTs Sederajat";
+            case "SD":
+              return "SD/MI Sederajat";
+            case "D1-D4":
+              return "Diploma I-IV";
+            case "S1-S3":
+              return "Sarjana (S1, S2, S3)";
+            default:
+              return item;
+          }
+        });
+        setIndikators(indikatorBaru);
+      }
+    }
+
+    updateIndikators();
+    window.addEventListener("resize", updateIndikators);
+    return () => window.removeEventListener("resize", updateIndikators);
+  }, []);
+
+  useEffect(() => {
     setIndexDaerah(changeDaerah(daerahName));
   }, [daerahName, changeDaerah]);
 
@@ -124,16 +171,17 @@ export default function ChartTiga() {
           daerahName={daerahName}
           daerahAll={listDaerahGroupStackedBarChart1}
           selectedKategori={selectedKategori}
+          checkboxLabels={checkboxLabels}
           changeDaerahName={changeDaerahName}
           changeSelectedKategori={changeSelectedKategori}
           className="mx-auto flex lg:basis-[35%] xl:basis-2/3"
         />
-        <div className="w-full flex lg:basis-[65%] xl:basis-1/3 gap-2 flex-col">
-          <h2 className="text-xl text-maroon-light font-bold text-center mt-2">
+        <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
+          <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
             Interpretasi
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
-          <p className="text-black text-md">
+          <p className="text-black text-justify text-sm md:text-base">
             {groupStackedBarChart1[indexDaerah].data.interpretasi}
           </p>
         </div>

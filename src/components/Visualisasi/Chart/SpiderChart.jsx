@@ -15,6 +15,7 @@ export default function SpiderChart({
   dataName,
   selectedData,
   variabelAll,
+  checkboxLabels,
   changeDataName,
   changeSelectedData,
 }) {
@@ -563,26 +564,26 @@ export default function SpiderChart({
   return (
     <div className="flex-col h-full w-full">
       {/* Dropdown */}
-      <div className="relative inline-flex justify-between gap-3 p-3 py-1.5 rounded-3xl max-w-[21rem] group hover:bg-stone-100 hover:w-[21rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-4 text-gray-900 cursor-pointer">
-        <div className="inline-flex items-center text-maroon-light text-md">
+      <div className="relative inline-flex justify-between gap-2 md:gap-3 p-1.5 md:p-3 lg:p-3 py-1 md:py-1.5 rounded-2xl w-fit md:max-w-[20rem] lg:max-w-[22rem] group hover:bg-stone-100 md:hover:w-[20rem] lg:hover:w-[22rem] hover:border-b-0 hover:rounded-b-none border-maroon-light border-[2.5px] items-center font-medium px-3 lg:px-4 text-gray-900 cursor-pointer">
+        <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
           {dataName}
         </div>
         <UpArrow
-          className={`w-7 h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
+          className={`w-6 h-6 md:w-7 md:h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
         <div
-          className={`absolute top-[1.5rem] -left-[2px] z-20 my-4 w-[21rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
+          className={`absolute top-[0.95rem] md:top-[1.5rem] lg:top-[1.5rem] -left-[2.5px] lg:-left-[2px] z-20 my-4 md:w-[20rem] lg:w-[22rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
-          <ul className="py-2 font-medium" role="none">
+          <ul className="pt-0.5 pb-1 md:py-2 font-medium" role="none">
             {variabelAll.map((variabel) => (
               <li
                 className={`${variabel.name === dataName ? "hidden" : ""}`}
                 key={variabel.name}
                 onClick={() => changeDataName(variabel.name)}
               >
-                <div className="cursor-pointer flex w-full gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
                     {variabel.name}
                   </div>
                 </div>
@@ -595,23 +596,23 @@ export default function SpiderChart({
       <div className="w-full flex relative">
         {/* Download Button */}
         <div
-          className={`w-9 h-9 absolute top-0 right-0 z-20 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
+          className={`w-8 h-8 z-20 lg:w-9 lg:h-9 absolute top-0 right-0 rounded-full flex justify-center items-center bg-maroon-light hover:bg-maroon group ${
             data.length === 0 ? "hidden" : ""
           }`}
         >
-          <Download className="text-white w-6 h-6" />
+          <Download className="text-white w-5 h-5 md:w-6 md:h-6" />
           <div
-            className={`absolute -bottom-[9.5rem] right-0 z-50 my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
+            className={`absolute -bottom-[8rem] md:-bottom-[9rem] lg:-bottom-[9.5rem] right-0 z-50 my-2 md:my-3 lg:my-4 w-max text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-lg shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
           >
-            <ul className="py-2 font-medium" role="none">
+            <ul className="py-1.5 lg:py-2 font-medium" role="none">
               <li>
                 <div
                   onClick={downloadSVG}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FileSvg className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md font-semibold">
+                  <FileSvg className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
                     SVG
                   </div>
                 </div>
@@ -621,8 +622,8 @@ export default function SpiderChart({
                   onClick={downloadPNG}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FilePng className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md">
+                  <FilePng className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
                     PNG
                   </div>
                 </div>
@@ -632,8 +633,8 @@ export default function SpiderChart({
                   onClick={downloadPDF}
                   className="cursor-pointer flex w-full justify-center gap-1 px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                 >
-                  <FilePdf className="text-maroon-light w-6 h-6" />
-                  <div className="inline-flex items-center text-maroon-light text-md">
+                  <FilePdf className="text-maroon-light w-5 h-5 md:w-6 md:h-6" />
+                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base">
                     PDF
                   </div>
                 </div>
@@ -648,55 +649,55 @@ export default function SpiderChart({
         ></div>
       </div>
       {/* Checkbox Filter */}
-      <div className="w-full flex items-center justify-center">
-        <div className="w-40">
+      <div className="w-full flex mt-1.5 md:mt-2.5 lg:mt-0 items-center justify-center">
+        <div className="md:w-32 lg:w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-${keys[0]}`}
+              id={`${title}-${checkboxLabels[0]}`}
               type="checkbox"
               checked={selectedData.group1}
               onChange={() => changeSelectedData("group1")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-${keys[0]}`}
+              htmlFor={`${title}-${checkboxLabels[0]}`}
               className="w-full ml-2 text-md font-medium text-maroon-light"
             >
-              {keys[0]}
+              {checkboxLabels[0]}
             </label>
           </div>
         </div>
-        <div className="w-40">
+        <div className="md:w-32 lg:w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-${keys[1]}`}
+              id={`${title}-${checkboxLabels[1]}`}
               type="checkbox"
               checked={selectedData.group2}
               onChange={() => changeSelectedData("group2")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-${keys[1]}`}
-              className="w-full ml-2 text-md font-medium text-maroon-light"
+              htmlFor={`${title}-${checkboxLabels[1]}`}
+              className="w-full ml-2 text-sm md:text-base font-medium text-maroon-light"
             >
-              {keys[1]}
+              {checkboxLabels[1]}
             </label>
           </div>
         </div>
-        <div className="w-40">
+        <div className="md:w-32 lg:w-40">
           <div className="flex items-center justify-center">
             <input
-              id={`${title}-${keys[2]}`}
+              id={`${title}-${checkboxLabels[2]}`}
               type="checkbox"
-              checked={selectedData.group2}
+              checked={selectedData.group3}
               onChange={() => changeSelectedData("group3")}
               className="w-7 h-7 bg-maroon-light border-maroon rounded focus:ring-maroon accent-maroon-light"
             />
             <label
-              htmlFor={`${title}-${keys[2]}`}
-              className="w-full ml-2 text-md font-medium text-maroon-light"
+              htmlFor={`${title}-${checkboxLabels[2]}`}
+              className="w-full ml-2 text-sm md:text-base font-medium text-maroon-light"
             >
-              {keys[2]}
+              {checkboxLabels[2]}
             </label>
           </div>
         </div>
