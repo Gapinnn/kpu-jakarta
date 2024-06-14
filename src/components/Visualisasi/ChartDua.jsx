@@ -18,6 +18,7 @@ export default function ChartDua() {
     group3: true,
   });
   const [indexSelectedData, setIndexSelectedData] = useState([0, 1, 2]);
+  const checkboxLabels = spiderChart1[0].label;
 
   const changeDataName = (value) => {
     changeSelectedData("all");
@@ -119,17 +120,18 @@ export default function ChartDua() {
           dataName={dataName}
           variabelAll={listVariabelSpiderChart1}
           selectedData={selectedData}
+          checkboxLabels={checkboxLabels}
           changeDataName={changeDataName}
           changeSelectedData={changeSelectedData}
           title="spiderchart-1"
           className="mx-auto flex lg:basis-[35%] xl:basis-1/2"
         />
-        <div className="w-full flex lg:basis-[65%] xl:basis-1/2 gap-2 flex-col">
-          <h2 className="text-xl text-maroon-light font-bold text-center mt-2">
+        <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
+          <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
             Interpretasi
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
-          <p className="text-black text-md">
+          <p className="text-black text-justify text-sm md:text-base">
             {spiderChart1[indexData].interpretasi}
           </p>
         </div>

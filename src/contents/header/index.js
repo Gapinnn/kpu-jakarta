@@ -54,21 +54,6 @@ export const menuId = [
     ],
   },
   {
-    name: "Statistik",
-    path: "/id/statistik",
-    branch: true,
-    submenu: [
-      {
-        name: "Visualisasi",
-        path: "/id/statistik/visualisasi",
-      },
-      {
-        name: "Tabulasi",
-        path: "/id/statistik/tabulasi",
-      },
-    ],
-  },
-  {
     name: "Publikasi",
     path: "/id/publikasi",
     branch: true,
@@ -80,6 +65,21 @@ export const menuId = [
       {
         name: "Galeri",
         path: "/id/publikasi/galeri",
+      },
+    ],
+  },
+  {
+    name: "Statistik",
+    path: "/id/statistik",
+    branch: true,
+    submenu: [
+      {
+        name: "Visualisasi",
+        path: "/id/statistik/visualisasi",
+      },
+      {
+        name: "Tabulasi",
+        path: "/id/statistik/tabulasi",
       },
     ],
   },

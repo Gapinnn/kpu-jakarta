@@ -902,7 +902,7 @@ export const groupBarChart1 = [
     warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
-        { region: "Jakarta \n Barat", value: 422127 },
+        { region: "Jakarta Barat", value: 422127 },
         { region: "Jakarta Selatan", value: 404512 },
         { region: "Jakarta Timur", value: 362411 },
         { region: "Jakarta Utara", value: 354177 },
@@ -910,7 +910,7 @@ export const groupBarChart1 = [
         { region: "Kepulauan Seribu", value: 334211 },
       ],
       [
-        { region: "Jakarta \n Barat", value: 251358 },
+        { region: "Jakarta Barat", value: 251358 },
         { region: "Jakarta Selatan", value: 338139 },
         { region: "Jakarta Timur", value: 512426 },
         { region: "Jakarta Utara", value: 412257 },
@@ -928,7 +928,7 @@ export const groupBarChart1 = [
     warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
-        { region: "Jakarta \n Barat", value: 451427 },
+        { region: "Jakarta Barat", value: 451427 },
         { region: "Jakarta Selatan", value: 408192 },
         { region: "Jakarta Timur", value: 334361 },
         { region: "Jakarta Utara", value: 334357 },
@@ -936,7 +936,7 @@ export const groupBarChart1 = [
         { region: "Kepulauan Seribu", value: 313141 },
       ],
       [
-        { region: "Jakarta \n Barat", value: 351258 },
+        { region: "Jakarta Barat", value: 351258 },
         { region: "Jakarta Selatan", value: 383123 },
         { region: "Jakarta Timur", value: 422126 },
         { region: "Jakarta Utara", value: 229957 },
@@ -954,7 +954,7 @@ export const groupBarChart1 = [
     warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
-        { region: "Jakarta \n Barat", value: 341427 },
+        { region: "Jakarta Barat", value: 341427 },
         { region: "Jakarta Selatan", value: 437202 },
         { region: "Jakarta Timur", value: 388861 },
         { region: "Jakarta Utara", value: 312657 },
@@ -962,7 +962,7 @@ export const groupBarChart1 = [
         { region: "Kepulauan Seribu", value: 322141 },
       ],
       [
-        { region: "Jakarta \n Barat", value: 441258 },
+        { region: "Jakarta Barat", value: 441258 },
         { region: "Jakarta Selatan", value: 321139 },
         { region: "Jakarta Timur", value: 422126 },
         { region: "Jakarta Utara", value: 611257 },
