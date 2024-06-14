@@ -252,7 +252,7 @@ const Header = () => {
                         <Link
                           onClick={() => setShowMenu(false)}
                           to={subitem.path}
-                          className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
+                          className="block px-4 py-1 hover:bg-stone-300 rounded-lg"
                         >
                           <p className="inline-flex items-center text-stone-800 font-semibold text-base md:text-lg">
                             {subitem.name}

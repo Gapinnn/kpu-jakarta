@@ -13,8 +13,8 @@ export default function Agenda() {
           {/* Breadcumb */}
           <Breadcumb />
           {/* Judul Halaman */}
-          <div className="flex flex-col gap-0 lg:gap-2 my-0 lg:my-4 mb-1 lg:mb-0">
-            <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
+          <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
+            <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
               Agenda KPU Provinsi DKI Jakarta
             </h1>
             <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">

@@ -208,7 +208,7 @@ const PengumumanPage = () => {
         {/* Breadcumb */}
         <Breadcumb />
         {/* Judul Halaman */}
-        <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-0">
+        <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
           <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
             Pengumuman KPU Provinsi DKI Jakarta
           </h1>
