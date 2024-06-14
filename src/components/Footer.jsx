@@ -43,7 +43,7 @@ const Footer = () => {
             Email: hupmaskpudki@gmail.com
           </p>
         </div>
-        <div className="mt-4 mb-2 flex flex-col items-start mx-4 md:grid md:grid-cols-2 md:mt-4 lg:mt-8 lg:mx-0 lg:flex lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-16 z-20">
+        <div className="lg:w-[100%] xl:w-[75%] 2xl:w-[50%] mt-4 mb-2 flex flex-col items-start mx-4 md:grid md:grid-cols-2 md:mt-4 lg:mt-8 lg:mx-0 lg:flex lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-4 z-20">
           <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4">
             <h3 className="text-base md:text-lg lg:text-xl font-bold text-stone-100">
               Tentang Kami
