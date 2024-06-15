@@ -19,7 +19,9 @@ export default function Breadcumb() {
         >
           <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
         </svg>
-        <span className="inline text-center align-text-top">Beranda</span>
+        <span className="inline text-center align-text-top">
+          {lang === "id" ? "Beranda" : "Home"}
+        </span>
       </Link>
       <Link
         to={`/${lang}/publikasi/dokumen`}
@@ -40,7 +42,9 @@ export default function Breadcumb() {
             d="m1 9 4-4-4-4"
           />
         </svg>
-        <span className="inline text-center align-text-top">Publikasi</span>
+        <span className="inline text-center align-text-top">
+          {lang === "id" ? "Publikasi" : "Publication"}
+        </span>
       </Link>
       {/* Halaman Saat Ini */}
       <Link className="text-sm md:text-base lg:text-lg inline font-semibold text-stone-900 align-middle">
@@ -60,7 +64,7 @@ export default function Breadcumb() {
           />
         </svg>
         <span className="inline text-center align-text-top">
-          Galeri Foto/Video
+          {lang === "id" ? "Galeri Foto/Video" : "Gallery Photo/Video"}
         </span>
       </Link>
     </nav>

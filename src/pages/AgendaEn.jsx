@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Kalendar from "../components/Informasi/Agenda/Kalendar";
 
-export default function Agenda() {
+export default function AgendaEn() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -92,23 +92,92 @@ export const menuId = [
 
 export const menuEn = [
   {
-    name: "Beranda",
+    name: "Home",
     path: "/en",
   },
   {
-    name: "Tentang Kami",
+    name: "About Us",
     path: "/en/profil",
+    branch: true,
+    submenu: [
+      {
+        name: "Vision Mission",
+        path: "/en/profil/visi-misi",
+      },
+      {
+        name: "Main Tasks",
+        path: "/en/profil/tugas-pokok",
+      },
+      {
+        name: "Authority Tasks",
+        path: "/en/profil/tugas-wewenang",
+      },
+      {
+        name: "Organizational Structure",
+        path: "/en/profil/struktur-organisasi",
+      },
+      {
+        name: "Election History",
+        path: "/en/profil/sejarah-pemilu",
+      },
+    ],
   },
   {
-    name: "Berita",
-    path: "/en/berita",
+    name: "Information",
+    path: "/en/informasi",
+    branch: true,
+    submenu: [
+      {
+        name: "News",
+        path: "/en/informasi/berita",
+      },
+      {
+        name: "Announcement",
+        path: "/en/informasi/pengumuman",
+      },
+      {
+        name: "Opinion",
+        path: "/en/informasi/opini",
+      },
+      {
+        name: "Agenda",
+        path: "/en/informasi/agenda",
+      },
+    ],
   },
   {
-    name: "Visualisasi",
-    path: "/en/visualisasi",
-  },
-  {
-    name: "Publikasi",
+    name: "Publication",
     path: "/en/publikasi",
+    branch: true,
+    submenu: [
+      {
+        name: "Document",
+        path: "/en/publikasi/dokumen",
+      },
+      {
+        name: "Gallery",
+        path: "/en/publikasi/galeri",
+      },
+    ],
+  },
+  {
+    name: "Statistic",
+    path: "/en/statistik",
+    branch: true,
+    submenu: [
+      {
+        name: "Visualization",
+        path: "/en/statistik/visualisasi",
+      },
+      {
+        name: "Tabulation",
+        path: "/en/statistik/tabulasi",
+      },
+    ],
+  },
+  {
+    name: "Complaint",
+    path: "/en/pengaduan",
+    branch: false,
   },
 ];

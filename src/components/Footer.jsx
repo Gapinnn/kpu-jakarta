@@ -5,8 +5,10 @@ import Instagram from "./Logo/Instagram";
 import Youtube from "./Logo/Youtube";
 import Twitter from "./Logo/Twitter";
 import Maps from "./Logo/Maps";
+import getLanguage from "../hooks/getLanguage";
 
 const Footer = () => {
+  const lang = getLanguage();
   const handleTautanLain = (e, url) => {
     e.preventDefault();
     window.open(url, "_blank", "noopener,noreferrer");
@@ -46,7 +48,7 @@ const Footer = () => {
         <div className="lg:w-[100%] xl:w-[75%] 2xl:w-[50%] mt-4 mb-2 flex flex-col items-start mx-4 md:grid md:grid-cols-2 md:mt-4 lg:mt-8 lg:mx-0 lg:flex lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-4 z-20">
           <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4">
             <h3 className="text-base md:text-lg lg:text-xl font-bold text-stone-100">
-              Tentang Kami
+              {lang === "id" ? "Tentang Kami" : "About Us"}
             </h3>
             {tentang.map((item) => (
               <Link
@@ -60,7 +62,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4 mt-2 lg:mt-0">
             <h3 className="text-base md:text-lg lg:text-xl font-bold text-stone-100">
-              Tautan Lain
+              {lang === "id" ? "Tautan Lain" : "Other Links"}
             </h3>
             {tautan.map((item) => (
               <Link
