@@ -1,3 +1,20 @@
+import Building from "../Icon/Building";
+import Calendar from "../Icon/Calendar";
+import Cancel from "../Icon/Cancel";
+import Clipboard from "../Icon/Clipboard";
+import Comment from "../Icon/Comment";
+import FIleOpen from "../Icon/FIleOpen";
+import FileImage from "../Icon/FileImage";
+import Images from "../Icon/Images";
+import Leader from "../Icon/Leader";
+import People from "../Icon/People";
+import Public from "../Icon/Public";
+import Room from "../Icon/Room";
+import Search from "../Icon/Search";
+import Share from "../Icon/Share";
+import Sosialisasi from "../Icon/Sosialisasi";
+import Table from "../Icon/Table";
+import Unduh from "../Icon/Unduh";
 import Breadcumb from "./Breadcumb";
 const VisiMisiComponent = () => {
   return (
@@ -6,6 +23,81 @@ const VisiMisiComponent = () => {
         <div className="bg-maroon-light bg-opacity-85 w-full h-52 rounded-t-full"></div>
         <div className="bg-maroon-light bg-opacity-85 w-full h-8"></div>
       </div>
+
+      {/* BUTTON */}
+      {/* <div className="min-h-screen flex flex-col items-center justify-center gap-6 ml-32">
+        <div className="flex flex-row gap-8">
+          <button className="h-14 px-8 rounded-xl py-0 text-base lg:text-lg font-semibold bg-maroon-light text-white border-2 border-maroon-light hover:bg-white hover:text-maroon-light">
+            Selengkapnya
+          </button>
+          <button className="h-14 px-6 flex flex-row items-center rounded-xl py-0 text-base lg:text-lg font-semibold bg-maroon-light text-white border-2 border-maroon-light hover:bg-white hover:text-maroon-light">
+            <Share className="w-4 h-4 md:w-4 md:h-4 lg:w-7 lg:h-7 me-1.5" />
+            <p className="text-lg">Selengkapnya</p>
+          </button>
+        </div>
+        <div className="flex flex-row gap-8">
+          <button className="h-14 px-8 flex text-lg items-center bg-white border-2 border-maroon-light text-maroon-light justify-center py-0 rounded-xl md:text-sm lg:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100">
+            <p className="text-lg">Selengkapnya</p>
+          </button>
+          <button className="h-14 px-6 flex text-lg items-center bg-white border-2 border-maroon-light text-maroon-light justify-center py-0 rounded-xl md:text-sm lg:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100">
+            <Share className="w-4 h-4 md:w-4 md:h-4 lg:w-7 lg:h-7 me-1.5" />
+            <p className="text-lg">Selengkapnya</p>
+          </button>
+        </div>
+      </div> */}
+
+      {/* ICON */}
+      {/* <div className="min-h-screen flex flex-col gap-6 justify-center w-full ml-32">
+        <div className="flex flex-row gap-6 items-center">
+          <Building className="w-12 h-12 text-stone-900" />
+          <Calendar className="w-12 h-12 text-stone-900" />
+          <Clipboard className="w-12 h-12 text-stone-900" />
+          <Comment className="w-12 h-12 text-stone-900" />
+          <Share className="w-12 h-12 text-stone-900" />
+        </div>
+        <div className="flex flex-row gap-6 items-center">
+          <FileImage className="w-12 h-12 text-stone-900" />
+          <Images className="w-12 h-12 text-stone-900" />
+          <Leader className="w-12 h-12 text-stone-900" />
+          <People className="w-12 h-12 text-stone-900" />
+          <Cancel className="w-12 h-12 text-stone-900" />
+        </div>
+        <div className="flex flex-row gap-6 items-center">
+          <Public className="w-12 h-12 text-stone-900" />
+          <Search className="w-12 h-12 text-stone-900" />
+          <Sosialisasi className="w-12 h-12 text-stone-900" />
+          <Table className="w-12 h-12 text-stone-900" />
+          <Room className="w-12 h-12 text-stone-900" />
+        </div>
+      </div> */}
+
+      {/* TYPOGRAPHY */}
+      {/* <div className="min-h-screen flex flex-col justify-center w-full ml-20 gap-1">
+        <p className="text-6xl font-bold">H1 Heading (60px)</p>
+        <p className="text-5xl font-bold mt-3">H2 Heading (48px)</p>
+        <p className="text-4xl font-bold mt-3">H3 Heading (36px)</p>
+        <p className="text-3xl font-bold mt-1">J1 Judul (30px)</p>
+        <p className="text-2xl font-bold">J2 Judul (24px)</p>
+        <p className="text-xl font-bold">J3 Judul (20px)</p>
+        <p className="text-base text-justify font-bold mt-6 w-[40rem]">
+          Paragraf biasa berukuran 16 px. Ini adalah kalimat yang ditebalkan.
+          Jika terdapat sebuah tag anchor yang mengarahkan ke halaman lain, maka
+          tampilannya akan seperti ini "
+          <span className="text-gold">
+            kalimat ini adalah link yang mengarahkan ke suatu tautan
+          </span>
+          "
+        </p>
+        <p className="text-base text-justify mt-2 w-[40rem]">
+          Paragraf biasa berukuran 16 px. Ini adalah kalimat yang ditebalkan.
+          Jika terdapat sebuah tag anchor yang mengarahkan ke halaman lain, maka
+          tampilannya akan seperti ini "
+          <span className="text-gold">
+            kalimat ini adalah link yang mengarahkan ke suatu tautan
+          </span>
+          "
+        </p>
+      </div> */}
 
       <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 lg:px-2 flex flex-col justify-center">
         {/* Breadcumb */}
