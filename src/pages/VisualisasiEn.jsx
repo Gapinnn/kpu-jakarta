@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import VisualisasiComponent from "../components/Visualisasi/VisualisasiComponent";
 
-export default function Visualisasi() {
+export default function VisualisasiEn() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

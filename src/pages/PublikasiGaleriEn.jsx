@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import Kalendar from "../components/Informasi/Agenda/Kalendar";
+import PubGaleri from "../components/Publikasi/Galeri/PubGaleri";
 
-export default function Agenda() {
+export default function PublikasiGaleriEn() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
       <div className="flex flex-col gap-0 bg-stone-100">
-        <Kalendar />
+        <PubGaleri />
       </div>
     </>
   );

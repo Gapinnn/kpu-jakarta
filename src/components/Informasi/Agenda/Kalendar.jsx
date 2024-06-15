@@ -12,6 +12,7 @@ import Leader from "../../Icon/Leader";
 import Room from "../../Icon/Room";
 import Public from "../../Icon/Public";
 import Private from "../../Icon/Private";
+import Breadcumb from "./Breadcumb";
 
 export default function Kalendar() {
   const data = JSON.stringify(dataKalendar);
@@ -241,12 +242,31 @@ export default function Kalendar() {
   }, [data]);
 
   return (
-    <div className="w-full bg-white rounded-2xl shadow-xl px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-2">
-      <h1 className="text-lg md:text-xl lg:text-2xl mb-3 md:mb-4 lg:mb-6 font-bold text-stone-900">
-        Kalendar Agenda
-      </h1>
-      <div className="flex w-full m-0 p-0">
-        <div className="flex w-full" ref={calendarRef}></div>
+    <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
+      {/* Breadcumb */}
+      <Breadcumb />
+      {/* Judul Halaman */}
+      <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
+        <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
+          Agenda KPU Provinsi DKI Jakarta
+        </h1>
+        <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
+          Sistem Pengelolaan Aduan Masyarakat KPU Provinsi DKI Jakarta adalah
+          platform yang disediakan oleh KPU Provinsi DKI Jakarta bagi masyarakat
+          untuk melaporkan segala bentuk pelanggaran atau masalah terkait
+          pelaksanaan pemilu. Melalui sistem ini, masyarakat dapat menyampaikan
+          keluhan, masukan, dan saran untuk memastikan transparansi dan
+          integritas lembaga dan program kerja KPU DKI Jakarta.
+        </p>
+      </div>
+      {/* Kalendar Agenda */}
+      <div className="w-full bg-white rounded-2xl shadow-xl px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-2">
+        <h1 className="text-lg md:text-xl lg:text-2xl mb-3 md:mb-4 lg:mb-6 font-bold text-stone-900">
+          Kalendar Agenda
+        </h1>
+        <div className="flex w-full m-0 p-0">
+          <div className="flex w-full" ref={calendarRef}></div>
+        </div>
       </div>
     </div>
   );

@@ -353,8 +353,9 @@ const Header = () => {
             showInfo ? " opacity-100" : " opacity-0"
           }`}
         >
-          Catat Tanggal (26 - 27 November 2024) Pilkada DKI Jakarta : Pemilihan
-          Gubernur dan DPRD Provinsi DKI Jakarta!
+          {lang === "id"
+            ? "Catat Tanggal (26 - 27 November 2024) Pilkada DKI Jakarta : Pemilihan Gubernur dan DPRD Provinsi DKI Jakarta!"
+            : "Save the Date (November 26-27, 2024) Jakarta Regional Election: Election of the Governor and Provincial DPRD of DKI Jakarta!"}
         </p>
         <div
           onClick={showInfoHandler}
