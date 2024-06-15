@@ -22,8 +22,6 @@ export default function KontenVideo() {
     };
   }, []);
 
-  console.log(windowDimensions);
-
   const optVideoUtama = {
     height:
       windowDimensions.width < 768
@@ -75,7 +73,7 @@ export default function KontenVideo() {
           </div>
         </div>
         {/* Konten Video Samping */}
-        <div className="w-fit lg:w-fit flex flex-row gap-2 md:gap-4 lg:gap-0 lg:flex-col justify-center lg:justify-between items-center">
+        <div className="w-fit lg:w-fit flex flex-row gap-2 md:gap-4 lg:gap-8 lg:flex-col justify-center lg:justify-between items-center">
           <div className="rounded-xl overflow-hidden border-[6px] border-gold">
             <YouTube videoId="FaD-VDro_tM" opts={optVideoSamping} />
           </div>

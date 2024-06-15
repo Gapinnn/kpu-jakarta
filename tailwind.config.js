@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         lato: ["Lato", "sans-serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
       },
     },
   },

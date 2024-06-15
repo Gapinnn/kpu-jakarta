@@ -54,7 +54,7 @@ export default function TabulasiDua() {
         {selectedData.title}
       </h3>
       {/* Tabel */}
-      <div className="overflow-x-auto mb-4 max-w-[370px] md:max-w-[680px] mx-auto">
+      <div className="overflow-x-auto mb-4 max-w-[370px] md:max-w-[680px] lg:max-w-max mx-auto">
         <table className="lg:mx-auto w-full border rounded-xl bg-white border-separate">
           <thead className="bg-gold">
             <tr>
