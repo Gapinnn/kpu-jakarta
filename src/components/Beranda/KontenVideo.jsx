@@ -25,15 +25,15 @@ export default function KontenVideo() {
   const optVideoUtama = {
     height:
       windowDimensions.width < 768
-        ? "210"
+        ? `${((windowDimensions.width - 55) * 630) / 1120}`
         : windowDimensions.width < 1024
-        ? "405"
+        ? `${((windowDimensions.width - 100) * 630) / 1120}`
         : "630",
     width:
       windowDimensions.width < 768
-        ? "380"
+        ? `${windowDimensions.width - 55}`
         : windowDimensions.width < 1024
-        ? "720"
+        ? `${windowDimensions.width - 100}`
         : "1120",
     playerVars: {
       rel: 0,
@@ -44,15 +44,15 @@ export default function KontenVideo() {
   const optVideoSamping = {
     height:
       windowDimensions.width < 768
-        ? "55"
+        ? `${(((windowDimensions.width - 90) / 3) * 180) / 320}`
         : windowDimensions.width < 1024
-        ? "120"
+        ? `${(((windowDimensions.width - 150) / 3) * 180) / 320}`
         : "180",
     width:
       windowDimensions.width < 768
-        ? "110"
+        ? `${(windowDimensions.width - 90) / 3}`
         : windowDimensions.width < 1024
-        ? "220"
+        ? `${(windowDimensions.width - 150) / 3}`
         : "320",
     playerVars: {
       rel: 0,
@@ -73,7 +73,7 @@ export default function KontenVideo() {
           </div>
         </div>
         {/* Konten Video Samping */}
-        <div className="w-fit lg:w-fit flex flex-row gap-2 md:gap-4 lg:gap-0 lg:flex-col justify-center lg:justify-between items-center">
+        <div className="w-fit lg:w-fit flex flex-row gap-2 md:gap-4 lg:gap-8 lg:flex-col justify-center lg:justify-between items-center">
           <div className="rounded-xl overflow-hidden border-[6px] border-gold">
             <YouTube videoId="FaD-VDro_tM" opts={optVideoSamping} />
           </div>

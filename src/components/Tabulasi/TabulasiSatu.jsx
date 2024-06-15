@@ -26,7 +26,7 @@ export default function TabulasiSatu() {
           className={`w-6 h-6 md:w-7 md:h-7 text-maroon-light transition-transform duration-500 rotate-0 group-hover:rotate-180`}
         />
         <div
-          className={`absolute top-[0.95rem] md:top-[1.5rem] lg:top-[1.5rem] -left-[2.5px] lg:-left-[2px] z-20 my-4 w-[18rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
+          className={`absolute top-[0.95rem] md:top-[1.5rem] lg:top-[2rem] -left-[2.5px] lg:-left-[2px] z-20 my-4 w-[18rem] text-base list-none bg-stone-100 divide-y divide-stone-100 rounded-b-2xl border-maroon-light border-[2.5px] border-t-[2.5px] border-t-stone-400 shadow-lg
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="pt-0.5 pb-1 md:py-2 font-medium" role="none">
@@ -54,7 +54,7 @@ export default function TabulasiSatu() {
         {selectedData.title}
       </h3>
       {/* Tabel */}
-      <div className="overflow-x-auto mb-4 max-w-[370px] md:max-w-[680px] mx-auto">
+      <div className="overflow-x-auto mb-4 max-w-[370px] md:max-w-[680px] lg:max-w-max mx-auto">
         <table className="lg:mx-auto w-full border rounded-xl bg-white border-separate">
           <thead className="bg-gold">
             <tr>

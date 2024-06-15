@@ -40,7 +40,7 @@ const Sejarah = () => {
               <h2 className="text-maroon-light text-xl px-2 md:text-2xl lg:text-2xl font-bold">
                 {dataSejarah[tabActive].name}
               </h2>
-              <h3 className="text-lg md:text-xl px-2 text-stone-800 font-semibold mb-2">
+              <h3 className="text-base md:text-lg lg:text-xl px-2 text-stone-800 font-semibold mb-2">
                 {dataSejarah[tabActive].title}
               </h3>
               {/* Isi Sejarah */}
