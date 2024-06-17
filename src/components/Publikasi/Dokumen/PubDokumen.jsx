@@ -6,8 +6,10 @@ import Modull from "../../Icon/Modull";
 import BahanSosialisasi from "./BahanSosialisasi";
 import BukuPedoman from "./BukuPedoman";
 import Modul from "./Modul";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function PubDokumen() {
+  const lang = getLanguage();
   const [tabActive, setTabctive] = useState(0);
   return (
     <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
@@ -16,14 +18,19 @@ export default function PubDokumen() {
       {/* Judul Halaman */}
       <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-          Dokumen
+        {
+                lang == "id"
+                  ?"DOKUMEN"
+                  :"DOCUMENT"
+              }
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-2 lg:mb-1">
-          Publikasi ini mencakup berbagai dokumen resmi yang dihasilkan oleh KPU
-          DKI Jakarta. Dokumen-dokumen ini disusun untuk mendukung
-          profesionalitas, transparansi, dan akuntabilitas dalam proses
-          pemilihan umum. Publikasi dokumen ini dibagi menjadi tiga kategori
-          berdasarkan fungsi dan tujuan dokumen, yaitu:
+          
+          {
+                lang == "id"
+                  ?"Publikasi ini mencakup berbagai dokumen resmi yang dihasilkan oleh KPU DKI Jakarta. Dokumen-dokumen ini disusun untuk mendukung profesionalitas, transparansi, dan akuntabilitas dalam proses pemilihan umum. Publikasi dokumen ini dibagi menjadi tiga kategori berdasarkan fungsi dan tujuan dokumen, yaitu:"
+                  :"This publication includes various official documents produced by the KPU DKI Jakarta. These documents are prepared to support professionalism, transparency and accountability in the process general elections. The publication of this document is divided into three categories based on the function and purpose of the document, namely:"
+              }
         </p>
         {/* list */}
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
@@ -31,7 +38,11 @@ export default function PubDokumen() {
             1
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            Bahan Sosialisasi
+          {
+                lang == "id"
+                  ?"BAHAN SOSIALISASI"
+                  :"SOCIALIZATION MATERIALS"
+              }
           </h1>
         </div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-1 md:mt-1.5 lg:mt-0">
@@ -39,7 +50,11 @@ export default function PubDokumen() {
             2
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            Buku Pedoman
+          {
+                lang == "id"
+                  ?"BUKU PEDOMAN"
+                  :"GUIDE BOOK"
+              }
           </h1>
         </div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-1 md:mt-1.5 lg:mt-0">
@@ -47,7 +62,11 @@ export default function PubDokumen() {
             3
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            Modul
+          {
+                lang == "id"
+                  ?"MODUL"
+                  :"MODULE"
+              }
           </h1>
         </div>
       </div>
@@ -132,7 +151,11 @@ export default function PubDokumen() {
                     : "text-maroon-light"
                 }`}
               >
-                Modul
+                {
+                lang == "id"
+                  ?"MODUL"
+                  :"MODULE"
+              }
               </p>
             </div>
           </li>

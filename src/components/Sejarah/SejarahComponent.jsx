@@ -2,8 +2,10 @@ import Breadcumb from "../Sejarah/Breadcumb";
 import { dataSejarah } from "../../contents/sejarah";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import getLanguage from "../../hooks/getLanguage";
 
 const Sejarah = () => {
+  const lang = getLanguage();
   const [tabActive, setTabActive] = useState(0);
   return (
     <div className="flex flex-col w-full bg-stone-100">
@@ -12,7 +14,12 @@ const Sejarah = () => {
         <Breadcumb />
         {/* Judul Halaman */}
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
-          Sejarah Pemilu di Indonesia
+         
+          {
+            lang == "id"
+              ?" Sejarah Pemilu di Indonesia"
+              :"History of Elections in Indonesia"
+          }
         </h1>
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center mx-auto py-4 lg:py-8 px-2 lg:px-10 bg-white shadow-2xl rounded-2xl">
@@ -67,7 +74,12 @@ const Sejarah = () => {
                     }}
                     className="w-full text-sm md:text-base mt-1 md:mt-2 py-1.5 px-4 md:px-6 font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
                   >
-                    Selengkapnya
+                    {
+                      lang == "id"
+                        ?" Selengkapnya"
+                        :"More"
+                    }
+                    
                   </Link>
                 </div>
               </div>
@@ -92,7 +104,12 @@ const Sejarah = () => {
                     }}
                     className="w-max mt-2 py-1.5 px-4 font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
                   >
-                    Selengkapnya
+                    {
+                      lang == "id"
+                        ?" Selengkapnya"
+                        :"More"
+                    }
+                    
                   </Link>
                 </p>
               </div>
