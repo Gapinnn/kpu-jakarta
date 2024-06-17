@@ -8,12 +8,16 @@ import Seven from "../Icon/Number/Seven";
 import Eight from "../Icon/Number/Eight";
 import Nine from "../Icon/Number/Nine";
 import Ten from "../Icon/Number/Ten";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function Timeline() {
+  const lang = getLanguage();
   return (
     <div className="bg-maroon-light relative p-2 py-2 md:py-3 lg:py-4 lg:h-auto pb-6">
       <h1 className="text-stone-100 text-center mx-auto font-extrabold text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-6 lg:mt-8">
-        Timeline Pilkada DKI Jakarta 2024
+        {lang === "id"
+          ? "Timeline Pilkada DKI Jakarta 2024"
+          : "Timeline for the 2024 DKI Jakarta Regional Election"}
       </h1>
       {/* Timeline Hp */}
       <div className="block md:hidden p-2">
@@ -28,11 +32,18 @@ export default function Timeline() {
                   </div>
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      S.D. 18 NOVEMBER 2024
+                      {lang === "id"
+                        ? "S.D. 18 NOVEMBER 2024"
+                        : "UNTIL 18 NOVEMBER 2024"}
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Penetapan Tata Cara dan Jadwal <br />
-                      Tahapan Pelaksanaan Pemilihan
+                      {lang === "id"
+                        ? "Penetapan Tata Cara dan Jadwal"
+                        : "Determination of Procedures and Schedules"}
+                      <br />
+                      {lang === "id"
+                        ? "Tahapan Pelaksanaan Pemilihan"
+                        : "Stages of Election Implementation"}
                     </p>
                   </div>
                 </div>
@@ -54,7 +65,9 @@ export default function Timeline() {
                       17 APRIL - 18 NOVEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pembentukan PPS, PPK, dan KPPS
+                      {lang === "id"
+                        ? "Pembentukan PPS, PPK, dan KPPS"
+                        : "Establishment of PPS, PPK, and KPPS"}
                     </p>
                   </div>
                   <div className="rounded-full w-7 h-7 z-10 bg-gold">
@@ -79,11 +92,14 @@ export default function Timeline() {
                   </div>
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      31 MEI - 23 SEPTEMBER 2024
+                      31 MAY - 23 SEPTEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pemutakhiran dan Penyusunan <br />
-                      Daftar Pemilih
+                      {lang === "id"
+                        ? "Pemutakhiran dan Penyusunan"
+                        : "Updating and Compiling"}
+                      <br />
+                      {lang === "id" ? "Daftar Pemilih" : "Voter List"}
                     </p>
                   </div>
                 </div>
@@ -105,8 +121,13 @@ export default function Timeline() {
                       27 MEI - 16 NOVEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pemberitahuan dan Pendaftaran <br />
-                      Pemantau Pemilihan
+                      {lang === "id"
+                        ? "Pemberitahuan dan Pendaftaran"
+                        : "Notification and Registration"}
+                      <br />
+                      {lang === "id"
+                        ? "Pemantau Pemilihan"
+                        : "Election Monitor"}
                     </p>
                   </div>
                   <div className="rounded-full w-7 h-7 z-10 bg-gold">
@@ -131,10 +152,15 @@ export default function Timeline() {
                   </div>
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      27 - 29 AGUSTUS 2024
+                      {lang === "id"
+                        ? "Timeline Pilkada DKI Jakarta 2024"
+                        : "Timeline for the 2024 DKI Jakarta Regional Election"}
+                      27 - 29 AUGUST 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pendaftaran Pasangan Calon
+                      {lang === "id"
+                        ? "Pendaftaran Pasangan Calon"
+                        : "Registration of Candidate Pairs"}
                     </p>
                   </div>
                 </div>
@@ -153,10 +179,15 @@ export default function Timeline() {
                 <div className="flex flex-row w-full justify-end gap-3">
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
+                      {lang === "id"
+                        ? "Timeline Pilkada DKI Jakarta 2024"
+                        : "Timeline for the 2024 DKI Jakarta Regional Election"}
                       22 SEPTEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Penetapan Pasangan Calon
+                      {lang === "id"
+                        ? "Penetapan Pasangan Calon"
+                        : "Determination of Candidate Pairs"}
                     </p>
                   </div>
                   <div className="rounded-full w-7 h-7 z-10 bg-gold">
@@ -184,7 +215,9 @@ export default function Timeline() {
                       25 SEPTEMBER - 23 NOVEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pelaksanaan Kampanye
+                      {lang === "id"
+                        ? " Pelaksanaan Kampanye"
+                        : "Campaign Implementation"}
                     </p>
                   </div>
                 </div>
@@ -206,7 +239,7 @@ export default function Timeline() {
                       27 NOVEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Pemungutan Suara
+                      {lang === "id" ? "Pemungutan Suara" : "Voting"}
                     </p>
                   </div>
                   <div className="rounded-full w-7 h-7 z-10 bg-gold">
@@ -231,10 +264,12 @@ export default function Timeline() {
                   </div>
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      DESEMBER 2024
+                      DECEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Penetapan Calon Terpilih
+                      {lang === "id"
+                        ? "Penetapan Calon Terpilih"
+                        : "Determination of Selected Candidates"}
                     </p>
                   </div>
                 </div>
@@ -256,7 +291,9 @@ export default function Timeline() {
                       2025 - 2030
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
-                      Masa Kerja Calon Terpilih
+                      {lang === "id"
+                        ? "Masa Kerja Calon Terpilih"
+                        : "Selected Candidate's Service Period"}
                     </p>
                   </div>
                   <div className="rounded-full w-7 h-7 z-10 bg-gold">
@@ -287,11 +324,18 @@ export default function Timeline() {
 
           <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              S.D. 18 NOVEMBER 2024
+              {lang === "id"
+                ? "S.D. 18 NOVEMBER 2024"
+                : "UNTIL 18 NOVEMBER 2024"}
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Penetapan Tata Cara dan Jadwal <br />
-              Tahapan Pelaksanaan Pemilihan
+              {lang === "id"
+                ? "Penetapan Tata Cara dan Jadwal"
+                : "Determination of Procedures and Schedules"}
+              <br />
+              {lang === "id"
+                ? "Tahapan Pelaksanaan Pemilihan"
+                : "Stages of Election Implementation"}
             </div>
           </div>
         </div>
@@ -315,7 +359,9 @@ export default function Timeline() {
               17 APRIL - 18 NOVEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pembentukan PPS, PPK, dan KPPS
+              {lang === "id"
+                ? "Pembentukan PPS, PPK, dan KPPS"
+                : "Establishment of PPS, PPK, and KPPS"}
             </div>
           </div>
         </div>
@@ -338,11 +384,17 @@ export default function Timeline() {
 
           <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              31 MEI - 23 SEPTEMBER 2024
+              {lang === "id"
+                ? "Timeline Pilkada DKI Jakarta 2024"
+                : "Timeline for the 2024 DKI Jakarta Regional Election"}
+              31 MAY - 23 SEPTEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pemutakhiran dan Penyusunan Daftar
-              <br /> Pemilih
+              {lang === "id"
+                ? "Pemutakhiran dan Penyusunan"
+                : "Updating and Compiling"}
+              <br />
+              {lang === "id" ? "Daftar Pemilih" : "Voter List"}
             </div>
           </div>
         </div>
@@ -363,11 +415,14 @@ export default function Timeline() {
 
           <div className="lg:translate-x-12 flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              27 MEI - 16 NOVEMBER 2024
+              27 MAY - 16 NOVEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pemberitahuan dan Pendaftaran <br />
-              Pemantau Pemilihan
+              {lang === "id"
+                ? "Pemberitahuan dan Pendaftaran"
+                : "Notification and Registration"}
+              <br />
+              {lang === "id" ? "Pemantau Pemilihan" : "Election Monitor"}
             </div>
           </div>
         </div>
@@ -390,10 +445,12 @@ export default function Timeline() {
 
           <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              27 - 29 AGUSTUS 2024
+              27 - 29 AUGUST 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pendaftaran Pasangan <br /> Calon
+              {lang === "id"
+                ? "Pendaftaran Pasangan Calon"
+                : "Registration of Candidate Pairs"}
             </div>
           </div>
         </div>
@@ -417,7 +474,9 @@ export default function Timeline() {
               22 SEPTEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Penetapan Pasangan Calon
+              {lang === "id"
+                ? "Penetapan Pasangan Calon"
+                : "Determination of Candidate Pairs"}
             </div>
           </div>
         </div>
@@ -443,8 +502,10 @@ export default function Timeline() {
               25 SEPTEMBER - 23 NOVEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pelaksanaan Kampanye
-              <br /> Partai Politik
+              {lang === "id"
+                ? " Pelaksanaan Kampanye"
+                : "Campaign Implementation"}
+              <br /> {lang === "id" ? " Partai Politik" : "Political parties"}
             </div>
           </div>
         </div>
@@ -468,8 +529,8 @@ export default function Timeline() {
               27 NOVEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Pemungutan Suara <br />
-              Hari-H Pemilu
+              {lang === "id" ? "Pemungutan Suara" : "Voting"} <br />{" "}
+              {lang === "id" ? "Hari-H Pemilu" : "Election Day"}
             </div>
           </div>
         </div>
@@ -494,10 +555,12 @@ export default function Timeline() {
 
           <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              DESEMBER 2024
+              DECEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Penetapan Calon Terpilih
+              {lang === "id"
+                ? "Penetapan Calon Terpilih"
+                : "Determination of Selected Candidates"}
             </div>
           </div>
         </div>
@@ -521,7 +584,9 @@ export default function Timeline() {
               2025 - 2030
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
-              Masa Kerja Calon Terpilih
+              {lang === "id"
+                ? "Masa Kerja Calon Terpilih"
+                : "Selected Candidate's Service Period"}
             </div>
           </div>
         </div>

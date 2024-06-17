@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import YouTube from "react-youtube";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function KontenVideo() {
+  const lang = getLanguage();
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -63,7 +65,7 @@ export default function KontenVideo() {
   return (
     <div className="w-full bg-stone-100 p-2 py-4">
       <h1 className="text-maroon-light text-center mx-auto font-extrabold text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-8 lg:mt-8">
-        Konten Video
+        {lang === "id" ? "Konten Video" : "Video Content"}
       </h1>
       <div className="flex flex-col items-center lg:flex-row justify-center w-full mt-4 md:mt-6 lg:mt-8 gap-2 md:gap-3 lg:gap-8 p-2">
         {/* Konten Video Utama */}

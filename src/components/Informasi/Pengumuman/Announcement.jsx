@@ -41,7 +41,7 @@ const PengumumanItem = ({
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
           <EyeView className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
           <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
-            {views} baca
+            {views} {lang === "id" ? "baca" : "Read"}
           </p>
         </div>
         {tags.map((tag, i) => (
@@ -67,7 +67,7 @@ const PengumumanItem = ({
         className="flex flex-row items-center w-fit group"
       >
         <p className="text-maroon-light text-xs md:text-sm font-semibold group-hover:text-maroon">
-          Selengkapnya
+          {lang === "id" ? "Selengkapnya" : "Detail"}
         </p>
       </Link>
     </div>
@@ -210,13 +210,14 @@ const PengumumanPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
           <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-            Pengumuman KPU Provinsi DKI Jakarta
+            {lang === "id"
+              ? "Pengumuman KPU Provinsi DKI Jakarta"
+              : "DKI Jakarta Provincial KPU Announcemets"}
           </h1>
           <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-            Pengumuman ini berisi informasi penting dari KPU DKI Jakarta,
-            seperti jadwal pemilu, prosedur pendaftaran calon, dan peraturan
-            pemilu terbaru. Pengumuman ini dirancang untuk memberi tahu
-            masyarakat dan memastikan kelancaran pelaksanaan pemilihan umum.
+            {lang === "id"
+              ? "Pengumuman ini berisi informasi penting dari KPU DKI Jakarta, seperti jadwal pemilu, prosedur pendaftaran calon, dan peraturan pemilu terbaru. Pengumuman ini dirancang untuk memberi tahu masyarakat dan memastikan kelancaran pelaksanaan pemilihan umum."
+              : "This announcement contains important information from the DKI Jakarta KPU, such as the election schedule, candidate registration procedures, and the latest election regulations. This announcement is designed to inform the public and ensure the smooth implementation of general elections."}
           </p>
         </div>
         {/* Konten Utama */}
@@ -224,12 +225,12 @@ const PengumumanPage = () => {
           {/* Filter Pengumuman */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
-              Filter Pengumuman
+              {lang === "id" ? "Filter Pengumuman" : "Announcements Filters"}
             </h2>
             <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kata Kunci
+                  {lang === "id" ? "Kata Kunci" : "Keyword"}
                 </h5>
                 <input
                   value={kataKunci}
@@ -243,7 +244,7 @@ const PengumumanPage = () => {
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Pengumuman
+                  {lang === "id" ? "Tahun Pengumuman" : "Year Announcement"}
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -299,7 +300,9 @@ const PengumumanPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Pengumuman
+                  {lang === "id"
+                    ? "Kategori Pengumuman"
+                    : "Announcements Category"}
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -358,7 +361,7 @@ const PengumumanPage = () => {
                 onClick={() => handleTampilkan()}
                 className="w-full mt-4 py-1 text-base lg:text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
-                Tampilkan
+                {lang === "id" ? "Tampilkan" : "Show"}
               </button>
             </div>
           </div>
@@ -381,10 +384,14 @@ const PengumumanPage = () => {
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-base md:text-lg lg:text-xl text-center font-semibold text-stone-800">
-                    Pengumuman KPU DKI Jakarta Tidak Tersedia
+                    {lang === "id"
+                      ? "Berita KPU DKI Jakarta Tidak Tersedia"
+                      : "DKI Jakarta KPU Announcements Not Available"}
                   </h3>
                   <p className="text-sm md:text-base lg:text-lg text-center text-stone-700">
-                    Silakan Coba Kata Kunci atau Filter Lainnya
+                    {lang === "id"
+                      ? "Silakan Coba Kata Kunci atau Filter Lainnya"
+                      : "Please Try Other Keywords or Filters"}
                   </p>
                 </div>
               )}
@@ -495,6 +502,7 @@ const PengumumanPage = () => {
 };
 
 export default function Announcement() {
+  const lang = getLanguage();
   return (
     <div>
       <PengumumanPage />

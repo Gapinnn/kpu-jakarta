@@ -41,7 +41,7 @@ const NewsItem = ({
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
           <EyeView className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
           <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
-            {views} baca
+            {views} {lang === "id" ? "baca" : "Read"}
           </p>
         </div>
         {tags.map((tag, i) => (
@@ -67,7 +67,7 @@ const NewsItem = ({
         className="flex flex-row items-center w-fit group"
       >
         <p className="text-maroon-light text-xs md:text-sm font-semibold group-hover:text-maroon">
-          Selengkapnya
+          {lang === "id" ? "Selengkapnya" : "Detail"}
         </p>
       </Link>
     </div>
@@ -208,13 +208,14 @@ const NewsPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
           <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-            Berita KPU Provinsi DKI Jakarta
+            {lang === "id"
+              ? "Berita KPU Provinsi DKI Jakarta"
+              : "DKI Jakarta Provincial KPU News"}
           </h1>
           <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-            Berita ini menyajikan informasi terkini mengenai berbagai kegiatan
-            dan perkembangan terkait pemilihan umum yang diselenggarakan oleh
-            KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan
-            lain-lain.
+            {lang === "id"
+              ? "Berita ini menyajikan informasi terkini mengenai berbagai kegiatan dan perkembangan terkait pemilihan umum yang diselenggarakan oleh KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan lain-lain."
+              : "This news provides the latest information regarding various activities and developments related to the general election held by the DKI Jakarta KPU, including event reports, work program reports and others."}
           </p>
         </div>
         {/* Konten Utama */}
@@ -222,12 +223,12 @@ const NewsPage = () => {
           {/* Filter Berita */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
-              Filter Berita
+              {lang === "id" ? "Filter Berita" : "News Filters"}
             </h2>
             <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kata Kunci
+                  {lang === "id" ? "Kata Kunci" : "Keyword"}
                 </h5>
                 <input
                   value={kataKunci}
@@ -241,7 +242,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Berita
+                  {lang === "id" ? "Tahun Berita" : "Year News"}
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -297,7 +298,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Berita
+                  {lang === "id" ? "Kategori Berita" : "News Category"}
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -356,7 +357,7 @@ const NewsPage = () => {
                 onClick={() => handleTampilkan()}
                 className="w-full mt-4 py-1 text-base lg:text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
-                Tampilkan
+                {lang === "id" ? "Tampilkan" : "Show"}
               </button>
             </div>
           </div>
@@ -379,10 +380,14 @@ const NewsPage = () => {
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-base md:text-lg lg:text-xl text-center font-semibold text-stone-800">
-                    Berita KPU DKI Jakarta Tidak Tersedia
+                    {lang === "id"
+                      ? "Berita KPU DKI Jakarta Tidak Tersedia"
+                      : "DKI Jakarta KPU News Not Available"}
                   </h3>
                   <p className="text-sm md:text-base lg:text-lg text-center text-stone-700">
-                    Silakan Coba Kata Kunci atau Filter Lainnya
+                    {lang === "id"
+                      ? "Silakan Coba Kata Kunci atau Filter Lainnya"
+                      : "Please Try Other Keywords or Filters"}
                   </p>
                 </div>
               )}
@@ -493,6 +498,7 @@ const NewsPage = () => {
 };
 
 export default function BeritaNow() {
+  const lang = getLanguage();
   return (
     <div>
       <NewsPage />
