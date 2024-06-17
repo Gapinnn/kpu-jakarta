@@ -152,9 +152,6 @@ export default function Timeline() {
                   </div>
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      {lang === "id"
-                        ? "Timeline Pilkada DKI Jakarta 2024"
-                        : "Timeline for the 2024 DKI Jakarta Regional Election"}
                       27 - 29 AUGUST 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
@@ -179,9 +176,6 @@ export default function Timeline() {
                 <div className="flex flex-row w-full justify-end gap-3">
                   <div className="flex flex-col items-center gap-0">
                     <p className="text-gold text-base font-semibold">
-                      {lang === "id"
-                        ? "Timeline Pilkada DKI Jakarta 2024"
-                        : "Timeline for the 2024 DKI Jakarta Regional Election"}
                       22 SEPTEMBER 2024
                     </p>
                     <p className="text-center text-stone-100 text-sm font-semibold">
@@ -384,9 +378,6 @@ export default function Timeline() {
 
           <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              {lang === "id"
-                ? "Timeline Pilkada DKI Jakarta 2024"
-                : "Timeline for the 2024 DKI Jakarta Regional Election"}
               31 MAY - 23 SEPTEMBER 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
