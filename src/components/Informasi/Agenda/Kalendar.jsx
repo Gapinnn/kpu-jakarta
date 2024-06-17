@@ -13,8 +13,10 @@ import Room from "../../Icon/Room";
 import Public from "../../Icon/Public";
 import Private from "../../Icon/Private";
 import Breadcumb from "./Breadcumb";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function Kalendar() {
+  const lang = getLanguage();
   const data = JSON.stringify(dataKalendar);
   const calendarRef = useRef(null);
   const formatTime = (date) => {
@@ -50,14 +52,14 @@ export default function Kalendar() {
               <div className="flex items-center justify-center gap-0.5 w-fit rounded-lg">
                 <Public className="w-2.5 h-2.5 text-stone-700" />
                 <div className="text-[0.6rem] text-stone-900 font-semibold">
-                  Umum
+                  {lang === "id" ? "Umum" : "General"}
                 </div>
               </div>
             ) : (
               <div className="flex items-center gap-0.5 w-fit rounded-xl">
                 <Private className="w-2.5 h-2.5 text-stone-700" />
                 <div className="text-[0.5rem] text-stone-900 font-semibold">
-                  Terbatas
+                  {lang === "id" ? "Terbatas" : "Limited"}
                 </div>
               </div>
             )}
@@ -70,10 +72,12 @@ export default function Kalendar() {
             <div className="flex flex-col justify-center items-center gap-0 mt-0.5 w-fit rounded-xl">
               <Building className="w-4 h-4 text-stone-800" />
               <div className="text-[0.55rem] text-center text-stone-900 font-semibold">
-                Gedung {eventInfo.event.extendedProps.gedung}
+                {lang === "id" ? "Gedung" : "Building"}{" "}
+                {eventInfo.event.extendedProps.gedung}
               </div>
               <div className="text-[0.55rem] text-center text-stone-900 font-semibold">
-                Ruang {eventInfo.event.extendedProps.ruang}
+                {lang === "id" ? "Ruang" : "Room"}{" "}
+                {eventInfo.event.extendedProps.ruang}
               </div>
             </div>
           </div>
@@ -98,14 +102,14 @@ export default function Kalendar() {
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Public className="w-4 h-4 text-stone-700" />
                   <div className="text-xs text-stone-900 font-semibold">
-                    Umum
+                    {lang === "id" ? "Umum" : "General"}
                   </div>
                 </div>
               ) : (
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Private className="w-4 h-4 text-stone-700" />
                   <div className="text-xs text-stone-900 font-semibold">
-                    Terbatas
+                    {lang === "id" ? "Terbatas" : "Limited"}
                   </div>
                 </div>
               )}
@@ -119,13 +123,15 @@ export default function Kalendar() {
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Building className="w-4 h-4 lg:w-5 lg:h-5 text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Gedung {eventInfo.event.extendedProps.gedung}
+                    {lang === "id" ? "Gedung" : "Building"}{" "}
+                    {eventInfo.event.extendedProps.gedung}
                   </div>
                 </div>
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Room className="w-4 h-4 lg:w-5 lg:h-5  text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Ruang {eventInfo.event.extendedProps.ruang}
+                    {lang === "id" ? "Ruang" : "Room"}
+                    {eventInfo.event.extendedProps.ruang}
                   </div>
                 </div>
               </div>
@@ -152,14 +158,14 @@ export default function Kalendar() {
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Public className="w-5 h-5 text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Umum
+                    {lang === "id" ? "Umum" : "General"}
                   </div>
                 </div>
               ) : (
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Private className="w-5 h-5 text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Terbatas
+                    {lang === "id" ? "Terbatas" : "Limited"}
                   </div>
                 </div>
               )}
@@ -173,13 +179,15 @@ export default function Kalendar() {
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Building className="w-5 h-5 text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Gedung {eventInfo.event.extendedProps.gedung}
+                    {lang === "id" ? "Gedung" : "Building"}{" "}
+                    {eventInfo.event.extendedProps.gedung}
                   </div>
                 </div>
                 <div className="flex items-center gap-1 px-2 py-0.5 bg-[#fff1c6] w-fit rounded-xl">
                   <Room className="w-5 h-5 text-stone-700" />
                   <div className="text-sm text-stone-900 font-semibold">
-                    Ruang {eventInfo.event.extendedProps.ruang}
+                    {lang === "id" ? "Ruang" : "Room"}{" "}
+                    {eventInfo.event.extendedProps.ruang}
                   </div>
                 </div>
               </div>
@@ -248,21 +256,20 @@ export default function Kalendar() {
       {/* Judul Halaman */}
       <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-          Agenda KPU Provinsi DKI Jakarta
+          {lang === "id"
+            ? "Agenda KPU Provinsi DKI Jakarta"
+            : "DKI Jakarta Provincial KPU agenda"}
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-          Sistem Pengelolaan Aduan Masyarakat KPU Provinsi DKI Jakarta adalah
-          platform yang disediakan oleh KPU Provinsi DKI Jakarta bagi masyarakat
-          untuk melaporkan segala bentuk pelanggaran atau masalah terkait
-          pelaksanaan pemilu. Melalui sistem ini, masyarakat dapat menyampaikan
-          keluhan, masukan, dan saran untuk memastikan transparansi dan
-          integritas lembaga dan program kerja KPU DKI Jakarta.
+          {lang === "id"
+            ? "Sistem Pengelolaan Aduan Masyarakat KPU Provinsi DKI Jakarta adalah platform yang disediakan oleh KPU Provinsi DKI Jakarta bagi masyarakat untuk melaporkan segala bentuk pelanggaran atau masalah terkait pelaksanaan pemilu. Melalui sistem ini, masyarakat dapat menyampaikan keluhan, masukan, dan saran untuk memastikan transparansi dan integritas lembaga dan program kerja KPU DKI Jakarta."
+            : "The DKI Jakarta Provincial KPU Public Complaints Management System is a platform provided by the DKI Jakarta Provincial KPU for the public to report all forms of violations or problems related to the implementation of elections. Through this system, the public can submit complaints, input and suggestions to ensure the transparency and integrity of the DKI Jakarta KPU institutions and work programs."}
         </p>
       </div>
       {/* Kalendar Agenda */}
       <div className="w-full bg-white rounded-2xl shadow-xl px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-2">
         <h1 className="text-lg md:text-xl lg:text-2xl mb-3 md:mb-4 lg:mb-6 font-bold text-stone-900">
-          Kalendar Agenda
+          {lang === "id" ? "Kalendar Agenda" : "Agenda Calendar"}
         </h1>
         <div className="flex w-full m-0 p-0">
           <div className="flex w-full" ref={calendarRef}></div>

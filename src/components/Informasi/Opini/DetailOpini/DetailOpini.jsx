@@ -18,7 +18,7 @@ const OpiniRelated = () => {
   return (
     <div className="lg:w-1/4 shadow-md rounded-lg mt-4 md:mt-6 h-fit lg:mt-0 bg-white">
       <h2 className="bg-maroon-light text-white text-base md:text-lg lg:text-xl font-bold p-2 md:p-3 lg:p-4 px-4 md:px-6 rounded-lg rounded-b-none">
-        Opini Terkait
+        {lang === "id" ? "Opini Terkait" : "Related Opinions"}
       </h2>
       <div className="flex flex-col gap-0 md:px-2 lg:px-0">
         {dataOpiniTerkait.map((item) => (
@@ -99,7 +99,7 @@ export default function DetailOpini({ data }) {
             <Cancel className="w-6 h-6 text-stone-600 hover:text-stone-900" />
           </button>
           <h2 className="text-base md:text-lg lg:text-xl text-stone-900 font-semibold">
-            Bagikan
+            {lang === "id" ? "Bagikan" : "Share"}
           </h2>
           <div className="relative flex border-2 border-stone-400 rounded-lg">
             <input
@@ -117,7 +117,7 @@ export default function DetailOpini({ data }) {
               type="button"
               className="text-white z-20 text-sm md:text-base lg:text-lg absolute px-2 py-1 end-1 md:end-1 bottom-1 md:bottom-1 bg-maroon-light hover:bg-maroon focus:outline-none font-medium rounded-lg"
             >
-              Salin
+              {lang === "id" ? "Salin" : "Copy"}
             </button>
           </div>
           <div
@@ -129,11 +129,13 @@ export default function DetailOpini({ data }) {
           >
             <Clipboard className="w-5 h-5 md:w-6 md:h-6 text-stone-400 " />
             <p className="text-stone-500 text-sm md:text-base lg:text-lg ms-1 font-semibold ">
-              URL Berhasil Disalin!
+              {lang === "id"
+                ? "URL Berhasil Disalin!"
+                : "URL Copied Successfully!"}
             </p>
           </div>
           <h2 className="-mt-3 text-base md:text-lg lg:text-xl text-stone-900 font-semibold">
-            Media Sosial
+            {lang === "id" ? "Media Sosial" : "Social Media"}
           </h2>
           <div className="grid grid-cols-2 -mt-2 md:-mt-1 lg:mt-0 space-y-1 md:space-y-0 md:grid-cols-4 w-full mx-auto gap-2 md:gap-6 lg:gap-8 justify-center">
             <div
@@ -184,7 +186,9 @@ export default function DetailOpini({ data }) {
             >
               <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
             </svg>
-            <span className="inline text-center align-text-top">Beranda</span>
+            <span className="inline text-center align-text-top">
+              {lang === "id" ? "Beranda" : "Home"}
+            </span>
           </Link>
           <Link
             to={`/${lang}/informasi/berita`}
@@ -205,7 +209,9 @@ export default function DetailOpini({ data }) {
                 d="m1 9 4-4-4-4"
               />
             </svg>
-            <span className="inline text-center align-text-top">Informasi</span>
+            <span className="inline text-center align-text-top">
+              {lang === "id" ? "Informasi" : "Information"}
+            </span>
           </Link>
           <Link
             to={`/${lang}/informasi/opini`}
@@ -226,7 +232,9 @@ export default function DetailOpini({ data }) {
                 d="m1 9 4-4-4-4"
               />
             </svg>
-            <span className="inline text-center align-text-top">Opini</span>
+            <span className="inline text-center align-text-top">
+              {lang === "id" ? "Opini" : "Opinion"}
+            </span>
           </Link>
           {/* Halaman Saat Ini */}
           <Link className="text-sm md:text-base lg:text-lg inline font-semibold text-stone-900 align-middle">
@@ -268,7 +276,7 @@ export default function DetailOpini({ data }) {
                 >
                   <Share className="w-8 h-8 text-stone-600 group-hover:text-stone-100" />
                   <p className="text-stone-600 text-sm md:text-base lg:text-lg ms-1 font-semibold group-hover:text-stone-100">
-                    Bagikan
+                    {lang === "id" ? "Bagikan" : "Share"}
                   </p>
                 </div>
                 <img

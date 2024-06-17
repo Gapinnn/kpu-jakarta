@@ -5,8 +5,10 @@ import {
   kategoriTabulasi3,
   allDataTabulasi3,
 } from "../../contents/tabulasi";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function TabulasiTiga() {
+  const lang = getLanguage();
   const [indexData, setIndexData] = useState(0);
   const [dataName, setDataName] = useState("Pendidikan Pemilih");
   const [selectedData, setSelectedData] = useState(allDataTabulasi3[indexData]);
@@ -62,7 +64,7 @@ export default function TabulasiTiga() {
                 className="px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 text-sm md:text-base text-center font-bold uppercase text-stone-900 border"
                 rowSpan="2"
               >
-                Kategori Frekuensi
+                {lang === "id" ? "Kategori Frekuensi" : "Frequency Categories"}
               </th>
               {kategoriTabulasi3.map((item) => (
                 <th
@@ -128,7 +130,7 @@ export default function TabulasiTiga() {
       {/* Interpretasi */}
       <div className=" mb-4 mx-auto">
         <h3 className="text-maroon-light text-center text-base md:text-lg lg:text-xl font-bold">
-          Interpretasi
+          {lang === "id" ? "Interpretasi" : "Interpretation"}
         </h3>
         <p className="text-justify mt-1">{selectedData.interpretasi}</p>
       </div>

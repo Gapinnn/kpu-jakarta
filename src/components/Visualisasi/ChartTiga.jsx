@@ -5,8 +5,10 @@ import {
 } from "../../contents/visualisasi";
 import GroupStackedBarChart from "./Chart/GroupStackedBarChart";
 import { useState, useCallback, useEffect } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartTiga() {
+  const lang = getLanguage();
   const [data, setData] = useState(groupStackedBarChart1[0].data.data);
   const [labels, setLabels] = useState(groupStackedBarChart1[0].data.labels);
   const [indikators, setIndikators] = useState(
@@ -178,7 +180,7 @@ export default function ChartTiga() {
         />
         <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
           <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
-            Interpretasi
+            {lang === "id" ? "Interpretasi" : "Interpretation"}
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">

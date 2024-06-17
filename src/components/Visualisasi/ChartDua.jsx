@@ -5,8 +5,10 @@ import {
 } from "../../contents/visualisasi";
 import SpiderChart from "./Chart/SpiderChart";
 import { useState, useCallback, useEffect } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartDua() {
+  const lang = getLanguage();
   const [data, setData] = useState(spiderChart1[0].data);
   const [warna, setWarna] = useState(spiderChart1[0].warna);
   const [label, setLabel] = useState(spiderChart1[0].label);
@@ -128,7 +130,7 @@ export default function ChartDua() {
         />
         <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
           <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
-            Interpretasi
+            {lang === "id" ? "Interpretasi" : "Interpretation"}
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
