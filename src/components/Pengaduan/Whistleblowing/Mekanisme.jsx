@@ -5,8 +5,10 @@ import Three from "../../Icon/Number/Three";
 import Two from "../../Icon/Number/Two";
 import { useState } from "react";
 import Breadcumb from "./Breadcumb";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function Mekanisme() {
+  const lang = getLanguage();
   const [activeStep, setActiveStep] = useState(1);
   const handleUnduhFormulir = () => {
     const link = document.createElement("a");
@@ -57,18 +59,17 @@ export default function Mekanisme() {
           Whistleblowing System
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg xl:text-xl mb-1">
-          Sistem Whistleblowing KPU Provinsi DKI Jakarta adalah platform yang
-          disediakan KPU ProvinsiDKI Jakarta bagi Anda yang ingin melaporkan
-          dugaan terjadinya suatu pelanggaran yang dilakukan oleh Pegawai
-          (Komisioner, PNS, dan non-PNS) KPU Provinsi DKI Jakarta. Melalui
-          sistem ini, masyarakat dapat menyampaikan kesalahan dan kekurangan
-          pegawai di lingkungan KPU DKI Jakarta.
+          {lang === "id" ?
+              "Sistem Whistleblowing KPU Provinsi DKI Jakarta adalah platform yang disediakan KPU Provinsi DKI Jakarta bagi Anda yang ingin melaporkan dugaan terjadinya suatu pelanggaran yang dilakukan oleh Pegawai (Komisioner, PNS, dan non-PNS) KPU Provinsi DKI Jakarta. Melalui sistem ini, masyarakat dapat menyampaikan kesalahan dan kekurangan pegawai di lingkungan KPU DKI Jakarta."
+              :
+              "The Whistleblowing System of KPU DKI Jakarta Province is a platform provided by KPU DKI Jakarta Province for those who wish to report allegations of misconduct committed by employees (Commissioners, civil servants, and non-civil servants) of KPU DKI Jakarta Province. Through this system, the public can report errors and deficiencies of employees within the KPU DKI Jakarta."
+          }
         </p>
       </div>
       {/* Mekanisme */}
       <div className="overflow-hidden w-full bg-white rounded-2xl shadow-xl px-2 md:px-4 lg:px-4 py-4 md:py-6 lg:py-8 flex flex-col items-center gap-1 lg:gap-2">
         <h1 className="text-lg md:text-xl lg:text-2xl mb-5 lg:mb-6 font-bold text-stone-900">
-          Mekanisme Whistleblowing
+          {lang === "id" ? "Mekanisme Whistleblowing" : "Whistleblowing Mechanism"}
         </h1>
         {/* Horizontal Stepper */}
         <ol className="hidden py-4 pb-2 lg:flex items-center justify-between mx-auto gap-2 w-full xl:w-4/5">
@@ -94,7 +95,7 @@ export default function Mekanisme() {
                 activeStep >= 1 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Mekanisme Pengajuan
+              {lang === "id" ? "Mekanisme Pengajuan" : "Submission Mechanism"}
             </h2>
             <div
               className={`w-full h-1 border-2 border-opacity-50 ${
@@ -124,7 +125,7 @@ export default function Mekanisme() {
                 activeStep >= 2 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Penanganan Pengajuan
+              {lang === "id" ? "Penanganan Pengajuan" : "Handling of Submissions"}
             </h2>
           </li>
           <li
@@ -152,7 +153,7 @@ export default function Mekanisme() {
                 activeStep >= 3 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Formulir
+              {lang === "id" ? "Formulir" : "Form"}
             </h2>
           </li>
         </ol>
@@ -179,7 +180,7 @@ export default function Mekanisme() {
                 activeStep >= 1 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Mekanisme Pengajuan
+              {lang === "id" ? "Mekanisme Pengajuan" : "Submission Mechanism"}
             </h2>
           </li>
           <li
@@ -202,7 +203,7 @@ export default function Mekanisme() {
                 activeStep >= 2 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Penanganan Pengajuan
+              {lang === "id" ? "Penanganan Pengajuan" : "Handling of Submissions"}
             </h2>
           </li>
           <li
@@ -225,7 +226,7 @@ export default function Mekanisme() {
                 activeStep >= 3 ? "text-maroon-light" : "text-stone-600"
               }`}
             >
-              Formulir
+              {lang === "id" ? "Formulir" : "Form"}
             </h2>
           </li>
         </ol>
@@ -239,44 +240,52 @@ export default function Mekanisme() {
             >
               <li>
                 <p>
-                  Pelapor dapat mengajukan keberatan secara tertulis kepada
-                  Atasan PPID di Lingkungan Sekretariat KPU Provinsi DKI Jakarta
-                  paling lambat 30 (tiga puluh) hari kerja setelah ditemukannya
-                  dugaan terjadinya suatu pelanggaran yang dilakukan oleh
-                  Pegawai (Komisioner, PNS dan non-PNS) KPU Provinsi DKI Jakarta
-                  dengan kesalahan sebagai berikut:
+                  {lang === "id" ?
+                      "Pelapor dapat mengajukan keberatan secara tertulis kepada Atasan PPID di Lingkungan Sekretariat KPU Provinsi DKI Jakarta paling lambat 30 (tiga puluh) hari kerja setelah ditemukannya dugaan terjadinya suatu pelanggaran yang dilakukan oleh Pegawai (Komisioner, PNS dan non-PNS) KPU Provinsi DKI Jakarta dengan kesalahan sebagai berikut:"
+                      :
+                      "Reporters may file objections in writing to the PPID Supervisor at the Secretariat of the KPU DKI Jakarta Province no later than 30 (thirty) working days after allegations of misconduct are discovered involving employees (Commissioners, civil servants, and non-civil servants) of the KPU DKI Jakarta Province with the following errors:"
+                  }
                 </p>
                 <ol className="flex flex-col gap-1 pl-6 list-disc text-sm md:text-base lg:text-lg">
-                  <li>Pelanggaran kode etik</li>
-                  <li>Benturan kepentingan</li>
-                  <li>Perbuatan melanggar hukum lainnya</li>
+                  <li>{lang === "id" ? "Pelanggaran kode etik" : "Violation of the code of ethics"}</li>
+                  <li>{lang === "id" ? "Benturan kepentingan" : "Conflict of interest"}</li>
+                  <li>{lang === "id" ? "Perbuatan melanggar hukum lainnya" : "Other illegal acts"}</li>
                 </ol>
               </li>
               <li>
-                Laporan dapat disampaikan melalui sarana yang terdapat informasi
-                kontak
+                {lang === "id" ?
+                    "Laporan dapat disampaikan melalui sarana yang terdapat informasi kontak."
+                    :
+                    "Reports can be submitted through channels with contact information."
+                }
               </li>
               <li>
-                KPU Provinsi DKI Jakarta sangat menghargai informasi yang
-                Pelapor laporkan dan berkomitmen untuk menindaklanjuti. Jadi,
-                kerahasiaan identitas Pelapor sebagai whistleblower akan
-                diutamakan dan dijaga agar tetap rahasia
+                {lang === "id" ?
+                    "KPU Provinsi DKI Jakarta sangat menghargai informasi yang Pelapor laporkan dan berkomitmen untuk menindaklanjuti. Jadi, kerahasiaan identitas Pelapor sebagai whistleblower akan diutamakan dan dijaga agar tetap rahasia."
+                    :
+                    "The DKI Jakarta Provincial KPU highly values the information reported by the complainant and is committed to follow up on it. Therefore, the confidentiality of the complainant's identity as a whistleblower will be prioritized and safeguarded to remain confidential."
+                }
               </li>
               <li>
-                KPU Provinsi DKI Jakarta melindungi kerahasiaan Pelapor, sesuai
-                undang-undang pasal 13 tahun 2006 tentang perlindungan saksi dan
-                korban
+                {lang === "id" ?
+                    "KPU Provinsi DKI Jakarta melindungi kerahasiaan Pelapor, sesuai undang-undang pasal 13 tahun 2006 tentang perlindungan saksi dan korban."
+                    :
+                    "The DKI Jakarta Provincial KPU protects the confidentiality of the complainant, in accordance with Law No. 13 of 2006 concerning witness and victim protection."
+                }
               </li>
               <li>
-                Pengajuan aduan dapat disampaikan secara langsung atau melalui
-                surat kepada Sekretariat Komisi Pemilihan Umum Provinsi DKI
-                Jakarta dengan{" "}
+                {lang === "id" ?
+                    "Pengajuan aduan dapat disampaikan secara langsung atau melalui surat kepada Sekretariat Komisi Pemilihan Umum Provinsi DKI Jakarta dengan"
+                    :
+                    "Complaints can be submitted directly or by mail to the Secretariat of the Election Commission of DKI Jakarta Province with"
+                }
+                {" "}
                 <b>
-                  alamat Jl. Salemba Raya No.15 Paseban, Senen Jakarta Pusat
+                {lang === "id" ? "alamat" : "address"} Jl. Salemba Raya No.15 Paseban, Senen Jakarta Pusat
                 </b>{" "}
-                , melalui <b>email hupmaskpudki@gmail.com</b>, melalui{" "}
-                <b>SMS/WA (+62)812 9142 1021</b>, atau melalui{" "}
-                <b>telepon (+62)21 3908701</b>
+                , {lang === "id" ? "melalui" : "via"} <b>email hupmaskpudki@gmail.com</b>, {lang === "id" ? "melalui" : "via"}{" "}
+                <b>SMS/WA (+62)812 9142 1021</b>, {lang === "id" ? "atau melalui" : "or through"}{" "}
+                <b>{lang === "id" ? "telepon" : "phone"} (+62)21 3908701</b>
               </li>
             </ol>
           </div>
@@ -291,27 +300,34 @@ export default function Mekanisme() {
             >
               <li>
                 <p>
-                  Laporan whistleblowing akan ditindaklanjuti oleh Pejabat di
-                  Lingkungan KPU Provinsi DKI Jakarta paling lambat 30 (tiga
-                  puluh) hari kerja setelah laporan whistleblowing diterima
+                  {lang === "id" ?
+                      "Laporan whistleblowing akan ditindaklanjuti oleh Pejabat di Lingkungan KPU Provinsi DKI Jakarta paling lambat 30 (tiga puluh) hari kerja setelah laporan whistleblowing diterima."
+                      :
+                      "Whistleblowing reports will be followed up by the Officer at the Secretariat of the KPU DKI Jakarta Province no later than 30 (thirty) working days after the whistleblowing report is received."
+                  }
                 </p>
               </li>
               <li>
-                Dalam menindaklanjuti laporan whistleblowing, Pelapor diharapkan
-                melakukan pengecekan secara berkala terhadap komunikasi yang
-                mungkin akan dilakukan oleh Pejabat KPU DKI Jakarta
+                {lang === "id" ?
+                    "Dalam menindaklanjuti laporan whistleblowing, Pelapor diharapkan melakukan pengecekan secara berkala terhadap komunikasi yang mungkin akan dilakukan oleh Pejabat KPU DKI Jakarta."
+                    :
+                    "In following up on whistleblowing reports, the reporter is expected to regularly check for any communications that may be made by the officials of KPU DKI Jakarta."
+                }
               </li>
               <li>
                 <p>
-                  Pelapor Keberatan bersedia untuk ditanya lebih lanjut terkait
-                  laporan whistleblowing yang memuat:
+                  {lang === "id" ?
+                      "Pelapor Keberatan bersedia untuk ditanya lebih lanjut terkait laporan whistleblowing yang memuat:"
+                      :
+                      "The objecting reporter is willing to be further questioned regarding the whistleblowing report that includes:"
+                  }
                 </p>
                 <ol className="flex flex-col gap-1 pl-6 list-disc text-sm md:text-base lg:text-lg">
-                  <li>Nama Terlapor;</li>
-                  <li>Jabatan Terlapor;</li>
-                  <li>Hal yang dilaporkan;</li>
+                  <li>{lang === "id" ? "Nama Terlapor;" : "Name of the Reported Person;" }</li>
+                  <li>{lang === "id" ? "Jabatan Terlapor;" : "Position of the Reported Person;"}</li>
+                  <li>{lang === "id" ? "Hal yang dilaporkan;" : "Reported Issue/Concern;"}</li>
                   <li>
-                    Bukti (bisa dijelaskan langsung dan/atau dilampirkan);
+                    {lang === "id" ? "Bukti (bisa dijelaskan langsung dan/atau dilampirkan);" : "Evidence (can be described directly and/or attached);" }
                   </li>
                 </ol>
               </li>
@@ -324,38 +340,47 @@ export default function Mekanisme() {
           <div className="w-full px-1 lg:px-16 py-4 flex flex-col gap-2 lg:gap-4">
             <div className="w-full bg-maroon-light bg-blend-lighten bg-opacity-20 px-2 lg:px-4 py-2 rounded-lg flex items-center">
               <p className="text-sm md:text-base lg:text-lg text-center text-maroon-light font-semibold">
-                Pastikan anda telah memahami Mekanisme Pengajuan dan Penanganan
-                Pengajuan sebelum Pelaporan Whistleblowing
+                {lang === "id" ?
+                    "Pastikan anda telah memahami Mekanisme Pengajuan dan Penanganan Pengajuan sebelum Pelaporan Whistleblowing."
+                    :
+                    "Make sure you understand the Submission Mechanism and Handling of Submissions before Whistleblowing Reporting."
+                }
               </p>
             </div>
             <p className="text-sm md:text-base lg:text-lg text-stone-900">
-              Anda dapat melakukan pelaporan whistleblowing dengan melakukan
-              pengunduhan file berikut
+              {lang === "id" ?
+                  "Anda dapat melakukan pelaporan whistleblowing dengan melakukan pengunduhan file berikut."
+                  :
+                  "You can report whistleblowing by downloading the following file."
+              }
             </p>
             <button
               onClick={handleUnduhFormulir}
               className="w-max text-sm md:text-base flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
             >
               <FileDownload className="w-5 h-5 me-2" />
-              <p>Formulir Whistleblowing</p>
+              <p>{lang === "id" ? "Formulir Whistleblowing" : "Whistleblowing Form"}</p>
             </button>
             <p className="text-sm md:text-base lg:text-lg text-stone-900">
-              Adapun beberapa dokumen berikut yang dapat membantu anda dalam
-              melakukan pelaporan whistleblowing
+              {lang === "id" ?
+                  "Adapun beberapa dokumen berikut yang dapat membantu anda dalam melakukan pelaporan whistleblowing."
+                  :
+                  "The following documents can assist you in making whistleblowing reports."
+              }
             </p>
             <button
               onClick={handleUnduhTataCara}
               className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-sm md:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
             >
               <FileDownload className="w-5 h-5 me-2" />
-              <p>Tata Cara Lapor Whistleblowing</p>
+              <p>{lang === "id" ? "Tata Cara Lapor Whistleblowing" : "Whistleblowing Reporting Procedure"}</p>
             </button>
             <button
               onClick={handleUnduhTim}
               className="w-max flex items-center bg-stone-100 border-2 border-maroon-light text-maroon-light px-4 lg:px-8 py-1.5 rounded-full text-sm md:text-base font-semibold group hover:bg-maroon-light hover:bg-opacity-80 hover:border-2 hover:border-maroon-light hover:text-stone-100"
             >
               <FileDownload className="w-5 h-5 me-2" />
-              <p>Tim Whistleblowing</p>
+              <p>{lang === "id" ? "Tim Whistleblowing" : "Whistleblowing Team"}</p>
             </button>
           </div>
         )}
@@ -375,7 +400,7 @@ export default function Mekanisme() {
                 activeStep === 1 ? "text-stone-700" : "text-white"
               }`}
             />
-            Sebelumnya
+            {lang === "id" ? "Sebelumnya" : "Previously"}
           </button>
           <button
             onClick={handleNext}
@@ -385,7 +410,7 @@ export default function Mekanisme() {
                 : "bg-maroon-light text-white"
             }`}
           >
-            Selanjutnya
+            {lang === "id" ? "Selanjutnya" : "Next"}
             <ArrowDown
               className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 -rotate-90 -me-3 ${
                 activeStep === 3 ? "text-stone-700" : "text-white"
