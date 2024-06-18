@@ -147,7 +147,9 @@ const Header = () => {
           <div className="relative flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
             <button
               type="button"
-              onClick={() => setLanguageDropdown(!languageDropdown)}
+              onClick={() => {
+                return;
+              }}
               className="inline-flex items-center font-medium justify-center px-4 py-2 text-gray-900 rounded-lg cursor-pointer hover:bg-maroon"
             >
               {lang === "id" ? (
@@ -264,7 +266,7 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <div className="w-full flex flex-col gap-4">
+            {/* <div className="w-full flex flex-col gap-4">
               <div
                 onClick={() => changeShowAccordion("bahasa")}
                 className="flex w-full"
@@ -324,7 +326,7 @@ const Header = () => {
                   </div>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       )}

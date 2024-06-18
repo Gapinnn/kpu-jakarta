@@ -40,61 +40,36 @@ function App() {
         <Route path="/id/profil/tugas-pokok" element={<Tupoksi />} />
         <Route path="/id/profil/tugas-wewenang" element={<TugasWewenang />} />
         <Route path="/id/profil/sejarah-pemilu" element={<Sejarah />} />
-        <Route path="/en/profil/sejarah-pemilu" element={<Sejarah />} />
         <Route path="/id/sop" elemen t={<Sop />} />
         <Route
           path="/id/profil/struktur-organisasi"
           element={<StrukturOrganisasi />}
         />
-        <Route path="/en" element={<Beranda />} />
         <Route path="/id/publikasi/dokumen" element={<PublikasiDokumen />} />
-        <Route path="/en/publikasi/dokumen" element={<PublikasiDokumen />} />
         <Route path="/id/publikasi/galeri" element={<PublikasiGaleri />} />
-        <Route path="/en/publikasi/galeri" element={<PublikasiGaleri />} />
         <Route path="/id/informasi/berita" element={<BeritaTerkini />} />
-        <Route path="/en/informasi/berita" element={<BeritaTerkini />} />
         <Route
           path="/id/informasi/berita/:idBerita"
           element={<HalamanBerita />}
         />
-        <Route
-          path="/en/informasi/berita/:idBerita"
-          element={<HalamanBerita />}
-        />
         <Route path="/id/informasi/opini" element={<BeritaOpini />} />
-        <Route path="/en/informasi/opini" element={<BeritaOpini />} />
         <Route path="/id/informasi/opini/:idOpini" element={<HalamanOpini />} />
-        <Route path="/en/informasi/opini/:idOpini" element={<HalamanOpini />} />
         <Route path="/id/informasi/pengumuman" element={<Pengumuman />} />
-        <Route path="/en/informasi/pengumuman" element={<Pengumuman />} />
         <Route
           path="/id/informasi/pengumuman/:idPengumuman"
           element={<HalamanPengumuman />}
         />
-        <Route
-          path="/en/informasi/pengumuman/:idPengumuman"
-          element={<HalamanPengumuman />}
-        />
         <Route path="/id/informasi/agenda" element={<Agenda />} />
-        <Route path="/en/informasi/agenda" element={<Agenda />} />
         <Route path="/id/statistik/visualisasi" element={<Visualisasi />} />
-        <Route path="/en/statistik/visualisasi" element={<Visualisasi />} />
         <Route path="/id/statistik/tabulasi" element={<Tabulasi />} />
-        <Route path="/en/statistik/tabulasi" element={<Tabulasi />} />
         <Route path="/id/pengaduan" element={<Pengaduan />} />
-        <Route path="/en/pengaduan" element={<Pengaduan />} />
         <Route path="/id/pengaduan/dumas" element={<Dumas />} />
-        <Route path="/en/pengaduan/dumas" element={<Dumas />} />
         <Route
           path="/id/pengaduan/whistleblowing"
           element={<Whistleblowing />}
         />
-        <Route
-          path="/en/pengaduan/whistleblowing"
-          element={<Whistleblowing />}
-        />
         <Route path="/pdf-viewer" Component={PdfView} />
-        <Route path="*" element={<Navigate to={`/${lang}`} />} />
+        <Route path="*" element={<Navigate to={`/id`} />} />
       </Routes>
       <Footer />
     </BrowserRouter>
