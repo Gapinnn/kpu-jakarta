@@ -24,7 +24,7 @@ export default function Breadcumb() {
         </span>
       </Link>
       <Link
-        to={`/${lang}/pengaduan`}
+        to={lang === "id" ? "/id/pengaduan" : "/en/complaint"}
         className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
       >
         <svg

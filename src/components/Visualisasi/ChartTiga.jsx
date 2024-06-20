@@ -3,6 +3,7 @@ import {
   groupStackedBarChart1,
   groupStackedBarChart1En,
   listDaerahGroupStackedBarChart1,
+  listDaerahGroupStackedBarChart1En,
 } from "../../contents/visualisasi";
 import GroupStackedBarChart from "./Chart/GroupStackedBarChart";
 import { useState, useCallback, useEffect } from "react";
@@ -22,7 +23,9 @@ export default function ChartTiga() {
   );
   const [colors, setColors] = useState(groupStackedBarChart[0].data.colors);
   const [colors2, setColors2] = useState(groupStackedBarChart[0].data.colors2);
-  const [daerahName, setDaerahName] = useState("DKI Jakarta");
+  const [daerahName, setDaerahName] = useState(
+    lang === "id" ? "DKI Jakarta" : "DKI Jakarta Province"
+  );
   const [indexDaerah, setIndexDaerah] = useState(0);
   const [selectedKategori, setSelectedKategori] = useState({
     group1: true,
@@ -38,19 +41,19 @@ export default function ChartTiga() {
 
   const changeDaerah = useCallback((daerahName) => {
     switch (daerahName) {
-      case "DKI Jakarta":
+      case lang === "id" ? "DKI Jakarta" : "DKI Jakarta Province":
         return 0;
-      case "Jakarta Pusat":
+      case lang === "id" ? "Jakarta Pusat" : "Central Jakarta":
         return 1;
-      case "Jakarta Selatan":
+      case lang === "id" ? "Jakarta Selatan" : "South Jakarta":
         return 2;
-      case "Jakarta Barat":
+      case lang === "id" ? "Jakarta Barat" : "West Jakarta":
         return 3;
-      case "Jakarta Utara":
+      case lang === "id" ? "Jakarta Utara" : "North Jakarta":
         return 4;
-      case "Jakarta Timur":
+      case lang === "id" ? "Jakarta Timur" : "East Jakarta":
         return 5;
-      case "Kepulauan Seribu":
+      case lang === "id" ? "Kepulauan Seribu" : "Islands of Seribu":
         return 6;
       default:
         return 0;
@@ -174,7 +177,11 @@ export default function ChartTiga() {
           colors={colors}
           colors2={colors2}
           daerahName={daerahName}
-          daerahAll={listDaerahGroupStackedBarChart1}
+          daerahAll={
+            lang === "id"
+              ? listDaerahGroupStackedBarChart1
+              : listDaerahGroupStackedBarChart1En
+          }
           selectedKategori={selectedKategori}
           checkboxLabels={checkboxLabels}
           changeDaerahName={changeDaerahName}

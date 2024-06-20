@@ -1940,7 +1940,7 @@ export const groupStackedBarChart1En = [
 
 // DAFTAR DAERAH (DROPDOWN)
 export const listDaerahGroupStackedBarChart1En = [
-  { name: "DKI Jakarta" },
+  { name: "DKI Jakarta Province" },
   {
     name: " Central Jakarta",
   },
@@ -1957,7 +1957,7 @@ export const listDaerahGroupStackedBarChart1En = [
     name: "East Jakarta",
   },
   {
-    name: "Kepulauan Seribu",
+    name: "Islands of Seribu",
   },
 ];
 
@@ -1976,7 +1976,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 362411 },
         { region: "North Jakarta", value: 354177 },
         { region: "Central Jakarta", value: 356118 },
-        { region: "Kepulauan Seribu", value: 334211 },
+        { region: "Island of Seribu", value: 334211 },
       ],
       [
         { region: "West Jakarta", value: 251358 },
@@ -1984,7 +1984,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 512426 },
         { region: "North Jakarta", value: 412257 },
         { region: "Central Jakarta", value: 331350 },
-        { region: "Kepulauan Seribu", value: 513269 },
+        { region: "Island of Seribu", value: 513269 },
       ],
     ],
   },
@@ -2002,7 +2002,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 334361 },
         { region: "North Jakarta", value: 334357 },
         { region: "Central Jakarta", value: 321156 },
-        { region: "Kepulauan Seribu", value: 313141 },
+        { region: "Island of Seribu", value: 313141 },
       ],
       [
         { region: "West Jakarta", value: 351258 },
@@ -2010,7 +2010,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 422126 },
         { region: "North Jakarta", value: 229957 },
         { region: "Central Jakarta", value: 321150 },
-        { region: "Kepulauan Seribu", value: 481269 },
+        { region: "Island of Seribu", value: 481269 },
       ],
     ],
   },
@@ -2028,7 +2028,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 388861 },
         { region: "North Jakarta", value: 312657 },
         { region: "Central Jakarta", value: 321256 },
-        { region: "Kepulauan Seribu", value: 322141 },
+        { region: "Island of Seribu", value: 322141 },
       ],
       [
         { region: "West Jakarta", value: 441258 },
@@ -2036,7 +2036,7 @@ export const groupBarChart1En = [
         { region: "East Jakarta", value: 422126 },
         { region: "North Jakarta", value: 611257 },
         { region: "Central Jakarta", value: 352122 },
-        { region: "Kepulauan Seribu", value: 261219 },
+        { region: "Island of Seribu", value: 261219 },
       ],
     ],
   },

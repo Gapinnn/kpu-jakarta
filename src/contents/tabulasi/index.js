@@ -744,7 +744,7 @@ export const kategoriTabulasi1En = [
     value: "jakarta_timur",
   },
   {
-    name: "Kepulauan Seribu",
+    name: "Island of Seribu",
     value: "kepulauan_seribu",
   },
 ];

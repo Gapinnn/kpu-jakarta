@@ -4,6 +4,7 @@ import {
   pilihanDataTabulasi1,
   pilihanDataTabulasi1En,
   kategoriTabulasi1,
+  kategoriTabulasi1En,
   allDataTabulasi1,
   allDataTabulasi1En,
 } from "../../contents/tabulasi";
@@ -86,14 +87,24 @@ export default function TabulasiSatu() {
               <th className="px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 text-sm md:text-base text-center font-bold uppercase text-stone-900 border">
                 {lang === "id" ? "Kategori Frekuensi" : "Frequency Categories"}
               </th>
-              {kategoriTabulasi1.map((item) => (
-                <th
-                  key={item.name}
-                  className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
-                >
-                  {item.name}
-                </th>
-              ))}
+              {lang === "id" &&
+                kategoriTabulasi1.map((item) => (
+                  <th
+                    key={item.name}
+                    className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
+                  >
+                    {item.name}
+                  </th>
+                ))}
+              {lang === "en" &&
+                kategoriTabulasi1En.map((item) => (
+                  <th
+                    key={item.name}
+                    className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
+                  >
+                    {item.name}
+                  </th>
+                ))}
             </tr>
           </thead>
           <tbody>

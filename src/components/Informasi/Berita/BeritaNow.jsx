@@ -21,7 +21,11 @@ const NewsItem = ({
   lang,
 }) => (
   <Link
-    to={`/${lang}/informasi/berita/${id}`}
+    to={
+      lang === "id"
+        ? `/id/informasi/berita/${id}`
+        : `/en/information/news/${id}`
+    }
     className="flex flex-col md:flex-row items-start p-3 lg:p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
   >
     <img

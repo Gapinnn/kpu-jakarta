@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { dataOpiniTerkait } from "../../../../contents/informasi/opini";
+import {
+  dataOpiniTerkait,
+  dataOpiniTerkaitEn,
+} from "../../../../contents/informasi/opini";
 import Calendar from "../../../Icon/Calendar";
 import EyeView from "../../../Icon/EyeView";
 import getLanguage from "../../../../hooks/getLanguage";
@@ -21,24 +24,44 @@ const OpiniRelated = () => {
         {lang === "id" ? "Opini Terkait" : "Related Opinions"}
       </h2>
       <div className="flex flex-col gap-0 md:px-2 lg:px-0">
-        {dataOpiniTerkait.map((item) => (
-          <Link
-            to={`/${lang}/informasi/opini/${item.id}`}
-            key={item.id}
-            className="flex items-start p-3 md:p-4 cursor-pointer"
-          >
-            <img
-              className="w-1/4 md:w-1/3 lg:w-1/3 object-cover rounded-lg"
-              src={item.image}
-              alt="Related Berita"
-            />
-            <div className="ml-2.5 md:ml-3 lg:ml-4">
-              <h3 className="text-sm md:text-lg lg:text-lg font-semibold leading-snug space-y-1">
-                {item.title}
-              </h3>
-            </div>
-          </Link>
-        ))}
+        {lang === "id" &&
+          dataOpiniTerkait.map((item) => (
+            <Link
+              to={`/${lang}/informasi/opini/${item.id}`}
+              key={item.id}
+              className="flex items-start p-3 md:p-4 cursor-pointer"
+            >
+              <img
+                className="w-1/4 md:w-1/3 lg:w-1/3 object-cover rounded-lg"
+                src={item.image}
+                alt="Related Berita"
+              />
+              <div className="ml-2.5 md:ml-3 lg:ml-4">
+                <h3 className="text-sm md:text-lg lg:text-lg font-semibold leading-snug space-y-1">
+                  {item.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
+        {lang === "en" &&
+          dataOpiniTerkaitEn.map((item) => (
+            <Link
+              to={`/${lang}/informasi/opini/${item.id}`}
+              key={item.id}
+              className="flex items-start p-3 md:p-4 cursor-pointer"
+            >
+              <img
+                className="w-1/4 md:w-1/3 lg:w-1/3 object-cover rounded-lg"
+                src={item.image}
+                alt="Related Berita"
+              />
+              <div className="ml-2.5 md:ml-3 lg:ml-4">
+                <h3 className="text-sm md:text-lg lg:text-lg font-semibold leading-snug space-y-1">
+                  {item.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   );
@@ -190,10 +213,7 @@ export default function DetailOpini({ data }) {
               {lang === "id" ? "Beranda" : "Home"}
             </span>
           </Link>
-          <Link
-            to={`/${lang}/informasi/berita`}
-            className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
-          >
+          <Link className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle">
             <svg
               className="rtl:rotate-180 inline w-2.5 h-2.5 md:w-3.5 md:h-3.5 mx-1.5 text-maroon-light "
               aria-hidden="true"
@@ -214,8 +234,10 @@ export default function DetailOpini({ data }) {
             </span>
           </Link>
           <Link
-            to={`/${lang}/informasi/opini`}
-            className="text-sm md:text-base lg:text-lg inline font-semibold text-stone-900 align-middle"
+            to={
+              lang === "id" ? "/id/informasi/opini" : "/en/information/opinion"
+            }
+            className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
           >
             <svg
               className="rtl:rotate-180 inline w-2.5 h-2.5 md:w-3.5 md:h-3.5 mx-1.5 text-stone-900 "
@@ -294,7 +316,7 @@ export default function DetailOpini({ data }) {
                   <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
                     <EyeView className="w-5 h-5 md:w-6 md:h-6 text-stone-600 group-hover:text-stone-100" />
                     <p className="text-stone-600 text-sm md:text-base lg:text-lg ms-1 font-semibold group-hover:text-stone-100">
-                      {data.views} baca
+                      {data.views} {lang === "id" ? "baca" : "views"}
                     </p>
                   </div>
                 </div>
