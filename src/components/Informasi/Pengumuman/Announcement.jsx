@@ -3,7 +3,10 @@ import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
 import Breadcumb from "./Breadcumb";
 import { listKategori, listTahun } from "../../../contents/filter";
-import { dataPengumuman } from "../../../contents/informasi/pengumuman";
+import {
+  dataPengumuman,
+  dataPengumumanEn,
+} from "../../../contents/informasi/pengumuman";
 import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
 import ArrowDown from "../../Icon/ArrowDown";
@@ -21,7 +24,11 @@ const PengumumanItem = ({
   lang,
 }) => (
   <Link
-    to={`/${lang}/informasi/pengumuman/${id}`}
+    to={
+      lang === "id"
+        ? `/id/informasi/pengumuman/${id}`
+        : `/en/information/announcement/${id}`
+    }
     className="flex flex-col md:flex-row items-start p-3 lg:p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
   >
     <img
@@ -41,7 +48,7 @@ const PengumumanItem = ({
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
           <EyeView className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
           <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
-            {views} baca
+            {views} {lang === "id" ? "baca" : "Read"}
           </p>
         </div>
         {tags.map((tag, i) => (
@@ -67,7 +74,7 @@ const PengumumanItem = ({
         className="flex flex-row items-center w-fit group"
       >
         <p className="text-maroon-light text-xs md:text-sm font-semibold group-hover:text-maroon">
-          Selengkapnya
+          {lang === "id" ? "Selengkapnya" : "Detail"}
         </p>
       </Link>
     </div>
@@ -78,7 +85,9 @@ const PengumumanPage = () => {
   const lang = getLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [listPengumuman, setListPengumuman] = useState(dataPengumuman);
+  const [listPengumuman, setListPengumuman] = useState(
+    lang === "id" ? dataPengumuman : dataPengumumanEn
+  );
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -210,13 +219,14 @@ const PengumumanPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
           <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-            Pengumuman KPU Provinsi DKI Jakarta
+            {lang === "id"
+              ? "Pengumuman KPU Provinsi DKI Jakarta"
+              : "DKI Jakarta Provincial KPU Announcemets"}
           </h1>
           <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-            Pengumuman ini berisi informasi penting dari KPU DKI Jakarta,
-            seperti jadwal pemilu, prosedur pendaftaran calon, dan peraturan
-            pemilu terbaru. Pengumuman ini dirancang untuk memberi tahu
-            masyarakat dan memastikan kelancaran pelaksanaan pemilihan umum.
+            {lang === "id"
+              ? "Pengumuman ini berisi informasi penting dari KPU DKI Jakarta, seperti jadwal pemilu, prosedur pendaftaran calon, dan peraturan pemilu terbaru. Pengumuman ini dirancang untuk memberi tahu masyarakat dan memastikan kelancaran pelaksanaan pemilihan umum."
+              : "This announcement contains important information from the DKI Jakarta KPU, such as the election schedule, candidate registration procedures, and the latest election regulations. This announcement is designed to inform the public and ensure the smooth implementation of general elections."}
           </p>
         </div>
         {/* Konten Utama */}
@@ -224,26 +234,30 @@ const PengumumanPage = () => {
           {/* Filter Pengumuman */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
-              Filter Pengumuman
+              {lang === "id" ? "Filter Pengumuman" : "Announcements Filters"}
             </h2>
             <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kata Kunci
+                  {lang === "id" ? "Kata Kunci" : "Keyword"}
                 </h5>
                 <input
                   value={kataKunci}
                   onChange={(e) => setKataKunci(e.target.value)}
                   onKeyDown={handleKeyDown}
                   type="text"
-                  placeholder="Masukkan kata kunci..."
+                  placeholder={
+                    lang === "id"
+                      ? "Masukkan kata kunci..."
+                      : "Enter keyword..."
+                  }
                   className="w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
                 />
               </div>
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Pengumuman
+                  {lang === "id" ? "Tahun Pengumuman" : "Year Announcement"}
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -254,7 +268,7 @@ const PengumumanPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base"
-                    placeholder="Pilih Tahun"
+                    placeholder={lang === "id" ? "Pilih Tahun" : "Select Year"}
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchTahun !== "" && (
@@ -299,7 +313,9 @@ const PengumumanPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Pengumuman
+                  {lang === "id"
+                    ? "Kategori Pengumuman"
+                    : "Announcements Category"}
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -310,7 +326,9 @@ const PengumumanPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base  "
-                    placeholder="Pilih Kategori"
+                    placeholder={
+                      lang === "id" ? "Pilih Kategori" : "Select Category"
+                    }
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchKategori !== "" && (
@@ -358,7 +376,7 @@ const PengumumanPage = () => {
                 onClick={() => handleTampilkan()}
                 className="w-full mt-4 py-1 text-base lg:text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
-                Tampilkan
+                {lang === "id" ? "Tampilkan" : "Show"}
               </button>
             </div>
           </div>
@@ -366,9 +384,13 @@ const PengumumanPage = () => {
           <div className="w-full">
             <div className="flex items-center justify-between mb-2 lg:mb-4">
               <span className="text-gray-800 text-sm md:text-base font-semibold pt-2">
-                {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                  dataPengumuman.length
-                } Pengumuman`}
+                {lang === "id"
+                  ? `Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
+                      dataPengumuman.length
+                    } Pengumuman`
+                  : `Showing ${firstIndex + 1}-${lastIndex} of ${
+                      dataPengumuman.length
+                    } Announcement`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
@@ -381,10 +403,14 @@ const PengumumanPage = () => {
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-base md:text-lg lg:text-xl text-center font-semibold text-stone-800">
-                    Pengumuman KPU DKI Jakarta Tidak Tersedia
+                    {lang === "id"
+                      ? "Berita KPU DKI Jakarta Tidak Tersedia"
+                      : "DKI Jakarta KPU Announcements Not Available"}
                   </h3>
                   <p className="text-sm md:text-base lg:text-lg text-center text-stone-700">
-                    Silakan Coba Kata Kunci atau Filter Lainnya
+                    {lang === "id"
+                      ? "Silakan Coba Kata Kunci atau Filter Lainnya"
+                      : "Please Try Other Keywords or Filters"}
                   </p>
                 </div>
               )}
@@ -495,6 +521,7 @@ const PengumumanPage = () => {
 };
 
 export default function Announcement() {
+  const lang = getLanguage();
   return (
     <div>
       <PengumumanPage />

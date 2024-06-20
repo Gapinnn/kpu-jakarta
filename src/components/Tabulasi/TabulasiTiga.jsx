@@ -2,17 +2,24 @@ import { useState, useEffect } from "react";
 import UpArrow from "../Icon/UpArrow";
 import {
   pilihanDataTabulasi3,
+  pilihanDataTabulasi3En,
   kategoriTabulasi3,
   allDataTabulasi3,
+  allDataTabulasi3En,
 } from "../../contents/tabulasi";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function TabulasiTiga() {
+  const lang = getLanguage();
+  const allDataTabulasi = lang === "id" ? allDataTabulasi3 : allDataTabulasi3En;
   const [indexData, setIndexData] = useState(0);
-  const [dataName, setDataName] = useState("Pendidikan Pemilih");
-  const [selectedData, setSelectedData] = useState(allDataTabulasi3[indexData]);
+  const [dataName, setDataName] = useState(
+    lang === "id" ? "Persebaran - Pendidikan" : "Distribution - Education"
+  );
+  const [selectedData, setSelectedData] = useState(allDataTabulasi[indexData]);
 
   useEffect(() => {
-    setSelectedData(allDataTabulasi3[indexData]);
+    setSelectedData(allDataTabulasi[indexData]);
   }, [indexData]);
 
   return (
@@ -30,22 +37,40 @@ export default function TabulasiTiga() {
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="pt-0.5 pb-1 md:py-2 font-medium" role="none">
-            {pilihanDataTabulasi3.map((variabel) => (
-              <li
-                className={`${variabel.name === dataName ? "hidden" : ""}`}
-                key={variabel.name}
-                onClick={() => {
-                  setDataName(variabel.name);
-                  setIndexData(variabel.value);
-                }}
-              >
-                <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
-                    {variabel.name}
+            {lang === "id" &&
+              pilihanDataTabulasi3.map((variabel) => (
+                <li
+                  className={`${variabel.name === dataName ? "hidden" : ""}`}
+                  key={variabel.name}
+                  onClick={() => {
+                    setDataName(variabel.name);
+                    setIndexData(variabel.value);
+                  }}
+                >
+                  <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                    <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
+                      {variabel.name}
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
+            {lang === "en" &&
+              pilihanDataTabulasi3En.map((variabel) => (
+                <li
+                  className={`${variabel.name === dataName ? "hidden" : ""}`}
+                  key={variabel.name}
+                  onClick={() => {
+                    setDataName(variabel.name);
+                    setIndexData(variabel.value);
+                  }}
+                >
+                  <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                    <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
+                      {variabel.name}
+                    </div>
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
@@ -62,7 +87,7 @@ export default function TabulasiTiga() {
                 className="px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 text-sm md:text-base text-center font-bold uppercase text-stone-900 border"
                 rowSpan="2"
               >
-                Kategori Frekuensi
+                {lang === "id" ? "Kategori Frekuensi" : "Frequency Categories"}
               </th>
               {kategoriTabulasi3.map((item) => (
                 <th
@@ -81,13 +106,13 @@ export default function TabulasiTiga() {
                     key={item.name}
                     className="px-2 md:px-4 lg:px-6 text-sm md:text-base text-center font-bold uppercase text-stone-900 border"
                   >
-                    {allDataTabulasi3[indexData].column[0]}
+                    {allDataTabulasi[indexData].column[0]}
                   </th>
                   <th
                     key={item.name}
                     className="px-2 md:px-4 lg:px-6 text-sm md:text-base text-center font-bold uppercase text-stone-900 border"
                   >
-                    {allDataTabulasi3[indexData].column[1]}
+                    {allDataTabulasi[indexData].column[1]}
                   </th>
                 </>
               ))}
@@ -128,7 +153,7 @@ export default function TabulasiTiga() {
       {/* Interpretasi */}
       <div className=" mb-4 mx-auto">
         <h3 className="text-maroon-light text-center text-base md:text-lg lg:text-xl font-bold">
-          Interpretasi
+          {lang === "id" ? "Interpretasi" : "Interpretation"}
         </h3>
         <p className="text-justify mt-1">{selectedData.interpretasi}</p>
       </div>

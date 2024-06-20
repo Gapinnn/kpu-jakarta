@@ -5,7 +5,7 @@ import ArrowDown from "../../Icon/ArrowDown";
 import EyeView from "../../Icon/EyeView";
 import { listTahun, listKategori } from "../../../contents/filter";
 import { useEffect, useRef, useState } from "react";
-import { dataBerita } from "../../../contents/informasi/berita";
+import { dataBerita, dataBeritaEn } from "../../../contents/informasi/berita";
 import Breadcumb from "./Breadcumb";
 import Clear from "../../Icon/Clear";
 import getLanguage from "../../../hooks/getLanguage";
@@ -21,7 +21,11 @@ const NewsItem = ({
   lang,
 }) => (
   <Link
-    to={`/${lang}/informasi/berita/${id}`}
+    to={
+      lang === "id"
+        ? `/id/informasi/berita/${id}`
+        : `/en/information/news/${id}`
+    }
     className="flex flex-col md:flex-row items-start p-3 lg:p-4 border-b border-gray-200 bg-white rounded-lg shadow-md mb-2"
   >
     <img
@@ -41,7 +45,7 @@ const NewsItem = ({
         <div className="bg-stone-200 py-1 px-2 flex justify-center items-center rounded-xl hover:bg-stone-500 group">
           <EyeView className="w-4 h-4 md:w-5 md:h-5 text-stone-600 group-hover:text-stone-100" />
           <p className="text-stone-600 text-xs md:text-sm ms-1 font-semibold group-hover:text-stone-100">
-            {views} baca
+            {views} {lang === "id" ? "baca" : "Read"}
           </p>
         </div>
         {tags.map((tag, i) => (
@@ -67,7 +71,7 @@ const NewsItem = ({
         className="flex flex-row items-center w-fit group"
       >
         <p className="text-maroon-light text-xs md:text-sm font-semibold group-hover:text-maroon">
-          Selengkapnya
+          {lang === "id" ? "Selengkapnya" : "Detail"}
         </p>
       </Link>
     </div>
@@ -78,7 +82,9 @@ const NewsPage = () => {
   const lang = getLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [listBerita, setListBerita] = useState(dataBerita);
+  const [listBerita, setListBerita] = useState(
+    lang === "id" ? dataBerita : dataBeritaEn
+  );
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -208,13 +214,14 @@ const NewsPage = () => {
         {/* Judul Halaman */}
         <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
           <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-            Berita KPU Provinsi DKI Jakarta
+            {lang === "id"
+              ? "Berita KPU Provinsi DKI Jakarta"
+              : "DKI Jakarta Provincial KPU News"}
           </h1>
           <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-            Berita ini menyajikan informasi terkini mengenai berbagai kegiatan
-            dan perkembangan terkait pemilihan umum yang diselenggarakan oleh
-            KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan
-            lain-lain.
+            {lang === "id"
+              ? "Berita ini menyajikan informasi terkini mengenai berbagai kegiatan dan perkembangan terkait pemilihan umum yang diselenggarakan oleh KPU DKI Jakarta, termasuk laporan acara, laporan program kerja dan lain-lain."
+              : "This news provides the latest information regarding various activities and developments related to the general election held by the DKI Jakarta KPU, including event reports, work program reports and others."}
           </p>
         </div>
         {/* Konten Utama */}
@@ -222,26 +229,30 @@ const NewsPage = () => {
           {/* Filter Berita */}
           <div className="w-full lg:w-1/4 lg:pr-4 mb-4 lg:mb-0">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 lg:mb-4">
-              Filter Berita
+              {lang === "id" ? "Filter Berita" : "News Filters"}
             </h2>
             <div className="p-2 md:px-6 md:py-3 lg:p-3 bg-white rounded-lg shadow-md">
               <div className="mb-3">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kata Kunci
+                  {lang === "id" ? "Kata Kunci" : "Keyword"}
                 </h5>
                 <input
                   value={kataKunci}
                   onChange={(e) => setKataKunci(e.target.value)}
                   onKeyDown={handleKeyDown}
                   type="text"
-                  placeholder="Masukkan kata kunci..."
+                  placeholder={
+                    lang === "id"
+                      ? "Masukkan kata kunci..."
+                      : "Enter keyword..."
+                  }
                   className="w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
                 />
               </div>
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Tahun Berita
+                  {lang === "id" ? "Tahun Berita" : "Year News"}
                 </h5>
                 <div ref={tahunRef} className="relative group w-full">
                   <input
@@ -252,7 +263,7 @@ const NewsPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base"
-                    placeholder="Pilih Tahun"
+                    placeholder={lang === "id" ? "Pilih Tahun" : "Select Year"}
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchTahun !== "" && (
@@ -297,7 +308,7 @@ const NewsPage = () => {
               {/* Dropdown & Search Filter Kategori */}
               <div className="mb-3 relative">
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
-                  Kategori Berita
+                  {lang === "id" ? "Kategori Berita" : "News Category"}
                 </h5>
                 <div ref={kategoriRef} className="relative group w-full">
                   <input
@@ -308,7 +319,9 @@ const NewsPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base  "
-                    placeholder="Pilih Kategori"
+                    placeholder={
+                      lang === "id" ? "Pilih Kategori" : "Select Category"
+                    }
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchKategori !== "" && (
@@ -356,7 +369,7 @@ const NewsPage = () => {
                 onClick={() => handleTampilkan()}
                 className="w-full mt-4 py-1 text-base lg:text-lg font-semibold bg-maroon-light text-white rounded-lg border-2 border-maroon-light hover:bg-white hover:text-maroon-light"
               >
-                Tampilkan
+                {lang === "id" ? "Tampilkan" : "Show"}
               </button>
             </div>
           </div>
@@ -364,9 +377,13 @@ const NewsPage = () => {
           <div className="w-full">
             <div className="flex items-center justify-between mb-2 lg:mb-4">
               <span className="text-gray-800 text-sm md:text-base font-semibold pt-2">
-                {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                  dataBerita.length
-                } Berita`}
+                {lang === "id"
+                  ? `Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
+                      dataBerita.length
+                    } Berita`
+                  : `Showing ${firstIndex + 1}-${lastIndex} of ${
+                      dataBerita.length
+                    } News`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
@@ -379,10 +396,14 @@ const NewsPage = () => {
               ) : (
                 <div className="bg-white rounded-2xl shadow-lg flex h-64 flex-col gap-0 justify-center items-center">
                   <h3 className="text-base md:text-lg lg:text-xl text-center font-semibold text-stone-800">
-                    Berita KPU DKI Jakarta Tidak Tersedia
+                    {lang === "id"
+                      ? "Berita KPU DKI Jakarta Tidak Tersedia"
+                      : "DKI Jakarta KPU News Not Available"}
                   </h3>
                   <p className="text-sm md:text-base lg:text-lg text-center text-stone-700">
-                    Silakan Coba Kata Kunci atau Filter Lainnya
+                    {lang === "id"
+                      ? "Silakan Coba Kata Kunci atau Filter Lainnya"
+                      : "Please Try Other Keywords or Filters"}
                   </p>
                 </div>
               )}
@@ -493,6 +514,7 @@ const NewsPage = () => {
 };
 
 export default function BeritaNow() {
+  const lang = getLanguage();
   return (
     <div>
       <NewsPage />

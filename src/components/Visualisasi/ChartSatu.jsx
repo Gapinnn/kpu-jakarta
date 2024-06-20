@@ -2,22 +2,29 @@ import LayoutVis from "./LayoutVis";
 import GroupBarChart from "./Chart/GroupBarChart";
 import {
   groupBarChart1,
+  groupBarChart1En,
   listVariabelGroupBarChart1,
+  listVariabelGroupBarChart1En,
 } from "../../contents/visualisasi";
 import { useCallback, useState, useEffect } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartSatu() {
-  const [data, setData] = useState(groupBarChart1[0].data);
-  const [warna, setWarna] = useState(groupBarChart1[0].warna);
-  const [label, setLabel] = useState(groupBarChart1[0].label);
-  const [dataName, setDataName] = useState("Jumlah Pemilih");
+  const lang = getLanguage();
+  const groupBarChart = lang === "id" ? groupBarChart1 : groupBarChart1En;
+  const [data, setData] = useState(groupBarChart[0].data);
+  const [warna, setWarna] = useState(groupBarChart[0].warna);
+  const [label, setLabel] = useState(groupBarChart[0].label);
+  const [dataName, setDataName] = useState(
+    lang === "id" ? "Jumlah Pemilih" : "Total Voters"
+  );
   const [indexData, setIndexData] = useState(0);
   const [selectedData, setSelectedData] = useState({
     group1: true,
     group2: true,
   });
   const [indexSelectedData, setIndexSelectedData] = useState([0, 1]);
-  const checkboxLabels = groupBarChart1[0].label;
+  const checkboxLabels = groupBarChart[0].label;
 
   const changeDataName = (value) => {
     changeSelectedData("all");
@@ -26,11 +33,11 @@ export default function ChartSatu() {
 
   const changeData = useCallback((dataName) => {
     switch (dataName) {
-      case "Jumlah Pemilih Tetap":
+      case lang === "id" ? "Jumlah Pemilih Tetap" : "Permanent Voters":
         return 1;
-      case "Jumlah Pemilih Baru":
+      case lang === "id" ? "Jumlah Pemilih Baru" : "New Voters":
         return 2;
-      case "Jumlah Pemilih":
+      case lang === "id" ? "Jumlah Pemilih" : "Total Voters":
         return 0;
       default:
         return 0;
@@ -81,7 +88,7 @@ export default function ChartSatu() {
     // Function to update region names based on screen width
     const updateRegionNames = () => {
       if (window.innerWidth < 760) {
-        groupBarChart1.forEach((chart) => {
+        groupBarChart.forEach((chart) => {
           chart.data.forEach((dataSet) => {
             dataSet.forEach((item) => {
               switch (item.region) {
@@ -110,7 +117,7 @@ export default function ChartSatu() {
           });
         });
       } else {
-        groupBarChart1.forEach((chart) => {
+        groupBarChart.forEach((chart) => {
           chart.data.forEach((dataSet) => {
             dataSet.forEach((item) => {
               switch (item.region) {
@@ -158,9 +165,9 @@ export default function ChartSatu() {
     let newWarna = [];
     let newLabel = [];
     indexSelectedData.forEach((index) => {
-      newWarna.push(groupBarChart1[indexData].warna[index]);
-      newLabel.push(groupBarChart1[indexData].label[index]);
-      newData.push(groupBarChart1[indexData].data[index]);
+      newWarna.push(groupBarChart[indexData].warna[index]);
+      newLabel.push(groupBarChart[indexData].label[index]);
+      newData.push(groupBarChart[indexData].data[index]);
     });
     setData(newData);
     setWarna(newWarna);
@@ -168,14 +175,18 @@ export default function ChartSatu() {
   }, [indexSelectedData, indexData]);
 
   return (
-    <LayoutVis title={groupBarChart1[indexData].title}>
+    <LayoutVis title={groupBarChart[indexData].title}>
       <div className="w-full flex flex-col lg:flex-row gap-2 md:gap-4 lg:gap-6">
         <GroupBarChart
           data={data}
           keys={label}
           warna={warna}
           dataName={dataName}
-          variabelAll={listVariabelGroupBarChart1}
+          variabelAll={
+            lang === "id"
+              ? listVariabelGroupBarChart1
+              : listVariabelGroupBarChart1En
+          }
           selectedData={selectedData}
           checkboxLabels={checkboxLabels}
           changeDataName={changeDataName}
@@ -185,11 +196,11 @@ export default function ChartSatu() {
         />
         <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
           <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
-            Interpretasi
+            {lang === "id" ? "Interpretasi" : "Interpretation"}
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
-            {groupBarChart1[indexData].interpretasi}
+            {groupBarChart[indexData].interpretasi}
           </p>
         </div>
       </div>

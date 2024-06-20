@@ -6,6 +6,7 @@ import FileSvg from "../../Icon/FileSvg";
 import FilePng from "../../Icon/FilePng";
 import FilePdf from "../../Icon/FilePdf";
 import UpArrow from "../../Icon/UpArrow";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function GroupStackedBarChart({
   title,
@@ -23,6 +24,7 @@ export default function GroupStackedBarChart({
   changeSelectedKategori,
 }) {
   const createChart = useCallback(() => {
+    const lang = getLanguage();
     d3.select(`#${title}`).style("background-color", "transparent");
     d3.select(`#${title}`).selectAll("*").remove();
 
@@ -83,7 +85,9 @@ export default function GroupStackedBarChart({
         // Detail Data (Value)
         indikators.forEach((indikator, i) => {
           const groupClass =
-            categories[labelIndex] == "Laki-Laki" ? "Laki" : "Perempuan";
+            categories[labelIndex] == (lang === "id" ? "Laki-Laki" : "Male")
+              ? "Laki"
+              : "Perempuan";
           dataEntry[indikator] = {
             value: data[labelIndex][groupIndex][`value${i + 1}`],
             percentage: data[labelIndex][groupIndex][`percentage${i + 1}`],
@@ -278,7 +282,7 @@ export default function GroupStackedBarChart({
     const svgWidth = svg.node().getBoundingClientRect().width;
     let legendY = margin.top * -1 + 15;
 
-    if (categories.includes("Laki-Laki")) {
+    if (categories.includes(lang === "id" ? "Laki-Laki" : "Male")) {
       // LEGENDA LAKI-LAKI
       svg
         .append("text")
@@ -290,7 +294,7 @@ export default function GroupStackedBarChart({
           window.innerWidth < 768 ? 11 : window.innerWidth < 1024 ? 13 : 15
         )
         .attr("font-weight", "bold")
-        .text("Laki-Laki");
+        .text(lang === "id" ? "Laki-Laki" : "Male");
 
       legendY += 5;
 
@@ -342,7 +346,7 @@ export default function GroupStackedBarChart({
       legendY +=
         window.innerWidth < 768 ? 32 : window.innerWidth < 1024 ? 44 : 50;
 
-      if (categories.includes("Perempuan")) {
+      if (categories.includes(lang === "id" ? "Perempuan" : "Female")) {
         // LEGENDA PEREMPUAN
         svg
           .append("text")
@@ -354,7 +358,7 @@ export default function GroupStackedBarChart({
             window.innerWidth < 768 ? 11 : window.innerWidth < 1024 ? 13 : 15
           )
           .attr("font-weight", "bold")
-          .text("Perempuan");
+          .text(lang === "id" ? "Perempuan" : "Female");
 
         const rWidth =
           window.innerWidth < 768 ? 55 : window.innerWidth < 1024 ? 130 : 160;

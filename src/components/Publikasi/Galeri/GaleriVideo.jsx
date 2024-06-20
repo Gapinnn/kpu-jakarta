@@ -3,10 +3,12 @@ import NextArrow from "../../Icon/NextArrow";
 import PrevArrow from "../../Icon/PrevArrow";
 import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
-import { dataGaleriVideo } from "../../../contents/galeri";
+import { dataGaleriVideo, dataGaleriVideoEn } from "../../../contents/galeri";
 import FileVideo from "../../Icon/FileVideo";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function GaleriVideo() {
+  const lang = getLanguage();
   const handleUnduh = (filepath) => {
     const fileName = filepath.split("/").pop().split(".").shift();
     const link = document.createElement("a");
@@ -28,7 +30,7 @@ export default function GaleriVideo() {
           />
           <div className="w-fit bg-maroon-light absolute bottom-0 left-0 ">
             <p className="text-gold text-sm md:text-base font-semibold px-3 py-1.5 rounded-lg">
-              VIDEO
+              {lang == "id" ? "VIDEO" : "VIDEO"}
             </p>
           </div>
         </div>
@@ -66,7 +68,9 @@ export default function GaleriVideo() {
             className="mt-2 w-full flex justify-center items-center bg-maroon-light border-maroon-light text-stone-100 px-9 py-1.5 rounded-full text-base font-semibold group hover:bg-stone-100 hover:text-maroon-light hover:border"
           >
             <FileVideo className="w-4 h-4 me-2" />
-            <p className="text-sm">Unduh Video</p>
+            <p className="text-sm">
+              {lang == "id" ? "Unduh Video" : "Download Video"}
+            </p>
           </button>
         </div>
       </div>
@@ -148,31 +152,44 @@ export default function GaleriVideo() {
     <div className="flex flex-col bg-stone-100 rounded-2xl">
       <div className="py-4 flex flex-col gap-1">
         <h1 className="text-maroon-light text-lg md:text-xl lg:text-2xl font-bold">
-          Album Video
+          {lang == "id" ? "Album Video" : "Video album"}
         </h1>
         <p className="text-justify text-stone-900 text-sm md:text-base lg:text-lg">
-          Album video ini menyajikan rangkaian video dokumenter dari berbagai
-          kegiatan dan acara yang diadakan oleh KPU DKI Jakarta, memberikan
-          gambaran dinamis tentang proses pemilu dan partisipasi masyarakat
-          dalam pemilihan umum.
+          {lang == "id"
+            ? " Album video ini menyajikan rangkaian video dokumenter dari berbagai kegiatan dan acara yang diadakan oleh KPU DKI Jakarta, memberikan gambaran dinamis tentang proses pemilu dan partisipasi masyarakat dalam pemilihan umum."
+            : "This video album presents a series of documentary videos from various activities and events held by the DKI Jakarta KPU, providing a dynamic overview of the electoral process and public participation in the general election."}
         </p>
       </div>
       <div className="mx-auto shadow-xl p-1 md:p-2 py-2 md:py-3 lg:py-4 pb-10 md:pb-12 lg:pb-12 border border-gold rounded-2xl grid grid-cols-1 ">
         <div id="bahanSosialisasiSlider">
           <div className="w-full h-fit slider-container mx-auto">
             <Slider {...settings} className="flex justify-center items-center">
-              {dataGaleriVideo.map((item, index) => (
-                <Card
-                  key={index}
-                  title={item.title}
-                  date={item.date}
-                  views={item.views}
-                  imageSrc={item.imgSrc}
-                  size={item.size}
-                  tags={item.tags}
-                  filepath={item.filepath}
-                />
-              ))}
+              {lang === "id" &&
+                dataGaleriVideo.map((item, index) => (
+                  <Card
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    views={item.views}
+                    imageSrc={item.imgSrc}
+                    size={item.size}
+                    tags={item.tags}
+                    filepath={item.filepath}
+                  />
+                ))}
+              {lang === "en" &&
+                dataGaleriVideoEn.map((item, index) => (
+                  <Card
+                    key={index}
+                    title={item.title}
+                    date={item.date}
+                    views={item.views}
+                    imageSrc={item.imgSrc}
+                    size={item.size}
+                    tags={item.tags}
+                    filepath={item.filepath}
+                  />
+                ))}
             </Slider>
           </div>
         </div>

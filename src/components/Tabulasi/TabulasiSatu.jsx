@@ -2,17 +2,25 @@ import { useState, useEffect } from "react";
 import UpArrow from "../Icon/UpArrow";
 import {
   pilihanDataTabulasi1,
+  pilihanDataTabulasi1En,
   kategoriTabulasi1,
+  kategoriTabulasi1En,
   allDataTabulasi1,
+  allDataTabulasi1En,
 } from "../../contents/tabulasi";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function TabulasiSatu() {
+  const lang = getLanguage();
+  const allDataTabulasi = lang === "id" ? allDataTabulasi1 : allDataTabulasi1En;
   const [indexData, setIndexData] = useState(0);
-  const [dataName, setDataName] = useState("Pendidikan Pemilih");
-  const [selectedData, setSelectedData] = useState(allDataTabulasi1[indexData]);
+  const [dataName, setDataName] = useState(
+    lang === "id" ? "Pemilih - Pendidikan" : "Voters - Education"
+  );
+  const [selectedData, setSelectedData] = useState(allDataTabulasi[indexData]);
 
   useEffect(() => {
-    setSelectedData(allDataTabulasi1[indexData]);
+    setSelectedData(allDataTabulasi[indexData]);
   }, [indexData]);
 
   return (
@@ -30,22 +38,40 @@ export default function TabulasiSatu() {
                 transition-transform duration-500 transform opacity-0 pointer-events-none translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto`}
         >
           <ul className="pt-0.5 pb-1 md:py-2 font-medium" role="none">
-            {pilihanDataTabulasi1.map((variabel) => (
-              <li
-                className={`${variabel.name === dataName ? "hidden" : ""}`}
-                key={variabel.name}
-                onClick={() => {
-                  setDataName(variabel.name);
-                  setIndexData(variabel.value);
-                }}
-              >
-                <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
-                  <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
-                    {variabel.name}
+            {lang === "id" &&
+              pilihanDataTabulasi1.map((variabel) => (
+                <li
+                  className={`${variabel.name === dataName ? "hidden" : ""}`}
+                  key={variabel.name}
+                  onClick={() => {
+                    setDataName(variabel.name);
+                    setIndexData(variabel.value);
+                  }}
+                >
+                  <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                    <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
+                      {variabel.name}
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
+            {lang === "en" &&
+              pilihanDataTabulasi1En.map((variabel) => (
+                <li
+                  className={`${variabel.name === dataName ? "hidden" : ""}`}
+                  key={variabel.name}
+                  onClick={() => {
+                    setDataName(variabel.name);
+                    setIndexData(variabel.value);
+                  }}
+                >
+                  <div className="cursor-pointer flex w-full gap-1 px-3 lg:px-4 py-1.5 md:py-2 hover:bg-stone-300 text-maroon-light rounded-lg">
+                    <div className="inline-flex items-center text-maroon-light text-sm md:text-base font-semibold">
+                      {variabel.name}
+                    </div>
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
@@ -59,16 +85,26 @@ export default function TabulasiSatu() {
           <thead className="bg-gold">
             <tr>
               <th className="px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 text-sm md:text-base text-center font-bold uppercase text-stone-900 border">
-                Kategori Frekuensi
+                {lang === "id" ? "Kategori Frekuensi" : "Frequency Categories"}
               </th>
-              {kategoriTabulasi1.map((item) => (
-                <th
-                  key={item.name}
-                  className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
-                >
-                  {item.name}
-                </th>
-              ))}
+              {lang === "id" &&
+                kategoriTabulasi1.map((item) => (
+                  <th
+                    key={item.name}
+                    className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
+                  >
+                    {item.name}
+                  </th>
+                ))}
+              {lang === "en" &&
+                kategoriTabulasi1En.map((item) => (
+                  <th
+                    key={item.name}
+                    className="px-4 md:px-5 lg:px-6 text-center text-sm md:text-base font-bold uppercase text-stone-900 border"
+                  >
+                    {item.name}
+                  </th>
+                ))}
             </tr>
           </thead>
           <tbody>
@@ -98,7 +134,7 @@ export default function TabulasiSatu() {
       {/* Interpretasi */}
       <div className=" mb-4 mx-auto">
         <h3 className="text-maroon-light text-center text-base md:text-lg lg:text-xl font-bold">
-          Interpretasi
+          {lang === "id" ? "Interpretasi" : "Interpretation"}
         </h3>
         <p className="text-justify mt-1">{selectedData.interpretasi}</p>
       </div>

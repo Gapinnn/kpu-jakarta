@@ -1,8 +1,10 @@
 import DataSlider from "./DataSlider";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function Hero() {
+  const lang = getLanguage();
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -48,7 +50,8 @@ export default function Hero() {
           <div className="flex flex-col w-fit self-center gap-2">
             <div className="flex flex-col gap-2 md:gap-3 lg:gap-2">
               <h1 className="text-stone-100 text-center mx-auto font-extrabold text-4xl md:text-5xl lg:text-6xl">
-                Pemilihan Umum <br className="lg:hidden" /> DKI Jakarta 2024
+                {lang === "id" ? "Pemilihan Umum" : "Regional Elections"}{" "}
+                <br className="lg:hidden" /> DKI Jakarta 2024
               </h1>
               <h1
                 ref={el}

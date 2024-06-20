@@ -3,8 +3,10 @@ import Calendar from "../../Icon/Calendar";
 import FileImage from "../../Icon/FileImage";
 import EyeView from "../../Icon/EyeView";
 import Tag from "../../Icon/Tag";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function Galeri() {
+  const lang = getLanguage();
   const [activeTab, setActiveTab] = useState("foto");
 
   const handleUnduh = (filepath) => {
@@ -104,7 +106,11 @@ export default function Galeri() {
               : "bg-white text-maroon font-bold"
           }`}
         >
-          Foto
+          {
+                lang == "id"
+                  ?"Foto"
+                  :"Photo"
+              }
         </button>
         <button
           onClick={() => setActiveTab("video")}
@@ -114,7 +120,11 @@ export default function Galeri() {
               : "bg-white text-maroon font-bold"
           }`}
         >
-          Video
+           {
+                lang == "id"
+                  ?"Video"
+                  :"Video"
+              }
         </button>
       </div>
       {activeTab === "foto" && (
@@ -130,7 +140,11 @@ export default function Galeri() {
                   />
                   <div className="w-fit bg-maroon-light absolute bottom-0 left-0 rounded-r-md rounded-bl-md">
                     <p className="text-gold text-base font-semibold px-3 py-1.5 rounded-lg">
-                      GAMBAR
+                    {
+                      lang == "id"
+                        ?"Gambar"
+                        :"Picture"
+                    }
                     </p>
                   </div>
                 </div>
@@ -174,7 +188,11 @@ export default function Galeri() {
                     className="mt-2 w-full flex justify-center items-center bg-maroon-light border-maroon-light text-stone-100 px-9 py-1.5 rounded-full text-base font-semibold group hover:bg-stone-100 hover:border-maroon-light hover:text-stone-100"
                   >
                     <FileImage className="w-4 h-4 me-2" />
-                    <p className="text-sm">Unduh Foto</p>
+                    <p className="text-sm"> {
+                lang == "id"
+                  ?"Unduh Foto"
+                  :"Download Photos"
+              }</p>
                   </button>
                 </div>
               </div>
@@ -201,7 +219,11 @@ export default function Galeri() {
                   download
                   className="text-maroon underline mt-2"
                 >
-                  Unduh Video
+                  {
+                lang == "id"
+                  ?"Unduh Video"
+                  :"Download Videos"
+              }
                 </a>
               </div>
             </div>

@@ -23,10 +23,7 @@ export default function Breadcumb() {
           {lang === "id" ? "Beranda" : "Home"}
         </span>
       </Link>
-      <Link
-        to={`/${lang}/profil/visi-misi`}
-        className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle"
-      >
+      <Link className="text-sm md:text-base lg:text-lg inline font-semibold text-maroon-light hover:text-maroon align-middle">
         <svg
           className="rtl:rotate-180 inline w-2.5 h-2.5 md:w-3.5 md:h-3.5 mx-1.5 text-maroon-light "
           aria-hidden="true"

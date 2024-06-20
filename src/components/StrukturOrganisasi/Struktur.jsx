@@ -1,6 +1,8 @@
 import Breadcumb from "./Breadcumb";
+import getLanguage from "../../hooks/getLanguage";
 
 const Struktur = () => {
+  const lang = getLanguage();
   return (
     <div className="flex flex-col w-full bg-stone-100 relative">
       <div className="w-full flex flex-col gap-0 absolute bottom-0">
@@ -13,7 +15,12 @@ const Struktur = () => {
         <Breadcumb />
         {/* Judul Halaman */}
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
-          Struktur Organisasi KPU Provinsi DKI Jakarta
+          
+          {
+            lang == "id"
+              ?"Struktur Organisasi KPU Provinsi DKI Jakarta"
+              :"DKI Jakarta Provincial KPU Organizational Structure"
+          }
         </h1>
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center mx-auto py-2 md:py-4 lg:py-8 px-2 md:px-4 lg:px-10 bg-white shadow-2xl rounded-2xl">

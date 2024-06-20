@@ -1,30 +1,38 @@
 import LayoutVis from "./LayoutVis";
 import {
   groupStackedBarChart1,
+  groupStackedBarChart1En,
   listDaerahGroupStackedBarChart1,
+  listDaerahGroupStackedBarChart1En,
 } from "../../contents/visualisasi";
 import GroupStackedBarChart from "./Chart/GroupStackedBarChart";
 import { useState, useCallback, useEffect } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartTiga() {
-  const [data, setData] = useState(groupStackedBarChart1[0].data.data);
-  const [labels, setLabels] = useState(groupStackedBarChart1[0].data.labels);
+  const lang = getLanguage();
+  const groupStackedBarChart =
+    lang === "id" ? groupStackedBarChart1 : groupStackedBarChart1En;
+  const [data, setData] = useState(groupStackedBarChart[0].data.data);
+  const [labels, setLabels] = useState(groupStackedBarChart[0].data.labels);
   const [indikators, setIndikators] = useState(
-    groupStackedBarChart1[0].data.indikators
+    groupStackedBarChart[0].data.indikators
   );
   const [categories, setCategories] = useState(
-    groupStackedBarChart1[0].data.categories
+    groupStackedBarChart[0].data.categories
   );
-  const [colors, setColors] = useState(groupStackedBarChart1[0].data.colors);
-  const [colors2, setColors2] = useState(groupStackedBarChart1[0].data.colors2);
-  const [daerahName, setDaerahName] = useState("DKI Jakarta");
+  const [colors, setColors] = useState(groupStackedBarChart[0].data.colors);
+  const [colors2, setColors2] = useState(groupStackedBarChart[0].data.colors2);
+  const [daerahName, setDaerahName] = useState(
+    lang === "id" ? "DKI Jakarta" : "DKI Jakarta Province"
+  );
   const [indexDaerah, setIndexDaerah] = useState(0);
   const [selectedKategori, setSelectedKategori] = useState({
     group1: true,
     group2: true,
   });
   const [indexSelectedKategori, setIndexSelectedKategori] = useState([0, 1]);
-  const checkboxLabels = groupStackedBarChart1[0].data.categories;
+  const checkboxLabels = groupStackedBarChart[0].data.categories;
 
   const changeDaerahName = (value) => {
     changeSelectedKategori("all");
@@ -33,19 +41,19 @@ export default function ChartTiga() {
 
   const changeDaerah = useCallback((daerahName) => {
     switch (daerahName) {
-      case "DKI Jakarta":
+      case lang === "id" ? "DKI Jakarta" : "DKI Jakarta Province":
         return 0;
-      case "Jakarta Pusat":
+      case lang === "id" ? "Jakarta Pusat" : "Central Jakarta":
         return 1;
-      case "Jakarta Selatan":
+      case lang === "id" ? "Jakarta Selatan" : "South Jakarta":
         return 2;
-      case "Jakarta Barat":
+      case lang === "id" ? "Jakarta Barat" : "West Jakarta":
         return 3;
-      case "Jakarta Utara":
+      case lang === "id" ? "Jakarta Utara" : "North Jakarta":
         return 4;
-      case "Jakarta Timur":
+      case lang === "id" ? "Jakarta Timur" : "East Jakarta":
         return 5;
-      case "Kepulauan Seribu":
+      case lang === "id" ? "Kepulauan Seribu" : "Islands of Seribu":
         return 6;
       default:
         return 0;
@@ -146,9 +154,9 @@ export default function ChartTiga() {
     const newData = [];
     const newCategories = [];
     indexSelectedKategori.forEach((index) => {
-      newData.push(groupStackedBarChart1[indexDaerah].data.data[index]);
+      newData.push(groupStackedBarChart[indexDaerah].data.data[index]);
       newCategories.push(
-        groupStackedBarChart1[indexDaerah].data.categories[index]
+        groupStackedBarChart[indexDaerah].data.categories[index]
       );
     });
     setData(newData);
@@ -157,7 +165,7 @@ export default function ChartTiga() {
 
   return (
     <LayoutVis
-      title={`${groupStackedBarChart1[indexDaerah].data.title} di ${groupStackedBarChart1[indexDaerah].region}`}
+      title={`${groupStackedBarChart[indexDaerah].data.title} di ${groupStackedBarChart[indexDaerah].region}`}
     >
       <div className="w-full flex flex-col lg:flex-row gap-6">
         <GroupStackedBarChart
@@ -169,7 +177,11 @@ export default function ChartTiga() {
           colors={colors}
           colors2={colors2}
           daerahName={daerahName}
-          daerahAll={listDaerahGroupStackedBarChart1}
+          daerahAll={
+            lang === "id"
+              ? listDaerahGroupStackedBarChart1
+              : listDaerahGroupStackedBarChart1En
+          }
           selectedKategori={selectedKategori}
           checkboxLabels={checkboxLabels}
           changeDaerahName={changeDaerahName}
@@ -178,11 +190,11 @@ export default function ChartTiga() {
         />
         <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
           <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
-            Interpretasi
+            {lang === "id" ? "Interpretasi" : "Interpretation"}
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
-            {groupStackedBarChart1[indexDaerah].data.interpretasi}
+            {groupStackedBarChart[indexDaerah].data.interpretasi}
           </p>
         </div>
       </div>
