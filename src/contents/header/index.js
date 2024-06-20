@@ -97,87 +97,87 @@ export const menuEn = [
   },
   {
     name: "About Us",
-    path: "/en/profil",
+    path: "/en/about-us",
     branch: true,
     submenu: [
       {
         name: "Vision Mission",
-        path: "/en/profil/visi-misi",
+        path: "/en/about-us/vision-mission",
       },
       {
         name: "Main Tasks",
-        path: "/en/profil/tugas-pokok",
+        path: "/en/about-us/main-tasks",
       },
       {
         name: "Authority Tasks",
-        path: "/en/profil/tugas-wewenang",
+        path: "/en/about-us/authority-tasks",
       },
       {
         name: "Organizational Structure",
-        path: "/en/profil/struktur-organisasi",
+        path: "/en/about-us/organizational-structure",
       },
       {
         name: "Election History",
-        path: "/en/profil/sejarah-pemilu",
+        path: "/en/about-us/election-history",
       },
     ],
   },
   {
     name: "Information",
-    path: "/en/informasi",
+    path: "/en/information",
     branch: true,
     submenu: [
       {
         name: "News",
-        path: "/en/informasi/berita",
+        path: "/en/information/news",
       },
       {
         name: "Announcement",
-        path: "/en/informasi/pengumuman",
+        path: "/en/information/announcement",
       },
       {
         name: "Opinion",
-        path: "/en/informasi/opini",
+        path: "/en/information/opinion",
       },
       {
         name: "Agenda",
-        path: "/en/informasi/agenda",
+        path: "/en/information/agenda",
       },
     ],
   },
   {
     name: "Publication",
-    path: "/en/publikasi",
+    path: "/en/publication",
     branch: true,
     submenu: [
       {
         name: "Document",
-        path: "/en/publikasi/dokumen",
+        path: "/en/publication/document",
       },
       {
         name: "Gallery",
-        path: "/en/publikasi/galeri",
+        path: "/en/publication/gallery",
       },
     ],
   },
   {
     name: "Statistic",
-    path: "/en/statistik",
+    path: "/en/statistic",
     branch: true,
     submenu: [
       {
         name: "Visualization",
-        path: "/en/statistik/visualisasi",
+        path: "/en/statistic/vizualization",
       },
       {
         name: "Tabulation",
-        path: "/en/statistik/tabulasi",
+        path: "/en/statistic/tabulation",
       },
     ],
   },
   {
     name: "Complaint",
-    path: "/en/pengaduan",
+    path: "/en/complaint",
     branch: false,
   },
 ];

@@ -3,7 +3,10 @@ import Calendar from "../../Icon/Calendar";
 import Tag from "../../Icon/Tag";
 import Breadcumb from "./Breadcumb";
 import { listKategori, listTahun } from "../../../contents/filter";
-import { dataPengumuman } from "../../../contents/informasi/pengumuman";
+import {
+  dataPengumuman,
+  dataPengumumanEn,
+} from "../../../contents/informasi/pengumuman";
 import { useEffect, useRef, useState } from "react";
 import Clear from "../../Icon/Clear";
 import ArrowDown from "../../Icon/ArrowDown";
@@ -78,7 +81,9 @@ const PengumumanPage = () => {
   const lang = getLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [listPengumuman, setListPengumuman] = useState(dataPengumuman);
+  const [listPengumuman, setListPengumuman] = useState(
+    lang === "id" ? dataPengumuman : dataPengumumanEn
+  );
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -237,7 +242,11 @@ const PengumumanPage = () => {
                   onChange={(e) => setKataKunci(e.target.value)}
                   onKeyDown={handleKeyDown}
                   type="text"
-                  placeholder="Masukkan kata kunci..."
+                  placeholder={
+                    lang === "id"
+                      ? "Masukkan kata kunci..."
+                      : "Enter keyword..."
+                  }
                   className="w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
                 />
               </div>
@@ -255,7 +264,7 @@ const PengumumanPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base"
-                    placeholder="Pilih Tahun"
+                    placeholder={lang === "id" ? "Pilih Tahun" : "Select Year"}
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchTahun !== "" && (
@@ -313,7 +322,9 @@ const PengumumanPage = () => {
                     type="text"
                     id="simple-search"
                     className="border group border-gray-300 focus:placeholder:text-gray-700 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium block w-full pe-10 p-2 lg:p-2.5 text-sm md:text-base  "
-                    placeholder="Pilih Kategori"
+                    placeholder={
+                      lang === "id" ? "Pilih Kategori" : "Select Category"
+                    }
                   />
                   <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
                     {searchKategori !== "" && (
@@ -369,9 +380,13 @@ const PengumumanPage = () => {
           <div className="w-full">
             <div className="flex items-center justify-between mb-2 lg:mb-4">
               <span className="text-gray-800 text-sm md:text-base font-semibold pt-2">
-                {`Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                  dataPengumuman.length
-                } Pengumuman`}
+                {lang === "id"
+                  ? `Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
+                      dataPengumuman.length
+                    } Pengumuman`
+                  : `Showing ${firstIndex + 1}-${lastIndex} of ${
+                      dataPengumuman.length
+                    } Announcement`}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">

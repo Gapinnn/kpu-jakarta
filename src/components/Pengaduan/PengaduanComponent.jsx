@@ -15,14 +15,12 @@ export default function PengaduanComponent() {
       {/* Judul Halaman */}
       <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-        {lang === "id" ? "Pengaduan" : "Complaint"}
+          {lang === "id" ? "Pengaduan" : "Complaint"}
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-1">
-        {lang === "id" ? 
-          "Layanan pengaduan ini memungkinkan warga DKI Jakarta untuk menyampaikan keluhan, laporan, dan masukan terkait KPU DKI Jakarta. KPU DKI Jakarta berkomitmen untuk menindaklanjuti setiap aduan guna meningkatkan kualitas dan integritas lembaga."
-          : 
-          "This complaint service allows residents of DKI Jakarta to submit complaints, reports, and feedback related to the KPU DKI Jakarta. KPU DKI Jakarta is committed to following up on every complaint in order to improve the quality and integrity of the institution."
-        }
+          {lang === "id"
+            ? "Layanan pengaduan ini memungkinkan warga DKI Jakarta untuk menyampaikan keluhan, laporan, dan masukan terkait KPU DKI Jakarta. KPU DKI Jakarta berkomitmen untuk menindaklanjuti setiap aduan guna meningkatkan kualitas dan integritas lembaga."
+            : "This complaint service allows residents of DKI Jakarta to submit complaints, reports, and feedback related to the KPU DKI Jakarta. KPU DKI Jakarta is committed to following up on every complaint in order to improve the quality and integrity of the institution."}
         </p>
       </div>
       {/* Menu */}
@@ -34,26 +32,28 @@ export default function PengaduanComponent() {
           </div>
           <div className="w-full flex flex-col gap-1.5">
             <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-stone-900">
-            {lang === "id" ? "Pengaduan" : "Complaint"} <br className="hidden lg:flex" /> {lang === "id" ? "Masyarakat":"Community"}
+              {lang === "id" ? "Pengaduan" : "Complaint"}{" "}
+              <br className="hidden lg:flex" />{" "}
+              {lang === "id" ? "Masyarakat" : "Community"}
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-stone-700">
-            {lang === "id" ? 
-                "Pengajuan laporan segala bentuk pelanggaran atau masalah terkait pelaksanaan program kerja KPU Provinsi DKI Jakarta." 
-                : 
-                "Submission of reports on any violations or issues related to the implementation of the work programs of KPU Province DKI Jakarta."
-            }
+              {lang === "id"
+                ? "Pengajuan laporan segala bentuk pelanggaran atau masalah terkait pelaksanaan program kerja KPU Provinsi DKI Jakarta."
+                : "Submission of reports on any violations or issues related to the implementation of the work programs of KPU Province DKI Jakarta."}
             </p>
           </div>
           <Link
-            to={lang === "id" ? "/id/pengaduan/dumas" :  "/en/pengaduan/dumas"}
+            to={
+              lang === "id"
+                ? "/id/pengaduan/dumas"
+                : "/en/complaint/complaint-community"
+            }
             className="mt-3 md:mt-4 lg:mt-6 flex flex-row items-center w-fit group"
           >
             <p className="text-maroon-light text-sm md:text-base lg:text-lg font-semibold group-hover:text-maroon">
-            {lang === "id" ? 
-                "Dumas KPU DKI Jakarta" 
-                : 
-                "KPU DKI Jakarta Complaint Service"
-            }
+              {lang === "id"
+                ? "Dumas KPU DKI Jakarta"
+                : "KPU DKI Jakarta Complaint Service"}
             </p>
             <Lanjut className="w-6 h-6 text-maroon-light group-hover:text-maroon ms-2" />
           </Link>
@@ -68,19 +68,23 @@ export default function PengaduanComponent() {
               Wistleblowing <br className="hidden lg:flex" /> System
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-stone-700">
-            {lang === "id" ? 
-                "Pengajuan laporan pelanggaran/kecurangan yang dilakukan oleh Pegawai (Komisioner, PNS, dan non-PNS) KPU Provinsi DKI Jakarta." 
-                : 
-                "Submission of reports on violations/fraud committed by employees (Commissioners, Civil Servants, and non-Civil Servants) of KPU Province DKI Jakarta."
-            }
+              {lang === "id"
+                ? "Pengajuan laporan pelanggaran/kecurangan yang dilakukan oleh Pegawai (Komisioner, PNS, dan non-PNS) KPU Provinsi DKI Jakarta."
+                : "Submission of reports on violations/fraud committed by employees (Commissioners, Civil Servants, and non-Civil Servants) of KPU Province DKI Jakarta."}
             </p>
           </div>
           <Link
-            to={lang === "id" ? "/id/pengaduan/whistleblowing" :  "/en/pengaduan/whistleblowing"}
+            to={
+              lang === "id"
+                ? "/id/pengaduan/whistleblowing"
+                : "/en/complaint/whistleblowing"
+            }
             className="mt-3 md:mt-4 lg:mt-6 flex flex-row items-center w-fit group"
           >
             <p className="text-maroon-light text-sm md:text-base lg:text-lg font-semibold group-hover:text-maroon">
-              {lang === "id" ? "Whistleblowing KPU DKI Jakarta" : "Whistleblowing at KPU DKI Jakarta"}
+              {lang === "id"
+                ? "Whistleblowing KPU DKI Jakarta"
+                : "Whistleblowing at KPU DKI Jakarta"}
             </p>
             <Lanjut className="w-6 h-6 text-maroon-light group-hover:text-maroon ms-2" />
           </Link>
@@ -92,14 +96,13 @@ export default function PengaduanComponent() {
           </div>
           <div className="w-full flex flex-col gap-1.5">
             <h1 className="text-lg md:text-xl lg:text-2xl font-bold text-stone-900">
-            {lang === "id" ? "Layanan" : "Service"} <br className="hidden lg:flex" /> Lapor.go.id
+              {lang === "id" ? "Layanan" : "Service"}{" "}
+              <br className="hidden lg:flex" /> Lapor.go.id
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-stone-700">
-            {lang === "id" ? 
-                "Layanan pengaduan, aspirasi, permintaan informasi yang dikelola oleh Kantor Staf Presiden Republik Indonesia." 
-                : 
-                "Complaint, aspiration, and information request services managed by the Office of the Presidential Staff of the Republic of Indonesia."
-            }
+              {lang === "id"
+                ? "Layanan pengaduan, aspirasi, permintaan informasi yang dikelola oleh Kantor Staf Presiden Republik Indonesia."
+                : "Complaint, aspiration, and information request services managed by the Office of the Presidential Staff of the Republic of Indonesia."}
             </p>
           </div>
           <Link

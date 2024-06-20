@@ -66,3 +66,72 @@ export const dataModul = [
       "Modul ini menjelaskan secara rinci tata cara dan ketentuan bagi bakal pasangan calon perseorangan dalam mengumpulkan dan menyerahkan dokumen dukungan",
   },
 ];
+
+export const dataModulEn = [
+  {
+    title: "2024 Election Module",
+    date: "August 14, 2019",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2024 Election", "Module"],
+    imageSrc: "/images/ModulPemilu2024.png",
+    filepath: "/file/ModulPemilu2024.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+  {
+    title: "2024 Election Module",
+    date: "August 14, 2024",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2024 Election", "Module"],
+    imageSrc: "/images/ModulPemilu2024.png",
+    filepath: "/file/ModulPemilu2024.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+  {
+    title: "2019 Election Module",
+    date: "August 14, 2019",
+    views: 666,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/ModulPemilu2019.png",
+    filepath: "/file/ModulPemilu2019.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+  {
+    title: "2019 Election Module",
+    date: "August 14, 2019",
+    views: 666,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/ModulPemilu2019.png",
+    filepath: "/file/ModulPemilu2019.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+  {
+    title: "2019 Election Module",
+    date: "August 14, 2019",
+    views: 666,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/ModulPemilu2019.png",
+    filepath: "/file/ModulPemilu2019.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+  {
+    title: "2019 Election Module",
+    date: "August 14, 2019",
+    views: 666,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/ModulPemilu2019.png",
+    filepath: "/file/ModulPemilu2019.pdf",
+    description:
+      "This module explains in detail the procedures and conditions for prospective independent candidate pairs in collecting and submitting support documents",
+  },
+];

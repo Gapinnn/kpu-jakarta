@@ -1,6 +1,7 @@
 import LayoutVis from "./LayoutVis";
 import {
   groupStackedBarChart1,
+  groupStackedBarChart1En,
   listDaerahGroupStackedBarChart1,
 } from "../../contents/visualisasi";
 import GroupStackedBarChart from "./Chart/GroupStackedBarChart";
@@ -9,16 +10,18 @@ import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartTiga() {
   const lang = getLanguage();
-  const [data, setData] = useState(groupStackedBarChart1[0].data.data);
-  const [labels, setLabels] = useState(groupStackedBarChart1[0].data.labels);
+  const groupStackedBarChart =
+    lang === "id" ? groupStackedBarChart1 : groupStackedBarChart1En;
+  const [data, setData] = useState(groupStackedBarChart[0].data.data);
+  const [labels, setLabels] = useState(groupStackedBarChart[0].data.labels);
   const [indikators, setIndikators] = useState(
-    groupStackedBarChart1[0].data.indikators
+    groupStackedBarChart[0].data.indikators
   );
   const [categories, setCategories] = useState(
-    groupStackedBarChart1[0].data.categories
+    groupStackedBarChart[0].data.categories
   );
-  const [colors, setColors] = useState(groupStackedBarChart1[0].data.colors);
-  const [colors2, setColors2] = useState(groupStackedBarChart1[0].data.colors2);
+  const [colors, setColors] = useState(groupStackedBarChart[0].data.colors);
+  const [colors2, setColors2] = useState(groupStackedBarChart[0].data.colors2);
   const [daerahName, setDaerahName] = useState("DKI Jakarta");
   const [indexDaerah, setIndexDaerah] = useState(0);
   const [selectedKategori, setSelectedKategori] = useState({
@@ -26,7 +29,7 @@ export default function ChartTiga() {
     group2: true,
   });
   const [indexSelectedKategori, setIndexSelectedKategori] = useState([0, 1]);
-  const checkboxLabels = groupStackedBarChart1[0].data.categories;
+  const checkboxLabels = groupStackedBarChart[0].data.categories;
 
   const changeDaerahName = (value) => {
     changeSelectedKategori("all");
@@ -148,9 +151,9 @@ export default function ChartTiga() {
     const newData = [];
     const newCategories = [];
     indexSelectedKategori.forEach((index) => {
-      newData.push(groupStackedBarChart1[indexDaerah].data.data[index]);
+      newData.push(groupStackedBarChart[indexDaerah].data.data[index]);
       newCategories.push(
-        groupStackedBarChart1[indexDaerah].data.categories[index]
+        groupStackedBarChart[indexDaerah].data.categories[index]
       );
     });
     setData(newData);
@@ -159,7 +162,7 @@ export default function ChartTiga() {
 
   return (
     <LayoutVis
-      title={`${groupStackedBarChart1[indexDaerah].data.title} di ${groupStackedBarChart1[indexDaerah].region}`}
+      title={`${groupStackedBarChart[indexDaerah].data.title} di ${groupStackedBarChart[indexDaerah].region}`}
     >
       <div className="w-full flex flex-col lg:flex-row gap-6">
         <GroupStackedBarChart
@@ -184,7 +187,7 @@ export default function ChartTiga() {
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
-            {groupStackedBarChart1[indexDaerah].data.interpretasi}
+            {groupStackedBarChart[indexDaerah].data.interpretasi}
           </p>
         </div>
       </div>

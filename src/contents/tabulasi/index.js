@@ -721,7 +721,6 @@ export const allDataTabulasi3 = [
   kerjaPersebaran,
 ];
 
-
 //En
 export const kategoriTabulasi1En = [
   {
@@ -729,25 +728,25 @@ export const kategoriTabulasi1En = [
     value: "jakarta_selatan",
   },
   {
-      name: "West Jakarta",
-      value: "jakarta_barat",
+    name: "West Jakarta",
+    value: "jakarta_barat",
   },
   {
-      name: "Central Jakarta",
-      value: "jakarta_pusat",
+    name: "Central Jakarta",
+    value: "jakarta_pusat",
   },
   {
-      name: "North Jakarta",
-      value: "jakarta_utara",
+    name: "North Jakarta",
+    value: "jakarta_utara",
   },
   {
-      name: "East Jakarta",
-      value: "jakarta_timur",
+    name: "East Jakarta",
+    value: "jakarta_timur",
   },
   {
-      name: "Kepulauan Seribu",
-      value: "kepulauan_seribu",
-  }
+    name: "Kepulauan Seribu",
+    value: "kepulauan_seribu",
+  },
 ];
 
 export const kategoriTabulasi2En = [
@@ -756,25 +755,25 @@ export const kategoriTabulasi2En = [
     value: "langsung",
   },
   {
-      name: "General",
-      value: "umum",
+    name: "General",
+    value: "umum",
   },
   {
-      name: "Free",
-      value: "bebas",
+    name: "Free",
+    value: "bebas",
   },
   {
-      name: "Confidential",
-      value: "rahasia",
+    name: "Confidential",
+    value: "rahasia",
   },
   {
-      name: "Honest",
-      value: "jujur",
+    name: "Honest",
+    value: "jujur",
   },
   {
-      name: "Fair",
-      value: "adil",
-  }
+    name: "Fair",
+    value: "adil",
+  },
 ];
 
 export const kategoriTabulasi3En = [
@@ -798,17 +797,17 @@ export const pilihanDataTabulasi1En = [
     value: 0,
   },
   {
-      name: "Voters - Generation",
-      value: 1,
+    name: "Voters - Generation",
+    value: 1,
   },
   {
-      name: "Voters - Gender",
-      value: 2,
+    name: "Voters - Gender",
+    value: 2,
   },
   {
-      name: "Voters - Occupation",
-      value: 3,
-  }
+    name: "Voters - Occupation",
+    value: 3,
+  },
 ];
 
 export const pilihanDataTabulasi2En = [
@@ -817,17 +816,17 @@ export const pilihanDataTabulasi2En = [
     value: 0,
   },
   {
-      name: "Indicator - Generation",
-      value: 1,
+    name: "Indicator - Generation",
+    value: 1,
   },
   {
-      name: "Indicator - Gender",
-      value: 2,
+    name: "Indicator - Gender",
+    value: 2,
   },
   {
-      name: "Indicator - Occupation",
-      value: 3,
-  }
+    name: "Indicator - Occupation",
+    value: 3,
+  },
 ];
 
 export const pilihanDataTabulasi3En = [
@@ -836,17 +835,17 @@ export const pilihanDataTabulasi3En = [
     value: 0,
   },
   {
-      name: "Distribution - Gender",
-      value: 1,
+    name: "Distribution - Gender",
+    value: 1,
   },
   {
-      name: "Distribution - Age",
-      value: 2,
+    name: "Distribution - Age",
+    value: 2,
   },
   {
-      name: "Distribution - Employment Status",
-      value: 3,
-  }
+    name: "Distribution - Employment Status",
+    value: 3,
+  },
 ];
 
 export const pendidikanPemilihEn = {
@@ -914,7 +913,8 @@ export const pendidikanPemilihEn = {
 };
 
 export const generasiPemilihEn = {
-  title: "Characteristics of Voters in the 2024 Election Based on Generational Groups",
+  title:
+    "Characteristics of Voters in the 2024 Election Based on Generational Groups",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -966,7 +966,8 @@ export const generasiPemilihEn = {
 };
 
 export const genderPemilihEn = {
-  title: "Characteristics of Voters in the 2024 Election Based on Generational Groups",
+  title:
+    "Characteristics of Voters in the 2024 Election Based on Generational Groups",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1006,7 +1007,8 @@ export const genderPemilihEn = {
 };
 
 export const pekerjaanPemilihEn = {
-  title: "Characteristics of Voters in the 2024 Election Based on Occupational Groups",
+  title:
+    "Characteristics of Voters in the 2024 Election Based on Occupational Groups",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1276,7 +1278,8 @@ export const allDataTabulasi2En = [
 ];
 
 export const pendidikanPersebaranEn = {
-  title: "Distribution of Candidate Choices in 2019 Elections Based on Education",
+  title:
+    "Distribution of Candidate Choices in 2019 Elections Based on Education",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1287,37 +1290,38 @@ export const pendidikanPersebaranEn = {
   ],
   interpretasi:
     "Data on the number of polling stations (TPS) in DKI Jakarta Province shows significant variations among different regions. In West Jakarta, there are 527 polling stations for male voters and 258 for female voters, indicating a higher concentration for male voters. South Jakarta has 502 polling stations for males and 339 for females, while East Jakarta records the highest numbers with 561 polling stations for males and 226 for females. In North Jakarta, there are 557 polling stations for males and 257 for females, while Central Jakarta has 556 polling stations for males and 250 for females. The Thousand Islands show a similar pattern with 541 polling stations for males and 269 for females. This data indicates that more polling stations are generally allocated for male voters in almost all regions, with East Jakarta having the highest number of polling stations for males and South Jakarta showing a more balanced distribution between males and females.",
-  column: ["Elementary-Middle-High School", "Diploma-Degree"],
+  column: ["Elementary-High", "Diploma-Degree"],
   data: [
     [
-      { label: "Elementary-Middle-High School", value: 1191212, value2: 6121312 },
+      { label: "Elementary-High", value: 1191212, value2: 6121312 },
       { label: "Diploma-Degree", value: 518931, value2: 1611212 },
     ],
     [
-      { label: "Elementary-Middle-High School", value: 2191232, value2: 8121212 },
+      { label: "Elementary-High", value: 2191232, value2: 8121212 },
       { label: "Diploma-Degree", value: 441931, value2: 2121412 },
     ],
     [
-      { label: "Elementary-Middle-High School", value: 1591252, value2: 3726112 },
+      { label: "Elementary-High", value: 1591252, value2: 3726112 },
       { label: "Diploma-Degree", value: 974131, value2: 4511217 },
     ],
     [
-      { label: "Elementary-Middle-High School", value: 2091222, value2: 2162126 },
+      { label: "Elementary-High", value: 2091222, value2: 2162126 },
       { label: "Diploma-Degree", value: 1852931, value2: 3237111 },
     ],
     [
-      { label: "Elementary-Middle-High School", value: 1791225, value2: 3127124 },
+      { label: "Elementary-High", value: 1791225, value2: 3127124 },
       { label: "Diploma-Degree", value: 545931, value2: 2152121 },
     ],
     [
-      { label: "Elementary-Middle-High School", value: 115124, value2: 129929 },
+      { label: "Elementary-High", value: 115124, value2: 129929 },
       { label: "Diploma-Degree", value: 59831, value2: 73182 },
     ],
   ],
 };
 
 export const genderPersebaranEn = {
-  title: "Distribution of Candidate Choices in 2019 Elections Based on Education",
+  title:
+    "Distribution of Candidate Choices in 2019 Elections Based on Education",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1358,7 +1362,8 @@ export const genderPersebaranEn = {
 };
 
 export const usiaPersebaranEn = {
-  title: "Distribution of Candidate Choices in 2019 Elections Based on Education",
+  title:
+    "Distribution of Candidate Choices in 2019 Elections Based on Education",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1399,7 +1404,8 @@ export const usiaPersebaranEn = {
 };
 
 export const kerjaPersebaranEn = {
-  title: "Distribution of Candidate Choices in 2019 Elections Based on Education",
+  title:
+    "Distribution of Candidate Choices in 2019 Elections Based on Education",
   label: [
     "South Jakarta",
     "West Jakarta",
@@ -1437,8 +1443,7 @@ export const kerjaPersebaranEn = {
       { label: "Unemployed", value: 59831, value2: 73182 },
     ],
   ],
-}
-
+};
 
 export const allDataTabulasi3En = [
   pendidikanPersebaranEn,

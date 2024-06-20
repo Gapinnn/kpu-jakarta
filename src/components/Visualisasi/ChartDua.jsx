@@ -1,7 +1,9 @@
 import LayoutVis from "./LayoutVis";
 import {
   spiderChart1,
+  spiderChart1En,
   listVariabelSpiderChart1,
+  listVariabelSpiderChart1En,
 } from "../../contents/visualisasi";
 import SpiderChart from "./Chart/SpiderChart";
 import { useState, useCallback, useEffect } from "react";
@@ -9,10 +11,15 @@ import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartDua() {
   const lang = getLanguage();
-  const [data, setData] = useState(spiderChart1[0].data);
-  const [warna, setWarna] = useState(spiderChart1[0].warna);
-  const [label, setLabel] = useState(spiderChart1[0].label);
-  const [dataName, setDataName] = useState("Indikator Pemilu - Jenis Kelamin");
+  const spiderChart = lang === "id" ? spiderChart1 : spiderChart1En;
+  const [data, setData] = useState(spiderChart[0].data);
+  const [warna, setWarna] = useState(spiderChart[0].warna);
+  const [label, setLabel] = useState(spiderChart[0].label);
+  const [dataName, setDataName] = useState(
+    lang === "id"
+      ? "Indikator Pemilu - Jenis Kelamin"
+      : "Election Indicator - Gender"
+  );
   const [indexData, setIndexData] = useState(0);
   const [selectedData, setSelectedData] = useState({
     group1: true,
@@ -20,7 +27,7 @@ export default function ChartDua() {
     group3: true,
   });
   const [indexSelectedData, setIndexSelectedData] = useState([0, 1, 2]);
-  const checkboxLabels = spiderChart1[0].label;
+  const checkboxLabels = spiderChart[0].label;
 
   const changeDataName = (value) => {
     changeSelectedData("all");
@@ -29,9 +36,13 @@ export default function ChartDua() {
 
   const changeData = useCallback((dataName) => {
     switch (dataName) {
-      case "Indikator Pemilu - Jenis Kelamin":
+      case lang === "id"
+        ? "Indikator Pemilu - Jenis Kelamin"
+        : "Election Indicator - Gender":
         return 0;
-      case "Indikator Pemilu - Usia":
+      case lang === "id"
+        ? "Indikator Pemilu - Usia"
+        : "Election Indicator - Age":
         return 1;
       default:
         return 0;
@@ -99,9 +110,9 @@ export default function ChartDua() {
     let newWarna = [];
     let newLabel = [];
     indexSelectedData.forEach((index) => {
-      newData.push(spiderChart1[indexData].data[index]);
-      newWarna.push(spiderChart1[indexData].warna[index]);
-      newLabel.push(spiderChart1[indexData].label[index]);
+      newData.push(spiderChart[indexData].data[index]);
+      newWarna.push(spiderChart[indexData].warna[index]);
+      newLabel.push(spiderChart[indexData].label[index]);
     });
     setData(newData);
     setWarna(newWarna);
@@ -113,14 +124,18 @@ export default function ChartDua() {
   }, []);
 
   return (
-    <LayoutVis title={spiderChart1[indexData].title}>
+    <LayoutVis title={spiderChart[indexData].title}>
       <div className="w-full flex flex-col lg:flex-row gap-6">
         <SpiderChart
           data={data}
           keys={label}
           warna={warna}
           dataName={dataName}
-          variabelAll={listVariabelSpiderChart1}
+          variabelAll={
+            lang === "id"
+              ? listVariabelSpiderChart1
+              : listVariabelSpiderChart1En
+          }
           selectedData={selectedData}
           checkboxLabels={checkboxLabels}
           changeDataName={changeDataName}
@@ -134,7 +149,7 @@ export default function ChartDua() {
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
-            {spiderChart1[indexData].interpretasi}
+            {spiderChart[indexData].interpretasi}
           </p>
         </div>
       </div>

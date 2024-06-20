@@ -73,6 +73,81 @@ export const dataGaleriFoto = [
   },
 ];
 
+export const dataGaleriFotoEn = [
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+  {
+    title: "KPU Thanks PPK and PPS for Their Work",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriFoto1.png",
+    filepath: "/images/GaleriFoto1.png",
+    views: 666,
+    size: "1.5 MB",
+    tags: ["2020 Election", "Archive"],
+  },
+];
+
 export const dataGaleriVideo = [
   {
     title: "Tata Cara Pencoblosan Pemilihan Umum 2024",
@@ -109,5 +184,44 @@ export const dataGaleriVideo = [
     views: 666,
     size: "12.5 MB",
     tags: ["Pemilu 2024", "Tutorial"],
+  },
+];
+
+export const dataGaleriVideoEn = [
+  {
+    title: "Voting Procedures for the 2024 General Election",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriVideo1.jpg",
+    filepath: "/videos/GaleriVideo1.mp4",
+    views: 666,
+    size: "12.5 MB",
+    tags: ["2024 Election", "Tutorial"],
+  },
+  {
+    title: "Voting Procedures for the 2024 General Election",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriVideo1.jpg",
+    filepath: "/videos/GaleriVideo1.mp4",
+    views: 666,
+    size: "12.5 MB",
+    tags: ["2024 Election", "Tutorial"],
+  },
+  {
+    title: "Voting Procedures for the 2024 General Election",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriVideo1.jpg",
+    filepath: "/videos/GaleriVideo1.mp4",
+    views: 666,
+    size: "12.5 MB",
+    tags: ["2024 Election", "Tutorial"],
+  },
+  {
+    title: "Voting Procedures for the 2024 General Election",
+    date: "October 10, 2024",
+    imgSrc: "/images/GaleriVideo1.jpg",
+    filepath: "/videos/GaleriVideo1.mp4",
+    views: 666,
+    size: "12.5 MB",
+    tags: ["2024 Election", "Tutorial"],
   },
 ];

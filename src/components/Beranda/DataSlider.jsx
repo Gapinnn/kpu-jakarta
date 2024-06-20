@@ -1,9 +1,12 @@
 import Slider from "react-slick";
-import { dataCard } from "../../contents/hero";
+import { dataCard, dataCardEn } from "../../contents/hero";
 import PrevArrow from "../Icon/PrevArrow";
 import IconTemplate from "../Icon/IconTemplate";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function DataSlider() {
+  const lang = getLanguage();
+  const dataCards = lang === "id" ? dataCard : dataCardEn;
   function PrevArroww(props) {
     const { onClick } = props;
     return (
@@ -94,7 +97,7 @@ export default function DataSlider() {
           {...settings}
           className="pb-2 flex justify-center items-center gap-3"
         >
-          {dataCard.map((data, index) => (
+          {dataCards.map((data, index) => (
             <div key={index} className="w-12 p-2 z-20">
               <div className="w-full h-[14rem] md:h-[15.5rem] lg:h-[17.5rem] relative rounded-2xl md:rounded-3xl overflow-hidden bg-gold-neutral pt-6 flex flex-col items-center justify-end z-20">
                 <div className="w-[5.5rem] h-[5.5rem] md:w-28 md:h-28 flex justify-center items-center absolute top-[0.8rem] md:top-[0.9rem] lg:top-[1rem] bg-maroon-light bg-opacity-30 rounded-2xl">

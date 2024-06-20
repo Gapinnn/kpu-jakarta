@@ -66,3 +66,72 @@ export const dataBahanSosilisasi = [
       "Berikut kami sampaikan Pengumuman Penyerahan Dokumen Syarat Dukungan Bakal Pasangan Calon Perseorangan Pemilihan Gubernur dan Wakil Gubernur DKI.",
   },
 ];
+
+export const dataBahanSosialisasiEn = [
+  {
+    title: "2024 Simultaneous Election Socialization Materials",
+    date: "February 12, 2024",
+    views: 444,
+    size: "1.5 MB",
+    tags: ["2024 Election", "Socialization"],
+    imageSrc: "/images/BahanSosialisasiPemilu2024.png",
+    filepath: "/file/BahanSosialisasiPemilu2024.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+  {
+    title: "2024 Simultaneous Election Socialization Materials",
+    date: "February 12, 2024",
+    views: 444,
+    size: "1.5 MB",
+    tags: ["2024 Election", "Socialization"],
+    imageSrc: "/images/BahanSosialisasiPemilu2024.png",
+    filepath: "/file/BahanSosialisasiPemilu2024.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+  {
+    title: "2020 Simultaneous Election Socialization Materials",
+    date: "February 12, 2019",
+    views: 444,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/BahanSosialisasiPemilihanSerentak2020.png",
+    filepath: "/file/BahanSosialisasiPemilihanSerentak2020.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+  {
+    title: "2020 Simultaneous Election Socialization Materials",
+    date: "February 12, 2019",
+    views: 444,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/BahanSosialisasiPemilihanSerentak2020.png",
+    filepath: "/file/BahanSosialisasiPemilihanSerentak2020.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+  {
+    title: "2020 Simultaneous Election Socialization Materials",
+    date: "February 12, 2019",
+    views: 444,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/BahanSosialisasiPemilihanSerentak2020.png",
+    filepath: "/file/BahanSosialisasiPemilihanSerentak2020.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+  {
+    title: "2020 Simultaneous Election Socialization Materials",
+    date: "February 12, 2019",
+    views: 444,
+    size: "1.8 MB",
+    tags: ["2020 Election", "Archive"],
+    imageSrc: "/images/BahanSosialisasiPemilihanSerentak2020.png",
+    filepath: "/file/BahanSosialisasiPemilihanSerentak2020.pdf",
+    description:
+      "Here we present the Announcement of Submission of Support Documents for Prospective Independent Candidate Pairs in the Election of the Governor and Deputy Governor of DKI.",
+  },
+];

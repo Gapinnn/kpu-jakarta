@@ -1096,8 +1096,6 @@ export const listVariabelSpiderChart1 = [
   { name: "Indikator Pemilu - Generasi" },
 ];
 
-
-
 //EN
 export const groupStackedBarChart1En = [
   // Province DKI Jakarta
@@ -1114,11 +1112,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1239,11 +1237,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1358,11 +1356,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1462,7 +1460,7 @@ export const groupStackedBarChart1En = [
       ],
     },
   },
-  
+
   // Kota Jakarta Barat
   {
     // Region Name
@@ -1477,11 +1475,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1581,7 +1579,7 @@ export const groupStackedBarChart1En = [
       ],
     },
   },
-  
+
   // Kota Jakarta Utara
   {
     // Region Name
@@ -1596,11 +1594,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1700,7 +1698,7 @@ export const groupStackedBarChart1En = [
       ],
     },
   },
-  
+
   // Kota Jakarta Timur
   {
     // Region Name
@@ -1715,11 +1713,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and enchanting culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1819,7 +1817,7 @@ export const groupStackedBarChart1En = [
       ],
     },
   },
-  
+
   // Kabupaten Kepulauan Seribu
   {
     // Region Name
@@ -1834,11 +1832,11 @@ export const groupStackedBarChart1En = [
         "Gen Z, with their enthusiasm and digital skills, can serve as a bridge to introduce Balinese culture to the wider world. Through social media platforms, they can share creative and engaging content about Balinese traditions, customs, and arts. This can increase global awareness and interest in Bali's unique and mesmerizing culture. On the other hand, parents, as the inheritors of Balinese culture, have the responsibility to pass on the knowledge and cultural values to the younger generation. Through various means, such as storytelling, modeling behavior, and organizing cultural activities, parents can instill a love and pride for Balinese culture in their children.",
       // Indicators or Key Segment Data (Stacked Bar)
       indikators: [
-        "Elementary School Equivalent",
-        "Junior High School Equivalent",
-        "High School Equivalent",
+        "Elementary School",
+        "Junior High School",
+        "High School",
         "Diploma I-IV",
-        "Bachelor's Degree (S1, S2, S3)",
+        "Bachelor's Degree",
       ],
       // Labels on Visualization (X axis)
       labels: ["Agus-Sylviana", "Ahok-Djarot", "Anis-Sandiaga"],
@@ -1937,7 +1935,7 @@ export const groupStackedBarChart1En = [
         ],
       ],
     },
-  },  
+  },
 ];
 
 // DAFTAR DAERAH (DROPDOWN)
@@ -1965,11 +1963,12 @@ export const listDaerahGroupStackedBarChart1En = [
 
 export const groupBarChart1En = [
   {
-    title: "Number of Voters in the 2024 Election by Gender in DKI Jakarta Province",
+    title:
+      "Number of Voters in the 2024 Election by Gender in DKI Jakarta Province",
     interpretasi:
       "Data on the number of polling stations (TPS) in DKI Jakarta Province shows significant variation among different regions. In West Jakarta, there are 527 TPS for male voters and 258 TPS for female voters, indicating a higher concentration for male voters. South Jakarta has 502 TPS for males and 339 TPS for females, while East Jakarta records the highest number with 561 TPS for males and 226 TPS for females. North Jakarta has 557 TPS for males and 257 TPS for females, whereas Central Jakarta has 556 TPS for males and 250 TPS for females. The Thousand Islands show a similar pattern with 541 TPS for males and 269 TPS for females. This data indicates that more TPS are allocated to male voters in almost all regions, with East Jakarta having the highest number of TPS for males and South Jakarta showing a more balanced distribution between males and females.",
     label: ["Male", "Female"],
-    colors: ["#FFBF00", "#FFDC73"],
+    warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
         { region: "West Jakarta", value: 422127 },
@@ -1990,11 +1989,12 @@ export const groupBarChart1En = [
     ],
   },
   {
-    title: "Number of Registered Voters in the 2024 Election by Gender in DKI Jakarta Province",
+    title:
+      "Number of Registered Voters in the 2024 Election by Gender in DKI Jakarta Province",
     interpretasi:
       "Data on the number of registered voters by gender in DKI Jakarta Province shows significant variation. In West Jakarta, there are 427 male voters compared to only 258 females, indicating male dominance. A similar pattern is seen in North Jakarta with 357 males and 257 females, and in the Thousand Islands with 341 males and 269 females. However, in South Jakarta and East Jakarta, the number of female voters is slightly higher with 339 females compared to 402 males in South Jakarta, and 426 females compared to 361 males in East Jakarta. In Central Jakarta, the number of voters is almost balanced with 356 males and 350 females. Overall, this data shows quite diverse variations with some regions dominated by male voters while others show balance or female dominance.",
     label: ["Male", "Female"],
-    colors: ["#FFBF00", "#FFDC73"],
+    warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
         { region: "West Jakarta", value: 451427 },
@@ -2015,11 +2015,12 @@ export const groupBarChart1En = [
     ],
   },
   {
-    title: "Number of New Voters in the 2024 Election by Gender in DKI Jakarta Province",
+    title:
+      "Number of New Voters in the 2024 Election by Gender in DKI Jakarta Province",
     interpretasi:
       "Data on the number of new voters by gender in DKI Jakarta Province shows significant variation. In West Jakarta, there are 427 male voters compared to only 258 females, indicating male dominance. A similar pattern is seen in North Jakarta with 357 males and 257 females, and in the Thousand Islands with 341 males and 269 females. However, in South Jakarta and East Jakarta, the number of female voters is slightly higher with 339 females compared to 402 males in South Jakarta, and 426 females compared to 361 males in East Jakarta. In Central Jakarta, the number of voters is almost balanced with 356 males and 350 females. Overall, this data shows quite diverse variations with some regions dominated by male voters while others show balance or female dominance.",
     label: ["Male", "Female"],
-    colors: ["#FFBF00", "#FFDC73"],
+    warna: ["#FFBF00", "#FFDC73"],
     data: [
       [
         { region: "West Jakarta", value: 341427 },
@@ -2145,11 +2146,11 @@ export const spiderChart1En = [
 
 export const listVariabelGroupBarChart1En = [
   { name: "Total Voters" },
-  { name: "Permanent Voters" },
   { name: "New Voters" },
+  { name: "Permanent Voters" },
 ];
 
 export const listVariabelSpiderChart1En = [
-  { name: "Election Indicators - Gender" },
-  { name: "Election Indicators - Generation" },
+  { name: "Election Indicator - Gender" },
+  { name: "Election Indicator - Age" },
 ];
