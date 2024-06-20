@@ -1,3 +1,4 @@
+import getLanguage from "../../hooks/getLanguage";
 import Building from "../Icon/Building";
 import Calendar from "../Icon/Calendar";
 import Cancel from "../Icon/Cancel";
@@ -17,6 +18,7 @@ import Table from "../Icon/Table";
 import Unduh from "../Icon/Unduh";
 import Breadcumb from "./Breadcumb";
 const VisiMisiComponent = () => {
+  const lang = getLanguage();
   return (
     <div className="flex flex-col w-full bg-stone-100 relative">
       <div className="w-full rounded-xl flex flex-col gap-0 absolute bottom-0">
