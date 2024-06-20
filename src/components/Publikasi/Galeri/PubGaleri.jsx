@@ -4,8 +4,10 @@ import Images from "../../Icon/Images";
 import Videos from "../../Icon/Videos";
 import GaleriFoto from "./GaleriFoto";
 import GaleriVideo from "./GaleriVideo";
+import getLanguage from "../../../hooks/getLanguage";
 
 export default function PubGaleri() {
+  const lang = getLanguage();
   const [tabActive, setTabctive] = useState(0);
   return (
     <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
@@ -14,15 +16,20 @@ export default function PubGaleri() {
       {/* Judul Halaman */}
       <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-          Galeri Foto/Video
+          
+          {
+                lang == "id"
+                  ?"Galeri Foto/Video"
+                  :"Photo/Video Gallery"
+              }
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-2 lg:mb-1">
-          Galeri ini menampilkan koleksi foto dan video dari berbagai kegiatan
-          yang diselenggarakan oleh KPU DKI Jakarta, termasuk pencalonan,
-          kampanye, pemungutan suara, dan penghitungan suara. Galeri ini
-          bertujuan untuk mendokumentasikan dan membagikan momen-momen penting
-          dalam perjalanan demokrasi di DKI Jakarta. Galeri ini dibagi menjadi
-          dua kategori berdasarkan jenis/tipe konten, yaitu:
+          
+          {
+                lang == "id"
+                  ?"Galeri ini menampilkan koleksi foto dan video dari berbagai kegiatan yang diselenggarakan oleh KPU DKI Jakarta, termasuk pencalonan, kampanye, pemungutan suara, dan penghitungan suara. Galeri ini bertujuan untuk mendokumentasikan dan membagikan momen-momen penting dalam perjalanan demokrasi di DKI Jakarta. Galeri ini dibagi menjadi dua kategori berdasarkan jenis/tipe konten, yaitu:"
+                  :"This gallery displays a collection of photos and videos from various activities organized by the DKI Jakarta KPU, including nominations, campaigning, voting, and vote counting. This gallery aims to document and share important moments in the journey of democracy in DKI Jakarta. This gallery is divided into: two categories based on the type/type of content, namely:"
+              }
         </p>
         {/* list */}
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
@@ -30,7 +37,12 @@ export default function PubGaleri() {
             1
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            Album Foto
+
+            {
+                lang == "id"
+                  ?"Album Foto"
+                  :"Photo album"
+              }
           </h1>
         </div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-1 md:mt-1.5 lg:mt-0">
@@ -38,7 +50,11 @@ export default function PubGaleri() {
             2
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            Album Video
+          {
+                lang == "id"
+                  ?"Album Video"
+                  :"Video album"
+              }
           </h1>
         </div>
       </div>
@@ -69,7 +85,11 @@ export default function PubGaleri() {
                     : "text-maroon-light"
                 }`}
               >
-                Album Foto
+                {
+                lang == "id"
+                  ?"Album Foto"
+                  :"Photo album"
+              }
               </p>
             </div>
           </li>
@@ -96,7 +116,11 @@ export default function PubGaleri() {
                     : "text-maroon-light"
                 }`}
               >
-                Album Video
+                 {
+                lang == "id"
+                  ?"Album Video"
+                  :"Video album"
+              }
               </p>
             </div>
           </li>

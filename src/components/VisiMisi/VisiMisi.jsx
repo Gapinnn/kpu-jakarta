@@ -17,6 +17,8 @@ import Sosialisasi from "../Icon/Sosialisasi";
 import Table from "../Icon/Table";
 import Unduh from "../Icon/Unduh";
 import Breadcumb from "./Breadcumb";
+import getLanguage from "../../hooks/getLanguage";
+
 const VisiMisiComponent = () => {
   const lang = getLanguage();
   return (
@@ -106,23 +108,42 @@ const VisiMisiComponent = () => {
         <Breadcumb />
         {/* Judul Halaman */}
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-6 mt-2 lg:mt-4">
-          Visi dan Misi KPU Provinsi DKI Jakarta
+          {
+            lang == "id"
+              ?"Visi dan Misi KPU Provinsi DKI Jakarta"
+              :"Vision and Mission of KPU Jakarta Province"
+          }
+          
         </h1>
         {/* Konten */}
         <div className="w-full z-20 flex flex-col justify-center mx-auto py-4 lg:py-8 px-2 lg:px-10 bg-white shadow-2xl rounded-2xl">
           {/* Visi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-base md:text-lg lg:text-xl p-3 lg:p-4 text-left font-bold mb-2 lg:mb-4">
-            Visi
+            
+            {
+            lang == "id"
+              ?"Visi"
+              :"Vision"
+          }
           </h1>
 
           <h1 className=" text-black text-sm md:text-base lg:text-lg px-2 lg:p-2 ">
-            Menjadi penyelenggara Pemilu yang mandiri, profesional, dan
-            berintegritas untuk terwujudnya Pemilu yang luber dan jurdil
+            
+            {
+            lang == "id"
+              ?"Menjadi penyelenggara Pemilu yang mandiri, profesional, dan berintegritas untuk terwujudnya Pemilu yang luber dan jurdil"
+              :"Become an independent, professional and election organizer with integrity to realize free and fair elections"
+          }
           </h1>
 
           {/* Misi */}
           <h1 className="bg-maroon-light rounded-xl text-gold text-base md:text-lg lg:text-xl p-3 lg:p-4 text-left font-bold mt-4 lg:mt-8 mb-2 lg:mb-4">
             Misi
+            {
+            lang == "id"
+              ?"Misi"
+              :"Mission"
+          }
           </h1>
 
           {/* <h1 className=" text-black text-sm md:text-base lg:text-lg p-2 ">Dalam Pasal 13 Undang Undang 7 Tahun 2017 Tentang Pemilihan Umum, KPU mempunyai kewenangan sebagai berikut:</h1> --> */}
@@ -132,8 +153,12 @@ const VisiMisiComponent = () => {
               1
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Meningkatkan kualitas penyelenggaraan Pemilu yang efektif dan
-              efisien, transparan, akuntabel, serta aksesibel;
+              
+              {
+            lang == "id"
+              ?"Meningkatkan kualitas penyelenggaraan Pemilu yang efektif dan efisien, transparan, akuntabel, serta aksesibel;"
+              :"Improving the quality of effective election administration and efficient, transparent, accountable and accessible;"
+          }
             </h1>
           </div>
           <div className="flex items-start px-2 lg:px-4 mb-2">
@@ -141,9 +166,11 @@ const VisiMisiComponent = () => {
               2
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Meningkatkan integritas, kemandirian, kompetensi sebagai upaya
-              menciptakan profesionalisme penyelenggara Pemilu dengan
-              mengukuhkan code of conduct penyelenggara Pemilu;
+              {
+            lang == "id"
+              ?"Meningkatkan integritas, kemandirian, kompetensi sebagai upaya menciptakan profesionalisme penyelenggara Pemilu dengan mengukuhkan code of conduct penyelenggara Pemilu;"
+              :"Increasing integrity, independence, competence as an effort creating professionalism in election organizers by confirming the code of conduct for election organizers;"
+          }
             </h1>
           </div>
           <div className="flex items-start px-2 lg:px-4 mb-2">
@@ -151,8 +178,12 @@ const VisiMisiComponent = () => {
               3
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Menyusun regulasi di bidang Pemilu yang memberikan kepastian
-              hukum, progesif, dan partisipatif;
+              
+              {
+                lang == "id"
+                  ?"Menyusun regulasi di bidang Pemilu yang memberikan kepastian hukum, progesif, dan partisipatif;"
+                  :"Develop regulations in the field of elections that provide legal certainty, are progressive and participatory;"
+              }
             </h1>
           </div>
           <div className="flex items-start px-2 lg:px-4 mb-2">
@@ -160,8 +191,11 @@ const VisiMisiComponent = () => {
               4
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Meningkatkan kualitas pelayanan Pemilu khususnya untuk seluruh
-              pemangku kepentingan dan umumnya untuk seluruh masyarakat;
+              {
+                lang == "id"
+                  ?"Meningkatkan kualitas pelayanan Pemilu khususnya untuk seluruh pemangku kepentingan dan umumnya untuk seluruh masyarakat;"
+                  :"Improving the quality of election services, especially for all stakeholders and generally for the whole community;"
+              }
             </h1>
           </div>
           <div className="flex items-start px-2 lg:px-4 mb-2">
@@ -169,8 +203,11 @@ const VisiMisiComponent = () => {
               5
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Meningkatkan partisipasi dan kualitas pemilih dalam Pemilu;
-              melalui sosialisasi dan Pendidikan pemilih yang berkelanjutan;
+             {
+                lang == "id"
+                  ?" Meningkatkan partisipasi dan kualitas pemilih dalam Pemilu; melalui sosialisasi dan Pendidikan pemilih yang berkelanjutan;"
+                  :"Increasing voter participation and quality in elections; through ongoing voter outreach and education;"
+              }
             </h1>
           </div>
           <div className="flex items-start px-2 lg:px-4 mb-2">
@@ -178,8 +215,12 @@ const VisiMisiComponent = () => {
               6
             </h1>
             <h1 className="text-black text-sm md:text-base lg:text-lg lg:leading-normal lg:p-2 ml-9 md:ml-12 lg:ml-14">
-              Mengoptimalkan pemanfaatan kemajuan teknologi informasi dalam
-              penyelenggaraan Pemilu
+              
+              {
+                lang == "id"
+                  ?" Mengoptimalkan pemanfaatan kemajuan teknologi informasi dalam penyelenggaraan Pemilu"
+                  :"Optimizing the use of advances in information technology holding elections"
+              }
             </h1>
           </div>
           {/* akhir list */}

@@ -5,12 +5,14 @@ import {
   listVariabelGroupBarChart1,
 } from "../../contents/visualisasi";
 import { useCallback, useState, useEffect } from "react";
+import getLanguage from "../../hooks/getLanguage";
 
 export default function ChartSatu() {
+  const lang = getLanguage();
   const [data, setData] = useState(groupBarChart1[0].data);
   const [warna, setWarna] = useState(groupBarChart1[0].warna);
   const [label, setLabel] = useState(groupBarChart1[0].label);
-  const [dataName, setDataName] = useState("Jumlah Pemilih");
+  const [dataName, setDataName] = useState(lang === "id" ? "Jumlah Pemilih" : "Number of Voters");
   const [indexData, setIndexData] = useState(0);
   const [selectedData, setSelectedData] = useState({
     group1: true,
@@ -26,11 +28,11 @@ export default function ChartSatu() {
 
   const changeData = useCallback((dataName) => {
     switch (dataName) {
-      case "Jumlah Pemilih Tetap":
+      case (lang === "id" ? "Jumlah Pemilih Tetap" : "Number of Registered Voters"):
         return 1;
-      case "Jumlah Pemilih Baru":
+      case (lang === "id" ? "Jumlah Pemilih Baru" : "Number of New Voters"):
         return 2;
-      case "Jumlah Pemilih":
+      case (lang === "id" ? "Jumlah Pemilih" : "Number of Voters"):
         return 0;
       default:
         return 0;
@@ -185,7 +187,7 @@ export default function ChartSatu() {
         />
         <div className="w-full flex px-1 pb-2 md:px-2 md:pb-4 lg:pb-0 lg:px-0 lg:basis-[65%] xl:basis-1/3 gap-1 lg:gap-2 flex-col">
           <h2 className="text-base md:text-lg lg:text-xl text-maroon-light font-bold text-center mt-2">
-            Interpretasi
+            {lang === "id" ? "Interpretasi" : "Interpretation"}
           </h2>
           <div className="w-full my-1 h-0.5 bg-maroon-light bg-opacity-50"></div>
           <p className="text-black text-justify text-sm md:text-base">
