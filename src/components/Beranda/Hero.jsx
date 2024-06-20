@@ -8,7 +8,10 @@ export default function Hero() {
   const el = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['"Pemilihan Umum Sebagai Sarana Integrasi Bangsa"'], // Strings to display
+      strings:
+        lang === "id"
+          ? ['"Pemilihan Umum Sebagai Sarana Integrasi Bangsa"']
+          : [['"General Elections as a Means of National Integration"']], // Strings to display
       // Speed settings, try diffrent values untill you get good results
       startDelay: 0,
       typeSpeed: 40,
