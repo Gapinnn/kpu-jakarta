@@ -16,14 +16,14 @@ export default function TabulasiComponent() {
       {/* Judul Halaman */}
       <div className="flex flex-col gap-0 lg:gap-2 my-0 mb-1 lg:mb-4">
         <h1 className="text-maroon-light font-bold text-xl md:text-2xl lg:text-3xl mb-2 lg:mb-0 mt-2 lg:mt-4">
-          {lang === "id" ? "Tabulasi Data KPU Provinsi DKI Jakarta" : "Data Tabulation of KPU DKI Jakarta Province"}
+          {lang === "id"
+            ? "Tabulasi Data KPU Provinsi DKI Jakarta"
+            : "Data Tabulation of KPU DKI Jakarta Province"}
         </h1>
         <p className="text-justify text-stone-900 text-base md:text-lg lg:text-xl mb-2 lg:mb-1">
-          {lang === "id" ?
-              "Tabulasi data-data pemilihan umum KPU DKI Jakarta yang disajikan dalam bentuk tabel untuk dapat dimanfaatkan masyarakat. Tabel yang disediakan juga meliputi tabel yang ada dalam publikasi Statistik Indonesia. Tabulasi data ini dibagi menjadi tiga bagian berdasarkan data yang disajikan, yaitu:"
-              :
-              "Tabulation of electoral data from KPU DKI Jakarta presented in table format for public use. The tables provided also include those found in Indonesia's Statistical Publications. This data tabulation is divided into three sections based on the presented data:"
-          }
+          {lang === "id"
+            ? "Tabulasi data-data pemilihan umum KPU DKI Jakarta yang disajikan dalam bentuk tabel untuk dapat dimanfaatkan masyarakat. Tabel yang disediakan juga meliputi tabel yang ada dalam publikasi Statistik Indonesia. Tabulasi data ini dibagi menjadi tiga bagian berdasarkan data yang disajikan, yaitu:"
+            : "Tabulation of electoral data from KPU DKI Jakarta presented in table format for public use. The tables provided also include those found in Indonesia's Statistical Publications. This data tabulation is divided into three sections based on the presented data:"}
         </p>
         {/* list */}
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
@@ -31,7 +31,9 @@ export default function TabulasiComponent() {
             1
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            {lang === "id" ? "Tabulasi Karakteristik Pemilih Pemilu" : "Tabulation of Voter Characteristics in Elections"}
+            {lang === "id"
+              ? "Tabulasi Karakteristik Pemilih Pemilu"
+              : "Tabulation of Voter Characteristics in Elections"}
           </h1>
         </div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-1 md:mt-1.5 lg:mt-0">
@@ -39,7 +41,9 @@ export default function TabulasiComponent() {
             2
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            {lang === "id" ? "Tabulasi Indikator Pemilu" : "Tabulation of Election Indicators"}
+            {lang === "id"
+              ? "Tabulasi Indikator Pemilu"
+              : "Tabulation of Election Indicators"}
           </h1>
         </div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-4 mt-1 md:mt-1.5 lg:mt-0">
@@ -47,7 +51,9 @@ export default function TabulasiComponent() {
             3
           </h1>
           <h1 className="text-stone-900 font-semibold text-base md:text-lg lg:text-xl">
-            {lang === "id" ? "Tabulasi Persebaran Pilihan Pemilu" : "Tabulation of Election Vote Distribution"}
+            {lang === "id"
+              ? "Tabulasi Persebaran Pilihan Pemilu"
+              : "Tabulation of Election Vote Distribution"}
           </h1>
         </div>
       </div>
@@ -79,9 +85,12 @@ export default function TabulasiComponent() {
                 }`}
               >
                 {window.innerWidth > 768
-                  ? (lang === "id" ? "Karakteristik Pemilih Pemilu" : "Characteristics of Election Voters")
-                  : (lang === "id" ? "Karakteristik" : "Characteristics")
-                }
+                  ? lang === "id"
+                    ? "Karakteristik Pemilih Pemilu"
+                    : "Characteristics of Election Voters"
+                  : lang === "id"
+                  ? "Karakteristik"
+                  : "Characteristics"}
               </p>
             </div>
           </li>
@@ -108,7 +117,13 @@ export default function TabulasiComponent() {
                     : "text-maroon-light"
                 }`}
               >
-                {window.innerWidth > 768 ? (lang === "id" ? "Indikator Pemilu" : "Election Indicators") : (lang === "id" ? "Indikator" : "Indicators")}
+                {window.innerWidth > 768
+                  ? lang === "id"
+                    ? "Indikator Pemilu"
+                    : "Election Indicators"
+                  : lang === "id"
+                  ? "Indikator"
+                  : "Indicators"}
               </p>
             </div>
           </li>
@@ -136,9 +151,12 @@ export default function TabulasiComponent() {
                 }`}
               >
                 {window.innerWidth > 768
-                  ? (lang === "id" ? "Persebaran Pemilih Pemilu" : "Distribution of Election Voters")
-                  : (lang === "id" ? "Persebaran" : "Distribution")
-                }
+                  ? lang === "id"
+                    ? "Persebaran Pemilih Pemilu"
+                    : "Distribution of Election Voters"
+                  : lang === "id"
+                  ? "Persebaran"
+                  : "Distribution"}
               </p>
             </div>
           </li>
@@ -151,14 +169,14 @@ export default function TabulasiComponent() {
           {/* Subjudul Halaman */}
           <div className="flex flex-col gap-1 pt-4">
             <h1 className="text-lg md:text-xl lg:text-2xl text-maroon-light font-bold">
-              {lang === "id" ? "Tabulasi Karakteristik Pemilih Pemilu" : "Tabulation of Election Voter Characteristics"}
+              {lang === "id"
+                ? "Tabulasi Karakteristik Pemilih Pemilu"
+                : "Tabulation of Election Voter Characteristics"}
             </h1>
             <p className="text-stone-900 text-sm md:text-base lg:text-lg text-justify">
-              {lang === "id" ?
-                  "Tabel-tabel ini menampilkan berbagai demografi dan karakteristik sosial ekonomi pemilih yang berpartisipasi dalam Pemilu 2024, termasuk usia, jenis kelamin, pendidikan, dan pekerjaan."
-                  :
-                  "These tables display various demographic and socio-economic characteristics of voters participating in the 2024 Elections, including age, gender, education, and occupation."
-              }
+              {lang === "id"
+                ? "Tabel-tabel ini menampilkan berbagai demografi dan karakteristik sosial ekonomi pemilih yang berpartisipasi dalam Pemilu 2024, termasuk usia, jenis kelamin, pendidikan, dan pekerjaan."
+                : "These tables display various demographic and socio-economic characteristics of voters participating in the 2024 Elections, including age, gender, education, and occupation."}
             </p>
           </div>
           {/* Tabulasi Satu */}
@@ -172,14 +190,14 @@ export default function TabulasiComponent() {
           {/* Subjudul Halaman */}
           <div className="flex flex-col gap-1 pt-4">
             <h1 className="text-lg md:text-xl lg:text-2xl text-maroon-light font-bold">
-              {lang === "id" ? "Tabulasi Indikator Pemilu" : "Tabulation of Election Indicators"}
+              {lang === "id"
+                ? "Tabulasi Indikator Pemilu"
+                : "Tabulation of Election Indicators"}
             </h1>
             <p className="text-stone-900 text-sm md:text-base lg:text-lg text-justify">
-            {lang === "id" ?
-                "Tabel-tabel ini menunjukkan berbagai indikator yang mempengaruhi Pemilu 2024, seperti partisipasi pemilih, jumlah kandidat, dan tingkat kampanye di berbagai wilayah."
-                :
-                "These tables show various indicators affecting the 2024 Elections, such as voter turnout, number of candidates, and campaign intensity across different regions."
-            }
+              {lang === "id"
+                ? "Tabel-tabel ini menunjukkan berbagai indikator yang mempengaruhi Pemilu 2024, seperti partisipasi pemilih, jumlah kandidat, dan tingkat kampanye di berbagai wilayah."
+                : "These tables show various indicators affecting the 2024 Elections, such as voter turnout, number of candidates, and campaign intensity across different regions."}
             </p>
           </div>
           {/* Tabulasi Dua */}
@@ -193,14 +211,14 @@ export default function TabulasiComponent() {
           {/* Subjudul Halaman */}
           <div className="flex flex-col gap-1 pt-4">
             <h1 className="text-lg md:text-xl lg:text-2xl text-maroon-light font-bold">
-              {lang === "id" ? "Tabulasi Persebaran Pilihan Pemilu" : "Tabulation of Election Vote Distribution"}
+              {lang === "id"
+                ? "Tabulasi Persebaran Pilihan Pemilu"
+                : "Tabulation of Election Vote Distribution"}
             </h1>
             <p className="text-stone-900 text-sm md:text-base lg:text-lg text-justify">
-              {lang === "id" ?
-                  "Tabel-tabel ini menggambarkan distribusi pilihan pemilih dalam Pemilu 2019 di seluruh wilayah, menyoroti pola suara yang mendukung berbagai partai politik dan kandidat."
-                  :
-                  "These tables depict the distribution of voter preferences in the 2019 Elections across all regions, highlighting voting patterns that support various political parties and candidates."
-              }
+              {lang === "id"
+                ? "Tabel-tabel ini menggambarkan distribusi pilihan pemilih dalam Pemilu 2019 di seluruh wilayah, menyoroti pola suara yang mendukung berbagai partai politik dan kandidat."
+                : "These tables depict the distribution of voter preferences in the 2019 Elections across all regions, highlighting voting patterns that support various political parties and candidates."}
             </p>
           </div>
           {/* Tabulasi Tiga */}

@@ -3,28 +3,55 @@ import getLanguage from "../../hooks/getLanguage";
 const lang = getLanguage();
 export const tentang = [
   {
-    name: "KPU Jakarta",
-    path: `/${lang}`,
+    name: "Beranda",
+    path: "/id",
   },
   {
     name: "Visi Misi",
-    path: `/${lang}/profil/visi-misi`,
+    path: "/id/profil/visi-misi",
   },
   {
     name: "Tugas Pokok",
-    path: `/${lang}/profil/tugas-pokok`,
+    path: "/id/profil/tugas-pokok",
   },
   {
     name: "Tugas Wewenang",
-    path: `/${lang}/profil/tugas-wewenang`,
+    path: "/id/profil/tugas-wewenang",
   },
   {
     name: "Struktur Organisasi",
-    path: `/${lang}/profil/struktur-organisasi`,
+    path: "/id/profil/struktur-organisasi",
   },
   {
     name: "Sejarah Pemilu",
-    path: `/${lang}/profil/sejarah-pemilu`,
+    path: "/id/profil/sejarah-pemilu",
+  },
+];
+
+export const tentangEn = [
+  {
+    name: "Home",
+    path: "/en",
+  },
+  {
+    name: "Vision Mission",
+    path: "/en/about-us/vision-mission",
+  },
+  {
+    name: "Main Tasks",
+    path: "/en/about-us/main-tasks",
+  },
+  {
+    name: "Authority Tasks",
+    path: "/en/about-us/authority-tasks",
+  },
+  {
+    name: "Organizational Structure",
+    path: "/en/about-us/organizational-structure",
+  },
+  {
+    name: "Election History",
+    path: "/en/about-us/election-history",
   },
 ];
 
@@ -51,6 +78,33 @@ export const tautan = [
   },
   {
     name: "JDIH Komisi Pemilihan Umum",
+    href: "https://jdih.kpu.go.id",
+  },
+];
+
+export const tautanEn = [
+  {
+    name: "General Election Commission",
+    href: "https://kpu.go.id",
+  },
+  {
+    name: "General Election Information",
+    href: "https://infopemilu.kpu.go.id",
+  },
+  {
+    name: "Check Voter List",
+    href: "https://cekdptonline.kpu.go.id/",
+  },
+  {
+    name: "Election Supervisory Agency",
+    href: "https://bawaslu.go.id",
+  },
+  {
+    name: "Honoral Council of Election Organizers",
+    href: "https://dkpp.go.id",
+  },
+  {
+    name: "KPU Legal Information Center",
     href: "https://jdih.kpu.go.id",
   },
 ];

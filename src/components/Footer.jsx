@@ -1,4 +1,4 @@
-import { tentang, tautan } from "../contents/footer";
+import { tentang, tautan, tentangEn, tautanEn } from "../contents/footer";
 import { Link } from "react-router-dom";
 import Facebook from "./Logo/Facebook";
 import Instagram from "./Logo/Instagram";
@@ -6,6 +6,7 @@ import Youtube from "./Logo/Youtube";
 import Twitter from "./Logo/Twitter";
 import Maps from "./Logo/Maps";
 import getLanguage from "../hooks/getLanguage";
+import { useEffect } from "react";
 
 const Footer = () => {
   const lang = getLanguage();
@@ -13,6 +14,7 @@ const Footer = () => {
     e.preventDefault();
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
   return (
     <footer className="bg-maroon w-full px-[5%] py-8">
       <div className="flex w-full flex-col lg:flex-row items-start lg:justify-between py-2 lg:py-4 lg:mx-0 border-b-2 border-gold z-20 relative">
@@ -50,30 +52,71 @@ const Footer = () => {
             <h3 className="text-base md:text-lg lg:text-xl font-bold text-stone-100">
               {lang === "id" ? "Tentang Kami" : "About Us"}
             </h3>
-            {tentang.map((item) => (
-              <Link
-                to={item.path}
-                key={item.name}
-                className="text-sm md:text-base text-stone-300 hover:text-stone-100"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {lang === "id" &&
+              tentang.map((item) => (
+                <Link
+                  to={item.path.includes(lang) ? "#" : item.path}
+                  onClick={(e) => {
+                    if (item.path.includes(lang)) {
+                      e.preventDefault();
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                  key={item.name}
+                  className="text-sm md:text-base text-stone-300 hover:text-stone-100"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            {lang === "en" &&
+              tentangEn.map((item) => (
+                <Link
+                  to={item.path.includes(lang) ? "#" : item.path}
+                  onClick={(e) => {
+                    if (item.path.includes(lang)) {
+                      e.preventDefault();
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                  key={item.name}
+                  className="text-sm md:text-base text-stone-300 hover:text-stone-100"
+                >
+                  {item.name}
+                </Link>
+              ))}
           </div>
           <div className="flex flex-col items-start lg:items-center gap-2 lg:gap-4 mt-2 lg:mt-0">
             <h3 className="text-base md:text-lg lg:text-xl font-bold text-stone-100">
               {lang === "id" ? "Tautan Lain" : "Other Links"}
             </h3>
-            {tautan.map((item) => (
-              <Link
-                to={"#"}
-                onClick={(e) => handleTautanLain(e, item.href)}
-                key={item.name}
-                className="text-sm md:text-base text-stone-300 hover:text-stone-100"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {lang === "id" &&
+              tautan.map((item) => (
+                <Link
+                  to={"#"}
+                  onClick={(e) => handleTautanLain(e, item.href)}
+                  key={item.name}
+                  className="text-sm md:text-base text-stone-300 hover:text-stone-100"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            {lang === "en" &&
+              tautanEn.map((item) => (
+                <Link
+                  to={"#"}
+                  onClick={(e) => handleTautanLain(e, item.href)}
+                  key={item.name}
+                  className="text-sm md:text-base text-stone-300 hover:text-stone-100"
+                >
+                  {item.name}
+                </Link>
+              ))}
           </div>
         </div>
         <div className="absolute hidden lg:flex w-1/2 left-0 bottom-0 -z-0">

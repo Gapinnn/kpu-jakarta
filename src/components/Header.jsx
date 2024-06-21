@@ -181,7 +181,11 @@ const Header = () => {
               <ul className="py-2 font-medium" role="none">
                 <li onClick={() => setLanguageDropdown(!languageDropdown)}>
                   <Link
-                    to="/id"
+                    to="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/id";
+                    }}
                     className="block px-4 py-2 hover:bg-stone-300 rounded-lg"
                   >
                     <div className="inline-flex items-center text-maroon-light text-lg">
@@ -196,7 +200,11 @@ const Header = () => {
                 </li>
                 <li onClick={() => setLanguageDropdown(!languageDropdown)}>
                   <Link
-                    to="/en"
+                    to="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/en";
+                    }}
                     className="block px-4 py-2 hover:bg-stone-300 text-maroon-light rounded-lg"
                   >
                     <div className="inline-flex items-center text-maroon-light text-lg">
@@ -289,7 +297,11 @@ const Header = () => {
                     }}
                   >
                     <Link
-                      to="/id"
+                      to="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = "/id";
+                      }}
                       className="block px-2 py-1 hover:bg-stone-300 rounded-lg"
                     >
                       <div className="inline-flex items-center text-stone-900 font-semibold text-base md:text-lg gap-1">
@@ -309,7 +321,11 @@ const Header = () => {
                     }}
                   >
                     <Link
-                      to="/en"
+                      to="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = "/en";
+                      }}
                       className="block px-2 py-1 hover:bg-stone-300 text-stone-900 font-semibold rounded-lg"
                     >
                       <div className="inline-flex items-center text-stone-900 font-semibold text-base md:text-lg gap-1">
