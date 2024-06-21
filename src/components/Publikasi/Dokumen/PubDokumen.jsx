@@ -142,7 +142,7 @@ export default function PubDokumen() {
                     : "text-maroon-light"
                 }`}
               >
-                {lang == "id" ? "Moduk" : "Module"}
+                {lang == "id" ? "Modul" : "Module"}
               </p>
             </div>
           </li>
