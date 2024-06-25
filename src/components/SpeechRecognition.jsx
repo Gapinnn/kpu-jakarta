@@ -31,7 +31,7 @@ export default function SpeechRecognition({
         prevValue +
         (transcript.length
           ? (prevValue.length ? " " : "") + transcript
-          : tempTranscript)
+          : prevValue)
     );
     stopListening();
   };

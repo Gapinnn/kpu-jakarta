@@ -18,18 +18,20 @@ export default function useSpeechToText(options) {
     recognition.continuous = options.continuous || false;
 
     if ("webkitSpeechGrammarList" in window) {
-      const grammar =
-        "#JSGF V1.0; grammar punctuation; public <punc> = . | , | ? | ! | ; | : ;";
+      const grammar = "#JSGF V1.0;";
       const speechRecognitionList = new window.webkitSpeechGrammarList();
       speechRecognitionList.addFromString(grammar, 1);
       recognition.grammars = speechRecognitionList;
     }
 
+    recognition.onstart = () => {
+      setTranscript("");
+    };
+
     recognition.onresult = (event) => {
-      let text = "";
-      for (let i = 0; i < event.results.length; i++) {
-        text += event.results[i][0].transcript;
-      }
+      const text = Array.from(event.results)
+        .map((result) => result[0].transcript)
+        .join("");
       setTranscript(text);
     };
 
@@ -39,7 +41,6 @@ export default function useSpeechToText(options) {
 
     recognition.onend = () => {
       setIsListening(false);
-      setTranscript("");
     };
 
     return () => {
