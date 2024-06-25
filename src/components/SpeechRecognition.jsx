@@ -11,20 +11,11 @@ export default function SpeechRecognition({
 }) {
   const lang = getLanguage();
   const [textInput, setTextInput] = useState("");
+  const [tempTranscript, setTempTranscript] = useState("");
   const textAreaRef = useRef(null);
 
   const { isListening, transcript, startListening, stopListening } =
     useSpeechToText({ continuous: true });
-
-  useEffect(() => {
-    if (transcript && isListening) {
-      setTextInput(
-        (prevValue) =>
-          prevValue +
-          (transcript.length ? (prevValue.length ? " " : "") + transcript : "")
-      );
-    }
-  }, [transcript, isListening]);
 
   const startStopListening = () => {
     if (isListening) {
@@ -35,8 +26,21 @@ export default function SpeechRecognition({
   };
 
   const stopVoiceInput = () => {
+    setTextInput(
+      (prevValue) =>
+        prevValue +
+        (transcript.length
+          ? (prevValue.length ? " " : "") + transcript
+          : tempTranscript)
+    );
     stopListening();
   };
+
+  useEffect(() => {
+    if (isListening) {
+      setTempTranscript(transcript);
+    }
+  }, [transcript, isListening]);
 
   return (
     <div
