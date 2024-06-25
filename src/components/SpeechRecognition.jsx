@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import getLanguage from "../hooks/getLanguage";
 import Cancel from "./Icon/Cancel";
 import useSpeechToText from "../hooks/useSpeechToText";
@@ -16,6 +16,16 @@ export default function SpeechRecognition({
   const { isListening, transcript, startListening, stopListening } =
     useSpeechToText({ continuous: true });
 
+  useEffect(() => {
+    if (transcript && isListening) {
+      setTextInput(
+        (prevValue) =>
+          prevValue +
+          (transcript.length ? (prevValue.length ? " " : "") + transcript : "")
+      );
+    }
+  }, [transcript, isListening]);
+
   const startStopListening = () => {
     if (isListening) {
       stopVoiceInput();
@@ -25,11 +35,6 @@ export default function SpeechRecognition({
   };
 
   const stopVoiceInput = () => {
-    setTextInput(
-      (prevValue) =>
-        prevValue +
-        (transcript.length ? (prevValue.length ? " " : "") + transcript : "")
-    );
     stopListening();
   };
 
