@@ -34,7 +34,7 @@ export default function useSpeechToText(options) {
     };
 
     recognition.onerror = (event) => {
-      console.log("Speech Recognition Error", event.error);
+      alert("Speech Recognition Error", event.error);
     };
 
     recognition.onend = () => {

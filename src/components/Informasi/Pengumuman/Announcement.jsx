@@ -553,7 +553,6 @@ const PengumumanPage = () => {
 };
 
 export default function Announcement() {
-  const lang = getLanguage();
   return (
     <div>
       <PengumumanPage />
