@@ -9,6 +9,8 @@ import { dataBerita, dataBeritaEn } from "../../../contents/informasi/berita";
 import Breadcumb from "./Breadcumb";
 import Clear from "../../Icon/Clear";
 import getLanguage from "../../../hooks/getLanguage";
+import Microphone from "../../Icon/Microphone";
+import SpeechRecognition from "../../SpeechRecognition";
 
 const NewsItem = ({
   id,
@@ -85,6 +87,8 @@ const NewsPage = () => {
   const [listBerita, setListBerita] = useState(
     lang === "id" ? dataBerita : dataBeritaEn
   );
+  const [showRecord, setShowRecord] = useState(false);
+  const [isRecord, setIsRecord] = useState(false);
   const [showDropdownTahun, setShowDropdownTahun] = useState(false);
   const [showDropdownKategori, setShowDropdownKategori] = useState(false);
   const [dataTahun, setDataTahun] = useState(listTahun);
@@ -203,11 +207,25 @@ const NewsPage = () => {
   }, []);
 
   useEffect(() => {
+    if (!showRecord && isRecord) {
+      handleTampilkan();
+      setIsRecord(false);
+    }
+  }, [kataKunci, isRecord]);
+
+  useEffect(() => {
     updateURL();
   }, [page]);
 
   return (
     <div className="flex flex-col w-full bg-stone-100">
+      {/* Modal Rekam Suara */}
+      <SpeechRecognition
+        isOpen={showRecord}
+        setIsOpen={setShowRecord}
+        setKataKunci={setKataKunci}
+        setIsRecord={setIsRecord}
+      />
       <div className="lg:container mx-auto pt-4 lg:pt-8 pb-8 lg:pb-12 px-4 md:px-8 lg:px-2 flex flex-col justify-center">
         {/* Breadcumb */}
         <Breadcumb />
@@ -236,18 +254,27 @@ const NewsPage = () => {
                 <h5 className="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-1">
                   {lang === "id" ? "Kata Kunci" : "Keyword"}
                 </h5>
-                <input
-                  value={kataKunci}
-                  onChange={(e) => setKataKunci(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  type="text"
-                  placeholder={
-                    lang === "id"
-                      ? "Masukkan kata kunci..."
-                      : "Enter keyword..."
-                  }
-                  className="w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
-                />
+                <div className="relative group w-full">
+                  <input
+                    value={kataKunci}
+                    onChange={(e) => setKataKunci(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    type="text"
+                    placeholder={
+                      lang === "id"
+                        ? "Masukkan kata kunci..."
+                        : "Enter keyword..."
+                    }
+                    className="relative w-full text-sm md:text-base p-2 lg:p-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-maroon-light focus:border-maroon-light focus:outline-none font-medium"
+                  />
+                  <div className="absolute inset-y-0 end-0 flex gap-1 items-center pe-1.5 cursor-default">
+                    <div className="flex w-0.5 h-3/4 bg-gray-200"></div>
+                    <Microphone
+                      onClick={() => setShowRecord(!showRecord)}
+                      className="w-6 h-6 text-gray-400 hover:text-gray-800 group-focus-within:text-gray-800"
+                    />
+                  </div>
+                </div>
               </div>
               {/* Dropdown & Search Filter Tahun */}
               <div className="mb-3 relative">
@@ -377,13 +404,18 @@ const NewsPage = () => {
           <div className="w-full">
             <div className="flex items-center justify-between mb-2 lg:mb-4">
               <span className="text-gray-800 text-sm md:text-base font-semibold pt-2">
-                {lang === "id"
-                  ? `Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
-                      dataBerita.length
-                    } Berita`
-                  : `Showing ${firstIndex + 1}-${lastIndex} of ${
-                      dataBerita.length
-                    } News`}
+                {listBerita.length > 0 &&
+                  (lang === "id"
+                    ? `Menampilkan ${firstIndex + 1}-${lastIndex} dari ${
+                        dataBerita.length
+                      } Berita`
+                    : `Showing ${firstIndex + 1}-${lastIndex} of ${
+                        dataBerita.length
+                      } News`)}
+                {listBerita.length === 0 &&
+                  (lang === "id"
+                    ? `Tidak ada Berita yang tersedia`
+                    : `No News available`)}
               </span>
             </div>
             <div className="grid grid-cols-1 gap-2">
@@ -514,7 +546,6 @@ const NewsPage = () => {
 };
 
 export default function BeritaNow() {
-  const lang = getLanguage();
   return (
     <div>
       <NewsPage />

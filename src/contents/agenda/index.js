@@ -1,8 +1,8 @@
 export const dataKalendar = [
   {
     title: "Rapat Pemilu Satu",
-    start: "2024-06-12T07:30:00",
-    end: "2024-06-12T10:00:00",
+    start: "2024-06-26T07:30:00",
+    end: "2024-06-26T10:00:00",
     extendedProps: {
       gedung: "A",
       lantai: "2",
@@ -13,8 +13,8 @@ export const dataKalendar = [
   },
   {
     title: "Rapat Pemilu Satu",
-    start: "2024-06-12T10:30:00",
-    end: "2024-06-12T12:30:00",
+    start: "2024-06-26T10:30:00",
+    end: "2024-06-26T12:30:00",
     extendedProps: {
       gedung: "B",
       lantai: "3",
@@ -25,8 +25,8 @@ export const dataKalendar = [
   },
   {
     title: "Rapat Pemilu Satu",
-    start: "2024-06-12T14:00:00",
-    end: "2024-06-12T16:30:00",
+    start: "2024-06-26T14:00:00",
+    end: "2024-06-26T16:30:00",
     extendedProps: {
       gedung: "A",
       lantai: "2",
@@ -38,8 +38,8 @@ export const dataKalendar = [
 
   {
     title: "Rapat Pilkada Satu",
-    start: "2024-06-13T08:30:00",
-    end: "2024-06-13T10:30:00",
+    start: "2024-06-27T08:30:00",
+    end: "2024-06-27T10:30:00",
     extendedProps: {
       gedung: "C",
       lantai: "1",
@@ -50,8 +50,8 @@ export const dataKalendar = [
   },
   {
     title: "Rapat Pilkada Satu",
-    start: "2024-06-13T15:00:00",
-    end: "2024-06-13T17:00:00",
+    start: "2024-06-27T15:00:00",
+    end: "2024-06-27T17:00:00",
     extendedProps: {
       gedung: "D",
       lantai: "4",
@@ -62,8 +62,8 @@ export const dataKalendar = [
   },
   {
     title: "Rapat Pilkada Dua",
-    start: "2024-06-14T09:00:00",
-    end: "2024-06-14T11:00:00",
+    start: "2024-06-28T09:00:00",
+    end: "2024-06-28T11:00:00",
     extendedProps: {
       gedung: "A",
       lantai: "2",
@@ -74,8 +74,8 @@ export const dataKalendar = [
   },
   {
     title: "Rapat Pemilu Dua",
-    start: "2024-06-13T12:30:00",
-    end: "2024-06-13T14:30:00",
+    start: "2024-06-27T12:30:00",
+    end: "2024-06-27T14:30:00",
     extendedProps: {
       gedung: "E",
       lantai: "2",
@@ -98,8 +98,8 @@ export const dataKalendar = [
   },
   {
     title: "Sidang Pemilu Satu",
-    start: "2024-06-14T12:00:00",
-    end: "2024-06-14T15:00:00",
+    start: "2024-06-28T12:00:00",
+    end: "2024-06-28T15:00:00",
     extendedProps: {
       gedung: "F",
       lantai: "3",

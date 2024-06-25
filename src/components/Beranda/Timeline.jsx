@@ -301,7 +301,7 @@ export default function Timeline() {
       </div>
 
       {/* Timeline Laptop dan Tablet */}
-      <div className="hidden md:block p-4 md:py-8 md:pb-12 lg:pb-0 md:px-4 lg:px-[10%]">
+      <div className="hidden md:block p-4 md:py-8 md:pb-12 lg:pb-0 md:px-4 xl:px-[5%] 2xl:px-[8%]">
         {/* Timeline PERTAMA */}
         <div className="flex w-full justify-start gap-0 py-3">
           <div className="block">
@@ -311,18 +311,16 @@ export default function Timeline() {
                   <One />
                 </div>
               </div>
-              <div className="w-36 lg:w-72 h-1 bg-gold"></div>
+              <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
               <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
+          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 xl:translate-y-2 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              {lang === "id"
-                ? "S.D. 18 NOVEMBER 2024"
-                : "UNTIL 18 NOVEMBER 2024"}
+              {lang === "id" ? "S.D. 18 NOV 2024" : "UNTIL 18 NOV 2024"}
             </div>
-            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
+            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl xl:translate-y-1">
               {lang === "id"
                 ? "Penetapan Tata Cara dan Jadwal"
                 : "Determination of Procedures and Schedules"}
@@ -340,7 +338,7 @@ export default function Timeline() {
         <div className="flex w-full justify-end gap-0 py-3">
           <div className="absolute left-1/2 flex gap-6 items-center -translate-x-2.5">
             <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
-            <div className="w-36 lg:w-72 h-1 bg-gold"></div>
+            <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
             <div className="flex justify-start flex-col md:flex-row gap-2">
               <div className="rounded-full bg-gold h-12 w-12 flex items-center justify-center">
                 <Two />
@@ -348,11 +346,11 @@ export default function Timeline() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
+          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 xl:translate-y-2 xl:translate-x-10 2xl:translate-x-2 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              17 APRIL - 18 NOVEMBER 2024
+              17 APR - 18 NOV 2024
             </div>
-            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
+            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl xl:translate-y-1">
               {lang === "id"
                 ? "Pembentukan PPS, PPK, dan KPPS"
                 : "Establishment of PPS, PPK, and KPPS"}
@@ -369,18 +367,18 @@ export default function Timeline() {
                   <Three />
                 </div>
               </div>
-              <div className="w-36 lg:w-72 h-1 bg-gold"></div>
+              <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
               <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
             </div>
           </div>
 
           <div className="bg-white absolute left-1/2 w-1 h-[2.8rem] -translate-x-0.5 -translate-y-10"></div>
 
-          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
+          <div className="flex flex-col items-center md:translate-y-12 md:mt-2 xl:translate-y-2 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              31 MAY - 23 SEPTEMBER 2024
+              31 MAY - 23 SEP 2024
             </div>
-            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
+            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl xl:translate-y-1">
               {lang === "id"
                 ? "Pemutakhiran dan Penyusunan"
                 : "Updating and Compiling"}
@@ -396,7 +394,7 @@ export default function Timeline() {
         <div className="flex w-full justify-end gap-0 py-3">
           <div className="absolute left-1/2 flex gap-6 items-center -translate-x-2.5">
             <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
-            <div className="w-36 lg:w-72 h-1 bg-gold"></div>
+            <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
             <div className="flex justify-start flex-col md:flex-row gap-2">
               <div className="rounded-full bg-gold h-12 w-12 flex items-center justify-center">
                 <Four />
@@ -404,11 +402,11 @@ export default function Timeline() {
             </div>
           </div>
 
-          <div className="lg:translate-x-12 flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
+          <div className="lg:translate-x-12 flex flex-col items-center md:translate-y-12 md:mt-2 xl:translate-y-2 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              27 MAY - 16 NOVEMBER 2024
+              27 MAY - 16 NOV 2024
             </div>
-            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
+            <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl xl:translate-y-1">
               {lang === "id"
                 ? "Pemberitahuan dan Pendaftaran"
                 : "Notification and Registration"}
@@ -429,7 +427,7 @@ export default function Timeline() {
                   <Five />
                 </div>
               </div>
-              <div className="w-44 lg:w-72 h-1 bg-gold"></div>
+              <div className="w-44 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
               <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
             </div>
           </div>
@@ -452,7 +450,7 @@ export default function Timeline() {
         <div className="flex w-full justify-end gap-0 py-3">
           <div className="absolute left-1/2 flex gap-6 items-center -translate-x-2.5">
             <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
-            <div className="w-40 lg:w-72 h-1 bg-gold"></div>
+            <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
             <div className="flex justify-start flex-col md:flex-row gap-2">
               <div className="rounded-full bg-gold h-12 w-12 flex items-center justify-center">
                 <Six />
@@ -481,16 +479,16 @@ export default function Timeline() {
                   <Seven />
                 </div>
               </div>
-              <div className="w-32 lg:w-72 h-1 bg-gold"></div>
+              <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
               <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
             </div>
           </div>
 
           <div className="bg-white absolute left-1/2 w-1 h-[2.8rem] -translate-x-0.5 -translate-y-10"></div>
 
-          <div className="lg:-translate-x-[4.5rem] flex flex-col items-center md:translate-y-12 md:mt-2 lg:translate-y-0 lg:mt-0">
+          <div className="xl:-translate-x-0 flex flex-col items-center md:translate-y-12 md:mt-2 xl:translate-y-2 lg:mt-0">
             <div className="text-gold text-base font-semibold md:text-xl lg:text-2xl">
-              25 SEPTEMBER - 23 NOVEMBER 2024
+              25 SEP - 23 NOV 2024
             </div>
             <div className="text-center lg:text-left text-stone-100 text-sm font-normal md:text-lg lg:text-xl">
               {lang === "id"
@@ -507,7 +505,7 @@ export default function Timeline() {
         <div className="flex w-full justify-end gap-0 py-3">
           <div className="absolute left-1/2 flex gap-6 items-center -translate-x-2.5">
             <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
-            <div className="w-40 lg:w-72 h-1 bg-gold"></div>
+            <div className="w-36 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
             <div className="flex justify-start flex-col md:flex-row gap-2">
               <div className="rounded-full bg-gold h-12 w-12 flex items-center justify-center">
                 <Eight />
@@ -537,7 +535,7 @@ export default function Timeline() {
                   <Nine />
                 </div>
               </div>
-              <div className="w-44 lg:w-72 h-1 bg-gold"></div>
+              <div className="w-44 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
               <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
             </div>
           </div>
@@ -562,7 +560,7 @@ export default function Timeline() {
         <div className="flex w-full justify-end gap-0 py-3">
           <div className="absolute left-1/2 flex gap-6 items-center -translate-x-2.5">
             <div className="rounded-full w-5 h-5 z-10 bg-gold"></div>
-            <div className="w-44 lg:w-72 h-1 bg-gold"></div>
+            <div className="w-44 lg:w-56 2xl:w-72 h-1 bg-gold"></div>
             <div className="flex justify-start flex-col md:flex-row gap-2">
               <div className="rounded-full bg-gold h-12 w-12 flex items-center justify-center">
                 <Ten />
