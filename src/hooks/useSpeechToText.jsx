@@ -15,7 +15,7 @@ export default function useSpeechToText(options) {
     const recognition = recognitionRef.current;
     recognition.interimResults = options.interimResults || true;
     recognition.lang = options.lang || "id-ID";
-    recognition.continuous = options.continuous || false;
+    recognition.continuous = false;
 
     if ("webkitSpeechGrammarList" in window) {
       const grammar = "#JSGF V1.0;";
